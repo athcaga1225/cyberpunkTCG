@@ -3,7 +3,7 @@
   "sourceUrl": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/cyberpunk-tcg/price-guides/welcome-to-night-city-beta",
   "observedDate": "2026-10-19",
   "kind": "non-live observed market-price snapshot",
-  "notes": "Prices are approximate past public market price readings, USD, for displayed printings. They are NOT live quotes, not a full set. Confirm card number and printing. ",
+  "notes": "Historical collected market price snapshots, not live quotes. Sources vary in retrieval timing; refer to each card's source. For high-value cards independently verify variant and latest market price.",
   "prices": {
     "B011": {
       "usd": 10.44,
@@ -134,6 +134,319 @@
       "usd": 99.79,
       "printing": "as listed on source",
       "condition": "Near Mint / where specified"
+    },
+    "B001": {
+      "usd": 4.37,
+      "name": "Adam Smasher - Ender of Legends (Epic)",
+      "source": "TCGplayer price guide",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B002": {
+      "usd": 0.2,
+      "name": "Dexter DeShawn - Off the Grid",
+      "source": "CardNexus Beta catalog",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B003": {
+      "usd": 33.65,
+      "name": "Johnny Silverhand - Rocking Renegade (Secret)",
+      "source": "CardNexus Beta catalog",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B004": {
+      "usd": 0.86,
+      "name": "Royce - Psycho on the Edge",
+      "source": "CardNexus Beta catalog",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B005A": {
+      "usd": 0.99,
+      "name": "V - Streetkid (A)",
+      "source": "CardNexus Beta catalog",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B005B": {
+      "usd": 1.15,
+      "name": "V - Streetkid (B)",
+      "source": "CardNexus Beta catalog",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B006": {
+      "usd": 0.1,
+      "name": "6th Street Recruits",
+      "source": "CardNexus Beta catalog",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B007": {
+      "usd": 0.1,
+      "name": "Animals Wrecker",
+      "source": "CardNexus Beta catalog",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B008": {
+      "usd": 0.1,
+      "name": "Chrome Fang",
+      "source": "CardNexus Beta catalog",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B009": {
+      "usd": 0.8,
+      "name": "El Sombreron - La Venganza Lenta",
+      "source": "CardNexus Beta catalog",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B010": {
+      "usd": 0.1,
+      "name": "Japantown Jonin",
+      "source": "CardNexus Beta catalog",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B012": {
+      "usd": 4.96,
+      "name": "Kerry Eurodyne - The Last Rockerboy",
+      "source": "CardNexus Beta catalog",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B013": {
+      "usd": 2.48,
+      "name": "La Llorona - Ghost of the Past",
+      "source": "CardNexus Beta catalog",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B015": {
+      "usd": 0.1,
+      "name": "Octant",
+      "source": "CardNexus Beta catalog",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B016": {
+      "usd": 0.18,
+      "name": "Royce - Don't Call Me Simon",
+      "source": "CardNexus Beta catalog",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B017": {
+      "usd": 0.1,
+      "name": "Ruthless Lowlife",
+      "source": "CardNexus Beta catalog",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B018": {
+      "usd": 0.1,
+      "name": "Screw - Lovelorn Fool",
+      "source": "CardNexus Beta catalog",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B019": {
+      "usd": 0.25,
+      "name": "Swordwise Huscle",
+      "source": "CardNexus Beta catalog",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B021": {
+      "usd": 0.1,
+      "name": "Valentino Guerrera",
+      "source": "CardNexus Beta catalog",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B022": {
+      "usd": 0.99,
+      "name": "Yorinobu Arasaka - Steel Dragon",
+      "source": "CardNexus Beta catalog",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B023": {
+      "usd": 0.1,
+      "name": "Arasaka Emergency Radioport",
+      "source": "CardNexus Beta catalog",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B025": {
+      "usd": 0.23,
+      "name": "Mantis Blades",
+      "source": "TCGplayer Beta card search",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B027": {
+      "usd": 1.46,
+      "name": "All is Lost",
+      "source": "TCGplayer price guide",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B041": {
+      "usd": 4.99,
+      "name": "Adam Smasher - Metal Over Meat (Epic)",
+      "source": "TCGplayer price guide",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B042": {
+      "usd": 1.14,
+      "name": "Alt Cunningham - Mother of Daemons (Rare)",
+      "source": "TCGplayer price guide",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B043": {
+      "usd": 0.2,
+      "name": "Augmented Negotiators",
+      "source": "TCGplayer price guide",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B072": {
+      "usd": 1.33,
+      "name": "Hanako Arasaka - Daughter of the Emperor (Rare)",
+      "source": "TCGplayer Beta card search",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B094": {
+      "usd": 0.36,
+      "name": "Riot Shield",
+      "source": "TCGplayer Beta card search",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B098": {
+      "usd": 3,
+      "name": "(Don't Fear) The Reaper",
+      "source": "TCGplayer price guide",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B106": {
+      "usd": 0.65,
+      "name": "Alt Cunningham - Soulkiller Architect (Rare)",
+      "source": "TCGplayer price guide",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B131": {
+      "usd": 0.66,
+      "name": "Chrome Reverie",
+      "source": "TCGplayer price guide",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B141": {
+      "usd": 114.66,
+      "name": "Adam Smasher - Ender of Legends (ILegend)",
+      "source": "TCGplayer price guide",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B161": {
+      "usd": 33.48,
+      "name": "Alt Cunningham - Mother of Daemons (IO)",
+      "source": "TCGplayer price guide",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B068": {
+      "usd": 0.13,
+      "name": "Live with the Aftermath",
+      "source": "Sparkl TCGplayer reference",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B127": {
+      "usd": 0.1,
+      "name": "Westbrook Netrunner",
+      "source": "Sparkl TCGplayer reference",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B029": {
+      "usd": 0.19,
+      "name": "Bonnie and Clyde",
+      "source": "Sparkl TCGplayer reference",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B092": {
+      "usd": 0.12,
+      "name": "Wraith Marauders",
+      "source": "Sparkl TCGplayer reference",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B116": {
+      "usd": 13.12,
+      "name": "Judy Alvarez - Nothing to Doubt (Secret)",
+      "source": "Sparkl TCGplayer reference",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B147": {
+      "usd": 82.65,
+      "name": "Muamar Reyes - El Capitan (ILegend)",
+      "source": "Sparkl TCGplayer reference",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B157": {
+      "usd": 368.79,
+      "name": "Judy Alvarez - Braindance Maestro (ILegend)",
+      "source": "Sparkl TCGplayer reference",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B168": {
+      "usd": 1034.46,
+      "name": "Johnny Silverhand - Rocking Renegade (ISecret)",
+      "source": "Sparkl TCGplayer reference",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B169": {
+      "usd": 881.82,
+      "name": "Sasha Yakovleva - Won't Let You Down (ISecret)",
+      "source": "Sparkl TCGplayer reference",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B170": {
+      "usd": 653.61,
+      "name": "Panam Palmer - Strength Through Family (ISecret)",
+      "source": "Sparkl TCGplayer reference",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
+    },
+    "B171": {
+      "usd": 794.07,
+      "name": "Judy Alvarez - Nothing to Doubt (ISecret)",
+      "source": "Sparkl TCGplayer reference",
+      "printing": "See rarity/name",
+      "condition": "Near Mint reference"
     }
+  },
+  "sources": {
+    "tcgplayer": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/cyberpunk-tcg/price-guides/welcome-to-night-city-beta",
+    "cardnexus": "https://cardnexus.com/en/explore/cyberpunk/welcome-to-night-city-beta/card",
+    "sparkl": "https://sparkl.gg/cyberpunk/welcome-to-night-city-beta/"
   }
 }
