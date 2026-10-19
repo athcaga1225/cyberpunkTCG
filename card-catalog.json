@@ -1,10 +1,11 @@
 {
-  "version": 2,
-  "info": "Complete 172-item numbered Welcome to Night City Beta main set (B001-B171, with B005A/B variants). Number and names cross-referenced to beta checklists; foil/parallel printings and six Box Toppers are separate, not included.",
+  "version": 3,
+  "info": "172 Welcome to Night City Beta main set entries (B001-B171 including B005A/B), plus 6 separately identifiable Box Topper Beta promo entries (T001-T006 app-only IDs to distinguish duplicate β numbers).",
   "sources": [
     "https://www.tcdb.com/Checklist.cfm/sid/684121/2026-Cyberpunk-TCG-Welcome-to-Night-City-Beta",
     "https://unacollezione.it/checklist/cyberpunk-tcg-welcome-to-night-city-beta-checklist",
-    "https://www.tcgplayer.com/search/cyberpunk-tcg/welcome-to-night-city-beta?page=1"
+    "https://www.tcgplayer.com/search/cyberpunk-tcg/welcome-to-night-city-beta?page=1",
+    "https://cardnexus.com/en/explore/cyberpunk/box-toppers-beta"
   ],
   "cards": {
     "B001": {
@@ -727,6 +728,48 @@
       "name": "Judy Alvarez: Nothing to Doubt",
       "source": "beta-checklist",
       "rarity": "Iconic Secret"
+    },
+    "T001": {
+      "name": "Yorinobu Arasaka: Embracing Destruction",
+      "source": "box-toppers-beta",
+      "rarity": "Nova Rare",
+      "set": "Box Toppers — Beta",
+      "number": "β001"
+    },
+    "T002": {
+      "name": "Viktor Vektor: Sit Down and Relax",
+      "source": "box-toppers-beta",
+      "rarity": "Nova Rare",
+      "set": "Box Toppers — Beta",
+      "number": "β002"
+    },
+    "T003": {
+      "name": "Goro Takemura: Hands Unclean",
+      "source": "box-toppers-beta",
+      "rarity": "Nova Rare",
+      "set": "Box Toppers — Beta",
+      "number": "β003"
+    },
+    "T004": {
+      "name": "Saburo Arasaka: Stubborn Patriarch",
+      "source": "box-toppers-beta",
+      "rarity": "Nova Rare",
+      "set": "Box Toppers — Beta",
+      "number": "β004"
+    },
+    "T005": {
+      "name": "Jackie Welles: Pour One Out For Me",
+      "source": "box-toppers-beta",
+      "rarity": "Nova Rare",
+      "set": "Box Toppers — Beta",
+      "number": "β005"
+    },
+    "T006": {
+      "name": "V: Corporate Exile",
+      "source": "box-toppers-beta",
+      "rarity": "Nova Rare",
+      "set": "Box Toppers — Beta",
+      "number": "β006"
     }
   }
 }
