@@ -21,8 +21,8 @@ const cards={}, sources={}; let overrides={};let prices={},priceDate="";
 try{overrides=JSON.parse(localStorage.getItem("cyberscan-name-overrides")||"{}")}catch(e){}
 async function loadCatalog(){try{const response=await fetch("./card-catalog.json?v=1",{cache:"no-cache"});if(!response.ok)throw Error("HTTP "+response.status);const data=await response.json();for(const [key,val] of Object.entries(data.cards||{})){cards[key]=val.name;sources[key]=val.source}for(const [key,name] of Object.entries(overrides)){if(typeof name==="string"&&name.trim()){cards[key]=name;sources[key]="user"}}$('catalogstatus').textContent="已載入 "+Object.keys(data.cards||{}).length+" 張編號對照（特殊版本尚待核對）。";renderPriceCatalog();}catch(e){$('catalogstatus').textContent="卡表載入失敗，仍可手動搜尋："+e.message}
 }
-async function loadPrices(){try{const res=await fetch("./prices.json?v=1",{cache:"no-cache"});if(!res.ok)throw Error("HTTP "+res.status);const data=await res.json();prices=data.prices||{};priceDate=data.observedDate||"";$('priceinfo').textContent="已載入 "+Object.keys(prices).length+" 筆歷史參考價（非即時）。";if(currentCard)displayPrice(currentCard.code);renderPriceCatalog()}catch(e){$('priceinfo').textContent="價格資料載入失敗，可使用下方 TCGplayer 連結查詢。";}}
-function displayPrice(code){const item=prices[code];if(item&&Number.isFinite(item.usd)){$('pricevalue').textContent="US$"+item.usd.toFixed(2);$('priceinfo').textContent="TCGplayer 歷史市場價格快照 · 資料擷取日期 "+priceDate+" · 不是即時報價；實際售價請點下方連結核對。";}else{$('pricevalue').textContent="尚無資料";$('priceinfo').textContent="目前沒有這個卡號的已記錄報價。可開啟下方 TCGplayer 價格表查詢。";}}
+async function loadPrices(){try{const res=await fetch("./prices.json?v=2",{cache:"no-cache"});if(!res.ok)throw Error("HTTP "+res.status);const data=await res.json();prices=data.prices||{};priceDate=data.observedDate||"";$('priceinfo').textContent="已載入 "+Object.keys(prices).length+" 筆歷史參考價（非即時）。";if(currentCard)displayPrice(currentCard.code);renderPriceCatalog()}catch(e){$('priceinfo').textContent="價格資料載入失敗，可使用下方 TCGplayer 連結查詢。";}}
+function displayPrice(code){const item=prices[code];if(item&&Number.isFinite(item.usd)){$('pricevalue').textContent="US$"+item.usd.toFixed(2);$('priceinfo').textContent="TCGplayer 歷史市場價格快照 · 資料擷取日期 "+priceDate+" · "+(item.source||"歷史價格資料")+" · 非即時報價；實際售價請點下方連結核對。";}else{$('pricevalue').textContent="尚無資料";$('priceinfo').textContent="目前沒有這個卡號的已記錄報價。可開啟下方 TCGplayer 價格表查詢。";}}
 
 function renderPriceCatalog(){
 const root=$('pricecatalog');if(!root)return;root.replaceChildren();
@@ -32,7 +32,7 @@ if(!entries.length){root.textContent=Object.keys(prices).length?"沒有符合的
 for(const [code,item] of entries){
 const row=document.createElement("div");row.className="collection-row";
 const name=document.createElement("div");name.className="description";
-const cardName=cards[code]||"卡名未確認";
+const cardName=item.name||cards[code]||"卡名未確認";
 name.textContent=code+" · "+cardName;
 const price=document.createElement("strong");price.textContent=Number.isFinite(item.usd)?"US$"+item.usd.toFixed(2):"—";
 const view=document.createElement("button");view.type="button";view.textContent="查看";view.setAttribute("aria-label","查詢 "+code);
@@ -70,7 +70,7 @@ else{$('ocrstatus').textContent="這張照片未讀到可用卡號或名稱。�
 finally{if(worker)try{await worker.terminate()}catch(e){}button.disabled=false}
 };
 function externalLink(label,url){const a=document.createElement("a");a.textContent=label;a.href=url;a.target="_blank";a.rel="noopener noreferrer";return a}
-function searchCard(scroll=true){const q=$('query').value.trim();if(!q){$('query').focus();return}const code=normalizeCode(q);const known=!!(code&&cards[code]);const name=known?cards[code]:q;const src=known?(sources[code]||"unverified"):"missing";$('cardconfidence').textContent=src==="beta-confirmed"?"已核對的 Beta 卡號名稱":src==="retail-reference"?"依同編號 Retail 基礎卡對照；Beta 印刷版本仍需核對":src==="user"?"此卡名由你在本機自訂":src==="missing"?"資料庫沒有這張卡的核實名稱；可使用下方連結查找並自行補充":"參考對照名稱，特殊版本仍請核對";$('customname').value=known?name:"";currentCard={key:code||q.toLowerCase(),name,code:code||"",query:q};displayPrice(code);$('cardname').textContent=(code?code+" · ":"")+name;
+function searchCard(scroll=true){const q=$('query').value.trim();if(!q){$('query').focus();return}const code=normalizeCode(q);const known=!!(code&&cards[code]);const name=prices[code]?.name|| (known?cards[code]:q);const src=known?(sources[code]||"unverified"):"missing";$('cardconfidence').textContent=src==="beta-confirmed"?"已核對的 Beta 卡號名稱":src==="retail-reference"?"依同編號 Retail 基礎卡對照；Beta 印刷版本仍需核對":src==="user"?"此卡名由你在本機自訂":src==="missing"?"資料庫沒有這張卡的核實名稱；可使用下方連結查找並自行補充":"參考對照名稱，特殊版本仍請核對";$('customname').value=known?name:"";currentCard={key:code||q.toLowerCase(),name,code:code||"",query:q};displayPrice(code);$('cardname').textContent=(code?code+" · ":"")+name;
 const findTerms=code&&cards[code]?code+" "+cards[code]:q;
 $('links').replaceChildren(
 externalLink("TCGplayer Beta 市價表",PRICE_GUIDE),
