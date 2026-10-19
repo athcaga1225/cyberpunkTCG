@@ -19,7 +19,7 @@ const PRICE_GUIDE="https://www.tcgplayer.com/categories/trading-and-collectible-
 let currentFile=null,blobURL=null,currentCard=null;
 const cards={}, sources={}; let overrides={};
 try{overrides=JSON.parse(localStorage.getItem("cyberscan-name-overrides")||"{}")}catch(e){}
-async function loadCatalog(){try{const response=await fetch("./card-catalog.json?v=1",{cache:"no-cache"});if(!response.ok)throw Error("HTTP "+response.status);const data=await response.json();for(const [key,val] of Object.entries(data.cards||{})){cards[key]=val.name;sources[key]=val.source}for(const [key,name] of Object.entries(overrides)){if(typeof name==="string"&&name.trim()){cards[key]=name;sources[key]="user"}}$('catalogstatus').textContent="已載入 "+Object.keys(data.cards||{}).length+" 張編號對照（特殊版本尚待核對）。";}catch(e){$('catalogstatus').textContent="卡表載入失敗，仍可手動搜尋："+e.message}}
+async function loadCatalog(){try{const response=await fetch("./card-catalog.json?v=1",{cache:"no-cache"});if(!response.ok)throw Error("HTTP "+response.status);const data=await response.json();for(const [key,val] of Object.entries(data.cards||{})){cards[key]=val.name;sources[key]=val.source}for(const [key,name] of Object.entries(overrides)){if(typeof name==="string"&&name.trim()){cards[key]=name;sources[key]="user"}}$('catalogstatus').textContent="已載入 "+Object.keys(data.cards||{}).length+" 張編號對照（特殊版本尚待核對）。";}catch(e){$('catalogstatus').textContent="卡表載入失敗，仍可手動搜尋："+e.message}
 }
 let collection=[];
 try{const saved=JSON.parse(localStorage.getItem("cyberscan-collection-v2")||"[]");if(Array.isArray(saved))collection=saved.filter(c=>c&&typeof c.key==="string"&&typeof c.name==="string"&&Number.isInteger(c.qty)&&c.qty>0).slice(0,10000)}catch(e){}
