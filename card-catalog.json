@@ -1,0 +1,578 @@
+{
+  "version": 1,
+  "info": "Retail numbered core card references plus limited Beta entries. Retail numbering is not proof of matching Beta printing. Alternate-art and topper cards require separate verification.",
+  "sources": [
+    "https://raw.githubusercontent.com/orzdk/cyber-sim-sdk/main/ref/d_cards.json",
+    "https://www.tcdb.com/Checklist.cfm/sid/684121/2026-Cyberpunk-TCG-Welcome-to-Night-City-Beta"
+  ],
+  "cards": {
+    "B001": {
+      "name": "Adam Smasher: Ender of Legends",
+      "source": "retail-reference"
+    },
+    "B002": {
+      "name": "Dexter DeShawn: Off the Grid",
+      "source": "retail-reference"
+    },
+    "B003": {
+      "name": "Johnny Silverhand: Rocking Renegade",
+      "source": "retail-reference"
+    },
+    "B004": {
+      "name": "Royce: Psycho on the Edge",
+      "source": "retail-reference"
+    },
+    "B005A": {
+      "name": "V: Streetkid",
+      "source": "retail-reference"
+    },
+    "B005B": {
+      "name": "V: Streetkid",
+      "source": "existing-beta-index"
+    },
+    "B006": {
+      "name": "6th Street Recruits",
+      "source": "retail-reference"
+    },
+    "B007": {
+      "name": "Animals Wrecker",
+      "source": "retail-reference"
+    },
+    "B008": {
+      "name": "Chrome Fang",
+      "source": "retail-reference"
+    },
+    "B009": {
+      "name": "El Sombrerón: La Venganza Lenta",
+      "source": "retail-reference"
+    },
+    "B010": {
+      "name": "Japantown Jonin",
+      "source": "retail-reference"
+    },
+    "B011": {
+      "name": "Johnny Silverhand: Never Stop Fighting",
+      "source": "retail-reference"
+    },
+    "B012": {
+      "name": "Kerry Eurodyne: The Last Rockerboy",
+      "source": "retail-reference"
+    },
+    "B013": {
+      "name": "La Llorona: Ghost of the Past",
+      "source": "retail-reference"
+    },
+    "B014": {
+      "name": "Meredith Stout: Stone Cold Corpo",
+      "source": "retail-reference"
+    },
+    "B015": {
+      "name": "Octant",
+      "source": "retail-reference"
+    },
+    "B016": {
+      "name": "Royce: Don't Call Me Simon",
+      "source": "retail-reference"
+    },
+    "B017": {
+      "name": "Ruthless Lowlife",
+      "source": "retail-reference"
+    },
+    "B018": {
+      "name": "Screw: Lovelorn Fool",
+      "source": "retail-reference"
+    },
+    "B019": {
+      "name": "Swordwise Huscle",
+      "source": "retail-reference"
+    },
+    "B020": {
+      "name": "V: Roamer of the Badlands",
+      "source": "retail-reference"
+    },
+    "B021": {
+      "name": "Valentino Guerrera",
+      "source": "retail-reference"
+    },
+    "B022": {
+      "name": "Yorinobu Arasaka: Steel Dragon",
+      "source": "retail-reference"
+    },
+    "B023": {
+      "name": "Arasaka Emergency Radioport",
+      "source": "retail-reference"
+    },
+    "B024": {
+      "name": "Deadman Transmitter",
+      "source": "retail-reference"
+    },
+    "B025": {
+      "name": "Mantis Blades",
+      "source": "retail-reference"
+    },
+    "B026": {
+      "name": "Satori: Sword of Saburo",
+      "source": "retail-reference"
+    },
+    "B027": {
+      "name": "All is Lost",
+      "source": "retail-reference"
+    },
+    "B028": {
+      "name": "Appetite for Destruction",
+      "source": "retail-reference"
+    },
+    "B029": {
+      "name": "Bonnie and Clyde",
+      "source": "retail-reference"
+    },
+    "B030": {
+      "name": "Carnage at the Colosseum",
+      "source": "retail-reference"
+    },
+    "B031": {
+      "name": "Detonate",
+      "source": "retail-reference"
+    },
+    "B032": {
+      "name": "Gunpoint Diplomacy",
+      "source": "retail-reference"
+    },
+    "B033": {
+      "name": "Industrial Assembly",
+      "source": "retail-reference"
+    },
+    "B034": {
+      "name": "Over the Edge",
+      "source": "retail-reference"
+    },
+    "B035": {
+      "name": "Shattered Memories",
+      "source": "retail-reference"
+    },
+    "B036": {
+      "name": "Dum Dum: Maelstrom Triggerman",
+      "source": "retail-reference"
+    },
+    "B037": {
+      "name": "Kerry Eurodyne: Axe, Attitude, Audience",
+      "source": "retail-reference"
+    },
+    "B038": {
+      "name": "Muamar Reyes: El Capitán",
+      "source": "retail-reference"
+    },
+    "B039": {
+      "name": "River Ward: Detective on the Hunt",
+      "source": "retail-reference"
+    },
+    "B040": {
+      "name": "Rogue Amendiares: Preem Solo",
+      "source": "retail-reference"
+    },
+    "B041": {
+      "name": "Adam Smasher: Metal Over Meat",
+      "source": "retail-reference"
+    },
+    "B042": {
+      "name": "Alt Cunningham: Mother of Daemons",
+      "source": "retail-reference"
+    },
+    "B043": {
+      "name": "Augmented Negotiators",
+      "source": "retail-reference"
+    },
+    "B044": {
+      "name": "Caliber: Totentanz's Top Dog",
+      "source": "retail-reference"
+    },
+    "B045": {
+      "name": "Gilded Matón",
+      "source": "retail-reference"
+    },
+    "B046": {
+      "name": "Hanako Arasaka: In a Gilded Cage",
+      "source": "retail-reference"
+    },
+    "B047": {
+      "name": "Heywood Ripperdoc",
+      "source": "retail-reference"
+    },
+    "B048": {
+      "name": "Jackie Welles: Ride or Die Choom",
+      "source": "retail-reference"
+    },
+    "B049": {
+      "name": "Maelstrom Goons",
+      "source": "retail-reference"
+    },
+    "B050": {
+      "name": "MaxTac Suppression Team",
+      "source": "retail-reference"
+    },
+    "B051": {
+      "name": "Offduty Malfini",
+      "source": "retail-reference"
+    },
+    "B052": {
+      "name": "Rockn' Rockerboy",
+      "source": "retail-reference"
+    },
+    "B053": {
+      "name": "Secondhand Bombus",
+      "source": "retail-reference"
+    },
+    "B054": {
+      "name": "Sketchy Ripper",
+      "source": "retail-reference"
+    },
+    "B055": {
+      "name": "T-Bug: Amateur Philosopher",
+      "source": "retail-reference"
+    },
+    "B056": {
+      "name": "Trauma Team Operatives",
+      "source": "retail-reference"
+    },
+    "B057": {
+      "name": "Viktor Vektor: Drop Your Illusions",
+      "source": "retail-reference"
+    },
+    "B058": {
+      "name": "Viktor Vektor: You Might Feel a Little Pinch",
+      "source": "retail-reference"
+    },
+    "B059": {
+      "name": "Adrenaline Converter",
+      "source": "retail-reference"
+    },
+    "B060": {
+      "name": "Gorilla Arms",
+      "source": "retail-reference"
+    },
+    "B061": {
+      "name": "Kiroshi Optics",
+      "source": "retail-reference"
+    },
+    "B062": {
+      "name": "Mandibular Upgrade",
+      "source": "retail-reference"
+    },
+    "B063": {
+      "name": "The Relic: Experimental Biochip",
+      "source": "retail-reference"
+    },
+    "B064": {
+      "name": "Zetatech Faceplate",
+      "source": "retail-reference"
+    },
+    "B065": {
+      "name": "Afterparty at Lizzie's",
+      "source": "retail-reference"
+    },
+    "B066": {
+      "name": "Bootleg Black Sapphire Show",
+      "source": "retail-reference"
+    },
+    "B067": {
+      "name": "Cyberpsychosis",
+      "source": "retail-reference"
+    },
+    "B068": {
+      "name": "Live with the Aftermath",
+      "source": "retail-reference"
+    },
+    "B069": {
+      "name": "Safety Override",
+      "source": "retail-reference"
+    },
+    "B070": {
+      "name": "The Heist",
+      "source": "retail-reference"
+    },
+    "B071": {
+      "name": "Goro Takemura: Vengeful Bodyguard",
+      "source": "retail-reference"
+    },
+    "B072": {
+      "name": "Hanako Arasaka: Daughter of the Emperor",
+      "source": "retail-reference"
+    },
+    "B073": {
+      "name": "Jackie Welles: Mama's Favorite",
+      "source": "retail-reference"
+    },
+    "B074": {
+      "name": "Padre: Man of the Cross",
+      "source": "retail-reference"
+    },
+    "B075": {
+      "name": "Panam Palmer: Nomad Cavalry",
+      "source": "retail-reference"
+    },
+    "B076": {
+      "name": "Corpo Security",
+      "source": "retail-reference"
+    },
+    "B077": {
+      "name": "Emergency Atlus",
+      "source": "retail-reference"
+    },
+    "B078": {
+      "name": "Field Operator",
+      "source": "retail-reference"
+    },
+    "B079": {
+      "name": "Maelstrom Zealots",
+      "source": "retail-reference"
+    },
+    "B080": {
+      "name": "MaxTac AV",
+      "source": "retail-reference"
+    },
+    "B081": {
+      "name": "MaxTac Heavy",
+      "source": "retail-reference"
+    },
+    "B082": {
+      "name": "MaxTac Squadron",
+      "source": "retail-reference"
+    },
+    "B083": {
+      "name": "Nadia: Fighting Through Grief",
+      "source": "retail-reference"
+    },
+    "B084": {
+      "name": "Pacifica Netrunner",
+      "source": "retail-reference"
+    },
+    "B085": {
+      "name": "Panam Palmer: Strength Through Family",
+      "source": "retail-reference"
+    },
+    "B086": {
+      "name": "Pepe Najarro: Working Doubles",
+      "source": "retail-reference"
+    },
+    "B087": {
+      "name": "Riding Nomad",
+      "source": "retail-reference"
+    },
+    "B088": {
+      "name": "Sandayu Oda: Hanako's Guardian",
+      "source": "retail-reference"
+    },
+    "B089": {
+      "name": "Saul Bright: Stormrider",
+      "source": "retail-reference"
+    },
+    "B090": {
+      "name": "Tyger's Whisper",
+      "source": "retail-reference"
+    },
+    "B091": {
+      "name": "Valentino Street Racer",
+      "source": "retail-reference"
+    },
+    "B092": {
+      "name": "Wraith Marauders",
+      "source": "retail-reference"
+    },
+    "B093": {
+      "name": "Overwatch: Panam's Gift",
+      "source": "retail-reference"
+    },
+    "B094": {
+      "name": "Riot Shield",
+      "source": "retail-reference"
+    },
+    "B095": {
+      "name": "Sandevistan",
+      "source": "retail-reference"
+    },
+    "B096": {
+      "name": "Zetatech Berserk",
+      "source": "retail-reference"
+    },
+    "B097": {
+      "name": "Corporate Surveillance",
+      "source": "retail-reference"
+    },
+    "B098": {
+      "name": "(Don't Fear) The Reaper",
+      "source": "retail-reference"
+    },
+    "B099": {
+      "name": "Fool on the Hill",
+      "source": "retail-reference"
+    },
+    "B100": {
+      "name": "Memory Relapse",
+      "source": "retail-reference"
+    },
+    "B101": {
+      "name": "Peace Offering",
+      "source": "retail-reference"
+    },
+    "B102": {
+      "name": "Synapse Burnout",
+      "source": "retail-reference"
+    },
+    "B103": {
+      "name": "Take Control",
+      "source": "retail-reference"
+    },
+    "B104": {
+      "name": "We Gotta Live Together",
+      "source": "retail-reference"
+    },
+    "B105": {
+      "name": "Wild in the Streets",
+      "source": "retail-reference"
+    },
+    "B106": {
+      "name": "Alt Cunningham: Soulkiller Architect",
+      "source": "retail-reference"
+    },
+    "B107": {
+      "name": "Evelyn Parker: Beautiful Enigma",
+      "source": "retail-reference"
+    },
+    "B108": {
+      "name": "Judy Álvarez: Braindance Maestro",
+      "source": "retail-reference"
+    },
+    "B109": {
+      "name": "Sasha Yakovleva: Won't Let You Down",
+      "source": "retail-reference"
+    },
+    "B110": {
+      "name": "Wakako Okada: Peace and Harmony",
+      "source": "retail-reference"
+    },
+    "B111": {
+      "name": "Delamain: Rideshare AI",
+      "source": "retail-reference"
+    },
+    "B112": {
+      "name": "Delamain Cab",
+      "source": "retail-reference"
+    },
+    "B113": {
+      "name": "Evelyn Parker: Scheming Siren",
+      "source": "retail-reference"
+    },
+    "B114": {
+      "name": "Hacked Corpo",
+      "source": "retail-reference"
+    },
+    "B115": {
+      "name": "Jacked-In Voodoo Boy",
+      "source": "retail-reference"
+    },
+    "B116": {
+      "name": "Judy Álvarez: Nothing to Doubt",
+      "source": "retail-reference"
+    },
+    "B117": {
+      "name": "Lizzy Wizzy: Delicate Weapon",
+      "source": "retail-reference"
+    },
+    "B118": {
+      "name": "Maman Brigitte: Spirit of Death",
+      "source": "retail-reference"
+    },
+    "B119": {
+      "name": "Misty Olszewski: Mender of Broken Spirits",
+      "source": "retail-reference"
+    },
+    "B120": {
+      "name": "Modded Kusanagi",
+      "source": "retail-reference"
+    },
+    "B121": {
+      "name": "Modded Muramasa",
+      "source": "retail-reference"
+    },
+    "B122": {
+      "name": "Mox Inciters",
+      "source": "retail-reference"
+    },
+    "B123": {
+      "name": "Placide: Voodoo Sentinel",
+      "source": "retail-reference"
+    },
+    "B124": {
+      "name": "Psycho Squad",
+      "source": "retail-reference"
+    },
+    "B125": {
+      "name": "Rita Wheeler: No Stupid Questions",
+      "source": "retail-reference"
+    },
+    "B126": {
+      "name": "Rogue Amendiares: Queen of the Afterlife",
+      "source": "retail-reference"
+    },
+    "B127": {
+      "name": "Westbrook Netrunner",
+      "source": "retail-reference"
+    },
+    "B128": {
+      "name": "Dying Night: V's Pistol",
+      "source": "retail-reference"
+    },
+    "B129": {
+      "name": "NetWatch Netdriver",
+      "source": "retail-reference"
+    },
+    "B130": {
+      "name": "Tetratronic Rippler",
+      "source": "retail-reference"
+    },
+    "B131": {
+      "name": "Chrome Reverie",
+      "source": "retail-reference"
+    },
+    "B132": {
+      "name": "Floor It",
+      "source": "retail-reference"
+    },
+    "B133": {
+      "name": "Les Élémens",
+      "source": "retail-reference"
+    },
+    "B134": {
+      "name": "Nocturne OP55 N1",
+      "source": "retail-reference"
+    },
+    "B135": {
+      "name": "Pyramid Song",
+      "source": "beta-confirmed"
+    },
+    "B136": {
+      "name": "Reboot Optics",
+      "source": "retail-reference"
+    },
+    "B137": {
+      "name": "Three Mouths, One Desire",
+      "source": "retail-reference"
+    },
+    "B138": {
+      "name": "Towerfall",
+      "source": "retail-reference"
+    },
+    "B139": {
+      "name": "Trust No One",
+      "source": "retail-reference"
+    },
+    "B140": {
+      "name": "Unlikely Bond",
+      "source": "retail-reference"
+    },
+    "B157": {
+      "name": "Judy Alvarez: Braindance Maestro",
+      "source": "existing-beta-index"
+    }
+  }
+}
