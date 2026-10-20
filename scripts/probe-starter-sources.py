@@ -18,3 +18,18 @@ for slug in ["the-heist-beta-starter-deck","embracing-power-beta-starter-deck"]:
  for i,x in enumerate([x for x in soup.find_all('img') if "/api/img/cards/cyberpunk-tcg/"+slug+"/webp/" in str(x.get('src'))][:22]):
   print("ITEM",slug,i,x.get("alt"),x.get("src"),"PARENT",x.parent.parent.get_text(" ",strip=True)[:120])
  print("SET_TEXT",slug,soup.get_text(" ",strip=True)[150:900])
+
+import json,concurrent.futures
+data=json.loads(open("starter-catalog.json").read())
+def check(item):
+ code,card,deck=item
+ try:
+  res=requests.get(card["imageUrl"],timeout=15,headers={"User-Agent":"Mozilla/5.0"})
+  return (deck,code,res.status_code,res.headers.get("content-type"),len(res.content))
+ except Exception as e:return (deck,code,"ERROR",str(e),0)
+items=[(code,card,deck) for deck,info in data["sets"].items() for code,card in info["cards"].items()]
+with concurrent.futures.ThreadPoolExecutor(max_workers=10) as pool:
+ results=list(pool.map(check,items))
+bad=[x for x in results if x[2]!=200 or not str(x[3]).startswith("image/") or x[4]<3000]
+print("STARTER_IMAGE_TEST",len(results),"GOOD",len(results)-len(bad),"BAD",bad,flush=True)
+if bad:raise SystemExit(1)
