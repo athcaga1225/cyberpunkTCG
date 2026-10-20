@@ -1,444 +1,712 @@
 <!doctype html>
-<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#050607">
-<title>CYBERSCAN — TYPE A PREVIEW</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&amp;display=swap" rel="stylesheet">
-<style>
-:root{color-scheme:dark;font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;color:#f4f6f4;background:#101417;font-weight:400}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0}button,input{font:inherit}button{cursor:pointer}header{border-bottom:1px solid #333d40;padding:20px;display:flex;align-items:center;justify-content:space-between;max-width:980px;margin:auto}.brand{font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;font-weight:800;letter-spacing:.14em}.brand em{font-style:normal;color:#dcf257}.small,.muted{color:#aab9bc;font-size:12px;line-height:1.65}.label{font-size:11px;letter-spacing:.12em;color:#bac5c5}.wrap{max-width:980px;margin:auto;padding:26px 18px 75px}h1{font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;font-size:clamp(34px,7vw,62px);line-height:1.04;margin:9px 0 14px;letter-spacing:-.035em}h1 span{color:#dcf257}h2{font-size:15px;margin:0 0 15px;font-weight:500}.intro{font-family:"Noto Sans TC","PingFang TC",sans-serif;font-weight:400;max-width:560px;color:#acbbbe;line-height:1.8;font-size:14px}.panel{background:#1c2428;border:1px solid #37464a;border-radius:16px;padding:18px;margin-top:18px}.row{display:flex;align-items:center;gap:10px}.space{justify-content:space-between}input{min-width:0;background:#0f161a;border:1px solid #57676b;color:#fff;border-radius:9px;padding:13px;width:100%;outline:none}input:focus{border-color:#d8ed58}input[type=number]{width:104px}button{border-radius:9px;border:1px solid #617075;background:#303c40;color:white;padding:12px 14px;font-weight:500}.primary{background:#def25b;color:#111713;border-color:#def25b}.search{display:flex;gap:9px}.search button{white-space:nowrap}.badge{background:#354346;color:#dfe5e5;border-radius:7px;padding:5px 8px;font-size:11px}.rarityinfo{border-top:1px solid #344044;margin:8px 0 0;padding-top:9px;font-size:12px;line-height:1.7;color:#b8c9ca}.rarityinfo strong{color:#f0f3ee;font-weight:500}.rarityinfo .rarityhigh{color:#def25b}.rarityinfo .rarityunknown{color:#a6b8ba}.rarityline{display:flex;flex-wrap:wrap;align-items:center;gap:7px 11px}.raritystars{font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;font-size:18px;line-height:1;letter-spacing:2px;color:#def25b;white-space:nowrap}.rarityname{color:#eff2ed;font-size:13px;font-weight:500}.raritytip{font-size:11px;line-height:1.7;color:#aab9bc;margin-top:5px}.rarityspecial{color:#def25b;font-weight:500}.settabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:18px 0 0}.settab{background:transparent;color:#c4d1d0;border:1px solid #4b5b5e;padding:13px 8px;font-size:12px}.settab[aria-selected="true"]{background:#def25b;color:#101617;border-color:#def25b}.startersets{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.startersets[hidden]{display:none}.startersets button{padding:8px 11px;font-size:12px;background:#192427}.startersets button[aria-pressed="true"]{border-color:#def25b;color:#def25b}.raritycode{color:#def25b;font-size:14px;font-weight:700;letter-spacing:.02em}.rarityname{font-size:12px;color:#aebebc}.rarityinfo{margin-top:8px;line-height:1.7}.rarityline{gap:9px}.setsublabel{color:#abbfc1;font-size:11px;padding-top:8px}.detail{display:none}.detail.open{display:block}.cardgrid{display:grid;grid-template-columns:128px minmax(0,1fr);gap:16px}.art{border-radius:10px;border:1px solid #435155;background:#131b1f;min-height:182px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}.art img{display:block;max-width:100%;width:100%;height:auto}.art .empty{color:#a6b8ba;font-size:12px;text-align:center;padding:16px;line-height:1.8}.cardtitle{font-size:clamp(18px,4.8vw,26px);margin:10px 0;line-height:1.35;overflow-wrap:anywhere}.price{font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;font-size:30px;font-weight:780;letter-spacing:-.04em}.price .currency-prefix{font-size:15px;font-weight:500;letter-spacing:0;vertical-align:baseline;margin-right:3px}.approx{font-size:18px;color:#dff257;font-weight:700}.approx .twd-prefix{font-size:12px;font-weight:400;letter-spacing:0;margin-right:2px}.divider{height:1px;background:#354347;margin:16px 0}.note{font-size:11px;line-height:1.7;color:#9fb1b3}.links{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}.links a{color:#fff;text-decoration:none;border:1px solid #697578;border-radius:9px;padding:11px 12px;font-size:12px}.catalog{max-height:480px;overflow:auto;margin-top:12px;border-top:1px solid #3c494d}.entry{display:flex;gap:8px;align-items:center;border-bottom:1px solid #333f43;padding:11px 2px}.entry .grow{min-width:0;flex:1}.entry .name{font-size:13px;overflow-wrap:anywhere}.entry .meta{font-size:11px;color:#a5b6b8;margin-top:4px}.entry .money{text-align:right;font-size:12px;white-space:nowrap}.entry button{font-size:11px;padding:8px 10px}.stats{display:flex;gap:9px;margin:14px 0}.stat{flex:1;border-radius:11px;background:#121a1d;padding:12px}.stat strong{font-size:22px;display:block;margin-top:6px}footer{color:#8fa3a6;font-size:11px;line-height:1.7;margin-top:28px}@media(min-width:700px){.columns{display:grid;grid-template-columns:1.1fr .9fr;align-items:start;gap:18px}.columns .panel{margin-top:0}.wrap{padding-top:40px}.cardgrid{grid-template-columns:175px minmax(0,1fr)}}@media(max-width:380px){.cardgrid{grid-template-columns:100px minmax(0,1fr);gap:10px}.price{font-size:25px}.search{flex-direction:column}.search button{width:100%}} 
+<html lang="zh-Hant">
 
-/* ─── CYBERSCAN : TYPE A / TECH-NOIR EXPERIMENT ─── */
-:root{--acid:#e8f547;--cyan:#62e3df;--ink:#090d10;--line:rgba(194,225,225,.25);--mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;background:#0a0e10;color:#f2f5ee}
-html{background:#0a0e10}
-body{background:radial-gradient(ellipse 850px 480px at 88% 5%,rgba(63,96,94,.16),transparent 65%),linear-gradient(90deg,transparent 0,transparent calc(50% - .5px),rgba(227,250,244,.025) 50%,transparent calc(50% + .5px)),#0a0e10;min-height:100vh;position:relative}
-body:before{content:"";position:absolute;inset:0 0 auto;height:670px;pointer-events:none;opacity:.3;background-image:linear-gradient(rgba(137,189,188,.11) 1px,transparent 1px),linear-gradient(90deg,rgba(137,189,188,.11) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(to bottom,black,transparent)}
-header{position:relative;max-width:none;margin:0;padding:18px max(22px,calc((100vw - 1040px)/2));border-bottom:1px solid var(--line);background:rgba(8,13,16,.9);min-height:79px}
-header:after{content:"// V.01 — NIGHT CITY DATABASE";font:9px var(--mono);letter-spacing:.1em;color:#8a9995;position:absolute;bottom:-21px;right:max(20px,calc((100vw - 1040px)/2));pointer-events:none}
-.brand{font-family:var(--mono);font-size:21px;letter-spacing:-.065em;font-weight:900;text-transform:uppercase}
-.brand em{color:var(--acid)}
-header .label{font-family:var(--mono);letter-spacing:.08em;color:var(--acid);font-size:10px}
-.wrap{position:relative;max-width:1040px;padding:52px 23px 90px}
-.wrap>.label:first-child{font:11px var(--mono);letter-spacing:.24em;color:var(--cyan);padding:0 0 12px 16px;border-left:3px solid var(--cyan)}
-h1{font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;font-size:clamp(34px,7vw,62px);line-height:1.04;margin:9px 0 14px;letter-spacing:-.035em;font-weight:700;text-transform:none;position:static}
-h1 span{color:#dcf257;text-shadow:none}
-.intro{max-width:580px;font-size:13px;line-height:1.85;color:#b3c4c2;border-left:1px solid var(--line);padding-left:17px;margin-bottom:31px}
-.settabs{margin-top:30px;gap:0;grid-template-columns:1fr 1fr;border-bottom:1px solid #697973}
-.settab{position:relative;text-align:left;background:#0f1618;border:0;border-right:1px solid #39494c;border-top:1px solid #39494c;border-radius:0;padding:18px 23px;color:#c2cecb;font-size:12px;font-weight:500;min-height:58px;transition:background .15s,color .15s}
-.settab:last-child{border-right:0}
-.settab:before{content:"01";font:10px var(--mono);color:var(--cyan);margin-right:13px}
-.settab:last-child:before{content:"02"}
-.settab[aria-selected="true"]{background:var(--acid);color:#0a0d0c;border-color:var(--acid)}
-.settab[aria-selected="true"]:before{color:#38420f}
-.settab[aria-selected="true"]:after{content:"";position:absolute;bottom:-1px;right:0;border-style:solid;border-width:0 0 14px 14px;border-color:transparent transparent #0a0e10 transparent}
-.startersets{margin-top:11px;gap:7px}
-.startersets button{background:#0e1819;border:1px solid #375253;border-radius:0;font-family:var(--mono);letter-spacing:.03em}
-.startersets button[aria-pressed="true"]{background:#143230;border-color:var(--cyan);color:var(--cyan)}
-.panel{background:linear-gradient(135deg,rgba(25,37,40,.98),rgba(14,22,25,.97));border:1px solid #526064;border-left:3px solid var(--acid);border-radius:0;position:relative;padding:24px 27px;margin-top:20px;box-shadow:9px 9px 0 rgba(0,0,0,.19);clip-path:polygon(0 0,calc(100% - 19px) 0,100% 19px,100% 100%,0 100%)}
-.panel:before{content:"";position:absolute;top:0;right:0;width:27px;height:1px;background:var(--acid);transform:translate(5px,10px) rotate(45deg)}
-.panel h2{font-family:var(--mono);font-size:12px;letter-spacing:.13em;font-weight:600;color:var(--acid);text-transform:uppercase;margin-bottom:18px}
-.panel h2:before{content:"[ ";color:var(--cyan)}.panel h2:after{content:" ]";color:var(--cyan)}
-.search{gap:9px}
-input{background:#081114;border-radius:0;border:1px solid #526b6b;color:#fff;min-height:52px;font-family:var(--mono);font-size:15px;letter-spacing:.035em;padding:15px 16px;transition:border-color .15s,box-shadow .15s}
-input::placeholder{color:#879e9e;opacity:1}
-input:focus{border-color:var(--acid);box-shadow:inset 3px 0 0 var(--acid)}
-button{border-radius:0;transition:background .17s,color .17s,border-color .17s}
-.primary{font-family:var(--mono);background:var(--acid);color:#0d130c;border:1px solid var(--acid);font-size:13px;font-weight:800;min-height:52px;letter-spacing:.045em;padding:12px 25px}
-.primary:hover{background:#f5ff82}
-.small,.muted,.note{color:#94aaac}
-#loadstate{font-family:var(--mono);font-size:11px;color:#b3c8c9}
-#loadstate:before{content:"● ";color:var(--cyan)}
-.detail{border-left-color:var(--cyan)}
-.detail>.row>.label{font-family:var(--mono);color:var(--cyan)}
-.badge{background:rgba(232,245,71,.11);border:1px solid rgba(232,245,71,.43);border-radius:0;color:var(--acid);font:10px var(--mono);letter-spacing:.035em;padding:7px 9px}
-.cardgrid{grid-template-columns:minmax(150px,245px) minmax(0,1fr);gap:30px;align-items:start}
-.art{min-height:230px;border:1px solid #5c7476;background:#10191b;border-radius:0;clip-path:polygon(0 0,calc(100% - 17px) 0,100% 17px,100% 100%,0 100%)}
-.art img{border-radius:0!important}
-#number{font:11px var(--mono);color:var(--cyan);letter-spacing:.13em;margin-top:10px}
-.cardtitle{font-size:clamp(22px,3.6vw,36px);line-height:1.13;font-weight:700;letter-spacing:-.025em;margin:14px 0 20px;color:#f8fbf7}
-.rarityinfo{border-top:1px solid #435c5c;border-bottom:1px solid #435c5c;padding:15px 0;margin:0}
-.raritycode{font-family:var(--mono);font-size:14px;font-weight:800;letter-spacing:.05em;color:var(--acid)}
-.rarityname{font-size:12px;font-weight:400;color:#b4c5c5}
-#result .label[style]{font-family:var(--mono);color:#93b2b5;letter-spacing:.12em;margin-top:24px!important}
-.price{font-family:var(--mono);font-size:clamp(33px,5vw,45px);letter-spacing:-.065em;color:#fff;line-height:1.5}
-.price .currency-prefix{color:var(--cyan);font-size:14px;letter-spacing:0}
-.approx{font-family:var(--mono);font-size:21px;letter-spacing:-.04em;color:var(--acid)}
-.approx .twd-prefix{font-family:"Noto Sans TC",sans-serif;letter-spacing:0;color:#b5c598;font-size:12px}
-#pricenote{margin-top:16px;max-width:430px}
-.divider{height:1px;background:repeating-linear-gradient(90deg,#527174 0 40px,transparent 40px 46px)}
-.links a{border-radius:0;background:rgba(7,15,17,.6);border-color:#637e7f;color:#d4e6e4;font-family:var(--mono);font-size:11px;padding:13px 17px}
-.links a:hover{border-color:var(--acid);color:var(--acid)}
-.panel .row .small{font-size:12px}
-input[type=number]{width:117px;min-height:40px;font-size:13px}
-footer{font-size:11px;border-top:1px solid #344549;padding-top:25px;color:#819598}
-::selection{background:var(--acid);color:#0b100e}
-@media(min-width:760px){.wrap{padding-top:62px}.intro{max-width:590px}.panel{padding:28px 30px}.cardgrid{grid-template-columns:minmax(190px,255px) minmax(0,1fr)}}
-@media(max-width:600px){header{padding:16px 18px;min-height:65px}header:after{right:18px;bottom:-17px;font-size:8px}.wrap{padding:39px 15px 70px}.intro{font-size:12px}.settabs{margin-top:24px}.settab{font-size:11px;padding:14px 12px;min-height:55px}.settab:before{display:block;margin-bottom:7px}.panel{padding:20px 16px;clip-path:polygon(0 0,calc(100% - 15px) 0,100% 15px,100% 100%,0 100%)}.cardgrid{grid-template-columns:112px minmax(0,1fr);gap:16px}.art{min-height:155px}.cardtitle{font-size:20px}.price{font-size:30px}.rarityline{gap:5px}.rarityname{font-size:11px}}
-@media(max-width:380px){.search{flex-direction:column}.search button{width:100%}.cardgrid{grid-template-columns:100px minmax(0,1fr);gap:12px}.cardtitle{font-size:18px}.price{font-size:26px}.raritycode{font-size:12px}.approx{font-size:17px}}
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="theme-color" content="#101417">
+    <title>CYBERSCAN — Cyberpunk TCG Beta 卡片冊</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&amp;display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            color-scheme: dark;
+            font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+            color: #f4f6f4;
+            background: #101417;
+            font-weight: 400
+        }
 
+        * {
+            box-sizing: border-box
+        }
 
-/* TYPE A / 2077 GAME HUD — deep-black + signal red, with restrained accents */
-:root{--acid:#ff5261;--cyan:#ff8990;--ink:#0d090c;--line:rgba(255,104,116,.25);background:#100b0e;color:#f4eded}
-html{background:#100b0e}
-body{background:radial-gradient(ellipse 780px 490px at 87% 5%,rgba(112,23,36,.22),transparent 69%),linear-gradient(120deg,rgba(210,55,72,.035),transparent 60%),#100b0e}
-body:before{background-image:linear-gradient(rgba(188,77,90,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(188,77,90,.1) 1px,transparent 1px)}
-header{background:rgba(16,9,13,.94)}
-header .label,.brand em{color:var(--acid)}
-.wrap>.label:first-child{color:var(--cyan);border-left-color:var(--acid)}
-h1 span{color:#ff5565;text-shadow:none}
-.intro{color:#c7b5b8}
-.settabs{border-bottom-color:#8a4d56}
-.settab{background:#1b1116;color:#d5c4c7;border-color:#613b44}
-.settab[aria-selected="true"]{background:var(--acid);border-color:var(--acid);color:#190c10}
-.settab[aria-selected="true"]:before{color:#4f1720}
-.settab[aria-selected="true"]:after{border-bottom-color:#100b0e}
-.startersets button{background:#201218;border-color:#68414a}
-.startersets button[aria-pressed="true"]{background:#37171e;border-color:var(--acid);color:#ffc7cc}
-.panel{background:linear-gradient(135deg,rgba(41,24,31,.97),rgba(25,16,21,.98));border-color:#67434b;border-left-color:var(--acid)}
-.panel h2{color:#ff6976}
-.panel h2:before,.panel h2:after{color:#bd7180}
-input{background:#130c10;color:#fff7f6;border-color:#774a55}
-input::placeholder{color:#b18b92}
-input:focus{border-color:#ff5769;box-shadow:inset 3px 0 0 #ff5769}
-button{border-color:#794854}
-.primary{background:#ff5261;border-color:#ff5261;color:#19090e}
-.primary:hover{background:#ff8290}
-#loadstate{color:#cdb4ba}
-#loadstate:before{color:#ff7e8a}
-.detail{border-left-color:#ff8893}
-.detail>.row>.label{color:#ff8d99}
-.badge{color:#ff9faa;border-color:rgba(255,98,119,.48);background:rgba(255,88,102,.12)}
-.art{border-color:#8a5a62;background:#160e13}
-#number{color:#ff9faa}
-.cardtitle{color:#fff3f1}
-.rarityinfo{border-color:#6a4650}
-.raritycode{color:#ff7583}
-.rarityname{color:#d0b9bf}
-#result .label[style]{color:#c998a3}
-.price{color:#fff5f4}
-.price .currency-prefix{color:#ff9aa3}
-.approx{color:#ff7886}
-.approx .twd-prefix{color:#c9aeb6}
-.divider{background:repeating-linear-gradient(90deg,#8f5260 0 40px,transparent 40px 46px)}
-.links a{background:rgba(22,10,15,.65);border-color:#80545d;color:#ecd4d9}
-.links a:hover{border-color:#ff6976;color:#ff99a4}
-footer{color:#a88e95;border-top-color:#65434c}
-::selection{background:#ff6676;color:#16090c}
+        html {
+            scroll-behavior: smooth
+        }
 
+        body {
+            margin: 0
+        }
 
-/* TYPE A / LOW-GLARE NIGHT CITY HUD: black-first, red as an information signal */
-:root{--acid:#df5662;--cyan:#75bfc9;--ink:#08090b;--line:rgba(176,76,87,.19);background:#070809;color:#e9e9e7}
-html{background:#070809}
-body{background:radial-gradient(ellipse 850px 480px at 90% 0%,rgba(67,22,29,.085),transparent 70%),#070809}
-body:before{opacity:.12;background-image:linear-gradient(rgba(153,71,81,.085) 1px,transparent 1px),linear-gradient(90deg,rgba(153,71,81,.085) 1px,transparent 1px)}
-header{background:#090a0c;border-bottom-color:#302226}
-header:after{color:#73777b}
-.brand em{color:#e76a73}
-header .label{color:#b65c66}
-.wrap>.label:first-child{color:#7dbfc7;border-left-color:#b94d59}
-h1{color:#eaeaea}
-h1 span{color:#df5865}
-.intro{color:#adb0b1;border-left-color:#362e32}
-.settabs{border-bottom-color:#6e3b44}
-.settab{background:#101114;color:#bebcbf;border-top-color:#433139;border-right-color:#433139}
-.settab:before{color:#7eb5c0}
-.settab[aria-selected="true"]{background:#4b2029;border-color:#b94d59;color:#f4e8e9;box-shadow:inset 0 -2px 0 #d45a67}
-.settab[aria-selected="true"]:before{color:#e98c96}
-.settab[aria-selected="true"]:after{border-bottom-color:#070809}
-.startersets button{background:#101113;border-color:#473039;color:#c7bec1}
-.startersets button[aria-pressed="true"]{background:#28161c;border-color:#a84957;color:#e6b7bd}
-.panel{background:linear-gradient(145deg,rgba(19,20,23,.99),rgba(12,13,16,.99));border-color:#42343a;border-left-color:#9f3b48;box-shadow:6px 6px 0 rgba(0,0,0,.18)}
-.panel:before{background:#a34a55}
-.panel h2{color:#c76673}
-.panel h2:before,.panel h2:after{color:#7e555c}
-input{background:#080a0d;color:#ece9e8;border-color:#504048}
-input::placeholder{color:#818288}
-input:focus{border-color:#ba5964;box-shadow:inset 2px 0 0 #a94652}
-button{border-color:#4c353d}
-.primary{background:#a43b49;border-color:#b7515d;color:#fff1f2}
-.primary:hover{background:#bf4a58;border-color:#d26270}
-#loadstate{color:#9a9ea3}
-#loadstate:before{color:#7cbac4}
-.detail{border-left-color:#ac5260}
-.detail>.row>.label{color:#a2bec2}
-.badge{background:rgba(113,38,48,.17);border-color:#6a3c46;color:#d68c98}
-.art{background:#080a0c;border-color:#4b343a}
-#number{color:#8fb7be}
-.cardtitle{color:#efefed}
-.rarityinfo{border-color:#453038}
-.raritycode{color:#e07984}
-.rarityname{color:#afb0b3}
-#result .label[style]{color:#999fa4}
-.price{color:#f1f0ef}
-.price .currency-prefix{color:#be9299}
-.approx{color:#dd8790}
-.approx .twd-prefix{color:#a7a2a4}
-.divider{background:repeating-linear-gradient(90deg,#54343e 0 40px,transparent 40px 46px)}
-.links a{background:#101115;border-color:#4b3b43;color:#c6c8c9}
-.links a:hover{border-color:#b7505e;color:#e99aa2}
-footer{border-top-color:#30282d;color:#828388}
-::selection{background:#b9515d;color:#fff}
+        button,
+        input {
+            font: inherit
+        }
 
+        button {
+            cursor: pointer
+        }
 
-/* TYPE A — in-game translucent diagnostic HUD, tuned to user's reference */
-:root{--acid:#e65b66;--cyan:#5cbbc3;--line:rgba(225,78,94,.24);background:#050607;color:#e8e7e6}
-html{background:#050607}
-body{background:radial-gradient(ellipse 680px 340px at 85% 2%,rgba(75,13,22,.055),transparent 72%),#050607}
-body:before{opacity:.075}
-header{background:rgba(5,6,8,.97);border-bottom-color:rgba(226,86,99,.24)}
-header .label{color:#b26a73}
-header:after{color:#65737a}
-.brand em{color:#e96a73}
-.wrap>.label:first-child{color:#79bfc5;border-left-color:#d15361}
-.intro{color:#abaeb0}
-.settabs{border-bottom:1px solid rgba(244,79,98,.58)}
-.settab{background:rgba(34,11,18,.22);border-top:1px solid rgba(225,88,103,.39);border-right:1px solid rgba(225,88,103,.22);color:#bcbec1}
-.settab:before{color:#64b6c0}
-.settab[aria-selected="true"]{background:rgba(133,27,39,.28);color:#ffe0e2;border-top-color:#ed5c6a;border-right-color:rgba(226,83,101,.52);box-shadow:inset 0 2px 0 rgba(244,95,110,.34),inset 0 -2px 0 #eb5667}
-.settab[aria-selected="true"]:before{color:#f18692}
-.settab[aria-selected="true"]:after{border-bottom-color:#050607}
-.startersets button{background:rgba(30,10,16,.22);border-color:rgba(218,80,95,.35)}
-.startersets button[aria-pressed="true"]{background:rgba(126,27,39,.26);border-color:#bf5766;color:#e4aab1}
-/* This layered panel is translucent red tinted glass, not a solid wine-red surface. */
-.panel{background:linear-gradient(115deg,rgba(85,18,29,.28),rgba(65,13,24,.19) 45%,rgba(26,8,15,.24)),rgba(6,7,9,.22);border:1px solid rgba(238,79,96,.48);border-left:2px solid rgba(246,93,108,.85);box-shadow:inset 0 1px 0 rgba(255,112,126,.1),0 9px 30px rgba(0,0,0,.19);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
-.panel:before{background:#f06e7b;opacity:.85}
-.panel h2{color:#ef8790}
-.panel h2:before,.panel h2:after{color:#bd6673}
-input{background:rgba(3,6,9,.78);border:1px solid rgba(213,80,96,.4);color:#eee8e9}
-input::placeholder{color:#8d9296}
-input:focus{border-color:#ef7180;box-shadow:inset 2px 0 0 #d85a69,0 0 0 2px rgba(214,68,84,.075)}
-.primary{background:rgba(139,33,47,.47);border:1px solid #c85c6b;color:#ffe5e7}
-.primary:hover{background:rgba(167,42,58,.64);border-color:#ec7886}
-#loadstate{color:#9da8ae}
-#loadstate:before{color:#69c5cc}
-.detail{background:linear-gradient(125deg,rgba(112,22,35,.29),rgba(78,15,30,.22) 52%,rgba(22,7,13,.28)),rgba(6,7,9,.24);border-color:rgba(247,90,107,.6);border-left-color:#fa6374}
-.detail>.row>.label{color:#8ecbd0}
-.badge{color:#ed929c;border-color:rgba(240,86,105,.48);background:rgba(124,22,37,.18)}
-.art{background:#08090b;border-color:rgba(224,89,104,.52)}
-#number{color:#81bdc3}
-.cardtitle{color:#f0e8e9}
-.rarityinfo{border-top-color:rgba(242,92,107,.45);border-bottom-color:rgba(242,92,107,.35)}
-.raritycode{color:#fa8391}
-.rarityname{color:#bcb4b7}
-.price{color:#f2e9e9}
-.price .currency-prefix{color:#e296a0}
-.approx{color:#dca0a8}
-.approx .twd-prefix{color:#a6a3a4}
-.divider{background:repeating-linear-gradient(90deg,rgba(239,97,112,.45) 0 36px,transparent 36px 44px)}
-.links a{background:rgba(12,8,12,.4);border-color:rgba(219,94,108,.42);color:#d2c7ca}
-.links a:hover{border-color:#ef8390;color:#ffd9df}
-footer{border-top-color:#302025;color:#85898c}
+        header {
+            border-bottom: 1px solid #333d40;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 980px;
+            margin: auto
+        }
 
+        .brand {
+            font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            font-weight: 800;
+            letter-spacing: .14em
+        }
 
+        .brand em {
+            font-style: normal;
+            color: #dcf257
+        }
 
-/* Rarity readout — cooler information colors on the existing Type A HUD */
-.rarityline{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}
-.raritylabel{font-family:var(--mono);font-size:12px;letter-spacing:.045em;color:#66d6e3}
-.raritycode{font-family:var(--mono);font-size:15px;font-weight:800;letter-spacing:.035em;color:#8feaf2;text-shadow:none}
-.rarityname{font-size:12px;font-weight:400;color:#d9dfe2}
+        .small,
+        .muted {
+            color: #aab9bc;
+            font-size: 12px;
+            line-height: 1.65
+        }
 
+        .label {
+            font-size: 11px;
+            letter-spacing: .12em;
+            color: #bac5c5
+        }
 
-/* TYPE A / V9: low-fatigue hierarchy. Red is an active signal, not a container fill. */
-:root{--acid:#dd6573;--cyan:#78bec8;--line:rgba(116,132,142,.20);background:#0b0e13;color:#e4e8ea}
-html{background:#0b0e13}
-body{background:radial-gradient(ellipse 1000px 620px at 88% 6%,rgba(28,37,49,.32),transparent 72%),linear-gradient(180deg,#0b0e13,#0b0d11 70%)}
-body:before{opacity:.035;background-image:linear-gradient(rgba(155,182,199,.085) 1px,transparent 1px),linear-gradient(90deg,rgba(155,182,199,.085) 1px,transparent 1px)}
-header{background:rgba(12,15,20,.94);border-bottom:1px solid #252e35}
-header .label{color:#879ca5}
-header:after{color:#687681}
-.brand{color:#e8edef}
-.brand em{color:#d96a76}
-.wrap>.label:first-child{color:#789faa;border-left-color:#8e4b55}
-h1{color:#e1e5e6}
-h1 span{color:#d06b77}
-.intro{color:#a1acb1;border-left-color:#313b43}
-.settabs{border-bottom:1px solid #3a454d}
-.settab{background:#10151b;border-top:1px solid #303942;border-right:1px solid #303942;color:#a8b3b9;box-shadow:none}
-.settab:before{color:#70858e}
-.settab[aria-selected="true"]{background:#191a22;color:#e2e6e8;border-top-color:#44515a;border-right-color:#38444e;box-shadow:inset 0 -2px 0 #cc6672}
-.settab[aria-selected="true"]:before{color:#cf7380}
-.settab[aria-selected="true"]:after{border-bottom-color:#0b0e13}
-.startersets button{background:#10151b;border:1px solid #36424a;color:#a6b1b8}
-.startersets button[aria-pressed="true"]{background:#151e24;border-color:#607e86;color:#a4d8df}
-.panel{background:linear-gradient(135deg,rgba(23,29,37,.97),rgba(16,21,28,.98));border:1px solid #313a42;border-left:1px solid #3e4a52;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
-.panel:before{background:#945260;opacity:.6}
-.panel h2{color:#a7b6bd}
-.panel h2:before,.panel h2:after{color:#bc6b79}
-input{background:#0b0e14;border:1px solid #37454e;color:#edf0f1}
-input::placeholder{color:#83919b}
-input:focus{border-color:#85a6b1;box-shadow:inset 2px 0 0 #7bb9c2,0 0 0 2px rgba(110,181,196,.07)}
-.primary{background:#26323b;border:1px solid #547985;color:#c9e5eb}
-.primary:hover{background:#324651;border-color:#7ab9c4;color:#effaff}
-#loadstate{color:#a4b0b6}
-#loadstate:before{color:#77bcc4}
-.detail{background:linear-gradient(145deg,#171d24,#10151c);border-color:#40505b;border-left:2px solid #ad5866}
-.detail>.row>.label{color:#82b4bd}
-.badge{background:rgba(117,52,64,.11);border:1px solid #58434a;color:#c89ca4}
-.art{background:#0c1015;border-color:#3b4951}
-#number{color:#7fb5c0}
-.cardtitle{color:#ecf0f2}
-.rarityinfo{border-top:1px solid #35424a;border-bottom:1px solid #35424a}
-.raritylabel{color:#85bdc8}
-.raritycode{color:#a1e0e9}
-.rarityname{color:#bac6cb}
-#result .label[style]{color:#839da8}
-.price{color:#eff2f3}
-.price .currency-prefix{color:#8fb0ba}
-.approx{color:#a6c5cc}
-.approx .twd-prefix{color:#99a7af}
-.divider{background:repeating-linear-gradient(90deg,#384550 0 36px,transparent 36px 44px)}
-.links a{background:#10161c;border:1px solid #40515a;color:#b9cdd2}
-.links a:hover{border-color:#81bbc6;color:#e6f2f4}
-footer{border-top-color:#313940;color:#849199}
-::selection{background:#a95160;color:white}
+        .wrap {
+            max-width: 980px;
+            margin: auto;
+            padding: 26px 18px 75px
+        }
 
+        h1 {
+            font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            font-size: clamp(34px, 7vw, 62px);
+            line-height: 1.04;
+            margin: 9px 0 14px;
+            letter-spacing: -.035em
+        }
 
-/* TYPE A / V10: restore Cyberpunk identity through selective red signal paths */
-:root{--acid:#ec5b6c;--cyan:#78bec8}
-.brand em{color:#ea5b6b}
-h1 span{color:#e36a77}
-.wrap>.label:first-child{border-left-color:#e25b6c;color:#86c4cc}
-header{border-bottom-color:#543039}
-header .label{color:#bd7983}
-.settabs{border-bottom:1px solid #9c3c4d}
-.settab{border-top-color:#44343d;border-right-color:#403038}
-.settab:before{color:#86aab2}
-.settab[aria-selected="true"]{background:linear-gradient(110deg,rgba(111,26,43,.49),rgba(38,21,30,.56));border-top-color:#ce5262;border-right-color:#8e394a;color:#f2e9ea;box-shadow:inset 0 0 0 1px rgba(223,73,92,.14),inset 0 -3px 0 #e45a6b}
-.settab[aria-selected="true"]:before{color:#f17b8a}
-.startersets button[aria-pressed="true"]{background:rgba(106,27,41,.29);border-color:#a65363;color:#edb8bf}
-/* Main search gets the recognizable HUD frame; informational panels stay quiet. */
-.panel:first-of-type{border-color:#79414e;border-left:2px solid #db5c6d;background:linear-gradient(130deg,#1c1d25,#141820 58%,#13151c)}
-.panel:first-of-type:before{background:#eb7180;opacity:1}
-.panel:first-of-type h2{color:#e7828d}
-.panel:first-of-type h2:before,.panel:first-of-type h2:after{color:#a75764}
-.primary{background:#833141;border-color:#ca5264;color:#fff0f2;font-weight:700}
-.primary:hover{background:#a74052;border-color:#e76a7c;color:#fff8f9}
-#loadstate:before{color:#79c5cc}
-.detail{border-left:2px solid #e16b79;border-top-color:#62404c}
-.detail:before{background:#e96e7c;opacity:.95}
-.detail>.row>.label{color:#a8d0d5}
-.raritylabel{color:#78c7d0}
-.raritycode{color:#a4e9f1}
-.badge{border-color:#81505c;color:#e09da6}
-.art{border-color:#59434b}
-.links a:hover{border-color:#d85e6f;color:#f3c0c7}
+        h1 span {
+            color: #dcf257
+        }
 
+        h2 {
+            font-size: 15px;
+            margin: 0 0 15px;
+            font-weight: 500
+        }
 
-/* User-selected panel treatment — retain all six exact values */
-.panel,.panel:first-of-type,.panel.detail{
-  background:linear-gradient(115deg,rgb(92 35 44 / 28%),rgba(65,13,24,.19) 45%,rgba(26,8,15,.24)),rgba(6,7,9,.22);
-  border:1px solid rgba(238,79,96,.48);
-  border-left:2px solid rgb(255 71 89 / 85%);
-  box-shadow:inset 0 1px 0 rgba(255,112,126,.1),0 9px 30px rgba(0,0,0,.19);
-  backdrop-filter:blur(4px);
-  -webkit-backdrop-filter:blur(4px);
-}
+        .intro {
+            font-family: "Noto Sans TC", "PingFang TC", sans-serif;
+            font-weight: 400;
+            max-width: 560px;
+            color: #acbbbe;
+            line-height: 1.8;
+            font-size: 14px
+        }
 
-</style></head>
-<body><header><div class="brand">CYBER<em>SCAN</em></div><div class="label">BETA // CARD INDEX</div></header>
-<main class="wrap">
-<div class="label">WELCOME TO NIGHT CITY · BETA COLLECTION</div><h1>KNOW YOUR<br><span>CARDS.</span></h1><p class="intro">輸入卡號或卡名查詢 Beta 卡圖、稀有度與參考價格。可切換主系列或初始牌組，相同卡號會對應不同系列的卡片。</p>
-<nav class="settabs" role="tablist" aria-label="卡片系列"><button type="button" class="settab" id="tab-main" role="tab" aria-selected="true">Welcome to Night City · Beta</button><button type="button" class="settab" id="tab-starter" role="tab" aria-selected="false">Starter Deck · Beta</button></nav><div class="startersets" id="startersets" hidden><button type="button" id="deck-heist" aria-pressed="true">The Heist</button><button type="button" id="deck-power" aria-pressed="false">Embracing Power</button></div><section class="panel"><h2>01 / 搜尋卡片</h2><div class="search"><input id="query" autocomplete="off" placeholder="B135、B157、T006" aria-label="輸入卡號或卡名"><button class="primary" id="search">搜尋卡片 ↗</button></div><div class="row space" style="margin-top:12px;flex-wrap:wrap"><div class="small" id="loadstate">載入資料中…</div></div></section>
-<section class="panel detail" id="result"><div class="row space"><div class="label">CARD DETAIL</div><div class="badge" id="variant">BETA</div></div>
-<div class="cardgrid" style="margin-top:14px"><div><div class="art" id="imagebox"><div class="empty">卡圖載入中</div></div><p class="note" id="imgnote"></p></div><div><div class="label" id="number"></div><h2 class="cardtitle" id="name"></h2><div class="rarityinfo" id="rarityinfo"></div><div class="label" style="margin-top:14px">市場參考價 / MARKET PRICE</div><div class="price" id="usd">—</div><div class="approx" id="twd"></div><p class="note" id="pricenote"></p></div></div>
-<div class="divider"></div><div class="links"><a id="tcg" target="_blank" rel="noopener noreferrer">TCGplayer 查價</a><a id="cataloglink" target="_blank" rel="noopener noreferrer">查看 Beta 卡片圖鑑</a></div></section>
-<section class="panel"><div class="row space"><h2>匯率與資料說明</h2><span class="badge">USD → TWD</span></div><div class="row"><div class="small">1 美元約 NT$</div><input id="rate" aria-label="美元換算台幣匯率" type="number" step="0.01" min="1" max="100" value="32.47"></div><p class="note">預設換算率為 2026/10/19 的參考值 32.47，非即時銀行匯率，可自行調整。價格資料為不同時間蒐集的歷史參考數字，並非目前成交價；外部資料來源可能變動。卡圖使用外部公開的圖片網址（Beta 主系列：Spellbound Games；Box Topper：HoloHoard），可能隨來源網站更新而變動。Box Topper 與主系列都有 β001～β006 編號；為避免混淆，本站使用 T001～T006 代表 Box Topper（例如 T006 = V: Corporate Exile）。</p></section>
-<footer>CYBERSCAN 是非官方收藏工具。與 Cyberpunk TCG、TCGplayer 無關；卡圖版權歸原權利人所有。價格不能作為保證成交報價。</footer>
-</main>
-<script>
-'use strict';
-const $=id=>document.getElementById(id);
-const base="https://www.tcgplayer.com/categories/trading-and-collectible-card-games/cyberpunk-tcg/price-guides/welcome-to-night-city-beta";
-const setUrl="https://www.tcgplayer.com/search/cyberpunk-tcg/welcome-to-night-city-beta?page=1&productLineName=cyberpunk-tcg&setName=welcome-to-night-city-beta&view=grid";
-let catalog={},prices={},selected=null,rate=32.47,priceDate="",starterSets={},activeSection="main",activeStarter="heist";
-try{const v=Number(localStorage.getItem("cyberscan-usd-twd"));if(v>=1&&v<=100)rate=v}catch(e){}
-$('rate').value=rate;
-// Shared Beta image URLs are loaded from card-images.json. No browser-specific uploads required.
-let cardImages={},artRequest=0;
-function galleryFallback(code){
-  const art=$('imagebox');art.replaceChildren();
-  const a=document.createElement("a");
-  a.href=activeSection==="starter"?(currentCatalog()[code]?.sourceUrl||"https://holohoard.app/explore/game/cyberpunk-tcg/"+(activeStarter==="heist"?"the-heist-beta-starter-deck":"embracing-power-beta-starter-deck")):"https://exburst.dev/cyberpunk/series/beta";a.target="_blank";a.rel="noopener noreferrer";
-  a.style.cssText="display:flex;align-items:center;justify-content:center;min-height:182px;padding:14px;text-align:center;color:#def25b;text-decoration:none;font-size:12px";
-  a.textContent=activeSection==="starter"?"查看這張卡的原始資料 ↗":"查看外部 Beta 圖鑑 ↗";art.append(a);
-  $('imgnote').textContent="目前沒有這張卡的共用圖片。";
-}
-function displayArt(code,entry){
-  const requestId=++artRequest;
-  const record=activeSection==="starter"?{url:entry.imageUrl,sourceUrl:entry.sourceUrl}:cardImages[code];
-  if(!record?.url){galleryFallback(code);return}
-  const art=$('imagebox');art.textContent="載入卡圖中…";
-  const image=document.createElement("img");
-  image.alt=code+" "+entry.name+"（Beta 卡圖）";
-  image.loading="eager";image.decoding="async";image.referrerPolicy="no-referrer";
-  image.style.cssText="display:block;width:100%;height:auto;border-radius:9px";
-  image.onload=()=>{
-    if(requestId!==artRequest)return;
-    const note=$('imgnote');note.replaceChildren();
-    const link=document.createElement("a");
-    link.href=record.sourceUrl;link.target="_blank";link.rel="noopener noreferrer";
-    link.style.color="#a6b8ba";link.textContent="卡圖來源："+(activeSection==="starter"||code.startsWith("T")?"HoloHoard":"Spellbound Games")+" ↗";
-    note.append(link);
-  };
-  image.onerror=()=>{if(requestId===artRequest)galleryFallback(code)};
-  art.replaceChildren(image);$('imgnote').textContent="";
-  image.src=record.url;
-}
-const fmtUSD=n=>"US$"+n.toFixed(2);
-const fmtTWD=n=>"約 NT$"+Math.round(n).toLocaleString("zh-TW");
-function normalize(q){q=String(q).trim().toUpperCase().replace(/^BOX\s*TOPPER\s*/,"T").replace(/^TOPPER\s*/,"T").replace(/^BT\s*/,"T").replace(/^[Ββ]/,"B").replace(/^\u03B2/,"B").replace(/[^A-Z0-9]/g,"");if(/^T\d{1,3}$/.test(q)){return "T"+q.slice(1).padStart(3,"0")}if(/^B?\d{1,3}[AB]?$/.test(q)){q=q.replace(/^B/,"");const m=q.match(/^(\d{1,3})([AB]?)$/);if(m)return "B"+m[1].padStart(3,"0")+m[2]}return q}
-function currency(n){return fmtTWD(n*rate)}
-const RARITY_CODES={"Common":"C","Uncommon":"UC","Rare":"R","Epic":"E","Secret":"S","Iconic Legend":"IL","Iconic Other":"IO","Iconic Secret":"IS","Nova Rare":"NR"};
-const RARITY_ZH={"Common":"普通","Uncommon":"非普通","Rare":"稀有","Epic":"史詩","Secret":"秘密稀有","Iconic Legend":"標誌性傳奇","Iconic Other":"標誌性特殊","Iconic Secret":"標誌性秘密稀有","Nova Rare":"Nova 稀有（Box Topper 特典）"};
-function currentCatalog(){return activeSection==="starter"?(starterSets[activeStarter]?.cards||{}):catalog}
-function chooseSection(section,starter){
-  activeSection=section; if(starter)activeStarter=starter;
-  $('tab-main').setAttribute('aria-selected',String(section==="main"));
-  $('tab-starter').setAttribute('aria-selected',String(section==="starter"));
-  $('startersets').hidden=section!=="starter";
-  $('deck-heist').setAttribute('aria-pressed',String(activeStarter==="heist"));
-  $('deck-power').setAttribute('aria-pressed',String(activeStarter==="power"));
-  $('result').classList.remove('open');selected=null;
-  const qty=Object.keys(currentCatalog()).length;
-  $('loadstate').textContent=section==="main"?"Welcome to Night City Beta · "+qty+" 項":(activeStarter==="heist"?"The Heist":"Embracing Power")+" Beta · "+qty+" 張卡";
-  if($('query').value.trim())show($('query').value,false);
-}
-$('tab-main').onclick=()=>chooseSection("main");
-$('tab-starter').onclick=()=>chooseSection("starter");
-$('deck-heist').onclick=()=>chooseSection("starter","heist");
-$('deck-power').onclick=()=>chooseSection("starter","power");
-function show(query,scroll){
-  const code=normalize(query),cards=currentCatalog();
-  let entry=cards[code];
-  if(!entry){
-    const matches=Object.entries(cards).filter(([id,item])=>item.name.toLowerCase().includes(String(query).trim().toLowerCase()));
-    if(matches.length===1)return show(matches[0][0],scroll);
-    $('result').classList.remove('open');selected=null;
-    $('loadstate').textContent=matches.length>1?"找到多張同名卡，請輸入完整卡號。":"此系列查不到卡片，請檢查卡號或切換系列。";return;
-  }
-  selected=code;$('loadstate').textContent="已找到 "+code;
-  $('result').classList.add('open');$('number').textContent=(activeSection==="starter"?(entry.setCode+" · "):"")+code;
-  $('name').textContent=entry.name;
-  $('variant').textContent=activeSection==="starter"?(activeStarter==="heist"?"THE HEIST · BETA":"EMBRACING POWER · BETA"):(entry.set?"BOX TOPPER":"WELCOME TO NIGHT CITY · BETA");
-  const rn=$('rarityinfo');rn.replaceChildren();
-  const line=document.createElement('div');line.className='rarityline';
-  const label=document.createElement('span');label.className='raritylabel';label.textContent='Rarity:';
-  const codeNode=document.createElement('span');codeNode.className='raritycode';codeNode.textContent=entry.rarityCode||RARITY_CODES[entry.rarity]||'?';
-  const expanded=document.createElement('span');expanded.className='rarityname';expanded.textContent=entry.rarity?(entry.rarity+'（'+(RARITY_ZH[entry.rarity]||'待確認')+'）'):'未確認';
-  line.append(label,codeNode,expanded);rn.append(line);
-  const p=activeSection==="main"?prices[code]:null,usd=$('usd');usd.replaceChildren();
-  if(p&&Number.isFinite(p.usd)){const prefix=document.createElement('span');prefix.className='currency-prefix';prefix.textContent='US$';const value=document.createElement('span');value.textContent=p.usd.toFixed(2);usd.append(prefix,value)}
-  else usd.textContent='尚無報價';
-  const twd=$('twd');twd.replaceChildren();if(p&&Number.isFinite(p.usd)){const prefix=document.createElement('span');prefix.className='twd-prefix';prefix.textContent='約 NT$';const amount=document.createElement('span');amount.textContent=Math.round(p.usd*rate).toLocaleString('zh-TW');twd.append(prefix,amount);}
-  $('pricenote').textContent=activeSection==="starter"?'此初始牌組尚未建立獨立市場參考價，不沿用主系列同號價格。':(p?'歷史價格快照 · 非即時 · 參考資料日期：'+(p.observedDate||priceDate)+'。不同來源時間可能不同。':'尚未建立這張卡的價格紀錄。');
-  $('tcg').href='https://www.tcgplayer.com/search/all/product?q='+encodeURIComponent("Cyberpunk TCG "+(activeSection==="starter"?(activeStarter==="heist"?"The Heist Beta starter ":"Embracing Power Beta starter "):"Welcome to Night City Beta ")+code+" "+entry.name);
-  $('cataloglink').href=activeSection==="starter"?entry.sourceUrl:setUrl;
-  displayArt(code,entry);
-  if(scroll)$('result').scrollIntoView({behavior:'smooth',block:'start'});
-}
-$('search').onclick=()=>$('query').value&&show($('query').value,true);
-$('query').onkeydown=e=>{if(e.key==="Enter")show($('query').value,true)};
-$('rate').onchange=()=>{const v=Number($('rate').value);if(v>=1&&v<=100){rate=v;try{localStorage.setItem("cyberscan-usd-twd",String(rate))}catch(e){}if(selected)show(selected,false)}else{$('rate').value=rate}};
-async function init(){const results=await Promise.allSettled([fetch("./card-catalog.json?v=5",{cache:"no-cache"}).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}),fetch("./prices.json?v=5",{cache:"no-cache"}).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}),fetch("./card-images.json?v=3",{cache:"no-cache"}).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}),fetch("./starter-catalog.json?v=2",{cache:"no-cache"}).then(r=>{if(!r.ok)throw Error(r.status);return r.json()})]);if(results[0].status==="fulfilled")catalog=results[0].value.cards||{};if(results[1].status==="fulfilled"){prices=results[1].value.prices||{};priceDate=results[1].value.observedDate||"未註明"}if(results[2].status==="fulfilled")cardImages=results[2].value.images||{};if(results[3].status==="fulfilled")starterSets=results[3].value.sets||{};$('loadstate').textContent=Object.keys(catalog).length===178?"已載入 Beta 主系列 172 項＋Box Topper 6 項。":"卡表資料未完整載入，請重新整理。";if(location.hash){const hash=decodeURIComponent(location.hash.slice(1));const match=hash.match(/^(heist|power)-(B\d{3})$/i);if(match){chooseSection('starter',match[1].toLowerCase());show(match[2],false)}else if(catalog[normalize(hash)])show(hash,false)}}
-init();
-</script></body></html>
+        .panel {
+            background: #1c2428;
+            border: 1px solid #37464a;
+            border-radius: 16px;
+            padding: 18px;
+            margin-top: 18px
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            gap: 10px
+        }
+
+        .space {
+            justify-content: space-between
+        }
+
+        input {
+            min-width: 0;
+            background: #0f161a;
+            border: 1px solid #57676b;
+            color: #fff;
+            border-radius: 9px;
+            padding: 13px;
+            width: 100%;
+            outline: none
+        }
+
+        input:focus {
+            border-color: #d8ed58
+        }
+
+        input[type=number] {
+            width: 104px
+        }
+
+        button {
+            border-radius: 9px;
+            border: 1px solid #617075;
+            background: #303c40;
+            color: white;
+            padding: 12px 14px;
+            font-weight: 500
+        }
+
+        .primary {
+            background: #def25b;
+            color: #111713;
+            border-color: #def25b
+        }
+
+        .search {
+            display: flex;
+            gap: 9px
+        }
+
+        .search button {
+            white-space: nowrap
+        }
+
+        .badge {
+            background: #354346;
+            color: #dfe5e5;
+            border-radius: 7px;
+            padding: 5px 8px;
+            font-size: 11px
+        }
+
+        .rarityinfo {
+            border-top: 1px solid #344044;
+            margin: 8px 0 0;
+            padding-top: 9px;
+            font-size: 12px;
+            line-height: 1.7;
+            color: #b8c9ca
+        }
+
+        .rarityinfo strong {
+            color: #f0f3ee;
+            font-weight: 500
+        }
+
+        .rarityinfo .rarityhigh {
+            color: #def25b
+        }
+
+        .rarityinfo .rarityunknown {
+            color: #a6b8ba
+        }
+
+        .rarityline {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 7px 11px
+        }
+
+        .raritystars {
+            font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            font-size: 18px;
+            line-height: 1;
+            letter-spacing: 2px;
+            color: #def25b;
+            white-space: nowrap
+        }
+
+        .rarityname {
+            color: #eff2ed;
+            font-size: 13px;
+            font-weight: 500
+        }
+
+        .raritytip {
+            font-size: 11px;
+            line-height: 1.7;
+            color: #aab9bc;
+            margin-top: 5px
+        }
+
+        .rarityspecial {
+            color: #def25b;
+            font-weight: 500
+        }
+
+        .settabs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin: 18px 0 0
+        }
+
+        .settab {
+            background: transparent;
+            color: #c4d1d0;
+            border: 1px solid #4b5b5e;
+            padding: 13px 8px;
+            font-size: 12px
+        }
+
+        .settab[aria-selected="true"] {
+            background: #def25b;
+            color: #101617;
+            border-color: #def25b
+        }
+
+        .startersets {
+            display: flex;
+            gap: 7px;
+            flex-wrap: wrap;
+            margin-top: 10px
+        }
+
+        .startersets[hidden] {
+            display: none
+        }
+
+        .startersets button {
+            padding: 8px 11px;
+            font-size: 12px;
+            background: #192427
+        }
+
+        .startersets button[aria-pressed="true"] {
+            border-color: #def25b;
+            color: #def25b
+        }
+
+        .raritycode {
+            color: #def25b;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: .02em
+        }
+
+        .rarityname {
+            font-size: 12px;
+            color: #aebebc
+        }
+
+        .rarityinfo {
+            margin-top: 8px;
+            line-height: 1.7
+        }
+
+        .rarityline {
+            gap: 9px
+        }
+
+        .setsublabel {
+            color: #abbfc1;
+            font-size: 11px;
+            padding-top: 8px
+        }
+
+        .detail {
+            display: none
+        }
+
+        .detail.open {
+            display: block
+        }
+
+        .cardgrid {
+            display: grid;
+            grid-template-columns: 128px minmax(0, 1fr);
+            gap: 16px
+        }
+
+        .art {
+            border-radius: 10px;
+            border: 1px solid #435155;
+            background: #131b1f;
+            min-height: 182px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden
+        }
+
+        .art img {
+            display: block;
+            max-width: 100%;
+            width: 100%;
+            height: auto
+        }
+
+        .art .empty {
+            color: #a6b8ba;
+            font-size: 12px;
+            text-align: center;
+            padding: 16px;
+            line-height: 1.8
+        }
+
+        .cardtitle {
+            font-size: clamp(18px, 4.8vw, 26px);
+            margin: 10px 0;
+            line-height: 1.35;
+            overflow-wrap: anywhere
+        }
+
+        .price {
+            font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            font-size: 30px;
+            font-weight: 780;
+            letter-spacing: -.04em
+        }
+
+        .price .currency-prefix {
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0;
+            vertical-align: baseline;
+            margin-right: 3px
+        }
+
+        .approx {
+            font-size: 18px;
+            color: #dff257;
+            font-weight: 700
+        }
+
+        .approx .twd-prefix {
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 0;
+            margin-right: 2px
+        }
+
+        .divider {
+            height: 1px;
+            background: #354347;
+            margin: 16px 0
+        }
+
+        .note {
+            font-size: 11px;
+            line-height: 1.7;
+            color: #9fb1b3
+        }
+
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-top: 16px
+        }
+
+        .links a {
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid #697578;
+            border-radius: 9px;
+            padding: 11px 12px;
+            font-size: 12px
+        }
+
+        .catalog {
+            max-height: 480px;
+            overflow: auto;
+            margin-top: 12px;
+            border-top: 1px solid #3c494d
+        }
+
+        .entry {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            border-bottom: 1px solid #333f43;
+            padding: 11px 2px
+        }
+
+        .entry .grow {
+            min-width: 0;
+            flex: 1
+        }
+
+        .entry .name {
+            font-size: 13px;
+            overflow-wrap: anywhere
+        }
+
+        .entry .meta {
+            font-size: 11px;
+            color: #a5b6b8;
+            margin-top: 4px
+        }
+
+        .entry .money {
+            text-align: right;
+            font-size: 12px;
+            white-space: nowrap
+        }
+
+        .entry button {
+            font-size: 11px;
+            padding: 8px 10px
+        }
+
+        .stats {
+            display: flex;
+            gap: 9px;
+            margin: 14px 0
+        }
+
+        .stat {
+            flex: 1;
+            border-radius: 11px;
+            background: #121a1d;
+            padding: 12px
+        }
+
+        .stat strong {
+            font-size: 22px;
+            display: block;
+            margin-top: 6px
+        }
+
+        footer {
+            color: #8fa3a6;
+            font-size: 11px;
+            line-height: 1.7;
+            margin-top: 28px
+        }
+
+        @media(min-width:700px) {
+            .columns {
+                display: grid;
+                grid-template-columns: 1.1fr .9fr;
+                align-items: start;
+                gap: 18px
+            }
+
+            .columns .panel {
+                margin-top: 0
+            }
+
+            .wrap {
+                padding-top: 40px
+            }
+
+            .cardgrid {
+                grid-template-columns: 175px minmax(0, 1fr)
+            }
+        }
+
+        @media(max-width:380px) {
+            .cardgrid {
+                grid-template-columns: 100px minmax(0, 1fr);
+                gap: 10px
+            }
+
+            .price {
+                font-size: 25px
+            }
+
+            .search {
+                flex-direction: column
+            }
+
+            .search button {
+                width: 100%
+            }
+        }
+    
+        /* Cyberpunk HUD frames only — retain the uploaded version's layout and functionality. */
+        .panel {
+            position: relative;
+            border-radius: 0;
+            border: 1px solid rgba(238, 79, 96, .48);
+            border-left: 2px solid rgba(255, 71, 89, .85);
+            background: linear-gradient(115deg, rgba(92, 35, 44, .28), rgba(65, 13, 24, .19) 45%, rgba(26, 8, 15, .24)), rgba(6, 7, 9, .22);
+            box-shadow: inset 0 1px 0 rgba(255, 112, 126, .1), 0 9px 30px rgba(0, 0, 0, .19);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
+        }
+        .panel::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 28px;
+            height: 1px;
+            background: rgba(255, 105, 121, .85);
+            transform: translate(5px, 10px) rotate(45deg);
+            pointer-events: none;
+        }
+        .panel h2 { color: #ef8790; }
+        .panel h2::before { content: "[ "; color: #c46e79; }
+        .panel h2::after { content: " ]"; color: #c46e79; }
+        @media (max-width: 600px) {
+            .panel { clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 0 100%); }
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="brand">CYBER<em>SCAN</em></div>
+        <div class="label">BETA / CARD INDEX</div>
+    </header>
+    <main class="wrap">
+        <div class="label">WELCOME TO NIGHT CITY · BETA COLLECTION</div>
+        <h1>KNOW YOUR<br><span>CARDS.</span></h1>
+        <p class="intro">輸入卡號或卡名查詢 Beta 卡圖、稀有度與參考價格。可切換主系列或初始牌組，相同卡號會對應不同系列的卡片。</p>
+        <nav class="settabs" role="tablist" aria-label="卡片系列"><button type="button" class="settab" id="tab-main"
+                role="tab" aria-selected="true">Welcome to Night City · Beta</button><button type="button"
+                class="settab" id="tab-starter" role="tab" aria-selected="false">Starter Deck · Beta</button></nav>
+        <div class="startersets" id="startersets" hidden><button type="button" id="deck-heist" aria-pressed="true">The
+                Heist</button><button type="button" id="deck-power" aria-pressed="false">Embracing Power</button></div>
+        <section class="panel">
+            <h2>01 / 搜尋卡片</h2>
+            <div class="search"><input id="query" autocomplete="off" placeholder="B135、B157、T006"
+                    aria-label="輸入卡號或卡名"><button class="primary" id="search">搜尋卡片 ↗</button></div>
+            <div class="row space" style="margin-top:12px;flex-wrap:wrap">
+                <div class="small" id="loadstate">載入資料中…</div>
+            </div>
+        </section>
+        <section class="panel detail" id="result">
+            <div class="row space">
+                <div class="label">CARD DETAIL</div>
+                <div class="badge" id="variant">BETA</div>
+            </div>
+            <div class="cardgrid" style="margin-top:14px">
+                <div>
+                    <div class="art" id="imagebox">
+                        <div class="empty">卡圖載入中</div>
+                    </div>
+                    <p class="note" id="imgnote"></p>
+                </div>
+                <div>
+                    <div class="label" id="number"></div>
+                    <h2 class="cardtitle" id="name"></h2>
+                    <div class="rarityinfo" id="rarityinfo"></div>
+                    <div class="label" style="margin-top:14px">市場參考價 / MARKET PRICE</div>
+                    <div class="price" id="usd">—</div>
+                    <div class="approx" id="twd"></div>
+                    <p class="note" id="pricenote"></p>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="links"><a id="tcg" target="_blank" rel="noopener noreferrer">TCGplayer 查價</a><a id="cataloglink"
+                    target="_blank" rel="noopener noreferrer">查看 Beta 卡片圖鑑</a></div>
+        </section>
+        <section class="panel">
+            <div class="row space">
+                <h2>匯率與資料說明</h2><span class="badge">USD → TWD</span>
+            </div>
+            <div class="row">
+                <div class="small">1 美元約 NT$</div><input id="rate" aria-label="美元換算台幣匯率" type="number" step="0.01"
+                    min="1" max="100" value="32.47">
+            </div>
+            <p class="note">預設換算率為 2026/10/19 的參考值
+                32.47，非即時銀行匯率，可自行調整。價格資料為不同時間蒐集的歷史參考數字，並非目前成交價；外部資料來源可能變動。卡圖使用外部公開的圖片網址（Beta 主系列：Spellbound Games；Box
+                Topper：HoloHoard），可能隨來源網站更新而變動。Box Topper 與主系列都有 β001～β006 編號；為避免混淆，本站使用 T001～T006 代表 Box Topper（例如 T006
+                = V: Corporate Exile）。</p>
+        </section>
+        <footer>CYBERSCAN 是非官方收藏工具。與 Cyberpunk TCG、TCGplayer 無關；卡圖版權歸原權利人所有。價格不能作為保證成交報價。</footer>
+    </main>
+    <script>
+        'use strict';
+        const $ = id => document.getElementById(id);
+        const base = "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/cyberpunk-tcg/price-guides/welcome-to-night-city-beta";
+        const setUrl = "https://www.tcgplayer.com/search/cyberpunk-tcg/welcome-to-night-city-beta?page=1&productLineName=cyberpunk-tcg&setName=welcome-to-night-city-beta&view=grid";
+        let catalog = {}, prices = {}, selected = null, rate = 32.47, priceDate = "", starterSets = {}, activeSection = "main", activeStarter = "heist";
+        try { const v = Number(localStorage.getItem("cyberscan-usd-twd")); if (v >= 1 && v <= 100) rate = v } catch (e) { }
+        $('rate').value = rate;
+        // Shared Beta image URLs are loaded from card-images.json. No browser-specific uploads required.
+        let cardImages = {}, artRequest = 0;
+        function galleryFallback(code) {
+            const art = $('imagebox'); art.replaceChildren();
+            const a = document.createElement("a");
+            a.href = activeSection === "starter" ? (currentCatalog()[code]?.sourceUrl || "https://holohoard.app/explore/game/cyberpunk-tcg/" + (activeStarter === "heist" ? "the-heist-beta-starter-deck" : "embracing-power-beta-starter-deck")) : "https://exburst.dev/cyberpunk/series/beta"; a.target = "_blank"; a.rel = "noopener noreferrer";
+            a.style.cssText = "display:flex;align-items:center;justify-content:center;min-height:182px;padding:14px;text-align:center;color:#def25b;text-decoration:none;font-size:12px";
+            a.textContent = activeSection === "starter" ? "查看這張卡的原始資料 ↗" : "查看外部 Beta 圖鑑 ↗"; art.append(a);
+            $('imgnote').textContent = "目前沒有這張卡的共用圖片。";
+        }
+        function displayArt(code, entry) {
+            const requestId = ++artRequest;
+            const record = activeSection === "starter" ? { url: entry.imageUrl, sourceUrl: entry.sourceUrl } : cardImages[code];
+            if (!record?.url) { galleryFallback(code); return }
+            const art = $('imagebox'); art.textContent = "載入卡圖中…";
+            const image = document.createElement("img");
+            image.alt = code + " " + entry.name + "（Beta 卡圖）";
+            image.loading = "eager"; image.decoding = "async"; image.referrerPolicy = "no-referrer";
+            image.style.cssText = "display:block;width:100%;height:auto;border-radius:9px";
+            image.onload = () => {
+                if (requestId !== artRequest) return;
+                const note = $('imgnote'); note.replaceChildren();
+                const link = document.createElement("a");
+                link.href = record.sourceUrl; link.target = "_blank"; link.rel = "noopener noreferrer";
+                link.style.color = "#a6b8ba"; link.textContent = "卡圖來源：" + (activeSection === "starter" || code.startsWith("T") ? "HoloHoard" : "Spellbound Games") + " ↗";
+                note.append(link);
+            };
+            image.onerror = () => { if (requestId === artRequest) galleryFallback(code) };
+            art.replaceChildren(image); $('imgnote').textContent = "";
+            image.src = record.url;
+        }
+        const fmtUSD = n => "US$" + n.toFixed(2);
+        const fmtTWD = n => "約 NT$" + Math.round(n).toLocaleString("zh-TW");
+        function normalize(q) { q = String(q).trim().toUpperCase().replace(/^BOX\s*TOPPER\s*/, "T").replace(/^TOPPER\s*/, "T").replace(/^BT\s*/, "T").replace(/^[Ββ]/, "B").replace(/^\u03B2/, "B").replace(/[^A-Z0-9]/g, ""); if (/^T\d{1,3}$/.test(q)) { return "T" + q.slice(1).padStart(3, "0") } if (/^B?\d{1,3}[AB]?$/.test(q)) { q = q.replace(/^B/, ""); const m = q.match(/^(\d{1,3})([AB]?)$/); if (m) return "B" + m[1].padStart(3, "0") + m[2] } return q }
+        function currency(n) { return fmtTWD(n * rate) }
+        const RARITY_CODES = { "Common": "C", "Uncommon": "UC", "Rare": "R", "Epic": "E", "Secret": "S", "Iconic Legend": "IL", "Iconic Other": "IO", "Iconic Secret": "IS", "Nova Rare": "NR" };
+        const RARITY_ZH = { "Common": "普通", "Uncommon": "非普通", "Rare": "稀有", "Epic": "史詩", "Secret": "秘密稀有", "Iconic Legend": "標誌性傳奇", "Iconic Other": "標誌性特殊", "Iconic Secret": "標誌性秘密稀有", "Nova Rare": "Nova 稀有（Box Topper 特典）" };
+        function currentCatalog() { return activeSection === "starter" ? (starterSets[activeStarter]?.cards || {}) : catalog }
+        function chooseSection(section, starter) {
+            activeSection = section; if (starter) activeStarter = starter;
+            $('tab-main').setAttribute('aria-selected', String(section === "main"));
+            $('tab-starter').setAttribute('aria-selected', String(section === "starter"));
+            $('startersets').hidden = section !== "starter";
+            $('deck-heist').setAttribute('aria-pressed', String(activeStarter === "heist"));
+            $('deck-power').setAttribute('aria-pressed', String(activeStarter === "power"));
+            $('result').classList.remove('open'); selected = null;
+            const qty = Object.keys(currentCatalog()).length;
+            $('loadstate').textContent = section === "main" ? "Welcome to Night City Beta · " + qty + " 項" : (activeStarter === "heist" ? "The Heist" : "Embracing Power") + " Beta · " + qty + " 張卡";
+            if ($('query').value.trim()) show($('query').value, false);
+        }
+        $('tab-main').onclick = () => chooseSection("main");
+        $('tab-starter').onclick = () => chooseSection("starter");
+        $('deck-heist').onclick = () => chooseSection("starter", "heist");
+        $('deck-power').onclick = () => chooseSection("starter", "power");
+        function show(query, scroll) {
+            const code = normalize(query), cards = currentCatalog();
+            let entry = cards[code];
+            if (!entry) {
+                const matches = Object.entries(cards).filter(([id, item]) => item.name.toLowerCase().includes(String(query).trim().toLowerCase()));
+                if (matches.length === 1) return show(matches[0][0], scroll);
+                $('result').classList.remove('open'); selected = null;
+                $('loadstate').textContent = matches.length > 1 ? "找到多張同名卡，請輸入完整卡號。" : "此系列查不到卡片，請檢查卡號或切換系列。"; return;
+            }
+            selected = code; $('loadstate').textContent = "已找到 " + code;
+            $('result').classList.add('open'); $('number').textContent = (activeSection === "starter" ? (entry.setCode + " · ") : "") + code;
+            $('name').textContent = entry.name;
+            $('variant').textContent = activeSection === "starter" ? (activeStarter === "heist" ? "THE HEIST · BETA" : "EMBRACING POWER · BETA") : (entry.set ? "BOX TOPPER" : "WELCOME TO NIGHT CITY · BETA");
+            const rn = $('rarityinfo'); rn.replaceChildren();
+            const line = document.createElement('div'); line.className = 'rarityline';
+            const value = document.createElement('span'); value.className = 'raritycode';
+            value.textContent = 'Rarity: ' + (entry.rarityCode || RARITY_CODES[entry.rarity] || '?');
+            const expanded = document.createElement('span'); expanded.className = 'rarityname'; expanded.textContent = entry.rarity ? (entry.rarity + '（' + (RARITY_ZH[entry.rarity] || '待確認') + '）') : '未確認';
+            line.append(value, expanded); rn.append(line);
+            const p = activeSection === "main" ? prices[code] : null, usd = $('usd'); usd.replaceChildren();
+            if (p && Number.isFinite(p.usd)) { const prefix = document.createElement('span'); prefix.className = 'currency-prefix'; prefix.textContent = 'US$'; const value = document.createElement('span'); value.textContent = p.usd.toFixed(2); usd.append(prefix, value) }
+            else usd.textContent = '尚無報價';
+            const twd = $('twd'); twd.replaceChildren(); if (p && Number.isFinite(p.usd)) { const prefix = document.createElement('span'); prefix.className = 'twd-prefix'; prefix.textContent = '約 NT$'; const amount = document.createElement('span'); amount.textContent = Math.round(p.usd * rate).toLocaleString('zh-TW'); twd.append(prefix, amount); }
+            $('pricenote').textContent = activeSection === "starter" ? '此初始牌組尚未建立獨立市場參考價，不沿用主系列同號價格。' : (p ? '歷史價格快照 · 非即時 · 參考資料日期：' + (p.observedDate || priceDate) + '。不同來源時間可能不同。' : '尚未建立這張卡的價格紀錄。');
+            $('tcg').href = 'https://www.tcgplayer.com/search/all/product?q=' + encodeURIComponent("Cyberpunk TCG " + (activeSection === "starter" ? (activeStarter === "heist" ? "The Heist Beta starter " : "Embracing Power Beta starter ") : "Welcome to Night City Beta ") + code + " " + entry.name);
+            $('cataloglink').href = activeSection === "starter" ? entry.sourceUrl : setUrl;
+            displayArt(code, entry);
+            if (scroll) $('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        $('search').onclick = () => $('query').value && show($('query').value, true);
+        $('query').onkeydown = e => { if (e.key === "Enter") show($('query').value, true) };
+        $('rate').onchange = () => { const v = Number($('rate').value); if (v >= 1 && v <= 100) { rate = v; try { localStorage.setItem("cyberscan-usd-twd", String(rate)) } catch (e) { } if (selected) show(selected, false) } else { $('rate').value = rate } };
+        async function init() { const results = await Promise.allSettled([fetch("./card-catalog.json?v=5", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() }), fetch("./prices.json?v=5", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() }), fetch("./card-images.json?v=3", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() }), fetch("./starter-catalog.json?v=2", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() })]); if (results[0].status === "fulfilled") catalog = results[0].value.cards || {}; if (results[1].status === "fulfilled") { prices = results[1].value.prices || {}; priceDate = results[1].value.observedDate || "未註明" } if (results[2].status === "fulfilled") cardImages = results[2].value.images || {}; if (results[3].status === "fulfilled") starterSets = results[3].value.sets || {}; $('loadstate').textContent = Object.keys(catalog).length === 178 ? "已載入 Beta 主系列 172 項＋Box Topper 6 項。" : "卡表資料未完整載入，請重新整理。"; if (location.hash) { const hash = decodeURIComponent(location.hash.slice(1)); const match = hash.match(/^(heist|power)-(B\d{3})$/i); if (match) { chooseSection('starter', match[1].toLowerCase()); show(match[2], false) } else if (catalog[normalize(hash)]) show(hash, false) } }
+        init();
+    </script>
+</body>
+
+</html>
