@@ -1,0 +1,338 @@
+{
+  "version": 1,
+  "notes": "The Heist and Embracing Power Beta starter sets, 20 each; different card IDs may share B numbers across sets. Image URLs from HoloHoard Beta starter pages. No starter prices copied from the main Beta set.",
+  "sets": {
+    "heist": {
+      "label": "The Heist · Beta",
+      "code": "SD01B",
+      "cards": {
+        "B001": {
+          "name": "Viktor Vektor: Sit Down and Relax",
+          "rarity": "Epic",
+          "rarityCode": "E",
+          "setCode": "SD01B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/the-heist-beta-starter-deck/webp/b001-viktor-vektor-sit-down-and-relax.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/the-heist-beta-starter-deck"
+        },
+        "B002": {
+          "name": "Dexter DeShawn: One Last Chance",
+          "rarity": "Uncommon",
+          "rarityCode": "UC",
+          "setCode": "SD01B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/the-heist-beta-starter-deck/webp/b002-dexter-deshawn-one-last-chance.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/the-heist-beta-starter-deck"
+        },
+        "B003": {
+          "name": "Heywood Ripperdoc",
+          "rarity": "Uncommon",
+          "rarityCode": "UC",
+          "setCode": "SD01B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/the-heist-beta-starter-deck/webp/b003-heywood-ripperdoc.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/the-heist-beta-starter-deck"
+        },
+        "B004": {
+          "name": "Offduty Malfini",
+          "rarity": "Common",
+          "rarityCode": "C",
+          "setCode": "SD01B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/the-heist-beta-starter-deck/webp/b004-offduty-malfini.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/the-heist-beta-starter-deck"
+        },
+        "B005": {
+          "name": "Secondhand Bombus",
+          "rarity": "Common",
+          "rarityCode": "C",
+          "setCode": "SD01B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/the-heist-beta-starter-deck/webp/b005-secondhand-bombus.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/the-heist-beta-starter-deck"
+        },
+        "B006": {
+          "name": "T-Bug: Amateur Philosopher",
+          "rarity": "Uncommon",
+          "rarityCode": "UC",
+          "setCode": "SD01B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/the-heist-beta-starter-deck/webp/b006-t-bug-amateur-philosopher.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/the-heist-beta-starter-deck"
+        },
+        "B007": {
+          "name": "Kiroshi Optics",
+          "rarity": "Common",
+          "rarityCode": "C",
+          "setCode": "SD01B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/the-heist-beta-starter-deck/webp/b007-kiroshi-optics.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/the-heist-beta-starter-deck"
+        },
+        "B008": {
+          "name": "Mandibular Upgrade",
+          "rarity": "Common",
+          "rarityCode": "C",
+          "setCode": "SD01B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/the-heist-beta-starter-deck/webp/b008-mandibular-upgrade.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/the-heist-beta-starter-deck"
+        },
+        "B009": {
+          "name": "Zetatech Faceplate",
+          "rarity": "Uncommon",
+          "rarityCode": "UC",
+          "setCode": "SD01B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/the-heist-beta-starter-deck/webp/b009-zetatech-faceplate.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/the-heist-beta-starter-deck"
+        },
+        "B010": {
+          "name": "Afterparty at Lizzie's",
+          "rarity": "Common",
+          "rarityCode": "C",
+          "setCode": "SD01B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/the-heist-beta-starter-deck/webp/b010-afterparty-at-lizzie-s.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/the-heist-beta-starter-deck"
+        },
+        "B011": {
+          "name": "Jackie Welles: Pour One Out For Me",
+          "rarity": "Epic",
+          "rarityCode": "E",
+          "setCode": "SD01B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/the-heist-beta-starter-deck/webp/b011-jackie-welles-pour-one-out-for-me.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/the-heist-beta-starter-deck"
+        },
+        "B012": {
+          "name": "V: Corporate Exile",
+          "rarity": "Epic",
+          "rarityCode": "E",
+          "setCode": "SD01B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/the-heist-beta-starter-deck/webp/b012-v-corporate-exile.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/the-heist-beta-starter-deck"
+        },
+        "B013": {
+          "name": "Delamain Cab",
+          "rarity": "Common",
+          "rarityCode": "C",
+          "setCode": "SD01B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/the-heist-beta-starter-deck/webp/b013-delamain-cab.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/the-heist-beta-starter-deck"
+        },
+        "B014": {
+          "name": "Evelyn Parker: Scheming Siren",
+          "rarity": "Uncommon",
+          "rarityCode": "UC",
+          "setCode": "SD01B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/the-heist-beta-starter-deck/webp/b014-evelyn-parker-scheming-siren.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/the-heist-beta-starter-deck"
+        },
+        "B015": {
+          "name": "MT0D12 Flathead",
+          "rarity": "Uncommon",
+          "rarityCode": "UC",
+          "setCode": "SD01B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/the-heist-beta-starter-deck/webp/b015-mt0d12-flathead.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/the-heist-beta-starter-deck"
+        },
+        "B016": {
+          "name": "Psycho Squad",
+          "rarity": "Common",
+          "rarityCode": "C",
+          "setCode": "SD01B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/the-heist-beta-starter-deck/webp/b016-psycho-squad.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/the-heist-beta-starter-deck"
+        },
+        "B017": {
+          "name": "Dying Night: V's Pistol",
+          "rarity": "Rare",
+          "rarityCode": "R",
+          "setCode": "SD01B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/the-heist-beta-starter-deck/webp/b017-dying-night-v-s-pistol.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/the-heist-beta-starter-deck"
+        },
+        "B018": {
+          "name": "Tetratonic Rippler",
+          "rarity": "Common",
+          "rarityCode": "C",
+          "setCode": "SD01B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/the-heist-beta-starter-deck/webp/b018-tetratonic-rippler.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/the-heist-beta-starter-deck"
+        },
+        "B019": {
+          "name": "Floor It",
+          "rarity": "Common",
+          "rarityCode": "C",
+          "setCode": "SD01B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/the-heist-beta-starter-deck/webp/b019-floor-it.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/the-heist-beta-starter-deck"
+        },
+        "B020": {
+          "name": "Reboot Optics",
+          "rarity": "Common",
+          "rarityCode": "C",
+          "setCode": "SD01B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/the-heist-beta-starter-deck/webp/b020-reboot-optics.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/the-heist-beta-starter-deck"
+        }
+      }
+    },
+    "power": {
+      "label": "Embracing Power · Beta",
+      "code": "SD02B",
+      "cards": {
+        "B001": {
+          "name": "Yorinobu Arasaka: Embracing Destruction",
+          "rarity": "Epic",
+          "rarityCode": "E",
+          "setCode": "SD02B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/embracing-power-beta-starter-deck/webp/b001-yorinobu-arasaka-embracing-destruction.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/embracing-power-beta-starter-deck"
+        },
+        "B002": {
+          "name": "Chrome Fang",
+          "rarity": "Common",
+          "rarityCode": "C",
+          "setCode": "SD02B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/embracing-power-beta-starter-deck/webp/b002-chrome-fang.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/embracing-power-beta-starter-deck"
+        },
+        "B003": {
+          "name": "Minotaur",
+          "rarity": "Uncommon",
+          "rarityCode": "UC",
+          "setCode": "SD02B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/embracing-power-beta-starter-deck/webp/b003-minotaur.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/embracing-power-beta-starter-deck"
+        },
+        "B004": {
+          "name": "Ruthless Lowlife",
+          "rarity": "Common",
+          "rarityCode": "C",
+          "setCode": "SD02B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/embracing-power-beta-starter-deck/webp/b004-ruthless-lowlife.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/embracing-power-beta-starter-deck"
+        },
+        "B005": {
+          "name": "Swordwise Huscle",
+          "rarity": "Common",
+          "rarityCode": "C",
+          "setCode": "SD02B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/embracing-power-beta-starter-deck/webp/b005-swordwise-huscle.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/embracing-power-beta-starter-deck"
+        },
+        "B006": {
+          "name": "Arasaka Emergency Radioport",
+          "rarity": "Common",
+          "rarityCode": "C",
+          "setCode": "SD02B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/embracing-power-beta-starter-deck/webp/b006-arasaka-emergency-radioport.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/embracing-power-beta-starter-deck"
+        },
+        "B007": {
+          "name": "Mantis Blades",
+          "rarity": "Uncommon",
+          "rarityCode": "UC",
+          "setCode": "SD02B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/embracing-power-beta-starter-deck/webp/b007-mantis-blades.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/embracing-power-beta-starter-deck"
+        },
+        "B008": {
+          "name": "Satori: Sword of Saburo",
+          "rarity": "Uncommon",
+          "rarityCode": "UC",
+          "setCode": "SD02B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/embracing-power-beta-starter-deck/webp/b008-satori-sword-of-saburo.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/embracing-power-beta-starter-deck"
+        },
+        "B009": {
+          "name": "Industrial Assembly",
+          "rarity": "Uncommon",
+          "rarityCode": "UC",
+          "setCode": "SD02B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/embracing-power-beta-starter-deck/webp/b009-industrial-assembly.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/embracing-power-beta-starter-deck"
+        },
+        "B010": {
+          "name": "Over the Edge",
+          "rarity": "Common",
+          "rarityCode": "C",
+          "setCode": "SD02B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/embracing-power-beta-starter-deck/webp/b010-over-the-edge.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/embracing-power-beta-starter-deck"
+        },
+        "B011": {
+          "name": "Shattered Memories",
+          "rarity": "Rare",
+          "rarityCode": "R",
+          "setCode": "SD02B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/embracing-power-beta-starter-deck/webp/b011-shattered-memories.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/embracing-power-beta-starter-deck"
+        },
+        "B012": {
+          "name": "Goro Takemura: Hands Unclean",
+          "rarity": "Epic",
+          "rarityCode": "E",
+          "setCode": "SD02B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/embracing-power-beta-starter-deck/webp/b012-goro-takemura-hands-unclean.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/embracing-power-beta-starter-deck"
+        },
+        "B013": {
+          "name": "Saburo Arasaka: Stubborn Patriarch",
+          "rarity": "Epic",
+          "rarityCode": "E",
+          "setCode": "SD02B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/embracing-power-beta-starter-deck/webp/b013-saburo-arasaka-stubborn-patriarch.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/embracing-power-beta-starter-deck"
+        },
+        "B014": {
+          "name": "Corpo Security",
+          "rarity": "Common",
+          "rarityCode": "C",
+          "setCode": "SD02B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/embracing-power-beta-starter-deck/webp/b014-corpo-security.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/embracing-power-beta-starter-deck"
+        },
+        "B015": {
+          "name": "Emergency Atlus",
+          "rarity": "Common",
+          "rarityCode": "C",
+          "setCode": "SD02B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/embracing-power-beta-starter-deck/webp/b015-emergency-atlus.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/embracing-power-beta-starter-deck"
+        },
+        "B016": {
+          "name": "Field Operator",
+          "rarity": "Common",
+          "rarityCode": "C",
+          "setCode": "SD02B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/embracing-power-beta-starter-deck/webp/b016-field-operator.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/embracing-power-beta-starter-deck"
+        },
+        "B017": {
+          "name": "Goro Takemura: Losing His Way",
+          "rarity": "Uncommon",
+          "rarityCode": "UC",
+          "setCode": "SD02B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/embracing-power-beta-starter-deck/webp/b017-goro-takemura-losing-his-way.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/embracing-power-beta-starter-deck"
+        },
+        "B018": {
+          "name": "MaxTac AV",
+          "rarity": "Common",
+          "rarityCode": "C",
+          "setCode": "SD02B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/embracing-power-beta-starter-deck/webp/b018-maxtac-av.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/embracing-power-beta-starter-deck"
+        },
+        "B019": {
+          "name": "Sandevistan",
+          "rarity": "Uncommon",
+          "rarityCode": "UC",
+          "setCode": "SD02B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/embracing-power-beta-starter-deck/webp/b019-sandevistan.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/embracing-power-beta-starter-deck"
+        },
+        "B020": {
+          "name": "Corporate Surveillance",
+          "rarity": "Uncommon",
+          "rarityCode": "UC",
+          "setCode": "SD02B",
+          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/embracing-power-beta-starter-deck/webp/b020-corporate-surveillance.webp",
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/embracing-power-beta-starter-deck"
+        }
+      }
+    }
+  }
+}
