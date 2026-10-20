@@ -230,6 +230,13 @@ input:focus{border-color:#ef7180;box-shadow:inset 2px 0 0 #d85a69,0 0 0 2px rgba
 footer{border-top-color:#302025;color:#85898c}
 
 
+
+/* Rarity readout — cooler information colors on the existing Type A HUD */
+.rarityline{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}
+.raritylabel{font-family:var(--mono);font-size:12px;letter-spacing:.045em;color:#66d6e3}
+.raritycode{font-family:var(--mono);font-size:15px;font-weight:800;letter-spacing:.035em;color:#8feaf2;text-shadow:none}
+.rarityname{font-size:12px;font-weight:400;color:#d9dfe2}
+
 </style></head>
 <body><header><div class="brand">CYBER<em>SCAN</em></div><div class="label">BETA // CARD INDEX</div></header>
 <main class="wrap">
@@ -318,10 +325,10 @@ function show(query,scroll){
   $('variant').textContent=activeSection==="starter"?(activeStarter==="heist"?"THE HEIST · BETA":"EMBRACING POWER · BETA"):(entry.set?"BOX TOPPER":"WELCOME TO NIGHT CITY · BETA");
   const rn=$('rarityinfo');rn.replaceChildren();
   const line=document.createElement('div');line.className='rarityline';
-  const value=document.createElement('span');value.className='raritycode';
-  value.textContent='Rarity: '+(entry.rarityCode||RARITY_CODES[entry.rarity]||'?');
+  const label=document.createElement('span');label.className='raritylabel';label.textContent='Rarity:';
+  const codeNode=document.createElement('span');codeNode.className='raritycode';codeNode.textContent=entry.rarityCode||RARITY_CODES[entry.rarity]||'?';
   const expanded=document.createElement('span');expanded.className='rarityname';expanded.textContent=entry.rarity?(entry.rarity+'（'+(RARITY_ZH[entry.rarity]||'待確認')+'）'):'未確認';
-  line.append(value,expanded);rn.append(line);
+  line.append(label,codeNode,expanded);rn.append(line);
   const p=activeSection==="main"?prices[code]:null,usd=$('usd');usd.replaceChildren();
   if(p&&Number.isFinite(p.usd)){const prefix=document.createElement('span');prefix.className='currency-prefix';prefix.textContent='US$';const value=document.createElement('span');value.textContent=p.usd.toFixed(2);usd.append(prefix,value)}
   else usd.textContent='尚無報價';
