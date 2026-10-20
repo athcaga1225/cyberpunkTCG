@@ -61,6 +61,7 @@ const fmtTWD=n=>"約 NT$"+Math.round(n).toLocaleString("zh-TW");
 function normalize(q){q=String(q).trim().toUpperCase().replace(/^BOX\s*TOPPER\s*/,"T").replace(/^TOPPER\s*/,"T").replace(/^BT\s*/,"T").replace(/^[Ββ]/,"B").replace(/^\u03B2/,"B").replace(/[^A-Z0-9]/g,"");if(/^T\d{1,3}$/.test(q)){return "T"+q.slice(1).padStart(3,"0")}if(/^B?\d{1,3}[AB]?$/.test(q)){q=q.replace(/^B/,"");const m=q.match(/^(\d{1,3})([AB]?)$/);if(m)return "B"+m[1].padStart(3,"0")+m[2]}return q}
 function currency(n){return fmtTWD(n*rate)}
 const RARITY_CODES={"Common":"C","Uncommon":"UC","Rare":"R","Epic":"E","Secret":"S","Iconic Legend":"IL","Iconic Other":"IO","Iconic Secret":"IS","Nova Rare":"NR"};
+const RARITY_ZH={"Common":"普通","Uncommon":"非普通","Rare":"稀有","Epic":"史詩","Secret":"秘密稀有","Iconic Legend":"標誌性傳奇","Iconic Other":"標誌性特殊","Iconic Secret":"標誌性秘密稀有","Nova Rare":"Nova 稀有（Box Topper 特典）"};
 function currentCatalog(){return activeSection==="starter"?(starterSets[activeStarter]?.cards||{}):catalog}
 function chooseSection(section,starter){
   activeSection=section; if(starter)activeStarter=starter;
@@ -95,7 +96,7 @@ function show(query,scroll){
   const line=document.createElement('div');line.className='rarityline';
   const value=document.createElement('span');value.className='raritycode';
   value.textContent='Rarity: '+(entry.rarityCode||RARITY_CODES[entry.rarity]||'?');
-  const expanded=document.createElement('span');expanded.className='rarityname';expanded.textContent=entry.rarity||'未確認';
+  const expanded=document.createElement('span');expanded.className='rarityname';expanded.textContent=entry.rarity?(entry.rarity+'（'+(RARITY_ZH[entry.rarity]||'待確認')+'）'):'未確認';
   line.append(value,expanded);rn.append(line);
   const p=activeSection==="main"?prices[code]:null,usd=$('usd');usd.replaceChildren();
   if(p&&Number.isFinite(p.usd)){const prefix=document.createElement('span');prefix.className='currency-prefix';prefix.textContent='US$';const value=document.createElement('span');value.textContent=p.usd.toFixed(2);usd.append(prefix,value)}
