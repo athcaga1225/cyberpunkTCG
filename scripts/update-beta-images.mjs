@@ -4,6 +4,9 @@ const res=await fetch(collectionUrl,{signal:AbortSignal.timeout(20000),headers:{
 if(!res.ok)throw Error('Shopify collection HTTP '+res.status);
 const data=await res.json();
 if(!Array.isArray(data.products))throw Error('Missing Shopify products array');
+const fs=await import('node:fs');
+const catalog=JSON.parse(fs.readFileSync('card-catalog.json','utf8')).cards;
+const normalize=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,'');
 const images={};
 const duplicates=[];
 for(const p of data.products){
@@ -13,6 +16,8 @@ for(const p of data.products){
   const code='B'+match[1].toUpperCase();
   const number=Number(match[1].slice(0,3));
   if(number<1||number>171)continue;
+  const displayName=p.title.replace(/\s*\(B\d{3}[ab]?\).*$/i,'').replace(/\s*\([ab]\)$/i,'');
+  if(!catalog[code]||normalize(displayName)!==normalize(catalog[code].name))continue;
   const url=p.images?.[0]?.src||p.image?.src;
   if(!url||!url.startsWith('https://cdn.shopify.com/'))continue;
   if(images[code]){duplicates.push(code);continue}
@@ -25,7 +30,6 @@ const results=await Promise.all(Object.entries(images).map(async ([code,item])=>
 }));
 for(const [code,good]of results)if(!good)delete images[code];
 if(!images.B135||Object.keys(images).length<140)throw Error('Images failed verification: '+Object.keys(images).length);
-const fs=await import('node:fs');
-const payload={version:1,source:'Spellbound Games public Beta Singles Shopify product images',sourceUrl:'https://spellboundgames.co.uk/collections/cyberpunk-singles',notes:'Externally hosted product photos, not an official card image license. Images belong to their respective owners. No copies are stored in this repository.',images:Object.fromEntries(Object.entries(images).sort(([a],[b])=>a.localeCompare(b,undefined,{numeric:true})))};
+const payload={version:2,source:'Spellbound Games public Beta Singles Shopify product images',sourceUrl:'https://spellboundgames.co.uk/collections/cyberpunk-singles',notes:'Externally hosted product photos, not an official card image license. Images belong to their respective owners. Only records matching both card number and card name are included. No copies are stored in this repository.',images:Object.fromEntries(Object.entries(images).sort(([a],[b])=>a.localeCompare(b,undefined,{numeric:true})))};
 fs.writeFileSync('card-images.json',JSON.stringify(payload,null,2)+'\n');
 console.log('TOTAL PRODUCTS',data.products.length,'IMAGE MATCHES',Object.keys(images).length,'DUPLICATES',duplicates.length,'B135',JSON.stringify(images.B135));
