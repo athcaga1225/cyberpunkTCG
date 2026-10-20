@@ -27,9 +27,10 @@ def check(item):
   res=requests.get(card["imageUrl"],timeout=15,headers={"User-Agent":"Mozilla/5.0"})
   return (deck,code,res.status_code,res.headers.get("content-type"),len(res.content))
  except Exception as e:return (deck,code,"ERROR",str(e),0)
-items=[(code,card,deck) for deck,info in data["sets"].items() for code,card in info["cards"].items()]
+items=[(code,card,deck) for deck,info in data["sets"].items() for code,card in info["cards"].items() if card.get("imageUrl")]
 with concurrent.futures.ThreadPoolExecutor(max_workers=10) as pool:
  results=list(pool.map(check,items))
 bad=[x for x in results if x[2]!=200 or not str(x[3]).startswith("image/") or x[4]<3000]
-print("STARTER_IMAGE_TEST",len(results),"GOOD",len(results)-len(bad),"BAD",bad,flush=True)
+print("STARTER_IMAGE_TEST",len(results),"GOOD",len(results)-len(bad),"BAD",bad,"B018_DECLARED_NO_IMAGE",data["sets"]["heist"]["cards"]["B018"].get("imageUrl") is None,flush=True)
+if len(results)!=39 or data["sets"]["heist"]["cards"]["B018"].get("imageUrl") is not None:raise SystemExit("Unexpected starter image manifest")
 if bad:raise SystemExit(1)
