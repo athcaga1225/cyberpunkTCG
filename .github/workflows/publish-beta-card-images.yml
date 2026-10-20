@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - '.github/workflows/publish-beta-card-images.yml'
+      - 'scripts/update-beta-images.mjs'
   workflow_dispatch:
 permissions:
   contents: write
