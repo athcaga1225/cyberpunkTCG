@@ -1,0 +1,30 @@
+name: Probe Beta price pages
+on:
+  push:
+    paths:
+      - '.github/workflows/probe-beta-prices.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Inspect public price catalog structure
+        run: |
+          python - <<'PY'
+          import requests,re
+          from bs4 import BeautifulSoup
+          u='https://valuemycard.com/expansions/cyberpunk-tcg/24845-welcome-to-night-city-beta'
+          for url in [u,u+'?page=2',u+'?page=3']:
+            try:
+              r=requests.get(url,timeout=25,headers={'User-Agent':'Mozilla/5.0'})
+              soup=BeautifulSoup(r.text,'html.parser')
+              cards=soup.find_all('a',href=re.compile(r'/card/\d+'))
+              print('PAGE',url,'STATUS',r.status_code,'LENGTH',len(r.text),'CARDS',len(cards),'CARD SAMPLES',[(c.get('href'),c.get_text(' ',strip=True)[:100]) for c in cards[:3]])
+              print('BODY SAMPLE',soup.get_text(' ',strip=True)[-900:])
+              print('JSON SCRIPTS',[(s.get('id'),s.get('type'),len(s.get_text())) for s in soup.find_all('script') if s.get('id') or 'json' in str(s.get('type'))][:10])
+              open('/tmp/vmc-'+url[-1]+'.html','w').write(r.text)
+            except Exception as e:print('ERROR',str(e))
+          PY
