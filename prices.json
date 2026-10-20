@@ -131,9 +131,13 @@
       "condition": "Near Mint / where specified"
     },
     "B155": {
-      "usd": 99.79,
-      "printing": "as listed on source",
-      "condition": "Near Mint / where specified"
+      "usd": 256.05,
+      "name": "Alt Cunningham: Soulkiller Architect (ILegend)",
+      "source": "ValueMyCard TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24845-welcome-to-night-city-beta",
+      "observedDate": "2026-10-17",
+      "printing": "Welcome to Night City Beta B155 Iconic Legend foil",
+      "condition": "Ungraded US market reference"
     },
     "B001": {
       "usd": 4.37,
@@ -353,11 +357,13 @@
       "condition": "Near Mint reference"
     },
     "B141": {
-      "usd": 114.66,
-      "name": "Adam Smasher - Ender of Legends (ILegend)",
-      "source": "TCGplayer price guide",
-      "printing": "See rarity/name",
-      "condition": "Near Mint reference"
+      "usd": 120.84,
+      "name": "Adam Smasher: Ender of Legends (ILegend)",
+      "source": "ValueMyCard TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24845-welcome-to-night-city-beta",
+      "observedDate": "2026-10-17",
+      "printing": "Welcome to Night City Beta B141 Iconic Legend foil",
+      "condition": "Ungraded US market reference"
     },
     "B161": {
       "usd": 33.48,
@@ -402,18 +408,22 @@
       "condition": "Near Mint reference"
     },
     "B147": {
-      "usd": 82.65,
-      "name": "Muamar Reyes - El Capitan (ILegend)",
-      "source": "Sparkl TCGplayer reference",
-      "printing": "See rarity/name",
-      "condition": "Near Mint reference"
+      "usd": 82.4,
+      "name": "Muamar Reyes: El Capitán (ILegend)",
+      "source": "ValueMyCard TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24845-welcome-to-night-city-beta",
+      "observedDate": "2026-10-17",
+      "printing": "Welcome to Night City Beta B147 Iconic Legend foil",
+      "condition": "Ungraded US market reference"
     },
     "B157": {
-      "usd": 368.79,
-      "name": "Judy Alvarez - Braindance Maestro (ILegend)",
-      "source": "Sparkl TCGplayer reference",
-      "printing": "See rarity/name",
-      "condition": "Near Mint reference"
+      "usd": 365.69,
+      "name": "Judy Alvarez: Braindance Maestro (ILegend)",
+      "source": "ValueMyCard TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24845-welcome-to-night-city-beta",
+      "observedDate": "2026-10-17",
+      "printing": "Welcome to Night City Beta B157 Iconic Legend foil",
+      "condition": "Ungraded US market reference"
     },
     "B168": {
       "usd": 1034.46,
@@ -445,12 +455,129 @@
     },
     "B142": {
       "usd": 80.04,
-      "name": "Dexter DeShawn - Off the Grid (ILegend)",
+      "name": "Dexter DeShawn: Off the Grid (ILegend)",
       "source": "ValueMyCard TCGplayer US market reference",
-      "sourceUrl": "https://valuemycard.com/card/714304-dexter-deshawn-off-the-grid-ilegend-cyberpunk-tcg-welcome-to-night-city-beta",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24845-welcome-to-night-city-beta",
       "observedDate": "2026-10-17",
-      "printing": "Welcome to Night City Beta B142 Foil Iconic Legend",
-      "condition": "Ungraded market reference"
+      "printing": "Welcome to Night City Beta B142 Iconic Legend foil",
+      "condition": "Ungraded US market reference"
+    },
+    "B143": {
+      "usd": 67.89,
+      "name": "Royce: Psycho on the Edge (ILegend)",
+      "source": "ValueMyCard TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24845-welcome-to-night-city-beta",
+      "observedDate": "2026-10-17",
+      "printing": "Welcome to Night City Beta B143 Iconic Legend foil",
+      "condition": "Ungraded US market reference"
+    },
+    "B144": {
+      "usd": 126.06,
+      "name": "V: Streetkid (ILegend)",
+      "source": "ValueMyCard TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24845-welcome-to-night-city-beta",
+      "observedDate": "2026-10-17",
+      "printing": "Welcome to Night City Beta B144 Iconic Legend foil",
+      "condition": "Ungraded US market reference"
+    },
+    "B145": {
+      "usd": 65.62,
+      "name": "Dum Dum: Maelstrom Triggerman (ILegend)",
+      "source": "ValueMyCard TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24845-welcome-to-night-city-beta",
+      "observedDate": "2026-10-17",
+      "printing": "Welcome to Night City Beta B145 Iconic Legend foil",
+      "condition": "Ungraded US market reference"
+    },
+    "B146": {
+      "usd": 66.1,
+      "name": "Kerry Eurodyne: Axe, Attitude, Audience (ILegend)",
+      "source": "ValueMyCard TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24845-welcome-to-night-city-beta",
+      "observedDate": "2026-10-17",
+      "printing": "Welcome to Night City Beta B146 Iconic Legend foil",
+      "condition": "Ungraded US market reference"
+    },
+    "B148": {
+      "usd": 143.12,
+      "name": "River Ward: Detective on the Hunt (ILegend)",
+      "source": "ValueMyCard TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24845-welcome-to-night-city-beta",
+      "observedDate": "2026-10-17",
+      "printing": "Welcome to Night City Beta B148 Iconic Legend foil",
+      "condition": "Ungraded US market reference"
+    },
+    "B149": {
+      "usd": 92.85,
+      "name": "Rogue Amendiares: Preem Solo (ILegend)",
+      "source": "ValueMyCard TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24845-welcome-to-night-city-beta",
+      "observedDate": "2026-10-17",
+      "printing": "Welcome to Night City Beta B149 Iconic Legend foil",
+      "condition": "Ungraded US market reference"
+    },
+    "B150": {
+      "usd": 67.12,
+      "name": "Goro Takemura: Vengeful Bodyguard (ILegend)",
+      "source": "ValueMyCard TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24845-welcome-to-night-city-beta",
+      "observedDate": "2026-10-17",
+      "printing": "Welcome to Night City Beta B150 Iconic Legend foil",
+      "condition": "Ungraded US market reference"
+    },
+    "B151": {
+      "usd": 266.18,
+      "name": "Hanako Arasaka: Daughter of the Emperor (ILegend)",
+      "source": "ValueMyCard TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24845-welcome-to-night-city-beta",
+      "observedDate": "2026-10-17",
+      "printing": "Welcome to Night City Beta B151 Iconic Legend foil",
+      "condition": "Ungraded US market reference"
+    },
+    "B152": {
+      "usd": 65.03,
+      "name": "Jackie Welles: Mama's Favorite (ILegend)",
+      "source": "ValueMyCard TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24845-welcome-to-night-city-beta",
+      "observedDate": "2026-10-17",
+      "printing": "Welcome to Night City Beta B152 Iconic Legend foil",
+      "condition": "Ungraded US market reference"
+    },
+    "B153": {
+      "usd": 78.15,
+      "name": "Padre: Man of the Cross (ILegend)",
+      "source": "ValueMyCard TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24845-welcome-to-night-city-beta",
+      "observedDate": "2026-10-17",
+      "printing": "Welcome to Night City Beta B153 Iconic Legend foil",
+      "condition": "Ungraded US market reference"
+    },
+    "B154": {
+      "usd": 133.74,
+      "name": "Panam Palmer: Nomad Cavalry (ILegend)",
+      "source": "ValueMyCard TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24845-welcome-to-night-city-beta",
+      "observedDate": "2026-10-17",
+      "printing": "Welcome to Night City Beta B154 Iconic Legend foil",
+      "condition": "Ungraded US market reference"
+    },
+    "B156": {
+      "usd": 89.55,
+      "name": "Evelyn Parker: Beautiful Enigma (ILegend)",
+      "source": "ValueMyCard TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24845-welcome-to-night-city-beta",
+      "observedDate": "2026-10-17",
+      "printing": "Welcome to Night City Beta B156 Iconic Legend foil",
+      "condition": "Ungraded US market reference"
+    },
+    "B158": {
+      "usd": 88.29,
+      "name": "Wakako Okada: Peace and Harmony (ILegend)",
+      "source": "ValueMyCard TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24845-welcome-to-night-city-beta",
+      "observedDate": "2026-10-17",
+      "printing": "Welcome to Night City Beta B158 Iconic Legend foil",
+      "condition": "Ungraded US market reference"
     }
   },
   "sources": {
