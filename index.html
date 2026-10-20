@@ -46,7 +46,7 @@ const ico=document.createElement("span");ico.style.fontSize="26px";ico.textConte
 const caption=document.createElement("span");caption.style.fontSize="12px";
 caption.textContent=code==="B135"?"查看 Pyramid Song 卡圖 ↗":"前往 Beta 圖鑑查看卡圖 ↗";
 link.append(ico,caption);art.append(link);
-note.textContent="目前尚未取得經驗證且允許嵌入的卡圖來源，暫時提供外部圖鑑入口。";
+note.textContent="";
 if(scroll)$('result').scrollIntoView({behavior:"smooth",block:"start"})}
 $('search').onclick=()=>$('query').value&&show($('query').value,true);
 $('query').onkeydown=e=>{if(e.key==="Enter")show($('query').value,true)};
