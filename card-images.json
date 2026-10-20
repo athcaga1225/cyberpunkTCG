@@ -2,8 +2,13 @@
   "version": 2,
   "source": "Spellbound Games public Beta Singles Shopify product images",
   "sourceUrl": "https://spellboundgames.co.uk/collections/cyberpunk-singles",
-  "notes": "Externally hosted product photos, not an official card image license. Images belong to their respective owners. No copies are stored in this repository. Image records with mismatched card names have been omitted to avoid showing another set's artwork.",
+  "notes": "Externally hosted product photos, not an official card image license. Images belong to their respective owners. Only records matching both card number and card name are included. No copies are stored in this repository.",
   "images": {
+    "B001": {
+      "url": "https://cdn.shopify.com/s/files/1/0811/4641/3357/files/b001-adamsmasherenderoflegends.jpg?v=1789055363",
+      "title": "Adam Smasher - Ender of Legends (B001)",
+      "sourceUrl": "https://spellboundgames.co.uk/products/cyberpunk-singles-wnb-adamsmasherenderoflegends-b001-epic"
+    },
     "B002": {
       "url": "https://cdn.shopify.com/s/files/1/0811/4641/3357/files/b002-dexterdeshawnoffthegrid.jpg?v=1789055376",
       "title": "Dexter DeShawn - Off the Grid (B002)",
@@ -59,6 +64,11 @@
       "title": "Johnny Silverhand - Never Stop Fighting (B011)",
       "sourceUrl": "https://spellboundgames.co.uk/products/cyberpunk-singles-wnb-johnnysilverhandneverstopfighting-b011-epic"
     },
+    "B012": {
+      "url": "https://cdn.shopify.com/s/files/1/0811/4641/3357/files/b012-kerryeurodynethelastrockerboy.jpg?v=1789055384",
+      "title": "Kerry Eurodyne - The Last Rockerboy (B012)",
+      "sourceUrl": "https://spellboundgames.co.uk/products/cyberpunk-singles-wnb-kerryeurodynethelastrockerboy-b012-uncommon"
+    },
     "B013": {
       "url": "https://cdn.shopify.com/s/files/1/0811/4641/3357/files/b013-lalloronaghostofthepast.jpg?v=1789055382",
       "title": "La Llorona - Ghost of the Past (B013)",
@@ -69,10 +79,20 @@
       "title": "Meredith Stout - Stone Cold Corpo (B014)",
       "sourceUrl": "https://spellboundgames.co.uk/products/cyberpunk-singles-wnb-meredithstoutstonecoldcorpo-b014-rare"
     },
+    "B015": {
+      "url": "https://cdn.shopify.com/s/files/1/0811/4641/3357/files/b015-octant.jpg?v=1789055368",
+      "title": "Octant (B015)",
+      "sourceUrl": "https://spellboundgames.co.uk/products/cyberpunk-singles-wnb-octant-b015-common"
+    },
     "B016": {
       "url": "https://cdn.shopify.com/s/files/1/0811/4641/3357/files/b016-roycedontcallmesimon.jpg?v=1789055368",
       "title": "Royce - Don't Call Me Simon (B016)",
       "sourceUrl": "https://spellboundgames.co.uk/products/cyberpunk-singles-wnb-roycedontcallmesimon-b016-uncommon"
+    },
+    "B017": {
+      "url": "https://cdn.shopify.com/s/files/1/0811/4641/3357/files/b017-ruthlesslowlife.jpg?v=1789055377",
+      "title": "Ruthless Lowlife (B017)",
+      "sourceUrl": "https://spellboundgames.co.uk/products/cyberpunk-singles-wnb-ruthlesslowlife-b017-common"
     },
     "B018": {
       "url": "https://cdn.shopify.com/s/files/1/0811/4641/3357/files/b018-screwlovelornfool.jpg?v=1789055382",
