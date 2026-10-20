@@ -147,8 +147,8 @@
           "rarity": "Common",
           "rarityCode": "C",
           "setCode": "SD01B",
-          "imageUrl": "https://holohoard.app/api/img/cards/cyberpunk-tcg/the-heist-beta-starter-deck/webp/b018-tetratonic-rippler.webp",
-          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/the-heist-beta-starter-deck"
+          "imageUrl": null,
+          "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/the-heist-beta-starter-deck/card-tetratronic-rippler-the-heist-beta"
         },
         "B019": {
           "name": "Floor It",
