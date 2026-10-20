@@ -1,8 +1,8 @@
 {
-  "version": 2,
+  "version": 3,
   "source": "Spellbound Games public Beta Singles Shopify product images",
   "sourceUrl": "https://spellboundgames.co.uk/collections/cyberpunk-singles",
-  "notes": "Externally hosted product photos, not an official card image license. Images belong to their respective owners. Only records matching both card number and card name are included. No copies are stored in this repository.",
+  "notes": "Main-set Beta images are externally hosted by Spellbound Games. Beta Box Topper images are externally hosted by HoloHoard. All six Box Topper URLs returned valid WebP images on 2026-10-20. Images remain property of their copyright holders.",
   "images": {
     "B001": {
       "url": "https://cdn.shopify.com/s/files/1/0811/4641/3357/files/b001-adamsmasherenderoflegends.jpg?v=1789055363",
@@ -863,6 +863,36 @@
       "url": "https://cdn.shopify.com/s/files/1/0811/4641/3357/files/b171-judyalvareznothingtodoubt.jpg?v=1789055371",
       "title": "Judy Alvarez - Nothing to Doubt (B171)",
       "sourceUrl": "https://spellboundgames.co.uk/products/cyberpunk-singles-wnb-judyalvareznothingtodoubt-b171-iconicsecret"
+    },
+    "T001": {
+      "url": "https://holohoard.app/api/img/cards/cyberpunk-tcg/box-toppers-beta/webp/b001-yorinobu-arasaka-embracing-destruction.webp",
+      "title": "Yorinobu Arasaka: Embracing Destruction (Beta Box Topper β001)",
+      "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/box-toppers-beta/card-yorinobu-arasaka-embracing-destruction-box-toppers-beta"
+    },
+    "T002": {
+      "url": "https://holohoard.app/api/img/cards/cyberpunk-tcg/box-toppers-beta/webp/b002-viktor-vektor-sit-down-and-relax.webp",
+      "title": "Viktor Vektor: Sit Down and Relax (Beta Box Topper β002)",
+      "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/box-toppers-beta/card-viktor-vektor-sit-down-and-relax-box-toppers-beta"
+    },
+    "T003": {
+      "url": "https://holohoard.app/api/img/cards/cyberpunk-tcg/box-toppers-beta/webp/b003-goro-takemura-hands-unclean.webp",
+      "title": "Goro Takemura: Hands Unclean (Beta Box Topper β003)",
+      "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/box-toppers-beta/card-goro-takemura-hands-unclean-box-toppers-beta"
+    },
+    "T004": {
+      "url": "https://holohoard.app/api/img/cards/cyberpunk-tcg/box-toppers-beta/webp/b004-saburo-arasaka-stubborn-patriarch.webp",
+      "title": "Saburo Arasaka: Stubborn Patriarch (Beta Box Topper β004)",
+      "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/box-toppers-beta/card-saburo-arasaka-stubborn-patriarch-box-toppers-beta"
+    },
+    "T005": {
+      "url": "https://holohoard.app/api/img/cards/cyberpunk-tcg/box-toppers-beta/webp/b005-jackie-welles-pour-one-out-for-me.webp",
+      "title": "Jackie Welles: Pour One Out For Me (Beta Box Topper β005)",
+      "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/box-toppers-beta/card-jackie-welles-pour-one-out-for-me-box-toppers-beta"
+    },
+    "T006": {
+      "url": "https://holohoard.app/api/img/cards/cyberpunk-tcg/box-toppers-beta/webp/b006-v-corporate-exile.webp",
+      "title": "V: Corporate Exile (Beta Box Topper β006)",
+      "sourceUrl": "https://holohoard.app/explore/game/cyberpunk-tcg/box-toppers-beta/card-v-corporate-exile-box-toppers-beta"
     }
   }
 }
