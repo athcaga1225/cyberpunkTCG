@@ -16,6 +16,14 @@ jobs:
           import requests,re,json
           from bs4 import BeautifulSoup
           links=['https://cardonaut.com/en/cyberpunk/extensions/welcome-to-night-city-box-toppers-beta--PRMWNCB','https://mtcg.pl/en/cyberpunk/box-toppers-beta','https://holohoard.app/explore/game/cyberpunk-tcg/box-toppers-beta/card-v-corporate-exile-box-toppers-beta']
+          base='https://holohoard.app'
+          cards={'T001':'b001-yorinobu-arasaka-embracing-destruction','T002':'b002-viktor-vektor-sit-down-and-relax','T003':'b003-goro-takemura-hands-unclean','T004':'b004-saburo-arasaka-stubborn-patriarch','T005':'b005-jackie-welles-pour-one-out-for-me','T006':'b006-v-corporate-exile'}
+          for code,slug in cards.items():
+            url=base+'/api/img/cards/cyberpunk-tcg/box-toppers-beta/webp/'+slug+'.webp'
+            try:
+              r=requests.get(url,timeout=20,headers={'User-Agent':'Mozilla/5.0'})
+              print('CARD IMAGE',code,r.status_code,r.headers.get('content-type'),len(r.content),r.content[:4].hex(),url,flush=True)
+            except Exception as e:print('CARD ERROR',code,str(e))
           for url in links:
             try:
               r=requests.get(url,timeout=20,headers={'User-Agent':'Mozilla/5.0'})
