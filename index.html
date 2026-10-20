@@ -86,7 +86,7 @@ if(rarity){
   name.textContent=entry.rarity+' · '+rarity.zh;
   line.append(stars,name);
   const tip=document.createElement('div');tip.className='raritytip';
-  tip.textContent=rarity.tip+' · 星星為非官方視覺提醒，不代表抽中機率或實際價格';
+  tip.textContent=rarity.tip+'';
   rarityNode.append(line,tip);
 }else{
   const label=document.createElement('span');label.className='rarityunknown';
