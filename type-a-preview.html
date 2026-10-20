@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#101417">
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#100b0e">
 <title>CYBERSCAN — TYPE A PREVIEW</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,6 +75,55 @@ footer{font-size:11px;border-top:1px solid #344549;padding-top:25px;color:#81959
 @media(max-width:600px){header{padding:16px 18px;min-height:65px}header:after{right:18px;bottom:-17px;font-size:8px}.wrap{padding:39px 15px 70px}.intro{font-size:12px}.settabs{margin-top:24px}.settab{font-size:11px;padding:14px 12px;min-height:55px}.settab:before{display:block;margin-bottom:7px}.panel{padding:20px 16px;clip-path:polygon(0 0,calc(100% - 15px) 0,100% 15px,100% 100%,0 100%)}.cardgrid{grid-template-columns:112px minmax(0,1fr);gap:16px}.art{min-height:155px}.cardtitle{font-size:20px}.price{font-size:30px}.rarityline{gap:5px}.rarityname{font-size:11px}}
 @media(max-width:380px){.search{flex-direction:column}.search button{width:100%}.cardgrid{grid-template-columns:100px minmax(0,1fr);gap:12px}.cardtitle{font-size:18px}.price{font-size:26px}.raritycode{font-size:12px}.approx{font-size:17px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+
+/* TYPE A / 2077 GAME HUD — deep-black + signal red, with restrained accents */
+:root{--acid:#ff5261;--cyan:#ff8990;--ink:#0d090c;--line:rgba(255,104,116,.25);background:#100b0e;color:#f4eded}
+html{background:#100b0e}
+body{background:radial-gradient(ellipse 780px 490px at 87% 5%,rgba(112,23,36,.22),transparent 69%),linear-gradient(120deg,rgba(210,55,72,.035),transparent 60%),#100b0e}
+body:before{background-image:linear-gradient(rgba(188,77,90,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(188,77,90,.1) 1px,transparent 1px)}
+header{background:rgba(16,9,13,.94)}
+header .label,.brand em{color:var(--acid)}
+.wrap>.label:first-child{color:var(--cyan);border-left-color:var(--acid)}
+h1 span{color:#ff5565;text-shadow:none}
+.intro{color:#c7b5b8}
+.settabs{border-bottom-color:#8a4d56}
+.settab{background:#1b1116;color:#d5c4c7;border-color:#613b44}
+.settab[aria-selected="true"]{background:var(--acid);border-color:var(--acid);color:#190c10}
+.settab[aria-selected="true"]:before{color:#4f1720}
+.settab[aria-selected="true"]:after{border-bottom-color:#100b0e}
+.startersets button{background:#201218;border-color:#68414a}
+.startersets button[aria-pressed="true"]{background:#37171e;border-color:var(--acid);color:#ffc7cc}
+.panel{background:linear-gradient(135deg,rgba(41,24,31,.97),rgba(25,16,21,.98));border-color:#67434b;border-left-color:var(--acid)}
+.panel h2{color:#ff6976}
+.panel h2:before,.panel h2:after{color:#bd7180}
+input{background:#130c10;color:#fff7f6;border-color:#774a55}
+input::placeholder{color:#b18b92}
+input:focus{border-color:#ff5769;box-shadow:inset 3px 0 0 #ff5769}
+button{border-color:#794854}
+.primary{background:#ff5261;border-color:#ff5261;color:#19090e}
+.primary:hover{background:#ff8290}
+#loadstate{color:#cdb4ba}
+#loadstate:before{color:#ff7e8a}
+.detail{border-left-color:#ff8893}
+.detail>.row>.label{color:#ff8d99}
+.badge{color:#ff9faa;border-color:rgba(255,98,119,.48);background:rgba(255,88,102,.12)}
+.art{border-color:#8a5a62;background:#160e13}
+#number{color:#ff9faa}
+.cardtitle{color:#fff3f1}
+.rarityinfo{border-color:#6a4650}
+.raritycode{color:#ff7583}
+.rarityname{color:#d0b9bf}
+#result .label[style]{color:#c998a3}
+.price{color:#fff5f4}
+.price .currency-prefix{color:#ff9aa3}
+.approx{color:#ff7886}
+.approx .twd-prefix{color:#c9aeb6}
+.divider{background:repeating-linear-gradient(90deg,#8f5260 0 40px,transparent 40px 46px)}
+.links a{background:rgba(22,10,15,.65);border-color:#80545d;color:#ecd4d9}
+.links a:hover{border-color:#ff6976;color:#ff99a4}
+footer{color:#a88e95;border-top-color:#65434c}
+::selection{background:#ff6676;color:#16090c}
 
 </style></head>
 <body><header><div class="brand">CYBER<em>SCAN</em></div><div class="label">BETA // CARD INDEX</div></header>
