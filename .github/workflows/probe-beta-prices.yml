@@ -13,6 +13,7 @@ jobs:
     steps:
       - name: Inspect public price catalog structure
         run: |
+          python -m pip install --quiet requests beautifulsoup4
           python - <<'PY'
           import requests,re
           from bs4 import BeautifulSoup
