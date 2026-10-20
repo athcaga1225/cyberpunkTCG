@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "info": "172 Welcome to Night City Beta main set entries (B001-B171 including B005A/B), plus 6 separately identifiable Box Topper Beta promo entries (T001-T006 app-only IDs to distinguish duplicate β numbers). Rarity labels matched by card number AND card name against beta singles listing; unmatched records remain unverified.",
   "sources": [
     "https://www.tcdb.com/Checklist.cfm/sid/684121/2026-Cyberpunk-TCG-Welcome-to-Night-City-Beta",
@@ -10,7 +10,9 @@
   "cards": {
     "B001": {
       "name": "Adam Smasher: Ender of Legends",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Epic",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B002": {
       "name": "Dexter DeShawn: Off the Grid",
@@ -80,7 +82,9 @@
     },
     "B012": {
       "name": "Kerry Eurodyne: The Last Rockerboy",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Uncommon",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B013": {
       "name": "La Llorona: Ghost of the Past",
@@ -96,7 +100,9 @@
     },
     "B015": {
       "name": "Octant",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B016": {
       "name": "Royce: Don't Call Me Simon",
@@ -106,7 +112,9 @@
     },
     "B017": {
       "name": "Ruthless Lowlife",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B018": {
       "name": "Screw: Lovelorn Fool",
