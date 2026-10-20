@@ -70,9 +70,9 @@ const rarityDetails={
 "Rare":{zh:"稀有",stars:3,tip:"值得留意"},
 "Epic":{zh:"史詩",stars:4,tip:"建議確認卡片版本及市價"},
 "Secret":{zh:"秘密稀有",stars:5,tip:"特殊稀有度，建議特別留意"},
-"Iconic Legend":{zh:"Iconic 傳奇",stars:5,tip:"Iconic 特殊版本"},
+"Iconic Legend":{zh:"Iconic 傳奇",stars:6,tip:"Iconic 特殊版本"},
 "Iconic Other":{zh:"Iconic 特殊",stars:5,tip:"Iconic 特殊版本"},
-"Iconic Secret":{zh:"Iconic 秘密",stars:5,tip:"Iconic 特殊版本"},
+"Iconic Secret":{zh:"Iconic 秘密",stars:6,tip:"Iconic 特殊版本"},
 "Nova Rare":{zh:"Nova 稀有",stars:4,tip:"Box Topper 特殊版本"}
 };
 const rarity=rarityDetails[entry.rarity], rarityNode=$('rarityinfo');
@@ -80,7 +80,7 @@ rarityNode.replaceChildren();
 if(rarity){
   const line=document.createElement('div');line.className='rarityline';
   const stars=document.createElement('span');stars.className='raritystars';
-  stars.textContent='★'.repeat(rarity.stars)+'☆'.repeat(5-rarity.stars);
+  stars.textContent='★'.repeat(rarity.stars)+'☆'.repeat(Math.max(0,5-rarity.stars));
   stars.setAttribute('aria-label','收藏提醒等級 '+rarity.stars+' 星（非官方機率）');
   const name=document.createElement('span');name.className='rarityname';
   name.textContent=entry.rarity+' · '+rarity.zh;
