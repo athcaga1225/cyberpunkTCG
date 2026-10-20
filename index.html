@@ -38,7 +38,7 @@ $('tcg').href="https://www.tcgplayer.com/search/all/product?q="+encodeURICompone
 $('cataloglink').href=setUrl;
 
 const art=$('imagebox');art.replaceChildren();const note=$('imgnote');
-const link=document.createElement("a");link.href="https://tcgcontender.com/cyberpunk/cards/"+encodeURIComponent(entry.name.replace(/:\\s*/g," - "));link.target="_blank";link.rel="noopener noreferrer";link.style.cssText="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:182px;width:100%;padding:14px;text-align:center;color:#def25b;text-decoration:none;gap:8px";
+const link=document.createElement("a");link.href="https://tcgcontender.com/cyberpunk/cards/"+encodeURIComponent(entry.name.replace(/:\s*/g," - "));link.target="_blank";link.rel="noopener noreferrer";link.style.cssText="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:182px;width:100%;padding:14px;text-align:center;color:#def25b;text-decoration:none;gap:8px";
 const ico=document.createElement("span");ico.style.fontSize="26px";ico.textContent="▣";const caption=document.createElement("span");caption.style.fontSize="12px";caption.textContent="開啟對應卡片圖鑑 ↗";link.append(ico,caption);art.append(link);note.textContent="目前未取得可穩定顯示的 Beta 卡圖網址。點擊上方開啟外部圖鑑查看卡面。";
 if(scroll)$('result').scrollIntoView({behavior:"smooth",block:"start"})}
 $('search').onclick=()=>$('query').value&&show($('query').value,true);
