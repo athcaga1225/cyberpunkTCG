@@ -442,6 +442,15 @@
       "source": "Sparkl TCGplayer reference",
       "printing": "See rarity/name",
       "condition": "Near Mint reference"
+    },
+    "B142": {
+      "usd": 80.04,
+      "name": "Dexter DeShawn - Off the Grid (ILegend)",
+      "source": "ValueMyCard TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/card/714304-dexter-deshawn-off-the-grid-ilegend-cyberpunk-tcg-welcome-to-night-city-beta",
+      "observedDate": "2026-10-17",
+      "printing": "Welcome to Night City Beta B142 Foil Iconic Legend",
+      "condition": "Ungraded market reference"
     }
   },
   "sources": {
