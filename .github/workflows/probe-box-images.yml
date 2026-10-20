@@ -1,0 +1,32 @@
+name: Probe Beta Box Topper images
+on:
+  push:
+    paths:
+      - '.github/workflows/probe-box-images.yml'
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Inspect available Beta Box Topper card images
+        run: |
+          python -m pip install -q requests beautifulsoup4
+          python - <<'PY'
+          import requests,re,json
+          from bs4 import BeautifulSoup
+          links=['https://cardonaut.com/en/cyberpunk/extensions/welcome-to-night-city-box-toppers-beta--PRMWNCB','https://mtcg.pl/en/cyberpunk/box-toppers-beta','https://holohoard.app/explore/game/cyberpunk-tcg/box-toppers-beta/card-v-corporate-exile-box-toppers-beta']
+          for url in links:
+            try:
+              r=requests.get(url,timeout=20,headers={'User-Agent':'Mozilla/5.0'})
+              soup=BeautifulSoup(r.text,'html.parser')
+              print('PAGE',url,'STATUS',r.status_code,'LEN',len(r.content))
+              for x in soup.find_all('img')[:22]:
+                print('IMG',str(x.get('alt'))[:90],str(x.get('src'))[:280],str(x.get('data-src'))[:90])
+              for x in soup.find_all('a',href=True):
+                if any(z in x.get_text(' ',strip=True).lower() for z in ['yorinobu arasaka','viktor vektor','goro takemura','saburo arasaka','jackie welles','corporate exile']):
+                  print('LINK',x.get_text(' ',strip=True)[:70],x['href'][:230])
+              for m in list(re.finditer('PRMWNCB-00[1-6]',r.text))[:3]:
+                print('CONTEXT',r.text[max(0,m.start()-180):m.end()+200].replace('\n',' ')[:380])
+            except Exception as e:print('ERROR',str(e))
+          PY
