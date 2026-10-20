@@ -1,0 +1,15 @@
+name: Probe Beta starter art
+on:
+  push:
+    paths:
+      - '.github/workflows/probe-starter-art.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q requests beautifulsoup4
+      - run: python scripts/probe-starter-sources.py
