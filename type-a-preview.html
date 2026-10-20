@@ -514,6 +514,46 @@
             }
         }
     
+
+        /* Cyberpunk red-black palette — consistent with the retained HUD frames. */
+        :root { background:#050607; color:#e9e6e7; }
+        html,body { background:#050607; }
+        header { border-bottom-color:#39242b; }
+        .brand em,h1 span { color:#e66c79; }
+        .label { color:#b9aeb3; }
+        .small,.muted,.note { color:#9ca5aa; }
+        .intro { color:#a9aeb2; }
+        .settabs { gap:0; border-bottom:1px solid #9c4051; }
+        .settab { border-radius:0; background:#110c10; border-color:#5b303c; color:#c9c1c5; }
+        .settab[aria-selected="true"] { background:rgba(101,26,41,.42); color:#f4e4e7; border-color:#cf5769; box-shadow:inset 0 -2px 0 #e96272; }
+        .startersets button { border-radius:0; background:#170e13; border-color:#643542; color:#e0c8cf; }
+        .startersets button[aria-pressed="true"] { background:#33161f; color:#f0a2ad; border-color:#c75b6d; }
+        input { border-radius:0; background:#08090d; color:#f2eeee; border-color:#71404c; }
+        input:focus { border-color:#e66b7b; box-shadow:inset 2px 0 0 #db6070; }
+        button { border-radius:0; border-color:#78404b; background:#28151d; color:#f1e7ea; }
+        .primary { background:#702c3a; color:#ffe8ec; border-color:#cf596b; }
+        .primary:hover { background:#8e394b; border-color:#ee7684; }
+        .badge { border-radius:0; background:#301720; color:#e6a3ad; border:1px solid #824453; }
+        .rarityinfo { border-color:#49323a; color:#c1b7bb; }
+        .rarityinfo strong { color:#f0e9eb; }
+        .rarityinfo .rarityhigh,.rarityspecial,.raritycode,.raritystars { color:#ed8896; }
+        .rarityname,.raritytip { color:#bfc1c5; }
+        .setsublabel { color:#c5afb6; }
+        .art { border-radius:0; border-color:#67404b; background:#0d0a0e; }
+        .art .empty { color:#b3a9ae; }
+        .cardtitle { color:#f3edef; }
+        .price { color:#f5edef; }
+        .approx { color:#e7a0aa; }
+        .divider { background:#4b323b; }
+        .links a { border-radius:0; border-color:#75434f; background:#160e13; color:#ead5db; }
+        .links a:hover { border-color:#e56e7e; color:#ffe5ea; }
+        .catalog { border-top-color:#50333d; }
+        .entry { border-bottom-color:#49313a; }
+        .entry .meta { color:#bcaeb4; }
+        .stat { border-radius:0; background:#1b1016; }
+        footer { color:#939499; border-top:1px solid #39272e; padding-top:20px; }
+        ::selection { background:#ac4356; color:#fff; }
+
         /* Cyberpunk HUD frames only — retain the uploaded version's layout and functionality. */
         .panel {
             position: relative;
@@ -624,7 +664,7 @@
             const art = $('imagebox'); art.replaceChildren();
             const a = document.createElement("a");
             a.href = activeSection === "starter" ? (currentCatalog()[code]?.sourceUrl || "https://holohoard.app/explore/game/cyberpunk-tcg/" + (activeStarter === "heist" ? "the-heist-beta-starter-deck" : "embracing-power-beta-starter-deck")) : "https://exburst.dev/cyberpunk/series/beta"; a.target = "_blank"; a.rel = "noopener noreferrer";
-            a.style.cssText = "display:flex;align-items:center;justify-content:center;min-height:182px;padding:14px;text-align:center;color:#def25b;text-decoration:none;font-size:12px";
+            a.style.cssText = "display:flex;align-items:center;justify-content:center;min-height:182px;padding:14px;text-align:center;color:#e7a0aa;text-decoration:none;font-size:12px";
             a.textContent = activeSection === "starter" ? "查看這張卡的原始資料 ↗" : "查看外部 Beta 圖鑑 ↗"; art.append(a);
             $('imgnote').textContent = "目前沒有這張卡的共用圖片。";
         }
