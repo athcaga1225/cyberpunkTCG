@@ -1,0 +1,39 @@
+name: Probe Beta Card Art
+on:
+  push:
+    paths:
+      - '.github/workflows/probe-beta-art.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Check Shopify product image endpoints
+        env:
+          NODE_OPTIONS: "--no-warnings"
+        run: |
+          node <<'JS'
+          (async()=>{
+            const endpoints=[
+              'https://spellboundgames.co.uk/products/cyberpunk-singles-wnb-pyramidsong-b135-rare.js',
+              'https://spellboundgames.co.uk/collections/cyberpunk-singles/products.json?limit=250'
+            ];
+            for(const url of endpoints){
+              try{
+                const res=await fetch(url,{headers:{'User-Agent':'Mozilla/5.0 CYBERSCAN-image-probe','Accept':'application/json'},signal:AbortSignal.timeout(15000)});
+                console.log('ENDPOINT',url,'STATUS',res.status,'TYPE',res.headers.get('content-type'));
+                const txt=await res.text();const data=JSON.parse(txt);
+                const product=data.product;
+                const hits=product?[product]:Array.isArray(data.products)?data.products.filter(p=>/pyramid song|b135/i.test(p.title+' '+p.handle)):[];
+                console.log('TOTAL',data.products?.length??1,'B135',JSON.stringify(hits.map(p=>({title:p.title,handle:p.handle,images:p.images?.map(i=>i.src),productImage:p.image?.src}))));
+                for(const p of hits)for(const im of p.images?.slice(0,1)||[]){
+                  const head=await fetch(im.src,{method:'HEAD',signal:AbortSignal.timeout(15000)});
+                  console.log('IMAGE HEAD',head.status,head.headers.get('content-type'),im.src);
+                }
+              }catch(e){console.log('ERROR',url,e.message)}
+            }
+          })().catch(e=>{console.error(e);process.exitCode=1});
+          JS
