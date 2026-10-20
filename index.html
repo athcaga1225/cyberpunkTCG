@@ -14,7 +14,7 @@
 <section class="panel detail" id="result"><div class="row space"><div class="label">CARD DETAIL</div><div class="badge" id="variant">BETA</div></div>
 <div class="cardgrid" style="margin-top:14px"><div><div class="art" id="imagebox"><div class="empty">卡圖載入中</div></div><p class="note" id="imgnote"></p></div><div><div class="label" id="number"></div><h2 class="cardtitle" id="name"></h2><div class="rarityinfo" id="rarityinfo"></div><div class="label" style="margin-top:14px">市場參考價 / MARKET PRICE</div><div class="price" id="usd">—</div><div class="approx" id="twd"></div><p class="note" id="pricenote"></p></div></div>
 <div class="divider"></div><div class="links"><a id="tcg" target="_blank" rel="noopener noreferrer">TCGplayer 查價</a><a id="cataloglink" target="_blank" rel="noopener noreferrer">查看 Beta 卡片圖鑑</a></div></section>
-<section class="panel"><div class="row space"><h2>匯率與資料說明</h2><span class="badge">USD → TWD</span></div><div class="row"><div class="small">1 美元約 NT$</div><input id="rate" aria-label="美元換算台幣匯率" type="number" step="0.01" min="1" max="100" value="32.47"></div><p class="note">預設換算率為 2026/10/19 的參考值 32.47，非即時銀行匯率，可自行調整。價格資料為不同時間蒐集的歷史參考數字，並非目前成交價；外部資料來源可能變動。Beta 主系列圖片使用外部商家公開的商品圖網址，可能隨來源網站更新而變動。Box Topper 與主系列都有 β001～β006 編號；為避免混淆，本站使用 T001～T006 代表 Box Topper（例如 T006 = V: Corporate Exile）。</p></section>
+<section class="panel"><div class="row space"><h2>匯率與資料說明</h2><span class="badge">USD → TWD</span></div><div class="row"><div class="small">1 美元約 NT$</div><input id="rate" aria-label="美元換算台幣匯率" type="number" step="0.01" min="1" max="100" value="32.47"></div><p class="note">預設換算率為 2026/10/19 的參考值 32.47，非即時銀行匯率，可自行調整。價格資料為不同時間蒐集的歷史參考數字，並非目前成交價；外部資料來源可能變動。卡圖使用外部公開的圖片網址（Beta 主系列：Spellbound Games；Box Topper：HoloHoard），可能隨來源網站更新而變動。Box Topper 與主系列都有 β001～β006 編號；為避免混淆，本站使用 T001～T006 代表 Box Topper（例如 T006 = V: Corporate Exile）。</p></section>
 <footer>CYBERSCAN 是非官方收藏工具。與 Cyberpunk TCG、TCGplayer 無關；卡圖版權歸原權利人所有。價格不能作為保證成交報價。</footer>
 </main>
 <script>
@@ -49,7 +49,7 @@ function displayArt(code,entry){
     const note=$('imgnote');note.replaceChildren();
     const link=document.createElement("a");
     link.href=record.sourceUrl;link.target="_blank";link.rel="noopener noreferrer";
-    link.style.color="#a6b8ba";link.textContent="卡圖來源：Spellbound Games ↗";
+    link.style.color="#a6b8ba";link.textContent="卡圖來源："+(code.startsWith("T")?"HoloHoard":"Spellbound Games")+" ↗";
     note.append(link);
   };
   image.onerror=()=>{if(requestId===artRequest)galleryFallback(code)};
@@ -102,6 +102,6 @@ if(scroll)$('result').scrollIntoView({behavior:"smooth",block:"start"})}
 $('search').onclick=()=>$('query').value&&show($('query').value,true);
 $('query').onkeydown=e=>{if(e.key==="Enter")show($('query').value,true)};
 $('rate').onchange=()=>{const v=Number($('rate').value);if(v>=1&&v<=100){rate=v;try{localStorage.setItem("cyberscan-usd-twd",String(rate))}catch(e){}if(selected)show(selected,false)}else{$('rate').value=rate}};
-async function init(){const results=await Promise.allSettled([fetch("./card-catalog.json?v=5",{cache:"no-cache"}).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}),fetch("./prices.json?v=5",{cache:"no-cache"}).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}),fetch("./card-images.json?v=1",{cache:"no-cache"}).then(r=>{if(!r.ok)throw Error(r.status);return r.json()})]);if(results[0].status==="fulfilled")catalog=results[0].value.cards||{};if(results[1].status==="fulfilled"){prices=results[1].value.prices||{};priceDate=results[1].value.observedDate||"未註明"}if(results[2].status==="fulfilled")cardImages=results[2].value.images||{};$('loadstate').textContent=Object.keys(catalog).length===178?"已載入 Beta 主系列 172 項＋Box Topper 6 項。":"卡表資料未完整載入，請重新整理。";if(location.hash){const code=decodeURIComponent(location.hash.slice(1));if(catalog[normalize(code)])show(code,false)}}
+async function init(){const results=await Promise.allSettled([fetch("./card-catalog.json?v=5",{cache:"no-cache"}).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}),fetch("./prices.json?v=5",{cache:"no-cache"}).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}),fetch("./card-images.json?v=3",{cache:"no-cache"}).then(r=>{if(!r.ok)throw Error(r.status);return r.json()})]);if(results[0].status==="fulfilled")catalog=results[0].value.cards||{};if(results[1].status==="fulfilled"){prices=results[1].value.prices||{};priceDate=results[1].value.observedDate||"未註明"}if(results[2].status==="fulfilled")cardImages=results[2].value.images||{};$('loadstate').textContent=Object.keys(catalog).length===178?"已載入 Beta 主系列 172 項＋Box Topper 6 項。":"卡表資料未完整載入，請重新整理。";if(location.hash){const code=decodeURIComponent(location.hash.slice(1));if(catalog[normalize(code)])show(code,false)}}
 init();
 </script></body></html>
