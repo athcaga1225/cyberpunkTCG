@@ -14,7 +14,7 @@
 <section class="panel detail" id="result"><div class="row space"><div class="label">CARD DETAIL</div><div class="badge" id="variant">BETA</div></div>
 <div class="cardgrid" style="margin-top:14px"><div><div class="art" id="imagebox"><div class="empty">卡圖載入中</div></div><p class="note" id="imgnote"></p></div><div><div class="label" id="number"></div><h2 class="cardtitle" id="name"></h2><div class="label" style="margin-top:14px">市場參考價 / MARKET PRICE</div><div class="price" id="usd">—</div><div class="approx" id="twd"></div><p class="note" id="pricenote"></p></div></div>
 <div class="divider"></div><div class="links"><a id="tcg" target="_blank" rel="noopener noreferrer">TCGplayer 查價</a><a id="cataloglink" target="_blank" rel="noopener noreferrer">查看 Beta 卡片圖鑑</a></div></section>
-<section class="panel"><div class="row space"><h2>匯率與資料說明</h2><span class="badge">USD → TWD</span></div><div class="row"><div class="small">1 美元約 NT$</div><input id="rate" aria-label="美元換算台幣匯率" type="number" step="0.01" min="1" max="100" value="32.47"></div><p class="note">預設換算率為 2026/10/19 的參考值 32.47，非即時銀行匯率，可自行調整。價格資料為不同時間蒐集的歷史參考數字，並非目前成交價；外部資料來源可能變動。目前站內沒有可靠的 Beta 圖片直連，點選卡片圖鑑入口查看原始圖片。Box Topper 與主系列都有 β001～β006 編號；為避免混淆，本站使用 T001～T006 代表 Box Topper（例如 T006 = V: Corporate Exile）。</p></section>
+<section class="panel"><div class="row space"><h2>匯率與資料說明</h2><span class="badge">USD → TWD</span></div><div class="row"><div class="small">1 美元約 NT$</div><input id="rate" aria-label="美元換算台幣匯率" type="number" step="0.01" min="1" max="100" value="32.47"></div><p class="note">預設換算率為 2026/10/19 的參考值 32.47，非即時銀行匯率，可自行調整。價格資料為不同時間蒐集的歷史參考數字，並非目前成交價；外部資料來源可能變動。卡圖來自外部網站，可能因來源限制無法顯示；無法載入時提供圖鑑入口。Box Topper 與主系列都有 β001～β006 編號；為避免混淆，本站使用 T001～T006 代表 Box Topper（例如 T006 = V: Corporate Exile）。</p></section>
 <footer>CYBERSCAN 是非官方收藏工具。與 Cyberpunk TCG、TCGplayer 無關；卡圖版權歸原權利人所有。價格不能作為保證成交報價。</footer>
 </main>
 <script>
@@ -38,8 +38,12 @@ $('tcg').href="https://www.tcgplayer.com/search/all/product?q="+encodeURICompone
 $('cataloglink').href=setUrl;
 
 const art=$('imagebox');art.replaceChildren();const note=$('imgnote');
-const link=document.createElement("a");link.href="https://tcgcontender.com/cyberpunk/cards/"+encodeURIComponent(entry.name.replace(/:\s*/g," - "));link.target="_blank";link.rel="noopener noreferrer";link.style.cssText="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:182px;width:100%;padding:14px;text-align:center;color:#def25b;text-decoration:none;gap:8px";
-const ico=document.createElement("span");ico.style.fontSize="26px";ico.textContent="▣";const caption=document.createElement("span");caption.style.fontSize="12px";caption.textContent="開啟對應卡片圖鑑 ↗";link.append(ico,caption);art.append(link);note.textContent="目前未取得可穩定顯示的 Beta 卡圖網址。點擊上方開啟外部圖鑑查看卡面。";
+const link=document.createElement("a");link.href=entry.set?"https://exburst.dev/cyberpunk/series/boxtoppers":"https://web.tcg.online/cyberpunk/cards/"+encodeURIComponent(entry.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,""));link.target="_blank";link.rel="noopener noreferrer";link.style.cssText="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:182px;width:100%;padding:14px;text-align:center;color:#def25b;text-decoration:none;gap:8px";
+function imageFallback(){art.replaceChildren();const ico=document.createElement("span");ico.style.fontSize="26px";ico.textContent="▣";const caption=document.createElement("span");caption.style.fontSize="12px";caption.textContent="查看外部卡片圖鑑 ↗";link.replaceChildren(ico,caption);art.append(link);note.textContent="外部圖片未能載入。可點擊上方到卡片圖鑑查看 Beta 印刷版本。"}
+if(!code.startsWith("T")){
+const img=document.createElement("img");img.alt=entry.name+"（Beta 卡圖，請核對印刷版本）";img.decoding="async";img.referrerPolicy="no-referrer";img.style.cssText="display:block;width:100%;height:auto;border-radius:9px";img.onerror=imageFallback;img.onload=()=>{note.textContent="圖片由 TCG.Online 外部來源提供；請以卡片實物核對 Beta 版本。"};
+img.src="https://cdn.tcg.online/public/cyberpunk/cards/welcometonightcitybeta/"+code.slice(1)+".webp";art.append(img);note.textContent="正在嘗試載入 Beta 卡圖…";
+}else{imageFallback()}
 if(scroll)$('result').scrollIntoView({behavior:"smooth",block:"start"})}
 $('search').onclick=()=>$('query').value&&show($('query').value,true);
 $('query').onkeydown=e=>{if(e.key==="Enter")show($('query').value,true)};
