@@ -12,9 +12,9 @@
 <div class="label">WELCOME TO NIGHT CITY · BETA COLLECTION</div><h1>KNOW YOUR<br><span>CARDS.</span></h1><p class="intro">輸入卡號或卡名，查詢卡片名稱、圖片參考、美元價格和台幣估價。直接輸入卡號或卡名查詢卡圖及美元／台幣參考價格。已收錄 Beta 主系列 172 項與 Box Topper 6 項。</p>
 <section class="panel"><h2>01 / 搜尋卡片</h2><div class="search"><input id="query" autocomplete="off" placeholder="B135、B157、T006（Box Topper）、Judy" aria-label="輸入卡號或卡名"><button class="primary" id="search">搜尋卡片 ↗</button></div><div class="row space" style="margin-top:12px;flex-wrap:wrap"><div class="small" id="loadstate">載入資料中…</div></div></section>
 <section class="panel detail" id="result"><div class="row space"><div class="label">CARD DETAIL</div><div class="badge" id="variant">BETA</div></div>
-<div class="cardgrid" style="margin-top:14px"><div><div class="art" id="imagebox"><div class="empty">卡圖載入中</div></div><p class="note" id="imgnote"></p></div><div><div class="label" id="number"></div><h2 class="cardtitle" id="name"></h2><div class="label" style="margin-top:14px">市場參考價 / MARKET PRICE</div><div class="price" id="usd">—</div><div class="approx" id="twd"></div><p class="note" id="pricenote"></p></div></div>
+<div class="cardgrid" style="margin-top:14px"><div><div class="art" id="imagebox"><div class="empty">卡圖載入中</div></div><p class="note" id="imgnote"></p><button id="uploadart" type="button" style="width:100%;font-size:12px;padding:9px">＋儲存我的卡圖</button><input id="artfile" type="file" accept="image/*" hidden><button id="removeart" type="button" style="display:none;width:100%;font-size:11px;padding:7px;margin-top:7px">移除這張卡圖</button></div><div><div class="label" id="number"></div><h2 class="cardtitle" id="name"></h2><div class="label" style="margin-top:14px">市場參考價 / MARKET PRICE</div><div class="price" id="usd">—</div><div class="approx" id="twd"></div><p class="note" id="pricenote"></p></div></div>
 <div class="divider"></div><div class="links"><a id="tcg" target="_blank" rel="noopener noreferrer">TCGplayer 查價</a><a id="cataloglink" target="_blank" rel="noopener noreferrer">查看 Beta 卡片圖鑑</a></div></section>
-<section class="panel"><div class="row space"><h2>匯率與資料說明</h2><span class="badge">USD → TWD</span></div><div class="row"><div class="small">1 美元約 NT$</div><input id="rate" aria-label="美元換算台幣匯率" type="number" step="0.01" min="1" max="100" value="32.47"></div><p class="note">預設換算率為 2026/10/19 的參考值 32.47，非即時銀行匯率，可自行調整。價格資料為不同時間蒐集的歷史參考數字，並非目前成交價；外部資料來源可能變動。卡圖需由外部圖鑑查看；網站不會再請求未經驗證的圖片網址。Box Topper 與主系列都有 β001～β006 編號；為避免混淆，本站使用 T001～T006 代表 Box Topper（例如 T006 = V: Corporate Exile）。</p></section>
+<section class="panel"><div class="row space"><h2>匯率與資料說明</h2><span class="badge">USD → TWD</span></div><div class="row"><div class="small">1 美元約 NT$</div><input id="rate" aria-label="美元換算台幣匯率" type="number" step="0.01" min="1" max="100" value="32.47"></div><p class="note">預設換算率為 2026/10/19 的參考值 32.47，非即時銀行匯率，可自行調整。價格資料為不同時間蒐集的歷史參考數字，並非目前成交價；外部資料來源可能變動。可自行為每個卡號儲存卡圖，圖片只存在本機瀏覽器，不會上傳到伺服器。清除網站資料或更換手機後圖片可能遺失。Box Topper 與主系列都有 β001～β006 編號；為避免混淆，本站使用 T001～T006 代表 Box Topper（例如 T006 = V: Corporate Exile）。</p></section>
 <footer>CYBERSCAN 是非官方收藏工具。與 Cyberpunk TCG、TCGplayer 無關；卡圖版權歸原權利人所有。價格不能作為保證成交報價。</footer>
 </main>
 <script>
@@ -25,6 +25,51 @@ const setUrl="https://www.tcgplayer.com/search/cyberpunk-tcg/welcome-to-night-ci
 let catalog={},prices={},selected=null,rate=32.47,priceDate="";
 try{const v=Number(localStorage.getItem("cyberscan-usd-twd"));if(v>=1&&v<=100)rate=v}catch(e){}
 $('rate').value=rate;
+// Card images remain on this device; no copies are uploaded to GitHub or external sites.
+let activeArtUrl=null,artRequest=0;
+const imageDbPromise=new Promise((resolve,reject)=>{
+if(!("indexedDB" in window)){reject(Error("瀏覽器不支援圖片儲存"));return}
+const request=indexedDB.open("cyberscan-personal-art",1);
+request.onupgradeneeded=()=>request.result.createObjectStore("images");
+request.onsuccess=()=>resolve(request.result);
+request.onerror=()=>reject(request.error||Error("無法開啟圖片資料庫"));
+});
+imageDbPromise.catch(()=>{});
+async function readArt(code){const db=await imageDbPromise;return new Promise((resolve,reject)=>{const tx=db.transaction("images","readonly"),req=tx.objectStore("images").get(code);req.onsuccess=()=>resolve(req.result||null);req.onerror=()=>reject(req.error)})}
+async function writeArt(code,blob){const db=await imageDbPromise;return new Promise((resolve,reject)=>{const tx=db.transaction("images","readwrite");tx.objectStore("images").put(blob,code);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)})}
+async function deleteArt(code){const db=await imageDbPromise;return new Promise((resolve,reject)=>{const tx=db.transaction("images","readwrite");tx.objectStore("images").delete(code);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)})}
+function galleryFallback(code,entry){
+const art=$('imagebox');art.replaceChildren();const link=document.createElement("a");
+link.href=code==="B135"?"https://tcgcontender.com/cyberpunk/cards/Pyramid%20Song":"https://exburst.dev/cyberpunk/series/beta";
+link.target="_blank";link.rel="noopener noreferrer";
+link.style.cssText="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:182px;width:100%;padding:14px;text-align:center;color:#def25b;text-decoration:none;gap:8px";
+link.textContent="查看外部 Beta 圖鑑 ↗";art.append(link);
+$('imgnote').textContent="可以使用下方按鈕為這個卡號儲存自己的照片。";
+}
+async function displayArt(code,entry){
+const requestId=++artRequest;
+if(activeArtUrl){URL.revokeObjectURL(activeArtUrl);activeArtUrl=null}
+$('removeart').style.display="none";$('imagebox').textContent="檢查已儲存的圖片…";
+try{
+const blob=await readArt(code);
+if(requestId!==artRequest)return;
+if(!blob){galleryFallback(code,entry);return}
+const url=URL.createObjectURL(blob);activeArtUrl=url;
+const image=document.createElement("img");image.alt=code+" "+entry.name+"（個人卡圖）";image.src=url;image.style.cssText="width:100%;height:auto;display:block;border-radius:9px";
+$('imagebox').replaceChildren(image);$('imgnote').textContent="已從這台裝置載入你儲存的卡圖。";$('removeart').style.display="block";
+}catch(e){if(requestId===artRequest){galleryFallback(code,entry);$('imgnote').textContent="無法讀取圖片："+e.message}}
+}
+$('uploadart').onclick=()=>$('artfile').click();
+$('artfile').onchange=async e=>{
+const file=e.target.files?.[0];e.target.value="";
+if(!file||!selected)return;
+if(!file.type.startsWith("image/")){alert("請選擇圖片檔");return}
+if(file.size>12*1024*1024){alert("圖片超過 12MB，請先縮小尺寸");return}
+const code=selected;
+try{await writeArt(code,file);if(selected===code)await displayArt(code,catalog[code])}
+catch(err){alert("圖片儲存失敗："+err.message)}
+};
+$('removeart').onclick=async()=>{if(!selected)return;const code=selected;if(!confirm("要移除 "+code+" 在這台裝置儲存的圖片嗎？"))return;try{await deleteArt(code);if(selected===code)displayArt(code,catalog[code])}catch(e){alert("移除失敗："+e.message)}};
 const fmtUSD=n=>"US$"+n.toFixed(2);
 const fmtTWD=n=>"約 NT$"+Math.round(n).toLocaleString("zh-TW");
 function normalize(q){q=String(q).trim().toUpperCase().replace(/^BOX\s*TOPPER\s*/,"T").replace(/^TOPPER\s*/,"T").replace(/^BT\s*/,"T").replace(/^[Ββ]/,"B").replace(/^\u03B2/,"B").replace(/[^A-Z0-9]/g,"");if(/^T\d{1,3}$/.test(q)){return "T"+q.slice(1).padStart(3,"0")}if(/^B?\d{1,3}[AB]?$/.test(q)){q=q.replace(/^B/,"");const m=q.match(/^(\d{1,3})([AB]?)$/);if(m)return "B"+m[1].padStart(3,"0")+m[2]}return q}
@@ -37,16 +82,7 @@ $('pricenote').textContent=p?"歷史價格快照 · 非即時 · 參考資料日
 $('tcg').href="https://www.tcgplayer.com/search/all/product?q="+encodeURIComponent("Cyberpunk TCG "+(entry.set?"Box Topper Beta "+entry.number:"Beta "+code)+" "+entry.name);
 $('cataloglink').href=setUrl;
 
-const art=$('imagebox');art.replaceChildren();const note=$('imgnote');
-const link=document.createElement("a");
-link.href=code==="B135"?"https://tcg.online/cyberpunk/cards/pyramid-song?printing=3b1d0570-bb8e-4ea5-9ec7-c698d9c9f94d":"https://exburst.dev/cyberpunk/series/beta";
-link.target="_blank";link.rel="noopener noreferrer";
-link.style.cssText="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:182px;width:100%;padding:14px;text-align:center;color:#def25b;text-decoration:none;gap:8px";
-const ico=document.createElement("span");ico.style.fontSize="26px";ico.textContent="▣";
-const caption=document.createElement("span");caption.style.fontSize="12px";
-caption.textContent=code==="B135"?"查看 Pyramid Song 卡圖 ↗":"前往 Beta 圖鑑查看卡圖 ↗";
-link.append(ico,caption);art.append(link);
-note.textContent="";
+displayArt(code,entry);
 if(scroll)$('result').scrollIntoView({behavior:"smooth",block:"start"})}
 $('search').onclick=()=>$('query').value&&show($('query').value,true);
 $('query').onkeydown=e=>{if(e.key==="Enter")show($('query').value,true)};
