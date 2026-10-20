@@ -333,6 +333,65 @@ header .label{color:#bd7983}
   backdrop-filter:blur(4px);
   -webkit-backdrop-filter:blur(4px);
 }
+
+/* TYPE A / V12 — screenshot-matched wide Cyberpunk HUD layout */
+:root{--acid:#ed6574;--cyan:#6dc3cb;--line:rgba(235,84,103,.26);background:#050607;color:#e7e2e4}
+html{background:#050607}
+body{background:#050607}
+body:before{opacity:0}
+header{background:#050607;border-bottom-color:rgba(232,82,100,.22)}
+.wrap{max-width:1600px;padding:50px 40px 90px}
+.intro{color:#a7a8ad;border-left-color:#45363d}
+.settabs{margin-top:30px;border-bottom:1px solid #ba4457}
+.settab{min-height:91px;padding:24px 35px;background:rgba(28,11,17,.3);border-top:1px solid #5f2835;border-right:1px solid #5f2835;color:#bdb7ba;font-size:18px;font-weight:600}
+.settab:before{font-size:15px;margin-right:24px;color:#6bbeca}
+.settab[aria-selected="true"]{background:linear-gradient(112deg,rgba(101,25,37,.42),rgba(76,17,28,.37));border-top-color:#cb5263;border-right-color:#ba4558;color:#f2dfe2;box-shadow:inset 0 3px 0 rgba(243,98,116,.3),inset 0 -4px 0 #ef5b6b}
+.settab[aria-selected="true"]:before{color:#ee8796}
+.settab[aria-selected="true"]:after{border-bottom-color:#050607}
+.panel,.panel:first-of-type,.panel.detail{background:linear-gradient(115deg,rgba(92,35,44,.28),rgba(65,13,24,.19) 45%,rgba(26,8,15,.24)),rgba(6,7,9,.22);border:1px solid rgba(238,79,96,.48);border-left:2px solid rgba(255,71,89,.85);box-shadow:inset 0 1px 0 rgba(255,112,126,.1),0 9px 30px rgba(0,0,0,.19);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);padding:43px 48px 44px;margin-top:31px}
+.panel:before{background:#ed6878}
+.panel h2{font-size:17px;letter-spacing:.11em;color:#e9828d;margin-bottom:25px}
+.panel h2:before,.panel h2:after{color:#e9828d}
+.search{gap:14px}
+.search input{min-height:80px;font-size:23px;padding:19px 24px;background:#050608;border-color:#71313d}
+.search input::placeholder{color:#8e9097}
+.search .primary{min-height:80px;padding:15px 39px;font-size:18px;font-weight:700;background:rgba(130,33,46,.5);border-color:#c7596b;color:#ffedf0}
+.search .primary:hover{background:rgba(164,42,59,.66);border-color:#f0808e}
+#loadstate{font-size:15px;color:#9ba1a9}
+#loadstate:before{color:#69c5cc}
+.panel .row .small{font-size:16px;color:#abb0b6}
+.panel .row .badge{font-size:14px;border-color:#8d394a;background:rgba(62,17,26,.26);color:#e98f9a;padding:12px 15px}
+.panel input[type=number]{width:182px;min-height:73px;font-size:20px;padding:15px 24px}
+.panel .note{font-size:15px;line-height:1.9;color:#a5aab1;margin-top:20px}
+footer{margin-top:43px;padding-top:35px;border-top:1px solid #392830;color:#85878b}
+@media(min-width:1200px){header{padding-left:40px;padding-right:40px}}
+@media(max-width:900px){
+ .wrap{padding:45px 24px 80px}
+ .settab{min-height:68px;padding:18px;font-size:14px}
+ .settab:before{font-size:12px;margin-right:10px}
+ .panel,.panel:first-of-type,.panel.detail{padding:27px 25px;margin-top:22px}
+ .panel h2{font-size:14px;margin-bottom:19px}
+ .search input,.search .primary{min-height:58px;font-size:15px}
+ .search input{padding:13px 15px}
+ .search .primary{padding:12px 20px}
+ #loadstate{font-size:12px}
+ .panel .row .small{font-size:13px}
+ .panel .note{font-size:12px}
+ .panel input[type=number]{width:117px;min-height:48px;font-size:14px;padding:10px 12px}
+}
+@media(max-width:600px){
+ .wrap{padding:39px 15px 70px}
+ .settab{min-height:55px;padding:14px 12px;font-size:11px}
+ .settab:before{display:block;font-size:10px;margin:0 0 7px}
+ .panel,.panel:first-of-type,.panel.detail{padding:20px 16px;margin-top:20px}
+ .panel h2{font-size:12px;margin-bottom:17px}
+ .search{gap:9px}
+ .search input,.search .primary{min-height:52px;font-size:13px}
+ .search .primary{padding:12px 14px}
+ .panel .row .badge{font-size:10px;padding:7px 9px}
+ .panel .note{font-size:11px}
+}
+
 </style></head>
 <body><header><div class="brand">CYBER<em>SCAN</em></div><div class="label">BETA // CARD INDEX</div></header>
 <main class="wrap">
