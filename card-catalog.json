@@ -1,6 +1,6 @@
 {
-  "version": 3,
-  "info": "172 Welcome to Night City Beta main set entries (B001-B171 including B005A/B), plus 6 separately identifiable Box Topper Beta promo entries (T001-T006 app-only IDs to distinguish duplicate β numbers).",
+  "version": 4,
+  "info": "172 Welcome to Night City Beta main set entries (B001-B171 including B005A/B), plus 6 separately identifiable Box Topper Beta promo entries (T001-T006 app-only IDs to distinguish duplicate β numbers). Rarity labels matched by card number AND card name against beta singles listing; unmatched records remain unverified.",
   "sources": [
     "https://www.tcdb.com/Checklist.cfm/sid/684121/2026-Cyberpunk-TCG-Welcome-to-Night-City-Beta",
     "https://unacollezione.it/checklist/cyberpunk-tcg-welcome-to-night-city-beta-checklist",
@@ -14,49 +14,69 @@
     },
     "B002": {
       "name": "Dexter DeShawn: Off the Grid",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Rare",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B003": {
       "name": "Johnny Silverhand: Rocking Renegade",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Secret",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B004": {
       "name": "Royce: Psycho on the Edge",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Rare",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B005A": {
       "name": "V: Streetkid",
       "source": "beta-core-number-match",
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B005B": {
       "name": "V: Streetkid",
       "source": "existing-beta-index",
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B006": {
       "name": "6th Street Recruits",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B007": {
       "name": "Animals Wrecker",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B008": {
       "name": "Chrome Fang",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B009": {
       "name": "El Sombrerón: La Venganza Lenta",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Rare",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B010": {
       "name": "Japantown Jonin",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B011": {
       "name": "Johnny Silverhand: Never Stop Fighting",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Epic",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B012": {
       "name": "Kerry Eurodyne: The Last Rockerboy",
@@ -64,11 +84,15 @@
     },
     "B013": {
       "name": "La Llorona: Ghost of the Past",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Uncommon",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B014": {
       "name": "Meredith Stout: Stone Cold Corpo",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Rare",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B015": {
       "name": "Octant",
@@ -76,7 +100,9 @@
     },
     "B016": {
       "name": "Royce: Don't Call Me Simon",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Uncommon",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B017": {
       "name": "Ruthless Lowlife",
@@ -84,650 +110,927 @@
     },
     "B018": {
       "name": "Screw: Lovelorn Fool",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B019": {
       "name": "Swordwise Huscle",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B020": {
       "name": "V: Roamer of the Badlands",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Epic",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B021": {
       "name": "Valentino Guerrera",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B022": {
       "name": "Yorinobu Arasaka: Steel Dragon",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Rare",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B023": {
       "name": "Arasaka Emergency Radioport",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B024": {
       "name": "Deadman Transmitter",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Uncommon",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B025": {
       "name": "Mantis Blades",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B026": {
       "name": "Satori: Sword of Saburo",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Uncommon",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B027": {
       "name": "All is Lost",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B028": {
       "name": "Appetite for Destruction",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Uncommon",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B029": {
       "name": "Bonnie and Clyde",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Uncommon",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B030": {
       "name": "Carnage at the Colosseum",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B031": {
       "name": "Detonate",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B032": {
       "name": "Gunpoint Diplomacy",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Uncommon",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B033": {
       "name": "Industrial Assembly",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Uncommon",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B034": {
       "name": "Over the Edge",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B035": {
       "name": "Shattered Memories",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Rare",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B036": {
       "name": "Dum Dum: Maelstrom Triggerman",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Rare",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B037": {
       "name": "Kerry Eurodyne: Axe, Attitude, Audience",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Rare",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B038": {
       "name": "Muamar Reyes: El Capitán",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Rare",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B039": {
       "name": "River Ward: Detective on the Hunt",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Rare",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B040": {
       "name": "Rogue Amendiares: Preem Solo",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Rare",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B041": {
       "name": "Adam Smasher: Metal Over Meat",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Epic",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B042": {
       "name": "Alt Cunningham: Mother of Daemons",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Rare",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B043": {
       "name": "Augmented Negotiators",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B044": {
       "name": "Caliber: Totentanz's Top Dog",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Rare",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B045": {
       "name": "Gilded Matón",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B046": {
       "name": "Hanako Arasaka: In a Gilded Cage",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Rare",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B047": {
       "name": "Heywood Ripperdoc",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Uncommon",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B048": {
       "name": "Jackie Welles: Ride or Die Choom",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Epic",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B049": {
       "name": "Maelstrom Goons",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B050": {
       "name": "MaxTac Suppression Team",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B051": {
       "name": "Offduty Malfini",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B052": {
       "name": "Rockn' Rockerboy",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B053": {
       "name": "Secondhand Bombus",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B054": {
       "name": "Sketchy Ripper",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B055": {
       "name": "T-Bug: Amateur Philosopher",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Uncommon",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B056": {
       "name": "Trauma Team Operatives",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B057": {
       "name": "Viktor Vektor: Drop Your Illusions",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Epic",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B058": {
       "name": "Viktor Vektor: You Might Feel a Little Pinch",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Uncommon",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B059": {
       "name": "Adrenaline Converter",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B060": {
       "name": "Gorilla Arms",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B061": {
       "name": "Kiroshi Optics",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B062": {
       "name": "Mandibular Upgrade",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B063": {
       "name": "The Relic: Experimental Biochip",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Epic",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B064": {
       "name": "Zetatech Faceplate",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Uncommon",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B065": {
       "name": "Afterparty at Lizzie's",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B066": {
       "name": "Bootleg Black Sapphire Show",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Uncommon",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B067": {
       "name": "Cyberpsychosis",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Uncommon",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B068": {
       "name": "Live with the Aftermath",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B069": {
       "name": "Safety Override",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B070": {
       "name": "The Heist",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Uncommon",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B071": {
       "name": "Goro Takemura: Vengeful Bodyguard",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Rare",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B072": {
       "name": "Hanako Arasaka: Daughter of the Emperor",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Rare",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B073": {
       "name": "Jackie Welles: Mama's Favorite",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Rare",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B074": {
       "name": "Padre: Man of the Cross",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Rare",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B075": {
       "name": "Panam Palmer: Nomad Cavalry",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Epic",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B076": {
       "name": "Corpo Security",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B077": {
       "name": "Emergency Atlus",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B078": {
       "name": "Field Operator",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B079": {
       "name": "Maelstrom Zealots",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B080": {
       "name": "MaxTac AV",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B081": {
       "name": "MaxTac Heavy",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Uncommon",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B082": {
       "name": "MaxTac Squadron",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B083": {
       "name": "Nadia: Fighting Through Grief",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Uncommon",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B084": {
       "name": "Pacifica Netrunner",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B085": {
       "name": "Panam Palmer: Strength Through Family",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Secret",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B086": {
       "name": "Pepe Najarro: Working Doubles",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Uncommon",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B087": {
       "name": "Riding Nomad",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B088": {
       "name": "Sandayu Oda: Hanako's Guardian",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Rare",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B089": {
       "name": "Saul Bright: Stormrider",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Rare",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B090": {
       "name": "Tyger's Whisper",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B091": {
       "name": "Valentino Street Racer",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B092": {
       "name": "Wraith Marauders",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Uncommon",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B093": {
       "name": "Overwatch: Panam's Gift",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Epic",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B094": {
       "name": "Riot Shield",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Uncommon",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B095": {
       "name": "Sandevistan",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Uncommon",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B096": {
       "name": "Zetatech Berserk",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B097": {
       "name": "Corporate Surveillance",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Uncommon",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B098": {
       "name": "(Don't Fear) The Reaper",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Rare",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B099": {
       "name": "Fool on the Hill",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Rare",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B100": {
       "name": "Memory Relapse",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Uncommon",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B101": {
       "name": "Peace Offering",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B102": {
       "name": "Synapse Burnout",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Uncommon",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B103": {
       "name": "Take Control",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Uncommon",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B104": {
       "name": "We Gotta Live Together",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Uncommon",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B105": {
       "name": "Wild in the Streets",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B106": {
       "name": "Alt Cunningham: Soulkiller Architect",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Rare",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B107": {
       "name": "Evelyn Parker: Beautiful Enigma",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Rare",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B108": {
       "name": "Judy Álvarez: Braindance Maestro",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Epic",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B109": {
       "name": "Sasha Yakovleva: Won't Let You Down",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Secret",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B110": {
       "name": "Wakako Okada: Peace and Harmony",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Rare",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B111": {
       "name": "Delamain: Rideshare AI",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Uncommon",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B112": {
       "name": "Delamain Cab",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B113": {
       "name": "Evelyn Parker: Scheming Siren",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Uncommon",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B114": {
       "name": "Hacked Corpo",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B115": {
       "name": "Jacked-In Voodoo Boy",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B116": {
       "name": "Judy Álvarez: Nothing to Doubt",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Secret",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B117": {
       "name": "Lizzy Wizzy: Delicate Weapon",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Rare",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B118": {
       "name": "Maman Brigitte: Spirit of Death",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Uncommon",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B119": {
       "name": "Misty Olszewski: Mender of Broken Spirits",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Rare",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B120": {
       "name": "Modded Kusanagi",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B121": {
       "name": "Modded Muramasa",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B122": {
       "name": "Mox Inciters",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B123": {
       "name": "Placide: Voodoo Sentinel",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Rare",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B124": {
       "name": "Psycho Squad",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B125": {
       "name": "Rita Wheeler: No Stupid Questions",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B126": {
       "name": "Rogue Amendiares: Queen of the Afterlife",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Epic",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B127": {
       "name": "Westbrook Netrunner",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B128": {
       "name": "Dying Night: V's Pistol",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Rare",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B129": {
       "name": "NetWatch Netdriver",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Uncommon",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B130": {
       "name": "Tetratronic Rippler",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B131": {
       "name": "Chrome Reverie",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B132": {
       "name": "Floor It",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B133": {
       "name": "Les Élémens",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Uncommon",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B134": {
       "name": "Nocturne OP55 N1",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Rare",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B135": {
       "name": "Pyramid Song",
-      "source": "beta-confirmed"
+      "source": "beta-confirmed",
+      "rarity": "Rare",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B136": {
       "name": "Reboot Optics",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B137": {
       "name": "Three Mouths, One Desire",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B138": {
       "name": "Towerfall",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Epic",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B139": {
       "name": "Trust No One",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B140": {
       "name": "Unlikely Bond",
-      "source": "beta-core-number-match"
+      "source": "beta-core-number-match",
+      "rarity": "Common",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B141": {
       "name": "Adam Smasher: Ender of Legends",
       "source": "beta-checklist",
-      "rarity": "Iconic Legend"
+      "rarity": "Iconic Legend",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B142": {
       "name": "Dexter DeShawn: Off the Grid",
       "source": "beta-checklist",
-      "rarity": "Iconic Legend"
+      "rarity": "Iconic Legend",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B143": {
       "name": "Royce: Psycho on the Edge",
       "source": "beta-checklist",
-      "rarity": "Iconic Legend"
+      "rarity": "Iconic Legend",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B144": {
       "name": "V: Streetkid",
       "source": "beta-checklist",
-      "rarity": "Iconic Legend"
+      "rarity": "Iconic Legend",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B145": {
       "name": "Dum Dum: Maelstrom Triggerman",
       "source": "beta-checklist",
-      "rarity": "Iconic Legend"
+      "rarity": "Iconic Legend",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B146": {
       "name": "Kerry Eurodyne: Axe, Attitude, Audience",
       "source": "beta-checklist",
-      "rarity": "Iconic Legend"
+      "rarity": "Iconic Legend",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B147": {
       "name": "Muamar Reyes: El Capitán",
       "source": "beta-checklist",
-      "rarity": "Iconic Legend"
+      "rarity": "Iconic Legend",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B148": {
       "name": "River Ward: Detective on the Hunt",
       "source": "beta-checklist",
-      "rarity": "Iconic Legend"
+      "rarity": "Iconic Legend",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B149": {
       "name": "Rogue Amendiares: Preem Solo",
       "source": "beta-checklist",
-      "rarity": "Iconic Legend"
+      "rarity": "Iconic Legend",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B150": {
       "name": "Goro Takemura: Vengeful Bodyguard",
       "source": "beta-checklist",
-      "rarity": "Iconic Legend"
+      "rarity": "Iconic Legend",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B151": {
       "name": "Hanako Arasaka: Daughter of the Emperor",
       "source": "beta-checklist",
-      "rarity": "Iconic Legend"
+      "rarity": "Iconic Legend",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B152": {
       "name": "Jackie Welles: Mama's Favorite",
       "source": "beta-checklist",
-      "rarity": "Iconic Legend"
+      "rarity": "Iconic Legend",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B153": {
       "name": "Padre: Man of the Cross",
       "source": "beta-checklist",
-      "rarity": "Iconic Legend"
+      "rarity": "Iconic Legend",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B154": {
       "name": "Panam Palmer: Nomad Cavalry",
       "source": "beta-checklist",
-      "rarity": "Iconic Legend"
+      "rarity": "Iconic Legend",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B155": {
       "name": "Alt Cunningham: Soulkiller Architect",
       "source": "beta-checklist",
-      "rarity": "Iconic Legend"
+      "rarity": "Iconic Legend",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B156": {
       "name": "Evelyn Parker: Beautiful Enigma",
       "source": "beta-checklist",
-      "rarity": "Iconic Legend"
+      "rarity": "Iconic Legend",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B157": {
       "name": "Judy Alvarez: Braindance Maestro",
       "source": "beta-checklist",
-      "rarity": "Iconic Legend"
+      "rarity": "Iconic Legend",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B158": {
       "name": "Wakako Okada: Peace and Harmony",
       "source": "beta-checklist",
-      "rarity": "Iconic Legend"
+      "rarity": "Iconic Legend",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B159": {
       "name": "Johnny Silverhand: Never Stop Fighting",
       "source": "beta-checklist",
-      "rarity": "Iconic Other"
+      "rarity": "Iconic Other",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B160": {
       "name": "Adam Smasher: Metal Over Meat",
       "source": "beta-checklist",
-      "rarity": "Iconic Other"
+      "rarity": "Iconic Other",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B161": {
       "name": "Alt Cunningham: Mother of Daemons",
       "source": "beta-checklist",
-      "rarity": "Iconic Other"
+      "rarity": "Iconic Other",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B162": {
       "name": "Hanako Arasaka: In a Gilded Cage",
       "source": "beta-checklist",
-      "rarity": "Iconic Other"
+      "rarity": "Iconic Other",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B163": {
       "name": "The Relic: Experimental Biochip",
       "source": "beta-checklist",
-      "rarity": "Iconic Other"
+      "rarity": "Iconic Other",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B164": {
       "name": "Sandayu Oda: Hanako's Guardian",
       "source": "beta-checklist",
-      "rarity": "Iconic Other"
+      "rarity": "Iconic Other",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B165": {
       "name": "Overwatch: Panam's Gift",
       "source": "beta-checklist",
-      "rarity": "Iconic Other"
+      "rarity": "Iconic Other",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B166": {
       "name": "Rogue Amendiares: Queen of the Afterlife",
       "source": "beta-checklist",
-      "rarity": "Iconic Other"
+      "rarity": "Iconic Other",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B167": {
       "name": "Towerfall",
       "source": "beta-checklist",
-      "rarity": "Iconic Other"
+      "rarity": "Iconic Other",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B168": {
       "name": "Johnny Silverhand: Rocking Renegade",
       "source": "beta-checklist",
-      "rarity": "Iconic Secret"
+      "rarity": "Iconic Secret",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B169": {
       "name": "Sasha Yakovleva: Won't Let You Down",
       "source": "beta-checklist",
-      "rarity": "Iconic Secret"
+      "rarity": "Iconic Secret",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B170": {
       "name": "Panam Palmer: Strength Through Family",
       "source": "beta-checklist",
-      "rarity": "Iconic Secret"
+      "rarity": "Iconic Secret",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "B171": {
       "name": "Judy Alvarez: Nothing to Doubt",
       "source": "beta-checklist",
-      "rarity": "Iconic Secret"
+      "rarity": "Iconic Secret",
+      "raritySource": "Spellbound Games Beta singles listing"
     },
     "T001": {
       "name": "Yorinobu Arasaka: Embracing Destruction",
