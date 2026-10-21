@@ -5,7 +5,7 @@ from pathlib import Path
 import requests
 from bs4 import BeautifulSoup
 from difflib import SequenceMatcher
-from datetime import date, timedelta
+from datetime import date as calendar_date, timedelta
 
 BASE="https://valuemycard.com"
 GUIDE=BASE+"/expansions/cyberpunk-tcg/24845-welcome-to-night-city-beta"
@@ -17,12 +17,12 @@ session.headers.update({"User-Agent":"Mozilla/5.0 (CYBERSCAN personal Beta colle
 results={}
 failures=[]
 MONTHS={m:i for i,m in enumerate(("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"),1)}
-today=date.today()
+today=calendar_date.today()
 def observed_date(day,month):
     month_no=MONTHS[month.title()]
-    stamp=date(today.year,month_no,int(day))
+    stamp=calendar_date(today.year,month_no,int(day))
     if stamp>today+timedelta(days=1):
-        stamp=date(today.year-1,month_no,int(day))
+        stamp=calendar_date(today.year-1,month_no,int(day))
     return stamp.isoformat()
 for page in range(1,4):
     url=GUIDE+("?page="+str(page) if page>1 else "")
