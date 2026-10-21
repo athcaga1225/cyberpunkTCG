@@ -73,5 +73,24 @@ data["source"]="ValueMyCard — TCGplayer US market references for Welcome to Ni
 data["sourceUrl"]=GUIDE
 data["notes"]="172 Welcome to Night City Beta main-set prices, captured from displayed printings. Foil and normal are preserved per card. Historical market references, not live offers. Box Toppers are excluded."
 data["prices"]={**{code:p for code,p in data["prices"].items() if not code.startswith("B")},**dict(sorted(results.items()))}
+# Preserve dated observations, never invent a point for a day with no new source value.
+history_path=Path("price-history.json")
+history=json.loads(history_path.read_text()) if history_path.exists() else {
+    "startDate":"2026-09-10","kind":"observed market price history (not individual transactions)","cards":{}
+}
+history.setdefault("cards",{})
+for code,record in results.items():
+    day=record["observedDate"]
+    if day<history.get("startDate","2026-09-10"):
+        continue
+    series=history["cards"].setdefault(code,[])
+    point={"date":day,"usd":record["usd"]}
+    previous=next((p for p in series if p["date"]==day),None)
+    if previous is None:
+        series.append(point)
+    elif previous["usd"]!=point["usd"]:
+        previous["usd"]=point["usd"]
+    series.sort(key=lambda p:p["date"])
+history_path.write_text(json.dumps(history,ensure_ascii=False,indent=2)+"\\n")
 Path("prices.json").write_text(json.dumps(data,ensure_ascii=False,indent=2)+"\n")
 print("SUCCESS priced",len(results),"main-series cards; Box Toppers unchanged; range",min(v["usd"] for v in results.values()),max(v["usd"] for v in results.values()),flush=True)
