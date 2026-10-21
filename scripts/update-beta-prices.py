@@ -5,6 +5,7 @@ from pathlib import Path
 import requests
 from bs4 import BeautifulSoup
 from difflib import SequenceMatcher
+from datetime import date, timedelta
 
 BASE="https://valuemycard.com"
 GUIDE=BASE+"/expansions/cyberpunk-tcg/24845-welcome-to-night-city-beta"
@@ -15,6 +16,14 @@ session=requests.Session()
 session.headers.update({"User-Agent":"Mozilla/5.0 (CYBERSCAN personal Beta collector reference)"})
 results={}
 failures=[]
+MONTHS={m:i for i,m in enumerate(("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"),1)}
+today=date.today()
+def observed_date(day,month):
+    month_no=MONTHS[month.title()]
+    stamp=date(today.year,month_no,int(day))
+    if stamp>today+timedelta(days=1):
+        stamp=date(today.year-1,month_no,int(day))
+    return stamp.isoformat()
 for page in range(1,4):
     url=GUIDE+("?page="+str(page) if page>1 else "")
     response=session.get(url,timeout=25)
@@ -24,7 +33,7 @@ for page in range(1,4):
     print("PAGE",page,"CARD ROWS",len(anchors),flush=True)
     for link in anchors:
         title=link.get_text(" ",strip=True)
-        match=re.search(r"#\s*(B\d{3}[ab]?)\s+(.+?)\s+(IL|IS|IO|UC|C|R|E|S)\s+\$(\d+(?:\.\d+)?)\s+(Foil|Normal)\s+Updated\s+(\d+)\s+(Oct|Sep|Nov|Dec|Aug)",title,re.I)
+        match=re.search(r"#\s*(B\d{3}[ab]?)\s+(.+?)\s+(IL|IS|IO|UC|C|R|E|S)\s+\$(\d+(?:\.\d+)?)\s+(Foil|Normal)\s+Updated\s+(\d+)\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)",title,re.I)
         if not match:
             failures.append(("unparsed",title))
             continue
@@ -49,8 +58,7 @@ for page in range(1,4):
         if code in results:
             failures.append(("duplicate",code))
             continue
-        month_number={"Aug":8,"Sep":9,"Oct":10,"Nov":11,"Dec":12}[month]
-        date=f"2026-{month_number:02d}-{int(day):02d}"
+        date=observed_date(day,month)
         href=link.get("href","")
         results[code]={"usd":float(usd),"name":card["name"],"source":"ValueMyCard — TCGplayer US market reference","sourceUrl":BASE+href,"observedDate":date,"printing":"Welcome to Night City Beta "+code+" "+card["rarity"]+" "+printing,"condition":"Ungraded market reference"}
 expected_codes={code for code in catalog if code.startswith("B")}
@@ -60,7 +68,7 @@ if failures or missing or len(results)!=172:
     print("MISSING",missing,flush=True)
     print("RESULTS",len(results),"EXPECTED",len(expected_codes),flush=True)
     raise SystemExit("Refusing incomplete or inconsistent price update")
-data["observedDate"]="2026-10-19"
+data["observedDate"]=max(item["observedDate"] for item in results.values())
 data["source"]="ValueMyCard — TCGplayer US market references for Welcome to Night City Beta"
 data["sourceUrl"]=GUIDE
 data["notes"]="172 Welcome to Night City Beta main-set prices, captured from displayed printings. Foil and normal are preserved per card. Historical market references, not live offers. Box Toppers are excluded."
