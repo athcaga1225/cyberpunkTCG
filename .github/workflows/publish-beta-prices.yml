@@ -27,11 +27,11 @@ jobs:
         run: python scripts/update-beta-prices.py
       - name: Publish verified Beta price data
         run: |
-          git add prices.json
-          if ! git diff --cached --quiet -- prices.json; then
+          git add prices.json price-history.json
+          if ! git diff --cached --quiet -- prices.json price-history.json; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git commit -m "data: refresh complete 172-card Beta market price guide"
+            git commit -m "data: refresh Beta prices and preserve dated history"
             git push
           else
             echo "No changes to price guide"
