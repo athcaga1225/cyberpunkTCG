@@ -539,6 +539,20 @@
             .panel { clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 0 100%); }
             .panel::before { width: 15px; height: 15px; }
         }
+
+        /* Price history — CSS scoped to the new component, original Type A retained. */
+        .history-panel{margin-top:18px}
+        .history-head{align-items:flex-start;flex-wrap:wrap;margin-bottom:12px}
+        .history-head h2{margin:0 0 8px;font-size:13px}
+        .history-periods{display:flex;flex-wrap:wrap;gap:5px}
+        .history-periods button{border-radius:0;padding:7px 9px;background:#10171a;border:1px solid #4b5b5e;color:#b9c9c9;font:11px ui-monospace,monospace}
+        .history-periods button[aria-pressed="true"]{color:#111713;background:#def25b;border-color:#def25b}
+        .history-graph{min-height:155px;overflow:hidden;margin-top:12px}
+        .history-graph svg{width:100%;height:auto;display:block;max-height:260px}
+        .history-graph .empty-history{padding:32px 12px;border:1px dashed #4d5c5e;color:#aab9bc;text-align:center;font-size:12px;line-height:1.7}
+        #history-summary{color:#c8d4d4;font-size:12px}
+        #history-note{margin-top:8px}
+        @media(max-width:600px){.history-head{display:block}.history-periods{margin-top:10px}.history-periods button{font-size:10px;padding:7px 9px}}
     </style>
 </head>
 
@@ -587,6 +601,12 @@
                 </div>
             </div>
             <div class="divider"></div>
+            <div class="history-panel" id="history-panel" aria-label="市場價格歷史">
+                <div class="row space history-head"><h2>價格走勢 / PRICE HISTORY</h2><div class="history-periods" id="history-periods"><button type="button" data-days="30" aria-pressed="false">1M</button><button type="button" data-days="90" aria-pressed="true">3M</button><button type="button" data-days="180" aria-pressed="false">6M</button><button type="button" data-days="365" aria-pressed="false">1Y</button><button type="button" data-days="0" aria-pressed="false">ALL</button></div></div>
+                <div id="history-summary" class="small"></div>
+                <div id="history-graph" class="history-graph"></div>
+                <p class="note" id="history-note">歷史市場參考價，非逐筆成交資料。</p>
+            </div>
             <div class="links"><a id="tcg" target="_blank" rel="noopener noreferrer">TCGplayer 查價</a><a id="cataloglink"
                     target="_blank" rel="noopener noreferrer">查看 Beta 卡片圖鑑</a></div>
         </section>
@@ -610,7 +630,7 @@
         const $ = id => document.getElementById(id);
         const base = "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/cyberpunk-tcg/price-guides/welcome-to-night-city-beta";
         const setUrl = "https://www.tcgplayer.com/search/cyberpunk-tcg/welcome-to-night-city-beta?page=1&productLineName=cyberpunk-tcg&setName=welcome-to-night-city-beta&view=grid";
-        let catalog = {}, prices = {}, selected = null, rate = 32.47, priceDate = "", starterSets = {}, activeSection = "main", activeStarter = "heist";
+        let catalog = {}, prices = {}, historyCards = {}, historyDays = 90, selected = null, rate = 32.47, priceDate = "", starterSets = {}, activeSection = "main", activeStarter = "heist";
         try { const v = Number(localStorage.getItem("cyberscan-usd-twd")); if (v >= 1 && v <= 100) rate = v } catch (e) { }
         $('rate').value = rate;
         // Shared Beta image URLs are loaded from card-images.json. No browser-specific uploads required.
@@ -694,12 +714,47 @@
             $('tcg').href = 'https://www.tcgplayer.com/search/all/product?q=' + encodeURIComponent("Cyberpunk TCG " + (activeSection === "starter" ? (activeStarter === "heist" ? "The Heist Beta starter " : "Embracing Power Beta starter ") : "Welcome to Night City Beta ") + code + " " + entry.name);
             $('cataloglink').href = activeSection === "starter" ? entry.sourceUrl : setUrl;
             displayArt(code, entry);
+            renderHistory();
             if (scroll) $('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
         $('search').onclick = () => $('query').value && show($('query').value, true);
         $('query').onkeydown = e => { if (e.key === "Enter") show($('query').value, true) };
         $('rate').onchange = () => { const v = Number($('rate').value); if (v >= 1 && v <= 100) { rate = v; try { localStorage.setItem("cyberscan-usd-twd", String(rate)) } catch (e) { } if (selected) show(selected, false) } else { $('rate').value = rate } };
-        async function init() { const results = await Promise.allSettled([fetch("./card-catalog.json?v=5", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() }), fetch("./prices.json?v=5", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() }), fetch("./card-images.json?v=3", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() }), fetch("./starter-catalog.json?v=2", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() })]); if (results[0].status === "fulfilled") catalog = results[0].value.cards || {}; if (results[1].status === "fulfilled") { prices = results[1].value.prices || {}; priceDate = results[1].value.observedDate || "未註明" } if (results[2].status === "fulfilled") cardImages = results[2].value.images || {}; if (results[3].status === "fulfilled") starterSets = results[3].value.sets || {}; $('loadstate').textContent = Object.keys(catalog).length === 178 ? "已載入 Beta 主系列 172 項＋Box Topper 6 項。" : "卡表資料未完整載入，請重新整理。"; if (location.hash) { const hash = decodeURIComponent(location.hash.slice(1)); const match = hash.match(/^(heist|power)-(B\d{3})$/i); if (match) { chooseSection('starter', match[1].toLowerCase()); show(match[2], false) } else if (catalog[normalize(hash)]) show(hash, false) } }
+
+        function renderHistory(){
+            const root=$('history-graph'),summary=$('history-summary'),note=$('history-note');
+            root.replaceChildren();
+            if(activeSection!=="main"||!selected||!selected.startsWith("B")){
+                summary.textContent="此系列尚無獨立歷史價格";note.textContent="僅 Beta 主系列有市場價格紀錄。";return;
+            }
+            const all=(historyCards[selected]||[]).filter(p=>p.date>="2026-09-10"&&Number.isFinite(p.usd)).slice().sort((a,b)=>a.date.localeCompare(b.date));
+            const today=new Date().toISOString().slice(0,10);
+            const threshold=historyDays?new Date(Date.now()-historyDays*86400000).toISOString().slice(0,10):"2026-09-10";
+            const points=all.filter(p=>p.date>=threshold&&p.date<=today);
+            note.textContent="ValueMyCard / TCGplayer 市場參考價（USD），非逐筆成交價；缺少資料的日期不補值。統一起算日：2026/09/10。";
+            if(points.length<2){
+                summary.textContent=points.length?"已記錄 "+points[0].date+" · US$"+points[0].usd.toFixed(2):"尚未收集到此區間的價格";
+                const empty=document.createElement('div');empty.className='empty-history';empty.textContent="至少需要兩筆不同日期的市場價格，才會顯示走勢。";root.append(empty);return;
+            }
+            const first=points[0],last=points[points.length-1],delta=last.usd-first.usd,pct=first.usd>0?delta/first.usd*100:0;
+            summary.textContent=first.date+" → "+last.date+"　US$"+first.usd.toFixed(2)+" → US$"+last.usd.toFixed(2)+"　"+(delta>=0?"+":"")+delta.toFixed(2)+" ("+(pct>=0?"+":"")+pct.toFixed(2)+"%)";
+            const NS="http://www.w3.org/2000/svg",svg=document.createElementNS(NS,"svg");svg.setAttribute("viewBox","0 0 640 230");svg.setAttribute("role","img");svg.setAttribute("aria-label","歷史市場參考價格曲線，"+points.length+" 筆資料");
+            const lo=Math.min(...points.map(p=>p.usd)),hi=Math.max(...points.map(p=>p.usd)),pad=Math.max((hi-lo)*.16,hi*.03,.01);
+            const min=lo-pad,max=hi+pad,W=640,H=230,left=55,right=16,top=16,bottom=38;
+            const times=points.map(p=>Date.parse(p.date+"T00:00:00Z")),tmin=times[0],tmax=times[times.length-1];
+            const x=t=>left+(t-tmin)/Math.max(1,tmax-tmin)*(W-left-right);
+            const y=v=>top+(max-v)/(max-min)*(H-top-bottom);
+            const el=(name,attrs,text)=>{const n=document.createElementNS(NS,name);for(const [k,v] of Object.entries(attrs||{}))n.setAttribute(k,String(v));if(text!==undefined)n.textContent=text;svg.append(n);return n};
+            for(let i=0;i<4;i++){const v=min+(max-min)*i/3,Y=y(v);el("line",{x1:left,y1:Y,x2:W-right,y2:Y,stroke:"#455255","stroke-width":.7,"stroke-dasharray":"3 5"});el("text",{x:0,y:Y+4,fill:"#aab9bc","font-size":12},v.toFixed(v>=100?0:2))}
+            const d=points.map((p,i)=>(i?"L":"M")+x(times[i]).toFixed(2)+","+y(p.usd).toFixed(2)).join(" ");
+            el("path",{d,stroke:"#dcf257","stroke-width":2.5,fill:"none","stroke-linecap":"round","stroke-linejoin":"round"});
+            points.forEach((p,i)=>{const circle=el("circle",{cx:x(times[i]),cy:y(p.usd),r:3.2,fill:"#dcf257"});const tip=document.createElementNS(NS,"title");tip.textContent=p.date+" · US$"+p.usd.toFixed(2);circle.append(tip)});
+            for(const p of [first,last]){const T=Date.parse(p.date+"T00:00:00Z");el("text",{x:x(T),y:H-10,fill:"#aab9bc","font-size":12,"text-anchor":p===first?"start":"end"},p.date.slice(5))}
+            root.append(svg);
+        }
+        $('history-periods').onclick=e=>{const button=e.target.closest('button[data-days]');if(!button)return;historyDays=Number(button.dataset.days);for(const b of $('history-periods').querySelectorAll('button'))b.setAttribute("aria-pressed",String(b===button));renderHistory()};
+
+        async function init() { const results = await Promise.allSettled([fetch("./card-catalog.json?v=5", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() }), fetch("./prices.json?v=5", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() }), fetch("./card-images.json?v=3", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() }), fetch("./starter-catalog.json?v=2", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() }), fetch("./price-history.json?v=1", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() })]); if (results[0].status === "fulfilled") catalog = results[0].value.cards || {}; if (results[1].status === "fulfilled") { prices = results[1].value.prices || {}; priceDate = results[1].value.observedDate || "未註明" } if (results[2].status === "fulfilled") cardImages = results[2].value.images || {}; if (results[3].status === "fulfilled") starterSets = results[3].value.sets || {}; if(results[4].status==="fulfilled") historyCards=results[4].value.cards||{}; $('loadstate').textContent = Object.keys(catalog).length === 178 ? "已載入 Beta 主系列 172 項＋Box Topper 6 項。" : "卡表資料未完整載入，請重新整理。"; if (location.hash) { const hash = decodeURIComponent(location.hash.slice(1)); const match = hash.match(/^(heist|power)-(B\d{3})$/i); if (match) { chooseSection('starter', match[1].toLowerCase()); show(match[2], false) } else if (catalog[normalize(hash)]) show(hash, false) } }
         init();
     </script>
 </body>
