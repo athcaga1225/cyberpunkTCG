@@ -528,18 +528,16 @@
         .panel::before {
             content: "";
             position: absolute;
-            top: 1px;
-            right: -7px;
-            width: 28px;
-            height: 1px;
-            background: #dcf257;
-            transform-origin: left top;
-            transform: rotate(45deg);
+            top: 0;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(45deg, transparent calc(50% - 1px), #dcf257 50%, transparent calc(50% + 1px));
             pointer-events: none;
         }
         @media (max-width: 600px) {
             .panel { clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 0 100%); }
-            .panel::before { right: -5px; width: 21px; }
+            .panel::before { width: 15px; height: 15px; }
         }
     </style>
 </head>
