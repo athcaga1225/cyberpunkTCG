@@ -561,6 +561,9 @@
         #history-summary{color:#c8d4d4;font-size:12px}
         #history-note{margin-top:8px}
         @media(max-width:600px){.history-head{display:block}.history-periods{margin-top:10px}.history-periods button{font-size:10px;padding:7px 9px}}
+        /* Safari double-tap zoom prevention; pinch-to-zoom remains available. */
+        html { touch-action: manipulation; }
+        button, a, input { touch-action: manipulation; }
     </style>
 </head>
 
