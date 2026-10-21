@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - '.github/workflows/publish-beta-prices.yml'
+      - 'scripts/update-beta-prices.py'
   workflow_dispatch:
   schedule:
     # Daily at 09:00 Asia/Taipei (01:00 UTC); GitHub may start late.
