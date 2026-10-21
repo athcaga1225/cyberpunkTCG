@@ -91,6 +91,6 @@ for code,record in results.items():
     elif previous["usd"]!=point["usd"]:
         previous["usd"]=point["usd"]
     series.sort(key=lambda p:p["date"])
-history_path.write_text(json.dumps(history,ensure_ascii=False,indent=2)+"\\n")
+history_path.write_text(json.dumps(history,ensure_ascii=False,indent=2)+"\n")
 Path("prices.json").write_text(json.dumps(data,ensure_ascii=False,indent=2)+"\n")
 print("SUCCESS priced",len(results),"main-series cards; Box Toppers unchanged; range",min(v["usd"] for v in results.values()),max(v["usd"] for v in results.values()),flush=True)
