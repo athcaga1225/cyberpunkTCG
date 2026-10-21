@@ -1,0 +1,29 @@
+name: Backfill Beta price history
+on:
+  push:
+    paths:
+      - '.github/workflows/backfill-beta-history.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --quiet requests beautifulsoup4
+      - name: Read and validate dated market-reference tables
+        run: python scripts/backfill-beta-history.py
+      - name: Commit validated historical observations
+        run: |
+          git add price-history.json
+          if ! git diff --cached --quiet -- price-history.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "data: backfill dated Beta market-price history"
+            git push
+          fi
