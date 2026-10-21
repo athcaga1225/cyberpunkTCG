@@ -547,7 +547,11 @@
         .history-periods{display:flex;flex-wrap:wrap;gap:5px}
         .history-periods button{border-radius:0;padding:7px 9px;background:#10171a;border:1px solid #4b5b5e;color:#b9c9c9;font:11px ui-monospace,monospace}
         .history-periods button[aria-pressed="true"]{color:#111713;background:#def25b;border-color:#def25b}
-        .history-graph{min-height:155px;overflow:hidden;margin-top:12px}
+        .history-graph{min-height:155px;position:relative;margin-top:12px}
+        .history-graph svg{touch-action:pan-y}
+        .history-tooltip{position:absolute;top:8px;left:0;z-index:2;pointer-events:none;min-width:132px;padding:9px 12px;background:rgba(7,12,14,.95);border:1px solid #dcf257;color:#e6eeee;font:12px ui-monospace,monospace;box-shadow:0 5px 18px rgba(0,0,0,.35)}
+        .history-tooltip strong{display:block;color:#dcf257;font-size:17px;margin-top:4px}
+        .history-tooltip[hidden]{display:none}
         .history-graph svg{width:100%;height:auto;display:block;max-height:260px}
         .history-graph .empty-history{padding:32px 12px;border:1px dashed #4d5c5e;color:#aab9bc;text-align:center;font-size:12px;line-height:1.7}
         #history-summary{color:#c8d4d4;font-size:12px}
@@ -748,9 +752,34 @@
             for(let i=0;i<4;i++){const v=min+(max-min)*i/3,Y=y(v);el("line",{x1:left,y1:Y,x2:W-right,y2:Y,stroke:"#455255","stroke-width":.7,"stroke-dasharray":"3 5"});el("text",{x:0,y:Y+4,fill:"#aab9bc","font-size":12},v.toFixed(v>=100?0:2))}
             const d=points.map((p,i)=>(i?"L":"M")+x(times[i]).toFixed(2)+","+y(p.usd).toFixed(2)).join(" ");
             el("path",{d,stroke:"#dcf257","stroke-width":2.5,fill:"none","stroke-linecap":"round","stroke-linejoin":"round"});
-            points.forEach((p,i)=>{const circle=el("circle",{cx:x(times[i]),cy:y(p.usd),r:3.2,fill:"#dcf257"});const tip=document.createElementNS(NS,"title");tip.textContent=p.date+" · US$"+p.usd.toFixed(2);circle.append(tip)});
+            points.forEach((p,i)=>{el("circle",{cx:x(times[i]),cy:y(p.usd),r:3.2,fill:"#dcf257"})});
             for(const p of [first,last]){const T=Date.parse(p.date+"T00:00:00Z");el("text",{x:x(T),y:H-10,fill:"#aab9bc","font-size":12,"text-anchor":p===first?"start":"end"},p.date.slice(5))}
-            root.append(svg);
+            const guide=el("line",{x1:0,y1:top,x2:0,y2:H-bottom,stroke:"#dcf257","stroke-width":1,"stroke-dasharray":"4 4",visibility:"hidden"});
+            const focus=el("circle",{cx:0,cy:0,r:6,fill:"#dcf257",stroke:"#081013","stroke-width":2,visibility:"hidden"});
+            const hit=el("rect",{x:left,y:top,width:W-left-right,height:H-top-bottom,fill:"transparent"});
+            const tooltip=document.createElement("div");tooltip.className="history-tooltip";tooltip.hidden=true;
+            const dateLabel=document.createElement("span"),priceLabel=document.createElement("strong");
+            tooltip.append(dateLabel,priceLabel);root.append(svg,tooltip);
+            const activate=(event)=>{
+                const rect=svg.getBoundingClientRect();
+                const mouseX=(event.clientX-rect.left)*W/rect.width;
+                if(mouseX<left-8||mouseX>W-right+8)return;
+                let nearest=0;
+                for(let i=1;i<points.length;i++)if(Math.abs(x(times[i])-mouseX)<Math.abs(x(times[nearest])-mouseX))nearest=i;
+                const p=points[nearest],cx=x(times[nearest]);
+                guide.setAttribute("x1",cx);guide.setAttribute("x2",cx);
+                focus.setAttribute("cx",cx);focus.setAttribute("cy",y(p.usd));
+                guide.setAttribute("visibility","visible");focus.setAttribute("visibility","visible");
+                dateLabel.textContent=p.date;priceLabel.textContent="US$"+p.usd.toFixed(2);
+                tooltip.hidden=false;
+                const tipWidth=tooltip.offsetWidth,graphWidth=root.clientWidth;
+                tooltip.style.left=Math.max(0,Math.min(graphWidth-tipWidth,cx/W*rect.width-tipWidth/2))+"px";
+            };
+            const hide=()=>{guide.setAttribute("visibility","hidden");focus.setAttribute("visibility","hidden");tooltip.hidden=true};
+            svg.addEventListener("pointermove",activate);
+            svg.addEventListener("pointerdown",activate);
+            svg.addEventListener("pointerleave",hide);
+            svg.addEventListener("pointercancel",hide);
         }
         $('history-periods').onclick=e=>{const button=e.target.closest('button[data-days]');if(!button)return;historyDays=Number(button.dataset.days);for(const b of $('history-periods').querySelectorAll('button'))b.setAttribute("aria-pressed",String(b===button));renderHistory()};
 
