@@ -851,11 +851,19 @@
             if (saved === "heist" || saved === "power") chooseSection("starter", saved);
             else chooseSection("main");
         }
+        const starterOptions = [...$('collection-select').querySelectorAll('option')].filter(option => option.value === "heist" || option.value === "power");
         function chooseEdition(edition) {
             activeEdition = edition;
             chooseSection(activeSection, activeStarter);
         }
         function chooseSection(section, starter) {
+            // Only Welcome to Night City is listed for RETAIL.
+            const retail = activeEdition === "retail";
+            if (retail) section = "main";
+            for (const option of starterOptions) {
+                if (retail) option.remove();
+                else if (!option.isConnected) $('collection-select').append(option);
+            }
             activeSection = section; if (starter) activeStarter = starter;
             $('collection-select').value = section === "main" ? "main" : activeStarter;
             $('collection-summary').textContent = (section === "main" ? "WELCOME TO NIGHT CITY" : activeStarter === "heist" ? "THE HEIST" : "EMBRACING POWER") + " / " + activeEdition.toUpperCase();
