@@ -1050,7 +1050,7 @@
             const root=$('history-graph'),summary=$('history-summary'),note=$('history-note');
             root.replaceChildren();
             if(activeSection!=="main"||!selected||!selected.startsWith("B")){
-                summary.textContent="初始牌組已有獨立單卡參考價，尚無歷史走勢";note.textContent="目前僅 Beta 主系列建立逐日市場參考價格走勢。";return;
+                summary.textContent="尚無歷史走勢";note.textContent="目前僅 Beta 主系列建立逐日市場參考價格走勢。";return;
             }
             const all=(historyCards[selected]||[]).filter(p=>p.date>="2026-09-10"&&Number.isFinite(p.usd)).slice().sort((a,b)=>a.date.localeCompare(b.date));
             const today=new Date().toISOString().slice(0,10);
