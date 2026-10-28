@@ -567,13 +567,19 @@
         .collection-search {border-top:1px solid #45575a;padding:18px 0 16px}
         .collection-search-head {display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:13px}
         .collection-search-step {color:#718d8e;font:10px monospace;letter-spacing:.1em}
-        .collection-search .search {margin-top:0}
+        .collection-search .search {margin-top:0;align-items:stretch;gap:14px}
+        .collection-search .search input {flex:1 1 auto;width:0;min-width:0}
+        .collection-search .search button {flex:0 0 auto;min-width:142px;padding-left:24px;padding-right:24px;letter-spacing:.04em}
+        @media(max-width:580px) {
+            .collection-search .search {gap:9px}
+            .collection-search .search button {min-width:116px;padding-left:13px;padding-right:13px}
+        }
         /* Type B: series-first navigation prototype. */
         .collection-nav {
             margin: 20px 0 22px;
             background: linear-gradient(145deg, #1d292b, #151d20 70%);
             border: 1px solid #607277;
-            border-top: 2px solid #def25b;
+            border-left: 3px solid #def25b;
             padding: 18px 20px 0;
             clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
         }
@@ -582,7 +588,7 @@
         .collection-grid {display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:15px;margin:18px 0 17px}
         .collection-field label,.collection-field-label {display:block;color:#acbdc0;font-size:10px;font-weight:700;letter-spacing:.08em;margin-bottom:9px}
         .collection-select-wrap {position:relative}
-        .collection-select-wrap:after {content:"⌄";pointer-events:none;color:#def25b;position:absolute;right:17px;top:50%;transform:translateY(-55%);font-size:21px}
+        .collection-select-wrap:after {content:"";pointer-events:none;position:absolute;right:18px;top:50%;width:9px;height:9px;border-right:2px solid #def25b;border-bottom:2px solid #def25b;transform:translateY(-70%) rotate(45deg)}
         #collection-select {width:100%;background:#0c1416;color:#f5f8f5;border:1px solid #526467;border-radius:0;font-size:13px;font-family:inherit;font-weight:500;min-height:46px;padding:12px 40px 12px 14px;appearance:none;-webkit-appearance:none;cursor:pointer}
         #collection-select:focus-visible {outline:2px solid #def25b;outline-offset:2px}
         .edition-options {display:grid;grid-template-columns:1fr 1fr;gap:8px}
