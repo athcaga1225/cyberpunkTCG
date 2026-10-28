@@ -598,7 +598,8 @@
         .collection-nav-top,.collection-footer {display:flex;align-items:center;justify-content:space-between;gap:12px}
         .collection-status,.collection-aside {color:#718d8e;font-family:monospace;font-size:10px;letter-spacing:.11em}
         .collection-grid {display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:15px;margin:18px 0 17px}
-        .collection-field label,.collection-field-label {display:block;color:#acbdc0;font-size:10px;font-weight:700;letter-spacing:.08em;margin-bottom:9px}
+        .collection-field label,.collection-field-label,.collection-step-label {display:block;color:#acbdc0;font-size:10px;font-weight:700;letter-spacing:.08em;line-height:1.5}
+        .collection-field label,.collection-field-label {margin-bottom:9px}
         .collection-select-wrap {position:relative}
         .collection-select-wrap:after {content:"";pointer-events:none;position:absolute;right:18px;top:50%;width:9px;height:9px;border-right:2px solid #def25b;border-bottom:2px solid #def25b;transform:translateY(-70%) rotate(45deg)}
         #collection-select {width:100%;background:#0c1416;color:#f5f8f5;border:1px solid #526467;border-radius:0;font-size:13px;font-family:inherit;font-weight:500;min-height:46px;padding:12px 40px 12px 14px;appearance:none;-webkit-appearance:none;cursor:pointer}
@@ -653,7 +654,7 @@
                 </div>
             </div>
             <div class="collection-search">
-                <div class="collection-search-head"><span class="label">03 / SEARCH · 搜尋卡片</span></div>
+                <div class="collection-search-head"><span class="collection-step-label">03 / SEARCH · 搜尋卡片</span></div>
                 <div class="search"><input id="query" autocomplete="off" placeholder="B135、B157、T006"
                         aria-label="輸入卡號或卡名"><button class="primary" id="search">搜尋卡片 ↗</button></div>
                 <div class="row space" style="margin-top:12px;flex-wrap:wrap">
