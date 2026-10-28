@@ -576,12 +576,23 @@
         }
         /* Type B: series-first navigation prototype. */
         .collection-nav {
+            position: relative;
             margin: 20px 0 22px;
             background: linear-gradient(145deg, #1d292b, #151d20 70%);
             border: 1px solid #607277;
             border-left: 3px solid #def25b;
             padding: 18px 20px 0;
-            clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
+        }
+        .collection-nav::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(45deg, transparent calc(50% - 1px), #dcf257 50%, transparent calc(50% + 1px));
+            pointer-events: none;
         }
         .collection-nav-top,.collection-footer {display:flex;align-items:center;justify-content:space-between;gap:12px}
         .collection-status,.collection-aside {color:#718d8e;font-family:monospace;font-size:10px;letter-spacing:.11em}
@@ -602,7 +613,8 @@
         #collection-summary {color:#d9e1db;font-family:monospace;font-size:10px;letter-spacing:.06em}
         .collection-aside {margin-left:auto}
         @media(max-width:580px) {
-            .collection-nav {padding:16px 14px 0}
+            .collection-nav {padding:16px 14px 0;clip-path:polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 0 100%)}
+            .collection-nav::before {width:15px;height:15px}
             .collection-grid {grid-template-columns:1fr;gap:14px;margin:15px 0}
             .collection-aside {display:none}
         }
