@@ -743,12 +743,21 @@
             const threshold=historyDays?new Date(Date.now()-historyDays*86400000).toISOString().slice(0,10):"2026-09-10";
             const points=all.filter(p=>p.date>=threshold&&p.date<=today);
             note.textContent="ValueMyCard / TCGplayer 市場參考價（USD），非逐筆成交價；缺少資料的日期不補值。統一起算日：2026/09/10。";
+            // The summary always compares the latest two weeks, independent of the chart's visible range.
+            const latest=all.filter(p=>p.date<=today).at(-1);
+            const twoWeekStart=latest?new Date(Date.parse(latest.date+"T00:00:00Z")-14*86400000).toISOString().slice(0,10):null;
+            const recent=latest?all.filter(p=>p.date>=twoWeekStart&&p.date<=latest.date):[];
+            if(recent.length>=2){
+                const startPoint=recent[0],endPoint=recent[recent.length-1];
+                const delta=endPoint.usd-startPoint.usd,pct=startPoint.usd>0?delta/startPoint.usd*100:0;
+                summary.textContent="近兩週漲跌（有紀錄日期）｜"+startPoint.date+" → "+endPoint.date+"　US$"+startPoint.usd.toFixed(2)+" → US$"+endPoint.usd.toFixed(2)+"　"+(delta>=0?"+":"")+delta.toFixed(2)+" ("+(pct>=0?"+":"")+pct.toFixed(2)+"%)";
+            }else{
+                summary.textContent="近兩週漲跌：資料不足，尚無法比較";
+            }
             if(points.length<2){
-                summary.textContent=points.length?"已記錄 "+points[0].date+" · US$"+points[0].usd.toFixed(2):"尚未收集到此區間的價格";
                 const empty=document.createElement('div');empty.className='empty-history';empty.textContent="至少需要兩筆不同日期的市場價格，才會顯示走勢。";root.append(empty);return;
             }
-            const first=points[0],last=points[points.length-1],delta=last.usd-first.usd,pct=first.usd>0?delta/first.usd*100:0;
-            summary.textContent=first.date+" → "+last.date+"　US$"+first.usd.toFixed(2)+" → US$"+last.usd.toFixed(2)+"　"+(delta>=0?"+":"")+delta.toFixed(2)+" ("+(pct>=0?"+":"")+pct.toFixed(2)+"%)";
+            const first=points[0],last=points[points.length-1];
             const NS="http://www.w3.org/2000/svg",svg=document.createElementNS(NS,"svg");svg.setAttribute("viewBox","0 0 640 230");svg.setAttribute("role","img");svg.setAttribute("aria-label","歷史市場參考價格曲線，"+points.length+" 筆資料");
             const lo=Math.min(...points.map(p=>p.usd)),hi=Math.max(...points.map(p=>p.usd)),pad=Math.max((hi-lo)*.16,hi*.03,.01);
             const min=lo-pad,max=hi+pad,W=640,H=230,left=55,right=16,top=16,bottom=38;
