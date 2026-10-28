@@ -945,7 +945,7 @@
                 return;
             }
             const qty = Object.keys(currentCatalog()).length;
-            $('loadstate').textContent = section === "main" ? "Welcome to Night City Beta · " + qty + " 張卡" : (activeStarter === "heist" ? "The Heist" : "Embracing Power") + " Beta · " + qty + " 張卡";
+            $('loadstate').textContent = section === "main" ? "Welcome to Night City Beta · " + qty + " 張卡" : (activeStarter === "heist" ? "The Heist" : "Embracing Power") + " Beta · " + qty + " 張卡（卡號 B001～B020）";
             if ($('query').value.trim()) show($('query').value, false);
         }
         $('collection-select').onchange = e => e.target.value === "main" ? chooseSection("main") : chooseSection("starter", e.target.value);
@@ -963,7 +963,7 @@
                 const matches = Object.entries(cards).filter(([id, item]) => item.name.toLowerCase().includes(String(query).trim().toLowerCase()));
                 if (matches.length === 1) return show(matches[0][0], scroll);
                 $('result').classList.remove('open'); $('rate-info').hidden = true; selected = null;
-                $('loadstate').textContent = matches.length > 1 ? "找到多張同名卡，請輸入完整卡號。" : "此系列查不到卡片，請檢查卡號或切換系列。"; return;
+                $('loadstate').textContent = matches.length > 1 ? "找到多張同名卡，請輸入完整卡號。" : activeSection === "starter" ? "此初始牌組僅收錄 B001～B020；" + code + " 不在目前選擇的牌組中。請檢查卡號或切換系列。" : "此系列查不到卡片，請檢查卡號或切換系列。"; return;
             }
             const changedCard = selected !== code || !$('result').classList.contains('open');
             selected = code; $('loadstate').textContent = "已找到 " + code;
