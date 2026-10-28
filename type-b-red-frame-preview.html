@@ -719,8 +719,8 @@
         #history-summary {color:#d0dce0}
         .note {color:#a0b1b8}
         .collection-search .search button {color:#f7edef}
-        .history-graph svg path[stroke="#c5003c"] {stroke:#f8504a}
-        .history-graph svg circle[fill="#c5003c"] {fill:#f8504a}
+        .history-graph svg path[stroke="#e5e9ec"] {stroke:#e5e9ec}
+        .history-graph svg circle[fill="#e5e9ec"] {fill:#e5e9ec}
         .history-graph svg line[stroke="#c5003c"] {stroke:#f8504a}
         .history-graph svg circle[stroke="#081013"] {stroke:#0b1015}
         
@@ -987,8 +987,8 @@
             const el=(name,attrs,text)=>{const n=document.createElementNS(NS,name);for(const [k,v] of Object.entries(attrs||{}))n.setAttribute(k,String(v));if(text!==undefined)n.textContent=text;svg.append(n);return n};
             for(let i=0;i<4;i++){const v=min+(max-min)*i/3,Y=y(v);el("line",{x1:left,y1:Y,x2:W-right,y2:Y,stroke:"#455255","stroke-width":.7,"stroke-dasharray":"3 5"});el("text",{x:0,y:Y+4,fill:"#aab9bc","font-size":12},v.toFixed(v>=100?0:2))}
             const d=points.map((p,i)=>(i?"L":"M")+x(times[i]).toFixed(2)+","+y(p.usd).toFixed(2)).join(" ");
-            el("path",{d,stroke:"#c5003c","stroke-width":2.5,fill:"none","stroke-linecap":"round","stroke-linejoin":"round"});
-            points.forEach((p,i)=>{el("circle",{cx:x(times[i]),cy:y(p.usd),r:3.2,fill:"#c5003c"})});
+            el("path",{d,stroke:"#e5e9ec","stroke-width":1.5,fill:"none","stroke-linecap":"round","stroke-linejoin":"round"});
+            points.forEach((p,i)=>{el("circle",{cx:x(times[i]),cy:y(p.usd),r:2.8,fill:"#e5e9ec"})});
             for(const p of [first,last]){const T=Date.parse(p.date+"T00:00:00Z");el("text",{x:x(T),y:H-10,fill:"#aab9bc","font-size":12,"text-anchor":p===first?"start":"end"},p.date.slice(5))}
             const guide=el("line",{x1:0,y1:top,x2:0,y2:H-bottom,stroke:"#c5003c","stroke-width":1,"stroke-dasharray":"4 4",visibility:"hidden"});
             const focus=el("circle",{cx:0,cy:0,r:6,fill:"#c5003c",stroke:"#081013","stroke-width":2,visibility:"hidden"});
