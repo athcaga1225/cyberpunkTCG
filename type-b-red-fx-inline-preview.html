@@ -776,6 +776,22 @@
         .market-fx-note .note {font-size:11px;line-height:1.65;color:#98a5ac}
         .market-fx-note .small {font-size:12px}
         @media(min-width:700px) {.cardgrid {gap:24px}}
+        /* External link buttons: subtle motion, never compete with primary search. */
+        .links a {
+            display:inline-flex;align-items:center;gap:6px;
+            background:#11171b;border-color:#505b63;color:#b6c2c7;
+            transition:background-color .22s ease,border-color .22s ease,color .22s ease;
+        }
+        .links a .ext-arrow {display:inline-block;transition:transform .23s ease}
+        .links a:hover,.links a:focus-visible {
+            background:#21181d;border-color:#f8504a;color:#f2f4f5;
+        }
+        .links a:hover .ext-arrow,.links a:focus-visible .ext-arrow {
+            transform:translate(2px,-2px);color:#f8504a;
+        }
+        @media(prefers-reduced-motion:reduce) {
+            .links a,.links a .ext-arrow {transition:none!important}
+        }
     </style>
 </head>
 
@@ -854,8 +870,8 @@
                 <div id="history-graph" class="history-graph"></div>
                 <p class="note" id="history-note">歷史市場參考價，非逐筆成交資料。</p>
             </div>
-            <div class="links"><a id="tcg" target="_blank" rel="noopener noreferrer">TCGplayer 查價</a><a id="cataloglink"
-                    target="_blank" rel="noopener noreferrer">查看 Beta 卡片圖鑑</a></div>
+            <div class="links"><a id="tcg" target="_blank" rel="noopener noreferrer">TCGplayer 查價 <span class="ext-arrow" aria-hidden="true">↗</span></a><a id="cataloglink"
+                    target="_blank" rel="noopener noreferrer">查看 Beta 卡片圖鑑 <span class="ext-arrow" aria-hidden="true">↗</span></a></div>
         </section>
         <footer>CYBERDEX 是非官方收藏工具。與 Cyberpunk TCG、TCGplayer 無關；卡圖版權歸原權利人所有。價格不能作為保證成交報價。</footer>
     </main>
