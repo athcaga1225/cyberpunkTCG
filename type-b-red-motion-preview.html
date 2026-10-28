@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <meta name="theme-color" content="#101417">
-    <title>CYBERDEX — Type B Red / Motion Study</title>
+    <title>CYBERDEX — Type B Red / Motion Study v2</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&amp;display=swap"
@@ -727,32 +727,41 @@
         /* Restore the original Type B Red frame; white dropdown chevron. */
         .collection-select-wrap:after {border-color:#f2f4f5}
 
-        /* Motion study: one-time entrance and deliberate input feedback. */
+        /* Motion v2: static select, restrained result and button feedback. */
         @keyframes hudEnter {from {opacity:0;transform:translateY(11px)}to {opacity:1;transform:translateY(0)}}
         @keyframes chartDraw {from {stroke-dashoffset:var(--chart-length)}to {stroke-dashoffset:0}}
         @keyframes pointReveal {from {opacity:0}to {opacity:1}}
+        @keyframes cardRefresh {from {opacity:.15;transform:translateY(7px)}to {opacity:1;transform:translateY(0)}}
         .collection-nav {animation:hudEnter .38s ease-out both}
         main > .panel {animation:hudEnter .38s ease-out .10s both}
         #rate-info {animation-delay:.17s}
-        #collection-select {transition:border-color .20s ease,background-color .20s ease,box-shadow .20s ease}
-        #collection-select:hover,#collection-select:focus-visible {
-            border-color:#f8504a;
-            background-color:#15161b;
-            box-shadow:inset 0 -2px 0 rgba(248,80,74,.5);
-        }
-        .collection-select-wrap::after {transition:border-color .20s ease}
-        .collection-select-wrap:hover::after,.collection-select-wrap:focus-within::after {border-color:#f8504a}
         .history-graph svg path[stroke="#e5e9ec"][data-animated] {
             stroke-dasharray:var(--chart-length);
             animation:chartDraw .6s cubic-bezier(.2,.7,.2,1) both;
         }
-        .history-graph svg circle[fill="#e5e9ec"] {
-            animation:pointReveal .25s ease-out .42s both;
+        .history-graph svg circle[fill="#e5e9ec"] {animation:pointReveal .25s ease-out .42s both}
+        #result.card-refresh .cardgrid,#result.card-refresh .history-panel {
+            animation:cardRefresh .32s ease-out both;
+        }
+        #result.card-refresh .history-panel {animation-delay:.07s}
+        button {transition:background-color .22s ease,border-color .22s ease,color .22s ease}
+        .collection-search .search button.primary:hover {
+            background:#c74748;border-color:#ff6b67;color:#fff;
+        }
+        .button-arrow {
+            display:inline-block;
+            margin-left:5px;
+            transition:transform .23s ease;
+        }
+        .collection-search .search button.primary:hover .button-arrow,
+        .collection-search .search button.primary:focus-visible .button-arrow {
+            transform:translate(3px,-3px);
         }
         @media (prefers-reduced-motion:reduce) {
-            .collection-nav,main > .panel,.history-graph svg path[stroke="#e5e9ec"][data-animated],
+            .collection-nav,main > .panel,#result.card-refresh .cardgrid,#result.card-refresh .history-panel,
+            .history-graph svg path[stroke="#e5e9ec"][data-animated],
             .history-graph svg circle[fill="#e5e9ec"] {animation:none!important}
-            #collection-select,.collection-select-wrap::after {transition:none!important}
+            button,.button-arrow {transition:none!important}
             .history-graph svg path[stroke="#e5e9ec"][data-animated] {stroke-dashoffset:0}
         }
     </style>
@@ -772,7 +781,7 @@
             <div class="collection-search">
                 <div class="collection-search-head"><span class="collection-step-label">01 / SEARCH · 搜尋卡片</span></div>
                 <div class="search"><input id="query" autocomplete="off" placeholder="B135、B157、T006"
-                        aria-label="輸入卡號或卡名"><button class="primary" id="search">搜尋卡片 ↗</button></div>
+                        aria-label="輸入卡號或卡名"><button class="primary" id="search">搜尋卡片 <span class="button-arrow" aria-hidden="true">↗</span></button></div>
                 <div class="row space" style="margin-top:12px;flex-wrap:wrap">
                     <div class="small" id="loadstate">載入資料中…</div>
                 </div>
@@ -956,6 +965,7 @@
                 $('result').classList.remove('open'); $('rate-info').hidden = true; selected = null;
                 $('loadstate').textContent = matches.length > 1 ? "找到多張同名卡，請輸入完整卡號。" : "此系列查不到卡片，請檢查卡號或切換系列。"; return;
             }
+            const changedCard = selected !== code || !$('result').classList.contains('open');
             selected = code; $('loadstate').textContent = "已找到 " + code;
             $('result').classList.add('open'); $('rate-info').hidden = false; $('number').textContent = (activeSection === "starter" ? (entry.setCode + " · ") : "") + code;
             $('name').textContent = entry.name;
@@ -975,11 +985,105 @@
             $('cataloglink').href = activeSection === "starter" ? entry.sourceUrl : setUrl;
             displayArt(code, entry);
             renderHistory();
+            if (changedCard && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                const result = $('result');
+                result.classList.remove('card-refresh');
+                void result.offsetWidth;
+                result.classList.add('card-refresh');
+            }
             if (scroll) $('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
         $('search').onclick = () => $('query').value && show($('query').value, true);
         $('query').onkeydown = e => { if (e.key === "Enter") show($('query').value, true) };
-        $('rate').onchange = () => { const v = Number($('rate').value); if (v >= 1 && v <= 100) { rate = v; try { localStorage.setItem("cyberscan-usd-twd", String(rate)) } catch (e) { } if (selected) show(selected, false) } else { $('rate').value = rate } };
+        $('rate').onchange = () => { const v = Number($('rate').value); if (v >= 1 && v <= 100) { rate = v; try { localStorage.setItem("cyberscan-usd-twd", String(rate)) } catch (e) { } if (selected) { const price = activeSection === "main" ? prices[selected] : starterPrices[activeStarter]?.prices?.[selected]; const twd = $('twd'); if (price && Number.isFinite(price.usd)) { twd.replaceChildren(); const prefix = document.createElement('span'); prefix.className = 'twd-prefix'; prefix.textContent = '約 NT } else { $('rate').value = rate } };
+
+        function renderHistory(){
+            const root=$('history-graph'),summary=$('history-summary'),note=$('history-note');
+            root.replaceChildren();
+            if(activeSection!=="main"||!selected||!selected.startsWith("B")){
+                summary.textContent="初始牌組已有獨立單卡參考價，尚無歷史走勢";note.textContent="目前僅 Beta 主系列建立逐日市場參考價格走勢。";return;
+            }
+            const all=(historyCards[selected]||[]).filter(p=>p.date>="2026-09-10"&&Number.isFinite(p.usd)).slice().sort((a,b)=>a.date.localeCompare(b.date));
+            const today=new Date().toISOString().slice(0,10);
+            const threshold=historyDays?new Date(Date.now()-historyDays*86400000).toISOString().slice(0,10):"2026-09-10";
+            const points=all.filter(p=>p.date>=threshold&&p.date<=today);
+            note.textContent="ValueMyCard / TCGplayer 市場參考價（USD），非逐筆成交價；缺少資料的日期不補值。統一起算日：2026/09/10。";
+            // The summary always compares the latest two weeks, independent of the chart's visible range.
+            const latest=all.filter(p=>p.date<=today).at(-1);
+            const twoWeekStart=latest?new Date(Date.parse(latest.date+"T00:00:00Z")-14*86400000).toISOString().slice(0,10):null;
+            const recent=latest?all.filter(p=>p.date>=twoWeekStart&&p.date<=latest.date):[];
+            if(recent.length>=2){
+                const startPoint=recent[0],endPoint=recent[recent.length-1];
+                const delta=endPoint.usd-startPoint.usd,pct=startPoint.usd>0?delta/startPoint.usd*100:0;
+                summary.textContent="近兩週漲跌（有紀錄日期）｜"+startPoint.date+" → "+endPoint.date+"　US$"+startPoint.usd.toFixed(2)+" → US$"+endPoint.usd.toFixed(2)+"　"+(delta>=0?"+":"")+delta.toFixed(2)+" ("+(pct>=0?"+":"")+pct.toFixed(2)+"%)";
+            }else{
+                summary.textContent="近兩週漲跌：資料不足，尚無法比較";
+            }
+            if(points.length<2){
+                const empty=document.createElement('div');empty.className='empty-history';empty.textContent="至少需要兩筆不同日期的市場價格，才會顯示走勢。";root.append(empty);return;
+            }
+            const first=points[0],last=points[points.length-1];
+            const NS="http://www.w3.org/2000/svg",svg=document.createElementNS(NS,"svg");svg.setAttribute("viewBox","0 0 640 230");svg.setAttribute("role","img");svg.setAttribute("aria-label","歷史市場參考價格曲線，"+points.length+" 筆資料");
+            const lo=Math.min(...points.map(p=>p.usd)),hi=Math.max(...points.map(p=>p.usd)),pad=Math.max((hi-lo)*.16,hi*.03,.01);
+            const min=lo-pad,max=hi+pad,W=640,H=230,left=55,right=16,top=16,bottom=38;
+            const times=points.map(p=>Date.parse(p.date+"T00:00:00Z")),tmin=times[0],tmax=times[times.length-1];
+            const x=t=>left+(t-tmin)/Math.max(1,tmax-tmin)*(W-left-right);
+            const y=v=>top+(max-v)/(max-min)*(H-top-bottom);
+            const el=(name,attrs,text)=>{const n=document.createElementNS(NS,name);for(const [k,v] of Object.entries(attrs||{}))n.setAttribute(k,String(v));if(text!==undefined)n.textContent=text;svg.append(n);return n};
+            for(let i=0;i<4;i++){const v=min+(max-min)*i/3,Y=y(v);el("line",{x1:left,y1:Y,x2:W-right,y2:Y,stroke:"#455255","stroke-width":.7,"stroke-dasharray":"3 5"});el("text",{x:0,y:Y+4,fill:"#aab9bc","font-size":12},v.toFixed(v>=100?0:2))}
+            const d=points.map((p,i)=>(i?"L":"M")+x(times[i]).toFixed(2)+","+y(p.usd).toFixed(2)).join(" ");
+            const curve=el("path",{d,stroke:"#e5e9ec","stroke-width":1.5,fill:"none","stroke-linecap":"round","stroke-linejoin":"round"});
+            const curveLength=Math.ceil(curve.getTotalLength());
+            curve.style.setProperty("--chart-length",curveLength+"px");
+            curve.setAttribute("data-animated","");
+            points.forEach((p,i)=>{el("circle",{cx:x(times[i]),cy:y(p.usd),r:2.8,fill:"#e5e9ec"})});
+            for(const p of [first,last]){const T=Date.parse(p.date+"T00:00:00Z");el("text",{x:x(T),y:H-10,fill:"#aab9bc","font-size":12,"text-anchor":p===first?"start":"end"},p.date.slice(5))}
+            const guide=el("line",{x1:0,y1:top,x2:0,y2:H-bottom,stroke:"#c5003c","stroke-width":1,"stroke-dasharray":"4 4",visibility:"hidden"});
+            const hit=el("rect",{x:left,y:top,width:W-left-right,height:H-top-bottom,fill:"transparent"});
+            const tooltip=document.createElement("div");tooltip.className="history-tooltip";tooltip.hidden=true;
+            const dateLabel=document.createElement("span"),priceLabel=document.createElement("strong");
+            tooltip.append(dateLabel,priceLabel);root.append(svg,tooltip);
+            const activate=(event)=>{
+                // Convert screen coordinates through the SVG transform so the
+                // viewBox stays aligned even when max-height letterboxes the chart.
+                const matrix=svg.getScreenCTM();
+                if(!matrix)return;
+                const cursor=svg.createSVGPoint();
+                cursor.x=event.clientX;cursor.y=event.clientY;
+                const mouseX=cursor.matrixTransform(matrix.inverse()).x;
+                if(mouseX<left-8||mouseX>W-right+8)return;
+                let nearest=0;
+                for(let i=1;i<points.length;i++)if(Math.abs(x(times[i])-mouseX)<Math.abs(x(times[nearest])-mouseX))nearest=i;
+                const p=points[nearest],cx=x(times[nearest]);
+                // The guide follows the pointer continuously while the value
+                // remains the nearest real recorded price (no invented prices).
+                const guideX=Math.max(left,Math.min(W-right,mouseX));
+                guide.setAttribute("x1",guideX);guide.setAttribute("x2",guideX);
+                guide.setAttribute("visibility","visible");
+                dateLabel.textContent=p.date;priceLabel.textContent="US$"+p.usd.toFixed(2);
+                tooltip.hidden=false;
+                const tipWidth=tooltip.offsetWidth,graphWidth=root.clientWidth;
+                const marker=svg.createSVGPoint();marker.x=guideX;marker.y=top;
+                const screenX=marker.matrixTransform(matrix).x-root.getBoundingClientRect().left;
+                tooltip.style.left=Math.max(0,Math.min(graphWidth-tipWidth,screenX-tipWidth/2))+"px";
+            };
+            const hide=()=>{guide.setAttribute("visibility","hidden");tooltip.hidden=true};
+            svg.addEventListener("pointermove",activate);
+            svg.addEventListener("pointerdown",activate);
+            svg.addEventListener("pointerleave",hide);
+            svg.addEventListener("pointercancel",hide);
+        }
+        $('history-periods').onclick=e=>{const button=e.target.closest('button[data-days]');if(!button)return;historyDays=Number(button.dataset.days);for(const b of $('history-periods').querySelectorAll('button'))b.setAttribute("aria-pressed",String(b===button));renderHistory()};
+
+        async function init() { const results = await Promise.allSettled([fetch("./card-catalog.json?v=5", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() }), fetch("./prices.json?v=5", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() }), fetch("./card-images.json?v=3", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() }), fetch("./starter-catalog.json?v=2", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() }), fetch("./price-history.json?v=1", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() }), fetch("./starter-prices.json?v=1", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() })]); if (results[0].status === "fulfilled") catalog = results[0].value.cards || {}; if (results[1].status === "fulfilled") { prices = results[1].value.prices || {}; priceDate = results[1].value.observedDate || "未註明" } if (results[2].status === "fulfilled") cardImages = results[2].value.images || {}; if (results[3].status === "fulfilled") starterSets = results[3].value.sets || {}; if(results[4].status==="fulfilled") historyCards=results[4].value.cards||{}; if(results[5].status==="fulfilled") starterPrices=results[5].value.sets||{}; $('loadstate').textContent = Object.keys(catalog).length === 178 ? "已載入 Beta 主系列 172 張卡＋Box Topper 6 張卡。" : "卡表資料未完整載入，請重新整理。"; restoreCollection(); if (location.hash) { const hash = decodeURIComponent(location.hash.slice(1)); const match = hash.match(/^(heist|power)-(B\d{3})$/i); if (match) { chooseSection('starter', match[1].toLowerCase()); show(match[2], false) } else if (catalog[normalize(hash)]) show(hash, false) } }
+        // Apply saved selection synchronously before displaying navigation; no BETA -> RETAIL flash.
+        restoreCollection();
+        document.querySelector('.collection-nav').style.visibility = 'visible';
+        init();
+    </script>
+</body>
+
+</html>; const amount = document.createElement('span'); amount.textContent = Math.round(price.usd * rate).toLocaleString('zh-TW'); twd.append(prefix, amount); } } } else { $('rate').value = rate } };
 
         function renderHistory(){
             const root=$('history-graph'),summary=$('history-summary'),note=$('history-note');
