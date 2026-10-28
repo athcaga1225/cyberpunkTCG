@@ -1,0 +1,383 @@
+{
+  "source": "ValueMyCard — TCGplayer US market reference",
+  "kind": "non-live observed market-price snapshot",
+  "notes": "Separate Beta starter deck prices by deck ID; never mix same-number cards. Listed Foil/Normal printings preserved. Not eBay sales or live listings.",
+  "sets": {
+    "heist": {
+      "label": "The Heist · Beta",
+      "setCode": "SD01B",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24847-the-heist-beta-starter-deck",
+      "observedDate": "2026-10-23",
+      "prices": {
+        "B001": {
+          "usd": 4.71,
+          "name": "Viktor Vektor: Sit Down and Relax",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24847-the-heist-beta-starter-deck",
+          "observedDate": "2026-10-23",
+          "printing": "Foil",
+          "condition": "Ungraded market reference"
+        },
+        "B002": {
+          "usd": 8.03,
+          "name": "Dexter DeShawn: One Last Chance",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24847-the-heist-beta-starter-deck",
+          "observedDate": "2026-10-23",
+          "printing": "Normal",
+          "condition": "Ungraded market reference"
+        },
+        "B003": {
+          "usd": 0.17,
+          "name": "Heywood Ripperdoc",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24847-the-heist-beta-starter-deck",
+          "observedDate": "2026-10-23",
+          "printing": "Normal",
+          "condition": "Ungraded market reference"
+        },
+        "B004": {
+          "usd": 0.33,
+          "name": "Offduty Malfini",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24847-the-heist-beta-starter-deck",
+          "observedDate": "2026-10-23",
+          "printing": "Normal",
+          "condition": "Ungraded market reference"
+        },
+        "B005": {
+          "usd": 0.75,
+          "name": "Secondhand Bombus",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24847-the-heist-beta-starter-deck",
+          "observedDate": "2026-10-23",
+          "printing": "Normal",
+          "condition": "Ungraded market reference"
+        },
+        "B006": {
+          "usd": 0.23,
+          "name": "T-Bug: Amateur Philosopher",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24847-the-heist-beta-starter-deck",
+          "observedDate": "2026-10-23",
+          "printing": "Normal",
+          "condition": "Ungraded market reference"
+        },
+        "B007": {
+          "usd": 0.36,
+          "name": "Kiroshi Optics",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24847-the-heist-beta-starter-deck",
+          "observedDate": "2026-10-23",
+          "printing": "Normal",
+          "condition": "Ungraded market reference"
+        },
+        "B008": {
+          "usd": 0.34,
+          "name": "Mandibular Upgrade",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24847-the-heist-beta-starter-deck",
+          "observedDate": "2026-10-23",
+          "printing": "Normal",
+          "condition": "Ungraded market reference"
+        },
+        "B009": {
+          "usd": 0.8,
+          "name": "Zetatech Faceplate",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24847-the-heist-beta-starter-deck",
+          "observedDate": "2026-10-23",
+          "printing": "Normal",
+          "condition": "Ungraded market reference"
+        },
+        "B010": {
+          "usd": 0.21,
+          "name": "Afterparty at Lizzie's",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24847-the-heist-beta-starter-deck",
+          "observedDate": "2026-10-23",
+          "printing": "Normal",
+          "condition": "Ungraded market reference"
+        },
+        "B011": {
+          "usd": 17.07,
+          "name": "Jackie Welles: Pour One Out For Me",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24847-the-heist-beta-starter-deck",
+          "observedDate": "2026-10-23",
+          "printing": "Foil",
+          "condition": "Ungraded market reference"
+        },
+        "B012": {
+          "usd": 6.4,
+          "name": "V: Corporate Exile",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24847-the-heist-beta-starter-deck",
+          "observedDate": "2026-10-23",
+          "printing": "Foil",
+          "condition": "Ungraded market reference"
+        },
+        "B013": {
+          "usd": 0.15,
+          "name": "Delamain Cab",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24847-the-heist-beta-starter-deck",
+          "observedDate": "2026-10-23",
+          "printing": "Normal",
+          "condition": "Ungraded market reference"
+        },
+        "B014": {
+          "usd": 0.64,
+          "name": "Evelyn Parker: Scheming Siren",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24847-the-heist-beta-starter-deck",
+          "observedDate": "2026-10-23",
+          "printing": "Normal",
+          "condition": "Ungraded market reference"
+        },
+        "B015": {
+          "usd": 12.2,
+          "name": "MT0D12 Flathead",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24847-the-heist-beta-starter-deck",
+          "observedDate": "2026-10-23",
+          "printing": "Normal",
+          "condition": "Ungraded market reference"
+        },
+        "B016": {
+          "usd": 0.23,
+          "name": "Psycho Squad",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24847-the-heist-beta-starter-deck",
+          "observedDate": "2026-10-23",
+          "printing": "Normal",
+          "condition": "Ungraded market reference"
+        },
+        "B017": {
+          "usd": 0.29,
+          "name": "Dying Night: V's Pistol",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24847-the-heist-beta-starter-deck",
+          "observedDate": "2026-10-23",
+          "printing": "Foil",
+          "condition": "Ungraded market reference"
+        },
+        "B018": {
+          "usd": 0.31,
+          "name": "Tetratonic Rippler",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24847-the-heist-beta-starter-deck",
+          "observedDate": "2026-10-23",
+          "printing": "Normal",
+          "condition": "Ungraded market reference"
+        },
+        "B019": {
+          "usd": 0.26,
+          "name": "Floor It",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24847-the-heist-beta-starter-deck",
+          "observedDate": "2026-10-23",
+          "printing": "Normal",
+          "condition": "Ungraded market reference"
+        },
+        "B020": {
+          "usd": 0.19,
+          "name": "Reboot Optics",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24847-the-heist-beta-starter-deck",
+          "observedDate": "2026-10-23",
+          "printing": "Normal",
+          "condition": "Ungraded market reference"
+        }
+      }
+    },
+    "power": {
+      "label": "Embracing Power · Beta",
+      "setCode": "SD02B",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24846-embracing-power-beta-starter-deck",
+      "observedDate": "2026-10-24",
+      "prices": {
+        "B001": {
+          "usd": 5.76,
+          "name": "Yorinobu Arasaka: Embracing Destruction",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24846-embracing-power-beta-starter-deck",
+          "observedDate": "2026-10-24",
+          "printing": "Foil",
+          "condition": "Ungraded market reference"
+        },
+        "B002": {
+          "usd": 0.19,
+          "name": "Chrome Fang",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24846-embracing-power-beta-starter-deck",
+          "observedDate": "2026-10-24",
+          "printing": "Normal",
+          "condition": "Ungraded market reference"
+        },
+        "B003": {
+          "usd": 6.76,
+          "name": "Minotaur",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24846-embracing-power-beta-starter-deck",
+          "observedDate": "2026-10-24",
+          "printing": "Normal",
+          "condition": "Ungraded market reference"
+        },
+        "B004": {
+          "usd": 0.23,
+          "name": "Ruthless Lowlife",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24846-embracing-power-beta-starter-deck",
+          "observedDate": "2026-10-24",
+          "printing": "Normal",
+          "condition": "Ungraded market reference"
+        },
+        "B005": {
+          "usd": 0.27,
+          "name": "Swordwise Huscle",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24846-embracing-power-beta-starter-deck",
+          "observedDate": "2026-10-24",
+          "printing": "Normal",
+          "condition": "Ungraded market reference"
+        },
+        "B006": {
+          "usd": 0.21,
+          "name": "Arasaka Emergency Radioport",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24846-embracing-power-beta-starter-deck",
+          "observedDate": "2026-10-24",
+          "printing": "Normal",
+          "condition": "Ungraded market reference"
+        },
+        "B007": {
+          "usd": 0.61,
+          "name": "Mantis Blades",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24846-embracing-power-beta-starter-deck",
+          "observedDate": "2026-10-24",
+          "printing": "Normal",
+          "condition": "Ungraded market reference"
+        },
+        "B008": {
+          "usd": 0.58,
+          "name": "Satori: Sword of Saburo",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24846-embracing-power-beta-starter-deck",
+          "observedDate": "2026-10-24",
+          "printing": "Normal",
+          "condition": "Ungraded market reference"
+        },
+        "B009": {
+          "usd": 0.42,
+          "name": "Industrial Assembly",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24846-embracing-power-beta-starter-deck",
+          "observedDate": "2026-10-24",
+          "printing": "Normal",
+          "condition": "Ungraded market reference"
+        },
+        "B010": {
+          "usd": 0.3,
+          "name": "Over the Edge",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24846-embracing-power-beta-starter-deck",
+          "observedDate": "2026-10-24",
+          "printing": "Normal",
+          "condition": "Ungraded market reference"
+        },
+        "B011": {
+          "usd": 1.22,
+          "name": "Shattered Memories",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24846-embracing-power-beta-starter-deck",
+          "observedDate": "2026-10-24",
+          "printing": "Foil",
+          "condition": "Ungraded market reference"
+        },
+        "B012": {
+          "usd": 5.55,
+          "name": "Goro Takemura: Hands Unclean",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24846-embracing-power-beta-starter-deck",
+          "observedDate": "2026-10-24",
+          "printing": "Foil",
+          "condition": "Ungraded market reference"
+        },
+        "B013": {
+          "usd": 5.63,
+          "name": "Saburo Arasaka: Stubborn Patriarch",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24846-embracing-power-beta-starter-deck",
+          "observedDate": "2026-10-24",
+          "printing": "Foil",
+          "condition": "Ungraded market reference"
+        },
+        "B014": {
+          "usd": 0.19,
+          "name": "Corpo Security",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24846-embracing-power-beta-starter-deck",
+          "observedDate": "2026-10-24",
+          "printing": "Normal",
+          "condition": "Ungraded market reference"
+        },
+        "B015": {
+          "usd": 0.18,
+          "name": "Emergency Atlus",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24846-embracing-power-beta-starter-deck",
+          "observedDate": "2026-10-24",
+          "printing": "Normal",
+          "condition": "Ungraded market reference"
+        },
+        "B016": {
+          "usd": 0.41,
+          "name": "Field Operator",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24846-embracing-power-beta-starter-deck",
+          "observedDate": "2026-10-24",
+          "printing": "Normal",
+          "condition": "Ungraded market reference"
+        },
+        "B017": {
+          "usd": 8.33,
+          "name": "Goro Takemura: Losing His Way",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24846-embracing-power-beta-starter-deck",
+          "observedDate": "2026-10-24",
+          "printing": "Normal",
+          "condition": "Ungraded market reference"
+        },
+        "B018": {
+          "usd": 0.18,
+          "name": "MaxTac AV",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24846-embracing-power-beta-starter-deck",
+          "observedDate": "2026-10-24",
+          "printing": "Normal",
+          "condition": "Ungraded market reference"
+        },
+        "B019": {
+          "usd": 0.35,
+          "name": "Sandevistan",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24846-embracing-power-beta-starter-deck",
+          "observedDate": "2026-10-24",
+          "printing": "Normal",
+          "condition": "Ungraded market reference"
+        },
+        "B020": {
+          "usd": 0.5,
+          "name": "Corporate Surveillance",
+          "source": "ValueMyCard — TCGplayer US market reference",
+          "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24846-embracing-power-beta-starter-deck",
+          "observedDate": "2026-10-24",
+          "printing": "Normal",
+          "condition": "Ungraded market reference"
+        }
+      }
+    }
+  }
+}
