@@ -606,7 +606,8 @@
         .edition-options {display:grid;grid-template-columns:1fr 1fr;gap:8px}
         .edition-btn {display:flex;align-items:center;justify-content:space-between;gap:6px;min-height:46px;padding:10px 12px;border-radius:0;font-size:12px;font-family:inherit;font-weight:700;letter-spacing:.035em}
         .edition-btn.active {background:#def25b;color:#101617;border:1px solid #def25b}
-        .edition-btn.active span {font-size:9px}
+        .edition-btn span {font-size:9px;visibility:hidden}
+        .edition-btn.active span {visibility:visible}
         .edition-btn.upcoming {background:transparent;color:#829597;border:1px solid #3d5053;cursor:pointer;opacity:1}
         .edition-btn.upcoming span {font:9px monospace;color:#708589;letter-spacing:.06em}
         .edition-btn.upcoming.active {background:#def25b;color:#101617;border-color:#def25b}
@@ -650,7 +651,7 @@
                     <span class="collection-field-label">02 / EDITION · 版本</span>
                     <div class="edition-options" role="group" aria-label="卡牌版本">
                         <button type="button" id="edition-beta" class="edition-btn active" aria-pressed="true">BETA <span>●</span></button>
-                        <button type="button" id="edition-retail" class="edition-btn upcoming" aria-pressed="false" title="正式版資料尚未加入">RETAIL <span>SOON</span></button>
+                        <button type="button" id="edition-retail" class="edition-btn upcoming" aria-pressed="false" title="正式版資料尚未加入">RETAIL <span>●</span></button>
                     </div>
                 </div>
             </div>
