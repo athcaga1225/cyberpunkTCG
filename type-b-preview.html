@@ -110,7 +110,7 @@
         .panel {
             background: #1c2428;
             border: 1px solid #37464a;
-            border-radius: 16px;
+            border-radius: 0;
             padding: 18px;
             margin-top: 18px
         }
@@ -130,7 +130,7 @@
             background: #0f161a;
             border: 1px solid #57676b;
             color: #fff;
-            border-radius: 9px;
+            border-radius: 0;
             padding: 13px;
             width: 100%;
             outline: none
@@ -145,7 +145,7 @@
         }
 
         button {
-            border-radius: 9px;
+            border-radius: 0;
             border: 1px solid #617075;
             background: #303c40;
             color: white;
@@ -171,7 +171,7 @@
         .badge {
             background: #354346;
             color: #dfe5e5;
-            border-radius: 7px;
+            border-radius: 0;
             padding: 5px 8px;
             font-size: 11px
         }
@@ -321,7 +321,7 @@
         }
 
         .art {
-            border-radius: 10px;
+            border-radius: 0;
             border: 1px solid #435155;
             background: #131b1f;
             min-height: 182px;
@@ -405,7 +405,7 @@
             color: #fff;
             text-decoration: none;
             border: 1px solid #697578;
-            border-radius: 9px;
+            border-radius: 0;
             padding: 11px 12px;
             font-size: 12px
         }
@@ -460,7 +460,7 @@
 
         .stat {
             flex: 1;
-            border-radius: 11px;
+            border-radius: 0;
             background: #121a1d;
             padding: 12px
         }
@@ -735,7 +735,7 @@
             const image = document.createElement("img");
             image.alt = code + " " + entry.name + "（Beta 卡圖）";
             image.loading = "eager"; image.decoding = "async"; image.referrerPolicy = "no-referrer";
-            image.style.cssText = "display:block;width:100%;height:auto;border-radius:9px";
+            image.style.cssText = "display:block;width:100%;height:auto;border-radius: 0";
             image.onload = () => {
                 if (requestId !== artRequest) return;
                 const note = $('imgnote'); note.replaceChildren();
