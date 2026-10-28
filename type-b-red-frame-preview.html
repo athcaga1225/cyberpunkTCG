@@ -991,7 +991,6 @@
             points.forEach((p,i)=>{el("circle",{cx:x(times[i]),cy:y(p.usd),r:2.8,fill:"#e5e9ec"})});
             for(const p of [first,last]){const T=Date.parse(p.date+"T00:00:00Z");el("text",{x:x(T),y:H-10,fill:"#aab9bc","font-size":12,"text-anchor":p===first?"start":"end"},p.date.slice(5))}
             const guide=el("line",{x1:0,y1:top,x2:0,y2:H-bottom,stroke:"#c5003c","stroke-width":1,"stroke-dasharray":"4 4",visibility:"hidden"});
-            const focus=el("circle",{cx:0,cy:0,r:6,fill:"#c5003c",stroke:"#081013","stroke-width":2,visibility:"hidden"});
             const hit=el("rect",{x:left,y:top,width:W-left-right,height:H-top-bottom,fill:"transparent"});
             const tooltip=document.createElement("div");tooltip.className="history-tooltip";tooltip.hidden=true;
             const dateLabel=document.createElement("span"),priceLabel=document.createElement("strong");
@@ -1012,8 +1011,7 @@
                 // remains the nearest real recorded price (no invented prices).
                 const guideX=Math.max(left,Math.min(W-right,mouseX));
                 guide.setAttribute("x1",guideX);guide.setAttribute("x2",guideX);
-                focus.setAttribute("cx",cx);focus.setAttribute("cy",y(p.usd));
-                guide.setAttribute("visibility","visible");focus.setAttribute("visibility","visible");
+                guide.setAttribute("visibility","visible");
                 dateLabel.textContent=p.date;priceLabel.textContent="US$"+p.usd.toFixed(2);
                 tooltip.hidden=false;
                 const tipWidth=tooltip.offsetWidth,graphWidth=root.clientWidth;
@@ -1021,7 +1019,7 @@
                 const screenX=marker.matrixTransform(matrix).x-root.getBoundingClientRect().left;
                 tooltip.style.left=Math.max(0,Math.min(graphWidth-tipWidth,screenX-tipWidth/2))+"px";
             };
-            const hide=()=>{guide.setAttribute("visibility","hidden");focus.setAttribute("visibility","hidden");tooltip.hidden=true};
+            const hide=()=>{guide.setAttribute("visibility","hidden");tooltip.hidden=true};
             svg.addEventListener("pointermove",activate);
             svg.addEventListener("pointerdown",activate);
             svg.addEventListener("pointerleave",hide);
