@@ -922,6 +922,12 @@
             activeEdition = edition;
             chooseSection(activeSection, activeStarter);
         }
+        function collectionStatusText() {
+            const qty = Object.keys(currentCatalog()).length;
+            return activeSection === "main"
+                ? "Welcome to Night City Beta · " + qty + " 張卡（B001～B172、T001～T006）"
+                : (activeStarter === "heist" ? "The Heist" : "Embracing Power") + " Beta · " + qty + " 張卡（B001～B020）";
+        }
         function chooseSection(section, starter) {
             // Only Welcome to Night City is listed for RETAIL.
             const retail = activeEdition === "retail";
@@ -944,8 +950,7 @@
                 $('loadstate').textContent = "RETAIL 正式版資料尚未加入，目前僅供切換與記憶功能測試。";
                 return;
             }
-            const qty = Object.keys(currentCatalog()).length;
-            $('loadstate').textContent = section === "main" ? "Welcome to Night City Beta · " + qty + " 張卡" : (activeStarter === "heist" ? "The Heist" : "Embracing Power") + " Beta · " + qty + " 張卡（卡號 B001～B020）";
+            $('loadstate').textContent = collectionStatusText();
             if ($('query').value.trim()) show($('query').value, false);
         }
         $('collection-select').onchange = e => e.target.value === "main" ? chooseSection("main") : chooseSection("starter", e.target.value);
@@ -966,7 +971,7 @@
                 $('loadstate').textContent = matches.length > 1 ? "找到多張同名卡，請輸入完整卡號。" : activeSection === "starter" ? "此初始牌組僅收錄 B001～B020；" + code + " 不在目前選擇的牌組中。請檢查卡號或切換系列。" : "此系列查不到卡片，請檢查卡號或切換系列。"; return;
             }
             const changedCard = selected !== code || !$('result').classList.contains('open');
-            selected = code; $('loadstate').textContent = "已找到 " + code;
+            selected = code; $('loadstate').textContent = collectionStatusText();
             $('result').classList.add('open'); $('rate-info').hidden = false; $('number').textContent = (activeSection === "starter" ? (entry.setCode + " · ") : "") + code;
             $('name').textContent = entry.name;
             $('variant').textContent = activeSection === "starter" ? (activeStarter === "heist" ? "THE HEIST · BETA" : "EMBRACING POWER · BETA") : (entry.set ? "BOX TOPPER" : "WELCOME TO NIGHT CITY · BETA");
