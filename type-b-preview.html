@@ -1,0 +1,851 @@
+<!doctype html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="theme-color" content="#101417">
+    <title>CYBERDEX — Type B 系列導覽預覽</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&amp;display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            color-scheme: dark;
+            font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+            color: #f4f6f4;
+            background: #101417;
+            font-weight: 400
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0
+        }
+
+        button,
+        input {
+            font: inherit
+        }
+
+        button {
+            cursor: pointer
+        }
+
+        header {
+            border-bottom: 1px solid #333d40;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 980px;
+            margin: auto
+        }
+
+        .brand {
+            font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            font-weight: 800;
+            letter-spacing: .14em
+        }
+
+        .brand em {
+            font-style: normal;
+            color: #dcf257
+        }
+
+        .small,
+        .muted {
+            color: #aab9bc;
+            font-size: 12px;
+            line-height: 1.65
+        }
+
+        .label {
+            font-size: 11px;
+            letter-spacing: .12em;
+            color: #bac5c5
+        }
+
+        .wrap {
+            max-width: 980px;
+            margin: auto;
+            padding: 26px 18px 75px
+        }
+
+        h1 {
+            font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            font-size: clamp(34px, 7vw, 62px);
+            line-height: 1.04;
+            margin: 9px 0 14px;
+            letter-spacing: -.035em
+        }
+
+        h1 span {
+            color: #dcf257
+        }
+
+        h2 {
+            font-size: 15px;
+            margin: 0 0 15px;
+            font-weight: 500
+        }
+
+        .intro {
+            font-family: "Noto Sans TC", "PingFang TC", sans-serif;
+            font-weight: 400;
+            max-width: none;
+            color: #acbbbe;
+            line-height: 1.8;
+            font-size: 14px
+        }
+
+        .panel {
+            background: #1c2428;
+            border: 1px solid #37464a;
+            border-radius: 16px;
+            padding: 18px;
+            margin-top: 18px
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            gap: 10px
+        }
+
+        .space {
+            justify-content: space-between
+        }
+
+        input {
+            min-width: 0;
+            background: #0f161a;
+            border: 1px solid #57676b;
+            color: #fff;
+            border-radius: 9px;
+            padding: 13px;
+            width: 100%;
+            outline: none
+        }
+
+        input:focus {
+            border-color: #d8ed58
+        }
+
+        input[type=number] {
+            width: 104px
+        }
+
+        button {
+            border-radius: 9px;
+            border: 1px solid #617075;
+            background: #303c40;
+            color: white;
+            padding: 12px 14px;
+            font-weight: 500
+        }
+
+        .primary {
+            background: #def25b;
+            color: #111713;
+            border-color: #def25b
+        }
+
+        .search {
+            display: flex;
+            gap: 9px
+        }
+
+        .search button {
+            white-space: nowrap
+        }
+
+        .badge {
+            background: #354346;
+            color: #dfe5e5;
+            border-radius: 7px;
+            padding: 5px 8px;
+            font-size: 11px
+        }
+
+        .rarityinfo {
+            border-top: 1px solid #344044;
+            margin: 8px 0 0;
+            padding-top: 9px;
+            font-size: 12px;
+            line-height: 1.7;
+            color: #b8c9ca
+        }
+
+        .rarityinfo strong {
+            color: #f0f3ee;
+            font-weight: 500
+        }
+
+        .rarityinfo .rarityhigh {
+            color: #def25b
+        }
+
+        .rarityinfo .rarityunknown {
+            color: #a6b8ba
+        }
+
+        .rarityline {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 7px 11px
+        }
+
+        .raritystars {
+            font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            font-size: 18px;
+            line-height: 1;
+            letter-spacing: 2px;
+            color: #def25b;
+            white-space: nowrap
+        }
+
+        .rarityname {
+            color: #eff2ed;
+            font-size: 13px;
+            font-weight: 500
+        }
+
+        .raritytip {
+            font-size: 11px;
+            line-height: 1.7;
+            color: #aab9bc;
+            margin-top: 5px
+        }
+
+        .rarityspecial {
+            color: #def25b;
+            font-weight: 500
+        }
+
+        .settabs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin: 18px 0 0
+        }
+
+        .settab {
+            background: transparent;
+            color: #c4d1d0;
+            border: 1px solid #4b5b5e;
+            border-radius: 0;
+            padding: 13px 8px;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .settab[aria-selected="true"] {
+            background: #def25b;
+            color: #101617;
+            border-color: #def25b;
+        }
+
+        .settab:focus-visible { outline: 2px solid #dcf257; outline-offset: 3px; }
+
+        .startersets {
+            display: flex;
+            gap: 7px;
+            flex-wrap: wrap;
+            margin-top: 10px
+        }
+
+        .startersets[hidden] {
+            display: none
+        }
+
+        .startersets button {
+            padding: 8px 11px;
+            font-size: 12px;
+            background: #192427
+        }
+
+        .startersets button[aria-pressed="true"] {
+            border-color: #def25b;
+            color: #def25b
+        }
+
+        .raritycode {
+            color: #def25b;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: .02em
+        }
+
+        .rarityname {
+            font-size: 12px;
+            color: #aebebc
+        }
+
+        .rarityinfo {
+            margin-top: 8px;
+            line-height: 1.7
+        }
+
+        .rarityline {
+            gap: 9px
+        }
+
+        .setsublabel {
+            color: #abbfc1;
+            font-size: 11px;
+            padding-top: 8px
+        }
+
+        .detail {
+            display: none
+        }
+
+        .detail.open {
+            display: block
+        }
+
+        .cardgrid {
+            display: grid;
+            grid-template-columns: 128px minmax(0, 1fr);
+            gap: 16px
+        }
+
+        .art {
+            border-radius: 10px;
+            border: 1px solid #435155;
+            background: #131b1f;
+            min-height: 182px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden
+        }
+
+        .art img {
+            display: block;
+            max-width: 100%;
+            width: 100%;
+            height: auto
+        }
+
+        .art .empty {
+            color: #a6b8ba;
+            font-size: 12px;
+            text-align: center;
+            padding: 16px;
+            line-height: 1.8
+        }
+
+        .cardtitle {
+            font-size: clamp(18px, 4.8vw, 26px);
+            margin: 10px 0;
+            line-height: 1.35;
+            overflow-wrap: anywhere
+        }
+
+        .price {
+            font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            font-size: 30px;
+            font-weight: 780;
+            letter-spacing: -.04em
+        }
+
+        .price .currency-prefix {
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0;
+            vertical-align: baseline;
+            margin-right: 3px
+        }
+
+        .approx {
+            font-size: 18px;
+            color: #dff257;
+            font-weight: 700
+        }
+
+        .approx .twd-prefix {
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 0;
+            margin-right: 2px
+        }
+
+        .divider {
+            height: 1px;
+            background: #354347;
+            margin: 16px 0
+        }
+
+        .note {
+            font-size: 11px;
+            line-height: 1.7;
+            color: #9fb1b3
+        }
+
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-top: 16px
+        }
+
+        .links a {
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid #697578;
+            border-radius: 9px;
+            padding: 11px 12px;
+            font-size: 12px
+        }
+
+        .catalog {
+            max-height: 480px;
+            overflow: auto;
+            margin-top: 12px;
+            border-top: 1px solid #3c494d
+        }
+
+        .entry {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            border-bottom: 1px solid #333f43;
+            padding: 11px 2px
+        }
+
+        .entry .grow {
+            min-width: 0;
+            flex: 1
+        }
+
+        .entry .name {
+            font-size: 13px;
+            overflow-wrap: anywhere
+        }
+
+        .entry .meta {
+            font-size: 11px;
+            color: #a5b6b8;
+            margin-top: 4px
+        }
+
+        .entry .money {
+            text-align: right;
+            font-size: 12px;
+            white-space: nowrap
+        }
+
+        .entry button {
+            font-size: 11px;
+            padding: 8px 10px
+        }
+
+        .stats {
+            display: flex;
+            gap: 9px;
+            margin: 14px 0
+        }
+
+        .stat {
+            flex: 1;
+            border-radius: 11px;
+            background: #121a1d;
+            padding: 12px
+        }
+
+        .stat strong {
+            font-size: 22px;
+            display: block;
+            margin-top: 6px
+        }
+
+        footer {
+            color: #8fa3a6;
+            font-size: 11px;
+            line-height: 1.7;
+            margin-top: 28px
+        }
+
+        @media(min-width:700px) {
+            .columns {
+                display: grid;
+                grid-template-columns: 1.1fr .9fr;
+                align-items: start;
+                gap: 18px
+            }
+
+            .columns .panel {
+                margin-top: 0
+            }
+
+            .wrap {
+                padding-top: 40px
+            }
+
+            .cardgrid {
+                grid-template-columns: 175px minmax(0, 1fr)
+            }
+        }
+
+        @media(max-width:380px) {
+            .cardgrid {
+                grid-template-columns: 100px minmax(0, 1fr);
+                gap: 10px
+            }
+
+            .price {
+                font-size: 25px
+            }
+
+            .search {
+                flex-direction: column
+            }
+
+            .search button {
+                width: 100%
+            }
+        }
+    
+
+        /* Cyberpunk HUD frame geometry; original yellow-green palette preserved. */
+        .panel {
+            position: relative;
+            border-radius: 0;
+            border: 1px solid #57676b;
+            border-left: 2px solid #dcf257;
+            background: #1c2428;
+            box-shadow: inset 0 1px 0 rgba(220, 242, 87, .06), 0 9px 30px rgba(0, 0, 0, .19);
+            clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
+        }
+        .panel::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(45deg, transparent calc(50% - 1px), #dcf257 50%, transparent calc(50% + 1px));
+            pointer-events: none;
+        }
+        @media (max-width: 600px) {
+            .panel { clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 0 100%); }
+            .panel::before { width: 15px; height: 15px; }
+        }
+
+        /* Price history — CSS scoped to the new component, original Type A retained. */
+        .history-panel{margin-top:18px}
+        .history-head{align-items:flex-start;flex-wrap:wrap;margin-bottom:12px}
+        .history-head h2{margin:0 0 8px;font-size:13px}
+        .history-periods{display:flex;flex-wrap:wrap;gap:5px}
+        .history-periods button{border-radius:0;padding:7px 9px;background:#10171a;border:1px solid #4b5b5e;color:#b9c9c9;font:11px ui-monospace,monospace}
+        .history-periods button[aria-pressed="true"]{color:#111713;background:#def25b;border-color:#def25b}
+        .history-graph{min-height:155px;position:relative;margin-top:12px}
+        .history-graph svg{touch-action:pan-y}
+        .history-tooltip{position:absolute;top:8px;left:0;z-index:2;pointer-events:none;min-width:132px;padding:9px 12px;background:rgba(7,12,14,.95);border:1px solid #dcf257;color:#e6eeee;font:12px ui-monospace,monospace;box-shadow:0 5px 18px rgba(0,0,0,.35)}
+        .history-tooltip strong{display:block;color:#dcf257;font-size:17px;margin-top:4px}
+        .history-tooltip[hidden]{display:none}
+        .history-graph svg{width:100%;height:auto;display:block;max-height:260px}
+        .history-graph .empty-history{padding:32px 12px;border:1px dashed #4d5c5e;color:#aab9bc;text-align:center;font-size:12px;line-height:1.7}
+        #history-summary{color:#c8d4d4;font-size:12px}
+        #history-note{margin-top:8px}
+        @media(max-width:600px){.history-head{display:block}.history-periods{margin-top:10px}.history-periods button{font-size:10px;padding:7px 9px}}
+        /* Safari double-tap zoom prevention; pinch-to-zoom remains available. */
+        html { touch-action: manipulation; }
+        button, a, input { touch-action: manipulation; }
+        /* Type B: series-first navigation prototype. */
+        .collection-nav {
+            margin: 20px 0 22px;
+            background: linear-gradient(145deg, #1d292b, #151d20 70%);
+            border: 1px solid #607277;
+            border-top: 2px solid #def25b;
+            padding: 18px 20px 0;
+            clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
+        }
+        .collection-nav-top,.collection-footer {display:flex;align-items:center;justify-content:space-between;gap:12px}
+        .collection-status,.collection-aside {color:#718d8e;font-family:monospace;font-size:10px;letter-spacing:.11em}
+        .collection-grid {display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:15px;margin:18px 0 17px}
+        .collection-field label,.collection-field-label {display:block;color:#acbdc0;font-size:10px;font-weight:700;letter-spacing:.08em;margin-bottom:9px}
+        .collection-select-wrap {position:relative}
+        .collection-select-wrap:after {content:"⌄";pointer-events:none;color:#def25b;position:absolute;right:17px;top:50%;transform:translateY(-55%);font-size:21px}
+        #collection-select {width:100%;background:#0c1416;color:#f5f8f5;border:1px solid #526467;border-radius:0;font-size:13px;font-family:inherit;font-weight:500;min-height:46px;padding:12px 40px 12px 14px;appearance:none;-webkit-appearance:none;cursor:pointer}
+        #collection-select:focus-visible {outline:2px solid #def25b;outline-offset:2px}
+        .edition-options {display:grid;grid-template-columns:1fr 1fr;gap:8px}
+        .edition-btn {display:flex;align-items:center;justify-content:space-between;gap:6px;min-height:46px;padding:10px 12px;border-radius:0;font-size:12px;font-family:inherit;font-weight:700;letter-spacing:.035em}
+        .edition-btn.active {background:#def25b;color:#101617;border:1px solid #def25b}
+        .edition-btn.active span {font-size:9px}
+        .edition-btn.upcoming {background:transparent;color:#829597;border:1px solid #3d5053;cursor:not-allowed;opacity:1}
+        .edition-btn.upcoming span {font:9px monospace;color:#708589;letter-spacing:.06em}
+        .collection-footer {border-top:1px solid #354649;min-height:39px;justify-content:flex-start}
+        .collection-dot {width:6px;height:6px;flex:none;background:#def25b;border-radius:50%;box-shadow:0 0 8px #def25b66}
+        #collection-summary {color:#d9e1db;font-family:monospace;font-size:10px;letter-spacing:.06em}
+        .collection-aside {margin-left:auto}
+        @media(max-width:580px) {
+            .collection-nav {padding:16px 14px 0}
+            .collection-grid {grid-template-columns:1fr;gap:14px;margin:15px 0}
+            .collection-aside {display:none}
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="brand">CYBER<em>DEX</em></div>
+        <div class="label">BETA / CARD INDEX</div>
+    </header>
+    <main class="wrap">
+        <div class="label">CYBERDEX / CARD DATABASE · TYPE B CONCEPT</div>
+        <h1>KNOW YOUR<br><span>CARDS.</span></h1>
+        <p class="intro">跨系列搜尋卡牌資料、稀有度與市場參考價格。先選擇系列與版本，再輸入卡號或卡名。</p>
+        <section class="collection-nav" aria-label="卡牌系列與版本">
+            <div class="collection-nav-top"><span class="label">COLLECTION / 系列導覽</span><span class="collection-status">01 / 02</span></div>
+            <div class="collection-grid">
+                <div class="collection-field">
+                    <label for="collection-select">01 / SERIES · 卡牌系列</label>
+                    <div class="collection-select-wrap">
+                        <select id="collection-select" aria-label="選擇卡牌系列">
+                            <option value="main">Welcome to Night City</option>
+                            <option value="heist">The Heist · Starter Deck</option>
+                            <option value="power">Embracing Power · Starter Deck</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="collection-field">
+                    <span class="collection-field-label">02 / EDITION · 版本</span>
+                    <div class="edition-options" role="group" aria-label="卡牌版本">
+                        <button type="button" class="edition-btn active" aria-pressed="true">BETA <span>●</span></button>
+                        <button type="button" class="edition-btn upcoming" disabled title="正式版資料尚未加入">RETAIL <span>SOON</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="collection-footer"><span class="collection-dot"></span><span id="collection-summary">WELCOME TO NIGHT CITY / BETA</span><span class="collection-aside">DATABASE ONLINE</span></div>
+        </section>
+        <section class="panel">
+            <h2>01 / 搜尋卡片</h2>
+            <div class="search"><input id="query" autocomplete="off" placeholder="B135、B157、T006"
+                    aria-label="輸入卡號或卡名"><button class="primary" id="search">搜尋卡片 ↗</button></div>
+            <div class="row space" style="margin-top:12px;flex-wrap:wrap">
+                <div class="small" id="loadstate">載入資料中…</div>
+            </div>
+        </section>
+        <section class="panel detail" id="result">
+            <div class="row space">
+                <div class="label">CARD DETAIL</div>
+                <div class="badge" id="variant">BETA</div>
+            </div>
+            <div class="cardgrid" style="margin-top:14px">
+                <div>
+                    <div class="art" id="imagebox">
+                        <div class="empty">卡圖載入中</div>
+                    </div>
+                    <p class="note" id="imgnote"></p>
+                </div>
+                <div>
+                    <div class="label" id="number"></div>
+                    <h2 class="cardtitle" id="name"></h2>
+                    <div class="rarityinfo" id="rarityinfo"></div>
+                    <div class="label" style="margin-top:14px">市場參考價 / MARKET PRICE</div>
+                    <div class="price" id="usd">—</div>
+                    <div class="approx" id="twd"></div>
+                    <p class="note" id="pricenote"></p>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="history-panel" id="history-panel" aria-label="市場價格歷史">
+                <div class="row space history-head"><h2>價格走勢 / PRICE HISTORY</h2><div class="history-periods" id="history-periods"><button type="button" data-days="30" aria-pressed="false">1M</button><button type="button" data-days="90" aria-pressed="true">3M</button><button type="button" data-days="180" aria-pressed="false">6M</button><button type="button" data-days="365" aria-pressed="false">1Y</button><button type="button" data-days="0" aria-pressed="false">ALL</button></div></div>
+                <div id="history-summary" class="small"></div>
+                <div id="history-graph" class="history-graph"></div>
+                <p class="note" id="history-note">歷史市場參考價，非逐筆成交資料。</p>
+            </div>
+            <div class="links"><a id="tcg" target="_blank" rel="noopener noreferrer">TCGplayer 查價</a><a id="cataloglink"
+                    target="_blank" rel="noopener noreferrer">查看 Beta 卡片圖鑑</a></div>
+        </section>
+        <section class="panel">
+            <div class="row space">
+                <h2>匯率與資料說明</h2><span class="badge">USD → TWD</span>
+            </div>
+            <div class="row">
+                <div class="small">1 美元約 NT$</div><input id="rate" aria-label="美元換算台幣匯率" type="number" step="0.01"
+                    min="1" max="100" value="32.47">
+            </div>
+            <p class="note">預設換算率為 2026/10/19 的參考值
+                32.47，非即時銀行匯率，可自行調整。價格資料為不同時間蒐集的歷史參考數字，並非目前成交價；外部資料來源可能變動。卡圖使用外部公開的圖片網址（Beta 主系列：Spellbound Games；Box
+                Topper：HoloHoard），可能隨來源網站更新而變動。Box Topper 與主系列都有 β001～β006 編號；為避免混淆，本站使用 T001～T006 代表 Box Topper（例如 T006
+                = V: Corporate Exile）。</p>
+        </section>
+        <footer>CYBERDEX 是非官方收藏工具。與 Cyberpunk TCG、TCGplayer 無關；卡圖版權歸原權利人所有。價格不能作為保證成交報價。</footer>
+    </main>
+    <script>
+        'use strict';
+        const $ = id => document.getElementById(id);
+        const base = "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/cyberpunk-tcg/price-guides/welcome-to-night-city-beta";
+        const setUrl = "https://www.tcgplayer.com/search/cyberpunk-tcg/welcome-to-night-city-beta?page=1&productLineName=cyberpunk-tcg&setName=welcome-to-night-city-beta&view=grid";
+        let catalog = {}, prices = {}, starterPrices = {}, historyCards = {}, historyDays = 90, selected = null, rate = 32.47, priceDate = "", starterSets = {}, activeSection = "main", activeStarter = "heist";
+        try { const v = Number(localStorage.getItem("cyberscan-usd-twd")); if (v >= 1 && v <= 100) rate = v } catch (e) { }
+        $('rate').value = rate;
+        // Shared Beta image URLs are loaded from card-images.json. No browser-specific uploads required.
+        let cardImages = {}, artRequest = 0;
+        function galleryFallback(code) {
+            const art = $('imagebox'); art.replaceChildren();
+            const a = document.createElement("a");
+            a.href = activeSection === "starter" ? (currentCatalog()[code]?.sourceUrl || "https://holohoard.app/explore/game/cyberpunk-tcg/" + (activeStarter === "heist" ? "the-heist-beta-starter-deck" : "embracing-power-beta-starter-deck")) : "https://exburst.dev/cyberpunk/series/beta"; a.target = "_blank"; a.rel = "noopener noreferrer";
+            a.style.cssText = "display:flex;align-items:center;justify-content:center;min-height:182px;padding:14px;text-align:center;color:#def25b;text-decoration:none;font-size:12px";
+            a.textContent = activeSection === "starter" ? "查看這張卡的原始資料 ↗" : "查看外部 Beta 圖鑑 ↗"; art.append(a);
+            $('imgnote').textContent = "目前沒有這張卡的共用圖片。";
+        }
+        function displayArt(code, entry) {
+            const requestId = ++artRequest;
+            const record = activeSection === "starter" ? { url: entry.imageUrl, sourceUrl: entry.sourceUrl } : cardImages[code];
+            if (!record?.url) { galleryFallback(code); return }
+            const art = $('imagebox'); art.textContent = "載入卡圖中…";
+            const image = document.createElement("img");
+            image.alt = code + " " + entry.name + "（Beta 卡圖）";
+            image.loading = "eager"; image.decoding = "async"; image.referrerPolicy = "no-referrer";
+            image.style.cssText = "display:block;width:100%;height:auto;border-radius:9px";
+            image.onload = () => {
+                if (requestId !== artRequest) return;
+                const note = $('imgnote'); note.replaceChildren();
+                const link = document.createElement("a");
+                link.href = record.sourceUrl; link.target = "_blank"; link.rel = "noopener noreferrer";
+                link.style.color = "#a6b8ba"; link.textContent = "卡圖來源：" + (activeSection === "starter" || code.startsWith("T") ? "HoloHoard" : "Spellbound Games") + " ↗";
+                note.append(link);
+            };
+            image.onerror = () => { if (requestId === artRequest) galleryFallback(code) };
+            art.replaceChildren(image); $('imgnote').textContent = "";
+            image.src = record.url;
+        }
+        const fmtUSD = n => "US$" + n.toFixed(2);
+        const fmtTWD = n => "約 NT$" + Math.round(n).toLocaleString("zh-TW");
+        function normalize(q) { q = String(q).trim().toUpperCase().replace(/^BOX\s*TOPPER\s*/, "T").replace(/^TOPPER\s*/, "T").replace(/^BT\s*/, "T").replace(/^[Ββ]/, "B").replace(/^\u03B2/, "B").replace(/[^A-Z0-9]/g, ""); if (/^T\d{1,3}$/.test(q)) { return "T" + q.slice(1).padStart(3, "0") } if (/^B?\d{1,3}[AB]?$/.test(q)) { q = q.replace(/^B/, ""); const m = q.match(/^(\d{1,3})([AB]?)$/); if (m) return "B" + m[1].padStart(3, "0") + m[2] } return q }
+        function currency(n) { return fmtTWD(n * rate) }
+        const RARITY_CODES = { "Common": "C", "Uncommon": "UC", "Rare": "R", "Epic": "E", "Secret": "S", "Iconic Legend": "IL", "Iconic Other": "IO", "Iconic Secret": "IS", "Nova Rare": "NR" };
+        const RARITY_ZH = { "Common": "普通", "Uncommon": "非普通", "Rare": "稀有", "Epic": "史詩", "Secret": "秘密稀有", "Iconic Legend": "標誌性傳奇", "Iconic Other": "標誌性特殊", "Iconic Secret": "標誌性秘密稀有", "Nova Rare": "Nova 稀有（Box Topper 特典）" };
+        function currentCatalog() { return activeSection === "starter" ? (starterSets[activeStarter]?.cards || {}) : catalog }
+        function chooseSection(section, starter) {
+            activeSection = section; if (starter) activeStarter = starter;
+            $('collection-select').value = section === "main" ? "main" : activeStarter;
+            $('collection-summary').textContent = (section === "main" ? "WELCOME TO NIGHT CITY" : activeStarter === "heist" ? "THE HEIST" : "EMBRACING POWER") + " / BETA";
+            $('result').classList.remove('open'); selected = null;
+            const qty = Object.keys(currentCatalog()).length;
+            $('loadstate').textContent = section === "main" ? "Welcome to Night City Beta · " + qty + " 項" : (activeStarter === "heist" ? "The Heist" : "Embracing Power") + " Beta · " + qty + " 張卡";
+            if ($('query').value.trim()) show($('query').value, false);
+        }
+        $('collection-select').onchange = e => e.target.value === "main" ? chooseSection("main") : chooseSection("starter", e.target.value);
+        function show(query, scroll) {
+            const code = normalize(query), cards = currentCatalog();
+            let entry = cards[code];
+            if (!entry) {
+                const matches = Object.entries(cards).filter(([id, item]) => item.name.toLowerCase().includes(String(query).trim().toLowerCase()));
+                if (matches.length === 1) return show(matches[0][0], scroll);
+                $('result').classList.remove('open'); selected = null;
+                $('loadstate').textContent = matches.length > 1 ? "找到多張同名卡，請輸入完整卡號。" : "此系列查不到卡片，請檢查卡號或切換系列。"; return;
+            }
+            selected = code; $('loadstate').textContent = "已找到 " + code;
+            $('result').classList.add('open'); $('number').textContent = (activeSection === "starter" ? (entry.setCode + " · ") : "") + code;
+            $('name').textContent = entry.name;
+            $('variant').textContent = activeSection === "starter" ? (activeStarter === "heist" ? "THE HEIST · BETA" : "EMBRACING POWER · BETA") : (entry.set ? "BOX TOPPER" : "WELCOME TO NIGHT CITY · BETA");
+            const rn = $('rarityinfo'); rn.replaceChildren();
+            const line = document.createElement('div'); line.className = 'rarityline';
+            const value = document.createElement('span'); value.className = 'raritycode';
+            value.textContent = 'Rarity: ' + (entry.rarityCode || RARITY_CODES[entry.rarity] || '?');
+            const expanded = document.createElement('span'); expanded.className = 'rarityname'; expanded.textContent = entry.rarity ? (entry.rarity + '（' + (RARITY_ZH[entry.rarity] || '待確認') + '）') : '未確認';
+            line.append(value, expanded); rn.append(line);
+            const p = activeSection === "main" ? prices[code] : starterPrices[activeStarter]?.prices?.[code], usd = $('usd'); usd.replaceChildren();
+            if (p && Number.isFinite(p.usd)) { const prefix = document.createElement('span'); prefix.className = 'currency-prefix'; prefix.textContent = 'US$'; const value = document.createElement('span'); value.textContent = p.usd.toFixed(2); usd.append(prefix, value) }
+            else usd.textContent = '尚無報價';
+            const twd = $('twd'); twd.replaceChildren(); if (p && Number.isFinite(p.usd)) { const prefix = document.createElement('span'); prefix.className = 'twd-prefix'; prefix.textContent = '約 NT$'; const amount = document.createElement('span'); amount.textContent = Math.round(p.usd * rate).toLocaleString('zh-TW'); twd.append(prefix, amount); }
+            $('pricenote').textContent = p ? '歷史價格快照 · 非即時 · 參考資料日期：' + (p.observedDate || priceDate) + '。' + (activeSection === "starter" ? '初始牌組獨立報價（' + p.printing + '），不沿用主系列同號價格；尚無價格走勢。' : '不同來源時間可能不同。') : '尚未建立這張卡的價格紀錄。';
+            $('tcg').href = 'https://www.tcgplayer.com/search/all/product?q=' + encodeURIComponent("Cyberpunk TCG " + (activeSection === "starter" ? (activeStarter === "heist" ? "The Heist Beta starter " : "Embracing Power Beta starter ") : "Welcome to Night City Beta ") + code + " " + entry.name);
+            $('cataloglink').href = activeSection === "starter" ? entry.sourceUrl : setUrl;
+            displayArt(code, entry);
+            renderHistory();
+            if (scroll) $('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        $('search').onclick = () => $('query').value && show($('query').value, true);
+        $('query').onkeydown = e => { if (e.key === "Enter") show($('query').value, true) };
+        $('rate').onchange = () => { const v = Number($('rate').value); if (v >= 1 && v <= 100) { rate = v; try { localStorage.setItem("cyberscan-usd-twd", String(rate)) } catch (e) { } if (selected) show(selected, false) } else { $('rate').value = rate } };
+
+        function renderHistory(){
+            const root=$('history-graph'),summary=$('history-summary'),note=$('history-note');
+            root.replaceChildren();
+            if(activeSection!=="main"||!selected||!selected.startsWith("B")){
+                summary.textContent="初始牌組已有獨立單卡參考價，尚無歷史走勢";note.textContent="目前僅 Beta 主系列建立逐日市場參考價格走勢。";return;
+            }
+            const all=(historyCards[selected]||[]).filter(p=>p.date>="2026-09-10"&&Number.isFinite(p.usd)).slice().sort((a,b)=>a.date.localeCompare(b.date));
+            const today=new Date().toISOString().slice(0,10);
+            const threshold=historyDays?new Date(Date.now()-historyDays*86400000).toISOString().slice(0,10):"2026-09-10";
+            const points=all.filter(p=>p.date>=threshold&&p.date<=today);
+            note.textContent="ValueMyCard / TCGplayer 市場參考價（USD），非逐筆成交價；缺少資料的日期不補值。統一起算日：2026/09/10。";
+            // The summary always compares the latest two weeks, independent of the chart's visible range.
+            const latest=all.filter(p=>p.date<=today).at(-1);
+            const twoWeekStart=latest?new Date(Date.parse(latest.date+"T00:00:00Z")-14*86400000).toISOString().slice(0,10):null;
+            const recent=latest?all.filter(p=>p.date>=twoWeekStart&&p.date<=latest.date):[];
+            if(recent.length>=2){
+                const startPoint=recent[0],endPoint=recent[recent.length-1];
+                const delta=endPoint.usd-startPoint.usd,pct=startPoint.usd>0?delta/startPoint.usd*100:0;
+                summary.textContent="近兩週漲跌（有紀錄日期）｜"+startPoint.date+" → "+endPoint.date+"　US$"+startPoint.usd.toFixed(2)+" → US$"+endPoint.usd.toFixed(2)+"　"+(delta>=0?"+":"")+delta.toFixed(2)+" ("+(pct>=0?"+":"")+pct.toFixed(2)+"%)";
+            }else{
+                summary.textContent="近兩週漲跌：資料不足，尚無法比較";
+            }
+            if(points.length<2){
+                const empty=document.createElement('div');empty.className='empty-history';empty.textContent="至少需要兩筆不同日期的市場價格，才會顯示走勢。";root.append(empty);return;
+            }
+            const first=points[0],last=points[points.length-1];
+            const NS="http://www.w3.org/2000/svg",svg=document.createElementNS(NS,"svg");svg.setAttribute("viewBox","0 0 640 230");svg.setAttribute("role","img");svg.setAttribute("aria-label","歷史市場參考價格曲線，"+points.length+" 筆資料");
+            const lo=Math.min(...points.map(p=>p.usd)),hi=Math.max(...points.map(p=>p.usd)),pad=Math.max((hi-lo)*.16,hi*.03,.01);
+            const min=lo-pad,max=hi+pad,W=640,H=230,left=55,right=16,top=16,bottom=38;
+            const times=points.map(p=>Date.parse(p.date+"T00:00:00Z")),tmin=times[0],tmax=times[times.length-1];
+            const x=t=>left+(t-tmin)/Math.max(1,tmax-tmin)*(W-left-right);
+            const y=v=>top+(max-v)/(max-min)*(H-top-bottom);
+            const el=(name,attrs,text)=>{const n=document.createElementNS(NS,name);for(const [k,v] of Object.entries(attrs||{}))n.setAttribute(k,String(v));if(text!==undefined)n.textContent=text;svg.append(n);return n};
+            for(let i=0;i<4;i++){const v=min+(max-min)*i/3,Y=y(v);el("line",{x1:left,y1:Y,x2:W-right,y2:Y,stroke:"#455255","stroke-width":.7,"stroke-dasharray":"3 5"});el("text",{x:0,y:Y+4,fill:"#aab9bc","font-size":12},v.toFixed(v>=100?0:2))}
+            const d=points.map((p,i)=>(i?"L":"M")+x(times[i]).toFixed(2)+","+y(p.usd).toFixed(2)).join(" ");
+            el("path",{d,stroke:"#dcf257","stroke-width":2.5,fill:"none","stroke-linecap":"round","stroke-linejoin":"round"});
+            points.forEach((p,i)=>{el("circle",{cx:x(times[i]),cy:y(p.usd),r:3.2,fill:"#dcf257"})});
+            for(const p of [first,last]){const T=Date.parse(p.date+"T00:00:00Z");el("text",{x:x(T),y:H-10,fill:"#aab9bc","font-size":12,"text-anchor":p===first?"start":"end"},p.date.slice(5))}
+            const guide=el("line",{x1:0,y1:top,x2:0,y2:H-bottom,stroke:"#dcf257","stroke-width":1,"stroke-dasharray":"4 4",visibility:"hidden"});
+            const focus=el("circle",{cx:0,cy:0,r:6,fill:"#dcf257",stroke:"#081013","stroke-width":2,visibility:"hidden"});
+            const hit=el("rect",{x:left,y:top,width:W-left-right,height:H-top-bottom,fill:"transparent"});
+            const tooltip=document.createElement("div");tooltip.className="history-tooltip";tooltip.hidden=true;
+            const dateLabel=document.createElement("span"),priceLabel=document.createElement("strong");
+            tooltip.append(dateLabel,priceLabel);root.append(svg,tooltip);
+            const activate=(event)=>{
+                const rect=svg.getBoundingClientRect();
+                const mouseX=(event.clientX-rect.left)*W/rect.width;
+                if(mouseX<left-8||mouseX>W-right+8)return;
+                let nearest=0;
+                for(let i=1;i<points.length;i++)if(Math.abs(x(times[i])-mouseX)<Math.abs(x(times[nearest])-mouseX))nearest=i;
+                const p=points[nearest],cx=x(times[nearest]);
+                guide.setAttribute("x1",cx);guide.setAttribute("x2",cx);
+                focus.setAttribute("cx",cx);focus.setAttribute("cy",y(p.usd));
+                guide.setAttribute("visibility","visible");focus.setAttribute("visibility","visible");
+                dateLabel.textContent=p.date;priceLabel.textContent="US$"+p.usd.toFixed(2);
+                tooltip.hidden=false;
+                const tipWidth=tooltip.offsetWidth,graphWidth=root.clientWidth;
+                tooltip.style.left=Math.max(0,Math.min(graphWidth-tipWidth,cx/W*rect.width-tipWidth/2))+"px";
+            };
+            const hide=()=>{guide.setAttribute("visibility","hidden");focus.setAttribute("visibility","hidden");tooltip.hidden=true};
+            svg.addEventListener("pointermove",activate);
+            svg.addEventListener("pointerdown",activate);
+            svg.addEventListener("pointerleave",hide);
+            svg.addEventListener("pointercancel",hide);
+        }
+        $('history-periods').onclick=e=>{const button=e.target.closest('button[data-days]');if(!button)return;historyDays=Number(button.dataset.days);for(const b of $('history-periods').querySelectorAll('button'))b.setAttribute("aria-pressed",String(b===button));renderHistory()};
+
+        async function init() { const results = await Promise.allSettled([fetch("./card-catalog.json?v=5", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() }), fetch("./prices.json?v=5", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() }), fetch("./card-images.json?v=3", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() }), fetch("./starter-catalog.json?v=2", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() }), fetch("./price-history.json?v=1", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() }), fetch("./starter-prices.json?v=1", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() })]); if (results[0].status === "fulfilled") catalog = results[0].value.cards || {}; if (results[1].status === "fulfilled") { prices = results[1].value.prices || {}; priceDate = results[1].value.observedDate || "未註明" } if (results[2].status === "fulfilled") cardImages = results[2].value.images || {}; if (results[3].status === "fulfilled") starterSets = results[3].value.sets || {}; if(results[4].status==="fulfilled") historyCards=results[4].value.cards||{}; if(results[5].status==="fulfilled") starterPrices=results[5].value.sets||{}; $('loadstate').textContent = Object.keys(catalog).length === 178 ? "已載入 Beta 主系列 172 項＋Box Topper 6 項。" : "卡表資料未完整載入，請重新整理。"; if (location.hash) { const hash = decodeURIComponent(location.hash.slice(1)); const match = hash.match(/^(heist|power)-(B\d{3})$/i); if (match) { chooseSection('starter', match[1].toLowerCase()); show(match[2], false) } else if (catalog[normalize(hash)]) show(hash, false) } }
+        init();
+    </script>
+</body>
+
+</html>
