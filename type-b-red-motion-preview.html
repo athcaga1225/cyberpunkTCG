@@ -847,8 +847,7 @@
                 <div class="small">1 美元約 NT$</div><input id="rate" aria-label="美元換算台幣匯率" type="number" step="0.01"
                     min="1" max="100" value="32.47">
             </div>
-            <p class="note">預設換算率為 2026/10/19 的參考值
-                32.47，非即時銀行匯率，可自行調整。價格資料為不同時間蒐集的歷史參考數字，並非目前成交價；外部資料來源可能變動。卡圖使用外部公開的圖片網址（Beta 主系列：Spellbound Games；Box
+            <p class="note"><span id="rate-source">匯率載入中；暫用備援參考值 32.47。</span> <a href="https://www.exchangerate-api.com" target="_blank" rel="noopener noreferrer">Rates By Exchange Rate API</a>。 每次開啟頁面會取得最新可用的每日參考匯率；當次仍可自行調整，不會記住手動設定。價格資料為不同時間蒐集的歷史參考數字，並非目前成交價；外部資料來源可能變動。卡圖使用外部公開的圖片網址（Beta 主系列：Spellbound Games；Box
                 Topper：HoloHoard），可能隨來源網站更新而變動。Box Topper 與主系列都有 β001～β006 編號；為避免混淆，本站使用 T001～T006 代表 Box Topper（例如 T006
                 = V: Corporate Exile）。</p>
         </section>
@@ -860,7 +859,6 @@
         const base = "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/cyberpunk-tcg/price-guides/welcome-to-night-city-beta";
         const setUrl = "https://www.tcgplayer.com/search/cyberpunk-tcg/welcome-to-night-city-beta?page=1&productLineName=cyberpunk-tcg&setName=welcome-to-night-city-beta&view=grid";
         let activeEdition = "beta", catalog = {}, prices = {}, starterPrices = {}, historyCards = {}, historyDays = 90, selected = null, rate = 32.47, priceDate = "", starterSets = {}, activeSection = "main", activeStarter = "heist";
-        try { const v = Number(localStorage.getItem("cyberscan-usd-twd")); if (v >= 1 && v <= 100) rate = v } catch (e) { }
         $('rate').value = rate;
         // Shared Beta image URLs are loaded from card-images.json. No browser-specific uploads required.
         let cardImages = {}, artRequest = 0;
@@ -1000,11 +998,12 @@
         }
         $('search').onclick = () => $('query').value && show($('query').value, true);
         $('query').onkeydown = e => { if (e.key === "Enter") show($('query').value, true) };
+        let manualRateChanged = false;
         $('rate').onchange = () => {
+            manualRateChanged = true;
             const v = Number($('rate').value);
             if (v < 1 || v > 100) { $('rate').value = rate; return; }
             rate = v;
-            try { localStorage.setItem("cyberscan-usd-twd", String(rate)); } catch (e) {}
             if (!selected) return;
             const price = activeSection === "main" ? prices[selected] : starterPrices[activeStarter]?.prices?.[selected];
             if (!price || !Number.isFinite(price.usd)) return;
@@ -1015,6 +1014,36 @@
             twd.replaceChildren(prefix, amount);
         };
 
+        function refreshTwdOnly() {
+            if (!selected) return;
+            const price = activeSection === "main" ? prices[selected] : starterPrices[activeStarter]?.prices?.[selected];
+            if (!price || !Number.isFinite(price.usd)) return;
+            const prefix = document.createElement("span"), amount = document.createElement("span");
+            prefix.className = "twd-prefix";
+            prefix.textContent = "約 NT" + String.fromCharCode(36);
+            amount.textContent = Math.round(price.usd * rate).toLocaleString("zh-TW");
+            $('twd').replaceChildren(prefix, amount);
+        }
+        async function loadDailyRate() {
+            const info = $('rate-source');
+            try {
+                const response = await fetch("https://open.er-api.com/v6/latest/USD", {cache:"default"});
+                if (!response.ok) throw Error("HTTP " + response.status);
+                const data = await response.json();
+                const latest = Number(data?.rates?.TWD);
+                if (data?.result !== "success" || data.base_code !== "USD" || !Number.isFinite(latest) || latest <= 0) throw Error("invalid data");
+                const stamp = Date.parse(data.time_last_update_utc);
+                const date = Number.isFinite(stamp) ? new Date(stamp).toLocaleDateString("zh-TW",{timeZone:"Asia/Taipei",year:"numeric",month:"2-digit",day:"2-digit"}) : "日期未提供";
+                if (!manualRateChanged) {
+                    rate = Number(latest.toFixed(2));
+                    $('rate').value = rate.toFixed(2);
+                    refreshTwdOnly();
+                }
+                info.textContent = "每日參考匯率：1 USD ≈ " + latest.toFixed(2) + " TWD（資料更新：" + date + "）。";
+            } catch (err) {
+                info.textContent = "即時載入每日參考匯率失敗，暫用 32.47；可手動調整。";
+            }
+        }
         function renderHistory(){
             const root=$('history-graph'),summary=$('history-summary'),note=$('history-note');
             root.replaceChildren();
@@ -1098,6 +1127,7 @@
         restoreCollection();
         document.querySelector('.collection-nav').style.visibility = 'visible';
         init();
+        loadDailyRate();
     </script>
 </body>
 
