@@ -748,20 +748,36 @@
         .collection-search .search button.primary:hover {
             background:#c74748;border-color:#ff6b67;color:#fff;
         }
-        .button-arrow {
-            display:inline-block;
+        /* Square clipping window: arrow exits NE and re-enters from SW. */
+        @keyframes arrowLoop {
+            0% {transform:translate(0,0)}
+            42% {transform:translate(120%,-120%)}
+            43% {transform:translate(-120%,120%)}
+            100% {transform:translate(0,0)}
+        }
+        .button-arrow-mask {
+            display:inline-flex;
+            vertical-align:-2px;
+            width:1.1em;height:1.1em;
             margin-left:5px;
-            transition:transform .23s ease;
+            align-items:center;justify-content:center;
+            overflow:hidden;
+            clip-path:inset(0);
+        }
+        .button-arrow {
+            display:block;
+            line-height:1;
         }
         .collection-search .search button.primary:hover .button-arrow,
         .collection-search .search button.primary:focus-visible .button-arrow {
-            transform:translate(3px,-3px);
+            animation:arrowLoop .52s cubic-bezier(.45,0,.22,1) both;
         }
         @media (prefers-reduced-motion:reduce) {
             .collection-nav,main > .panel,#result.card-refresh .cardgrid,#result.card-refresh .history-panel,
             .history-graph svg path[stroke="#e5e9ec"][data-animated],
             .history-graph svg circle[fill="#e5e9ec"] {animation:none!important}
-            button,.button-arrow {transition:none!important}
+            button {transition:none!important}
+            .button-arrow {animation:none!important}
             .history-graph svg path[stroke="#e5e9ec"][data-animated] {stroke-dashoffset:0}
         }
     </style>
@@ -781,7 +797,7 @@
             <div class="collection-search">
                 <div class="collection-search-head"><span class="collection-step-label">01 / SEARCH · 搜尋卡片</span></div>
                 <div class="search"><input id="query" autocomplete="off" placeholder="B135、B157、T006"
-                        aria-label="輸入卡號或卡名"><button class="primary" id="search">搜尋卡片 <span class="button-arrow" aria-hidden="true">↗</span></button></div>
+                        aria-label="輸入卡號或卡名"><button class="primary" id="search">搜尋卡片 <span class="button-arrow-mask" aria-hidden="true"><span class="button-arrow">↗</span></span></button></div>
                 <div class="row space" style="margin-top:12px;flex-wrap:wrap">
                     <div class="small" id="loadstate">載入資料中…</div>
                 </div>
