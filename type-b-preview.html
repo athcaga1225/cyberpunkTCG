@@ -576,6 +576,7 @@
         }
         /* Type B: series-first navigation prototype. */
         .collection-nav {
+            visibility: hidden; /* Reveal only after restoring the saved selection. */
             position: relative;
             margin: 20px 0 22px;
             background: linear-gradient(145deg, #1d292b, #151d20 70%);
@@ -793,7 +794,7 @@
                 return;
             }
             const qty = Object.keys(currentCatalog()).length;
-            $('loadstate').textContent = section === "main" ? "Welcome to Night City Beta · " + qty + " 項" : (activeStarter === "heist" ? "The Heist" : "Embracing Power") + " Beta · " + qty + " 張卡";
+            $('loadstate').textContent = section === "main" ? "Welcome to Night City Beta · " + qty + " 張卡" : (activeStarter === "heist" ? "The Heist" : "Embracing Power") + " Beta · " + qty + " 張卡";
             if ($('query').value.trim()) show($('query').value, false);
         }
         $('collection-select').onchange = e => e.target.value === "main" ? chooseSection("main") : chooseSection("starter", e.target.value);
@@ -905,7 +906,10 @@
         }
         $('history-periods').onclick=e=>{const button=e.target.closest('button[data-days]');if(!button)return;historyDays=Number(button.dataset.days);for(const b of $('history-periods').querySelectorAll('button'))b.setAttribute("aria-pressed",String(b===button));renderHistory()};
 
-        async function init() { const results = await Promise.allSettled([fetch("./card-catalog.json?v=5", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() }), fetch("./prices.json?v=5", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() }), fetch("./card-images.json?v=3", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() }), fetch("./starter-catalog.json?v=2", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() }), fetch("./price-history.json?v=1", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() }), fetch("./starter-prices.json?v=1", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() })]); if (results[0].status === "fulfilled") catalog = results[0].value.cards || {}; if (results[1].status === "fulfilled") { prices = results[1].value.prices || {}; priceDate = results[1].value.observedDate || "未註明" } if (results[2].status === "fulfilled") cardImages = results[2].value.images || {}; if (results[3].status === "fulfilled") starterSets = results[3].value.sets || {}; if(results[4].status==="fulfilled") historyCards=results[4].value.cards||{}; if(results[5].status==="fulfilled") starterPrices=results[5].value.sets||{}; $('loadstate').textContent = Object.keys(catalog).length === 178 ? "已載入 Beta 主系列 172 項＋Box Topper 6 項。" : "卡表資料未完整載入，請重新整理。"; restoreCollection(); if (location.hash) { const hash = decodeURIComponent(location.hash.slice(1)); const match = hash.match(/^(heist|power)-(B\d{3})$/i); if (match) { chooseSection('starter', match[1].toLowerCase()); show(match[2], false) } else if (catalog[normalize(hash)]) show(hash, false) } }
+        async function init() { const results = await Promise.allSettled([fetch("./card-catalog.json?v=5", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() }), fetch("./prices.json?v=5", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() }), fetch("./card-images.json?v=3", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() }), fetch("./starter-catalog.json?v=2", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() }), fetch("./price-history.json?v=1", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() }), fetch("./starter-prices.json?v=1", { cache: "no-cache" }).then(r => { if (!r.ok) throw Error(r.status); return r.json() })]); if (results[0].status === "fulfilled") catalog = results[0].value.cards || {}; if (results[1].status === "fulfilled") { prices = results[1].value.prices || {}; priceDate = results[1].value.observedDate || "未註明" } if (results[2].status === "fulfilled") cardImages = results[2].value.images || {}; if (results[3].status === "fulfilled") starterSets = results[3].value.sets || {}; if(results[4].status==="fulfilled") historyCards=results[4].value.cards||{}; if(results[5].status==="fulfilled") starterPrices=results[5].value.sets||{}; $('loadstate').textContent = Object.keys(catalog).length === 178 ? "已載入 Beta 主系列 172 張卡＋Box Topper 6 張卡。" : "卡表資料未完整載入，請重新整理。"; restoreCollection(); if (location.hash) { const hash = decodeURIComponent(location.hash.slice(1)); const match = hash.match(/^(heist|power)-(B\d{3})$/i); if (match) { chooseSection('starter', match[1].toLowerCase()); show(match[2], false) } else if (catalog[normalize(hash)]) show(hash, false) } }
+        // Apply saved selection synchronously before displaying navigation; no BETA -> RETAIL flash.
+        restoreCollection();
+        document.querySelector('.collection-nav').style.visibility = 'visible';
         init();
     </script>
 </body>
