@@ -952,8 +952,13 @@
             const dateLabel=document.createElement("span"),priceLabel=document.createElement("strong");
             tooltip.append(dateLabel,priceLabel);root.append(svg,tooltip);
             const activate=(event)=>{
-                const rect=svg.getBoundingClientRect();
-                const mouseX=(event.clientX-rect.left)*W/rect.width;
+                // Convert screen coordinates through the SVG transform so the
+                // viewBox stays aligned even when max-height letterboxes the chart.
+                const matrix=svg.getScreenCTM();
+                if(!matrix)return;
+                const cursor=svg.createSVGPoint();
+                cursor.x=event.clientX;cursor.y=event.clientY;
+                const mouseX=cursor.matrixTransform(matrix.inverse()).x;
                 if(mouseX<left-8||mouseX>W-right+8)return;
                 let nearest=0;
                 for(let i=1;i<points.length;i++)if(Math.abs(x(times[i])-mouseX)<Math.abs(x(times[nearest])-mouseX))nearest=i;
@@ -964,7 +969,9 @@
                 dateLabel.textContent=p.date;priceLabel.textContent="US$"+p.usd.toFixed(2);
                 tooltip.hidden=false;
                 const tipWidth=tooltip.offsetWidth,graphWidth=root.clientWidth;
-                tooltip.style.left=Math.max(0,Math.min(graphWidth-tipWidth,cx/W*rect.width-tipWidth/2))+"px";
+                const marker=svg.createSVGPoint();marker.x=cx;marker.y=top;
+                const screenX=marker.matrixTransform(matrix).x-root.getBoundingClientRect().left;
+                tooltip.style.left=Math.max(0,Math.min(graphWidth-tipWidth,screenX-tipWidth/2))+"px";
             };
             const hide=()=>{guide.setAttribute("visibility","hidden");focus.setAttribute("visibility","hidden");tooltip.hidden=true};
             svg.addEventListener("pointermove",activate);
