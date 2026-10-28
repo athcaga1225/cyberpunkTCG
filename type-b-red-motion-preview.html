@@ -749,35 +749,21 @@
             background:#c74748;border-color:#ff6b67;color:#fff;
         }
         /* Square clipping window: arrow exits NE and re-enters from SW. */
-        @keyframes arrowLoop {
-            0% {transform:translate(0,0)}
-            42% {transform:translate(120%,-120%)}
-            43% {transform:translate(-120%,120%)}
-            100% {transform:translate(0,0)}
-        }
         .button-arrow-mask {
-            display:inline-flex;
-            vertical-align:-2px;
-            width:1.1em;height:1.1em;
-            margin-left:5px;
-            align-items:center;justify-content:center;
-            overflow:hidden;
-            clip-path:inset(0);
+            display:inline-flex;vertical-align:-2px;width:1.1em;height:1.1em;
+            margin-left:5px;align-items:center;justify-content:center;overflow:hidden;
         }
-        .button-arrow {
-            display:block;
-            line-height:1;
-        }
+        .button-arrow {display:block;line-height:1;transition:transform .23s ease}
         .collection-search .search button.primary:hover .button-arrow,
         .collection-search .search button.primary:focus-visible .button-arrow {
-            animation:arrowLoop .85s cubic-bezier(.45,0,.22,1) both;
+            transform:translate(3px,-3px);
         }
         @media (prefers-reduced-motion:reduce) {
             .collection-nav,main > .panel,#result.card-refresh .cardgrid,#result.card-refresh .history-panel,
             .history-graph svg path[stroke="#e5e9ec"][data-animated],
             .history-graph svg circle[fill="#e5e9ec"] {animation:none!important}
             button {transition:none!important}
-            .button-arrow {animation:none!important}
+            .button-arrow {transition:none!important}
             .history-graph svg path[stroke="#e5e9ec"][data-animated] {stroke-dashoffset:0}
         }
     </style>
