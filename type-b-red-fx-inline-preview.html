@@ -495,7 +495,7 @@
             }
 
             .cardgrid {
-                grid-template-columns: 175px minmax(0, 1fr)
+                grid-template-columns: 202px minmax(0, 1fr)
             }
         }
 
@@ -771,6 +771,11 @@
         .market-fx-note strong {font-weight:600;color:#e5e9ec;font-family:ui-monospace,monospace}
         .market-fx-note .note {margin:5px 0 0}
         .source-disclosure {max-width:980px;margin:20px 0 0;color:#869399}
+        /* Layout study: larger desktop art, restrained supporting copy. */
+        .market-fx-note {margin-top:14px;padding-top:11px}
+        .market-fx-note .note {font-size:11px;line-height:1.65;color:#98a5ac}
+        .market-fx-note .small {font-size:12px}
+        @media(min-width:700px) {.cardgrid {gap:24px}}
     </style>
 </head>
 
@@ -837,7 +842,7 @@
                     <div class="market-fx-note">
                         <div class="small">USD / TWD 參考匯率 · 1 USD ≈ <strong id="rate">32.47</strong> TWD</div>
                         <p class="note"><span id="rate-source">匯率載入中；暫用備援參考值 32.47。</span> <a href="https://www.exchangerate-api.com" target="_blank" rel="noopener noreferrer">Rates By Exchange Rate API</a></p>
-                        <p class="note">價格資料為不同時間蒐集的歷史參考數字，並非目前成交價；外部資料來源可能變動。卡圖使用外部公開的圖片網址（Beta 主系列：Spellbound Games；Box Topper：HoloHoard），可能隨來源網站更新而變動。Box Topper 與主系列都有 β001～β006 編號；本站以 T001～T006 代表 Box Topper。</p>
+                        <p class="note">資料說明：價格為歷史參考值，非即時成交價；外部價格及卡圖資料可能變動。卡圖來源：主系列 Spellbound Games、Box Topper HoloHoard；Box Topper 使用 T001～T006 編號以區別主系列。</p>
                     </div>
 
                 </div>
