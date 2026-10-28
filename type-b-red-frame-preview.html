@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <meta name="theme-color" content="#101417">
-    <title>CYBERDEX — Type B Red / Frame Study</title>
+    <title>CYBERDEX — Type B Red / Atmosphere Study</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&amp;display=swap"
@@ -667,7 +667,7 @@
         /* Barely visible texture on the atmospheric layer only, never on content. */
         body::after {
             content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-            opacity:.045;
+            opacity:.085;
             background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='.30'/%3E%3C/svg%3E");
             background-size:160px 160px;
         }
@@ -724,29 +724,8 @@
         .history-graph svg line[stroke="#c5003c"] {stroke:#f8504a}
         .history-graph svg circle[stroke="#081013"] {stroke:#0b1015}
         
-        /* Frame study: deliberately asymmetric HUD silhouette and segmented rules. */
-        .panel,.collection-nav {
-            position:relative;
-            background:linear-gradient(112deg,#0b0b10 0%,#100d13 58%,#080b11 100%);
-            border:1px solid #551b20;
-            border-left:2px solid #f8504a;
-            clip-path:polygon(0 0,calc(100% - 32px) 0,100% 32px,100% 100%,30px 100%,30px calc(100% - 9px),12px calc(100% - 9px),12px calc(100% - 24px),0 calc(100% - 24px));
-        }
-        .panel::before,.collection-nav::before {
-            width:32px;height:32px;
-            background:linear-gradient(45deg,transparent calc(50% - 1px),#f8504a 50%,transparent calc(50% + 1px));
-        }
-        .panel::after,.collection-nav::after {
-            content:"";position:absolute;top:0;left:18px;width:78px;height:2px;
-            background:linear-gradient(90deg,#f8504a 0 38%,#551b20 38% 72%,transparent 72%);
-            pointer-events:none;
-        }
-        @media(max-width:580px) {
-            .panel,.collection-nav {
-                clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,20px 100%,20px calc(100% - 7px),9px calc(100% - 7px),9px calc(100% - 17px),0 calc(100% - 17px));
-            }
-            .panel::before,.collection-nav::before{width:20px;height:20px}
-        }
+        /* Restore the original Type B Red frame; white dropdown chevron. */
+        .collection-select-wrap:after {border-color:#f2f4f5}
     </style>
 </head>
 
