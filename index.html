@@ -606,7 +606,7 @@
         .source-disclosure[hidden] {display:none}
         .collection-nav-top,.collection-footer {display:flex;align-items:center;justify-content:space-between;gap:12px}
         .collection-status,.collection-aside {color:#718d8e;font-family:monospace;font-size:10px;letter-spacing:.11em}
-        .collection-grid {display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:15px;margin:18px 0 17px}
+        .collection-grid {display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:15px;margin:18px 0 17px}
         .collection-field label,.collection-field-label,.collection-step-label {display:block;color:#acbdc0;font-size:10px;font-weight:700;letter-spacing:.08em;line-height:1.5}
         .collection-field label,.collection-field-label {margin-bottom:9px}
         .collection-select-wrap {position:relative}
@@ -799,7 +799,7 @@
     <main class="wrap">
         <div class="label">WELCOME TO NIGHT CITY</div>
         <h1>NIGHT CITY<br><span>CARD INDEX.</span></h1>
-        <p class="intro">跨系列搜尋卡牌資料、稀有度與市場參考價格。先選擇系列與版本，再輸入卡號或卡名。</p>
+        <p class="intro">跨系列搜尋卡牌資料、稀有度與市場參考價格。先選擇版本與系列，再輸入卡號或卡名。</p>
         <section class="collection-nav" aria-label="卡牌系列與版本">
             <div class="collection-nav-top"><span class="collection-heading">COLLECTION / 系列導覽</span></div>
             <div class="collection-search">
@@ -812,20 +812,20 @@
             </div>
             <div class="collection-grid">
                 <div class="collection-field">
-                    <label for="collection-select">02 / SERIES · 卡牌系列</label>
+                    <span class="collection-field-label">02 / EDITION · 版本</span>
+                    <div class="edition-options" role="group" aria-label="卡牌版本">
+                        <button type="button" id="edition-beta" class="edition-btn active" aria-pressed="true">BETA <span>●</span></button>
+                        <button type="button" id="edition-retail" class="edition-btn upcoming" aria-pressed="false" title="正式版資料尚未加入">RETAIL <span>●</span></button>
+                    </div>
+                </div>
+                <div class="collection-field">
+                    <label for="collection-select">03 / SERIES · 卡牌系列</label>
                     <div class="collection-select-wrap">
                         <select id="collection-select" aria-label="選擇卡牌系列">
                             <option value="main">Welcome to Night City</option>
                             <option value="heist">The Heist · Starter Deck</option>
                             <option value="power">Embracing Power · Starter Deck</option>
                         </select>
-                    </div>
-                </div>
-                <div class="collection-field">
-                    <span class="collection-field-label">03 / EDITION · 版本</span>
-                    <div class="edition-options" role="group" aria-label="卡牌版本">
-                        <button type="button" id="edition-beta" class="edition-btn active" aria-pressed="true">BETA <span>●</span></button>
-                        <button type="button" id="edition-retail" class="edition-btn upcoming" aria-pressed="false" title="正式版資料尚未加入">RETAIL <span>●</span></button>
                     </div>
                 </div>
             </div>
