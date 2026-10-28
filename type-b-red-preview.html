@@ -680,6 +680,8 @@
         .rarityinfo strong {color:#d6e3e6}
         .history-periods button {background:#111920;color:#b0bec4;border-color:#404b53}
         .history-tooltip {background:rgba(8,15,20,.97);border-color:#f8504a}
+        /* Follow the cursor smoothly rather than jumping between data points. */
+        .history-tooltip {transition:left 70ms ease-out;will-change:left}
         .history-tooltip strong {color:#f8504a}
         .divider {background:#354048}
         #history-summary {color:#d0dce0}
@@ -963,13 +965,16 @@
                 let nearest=0;
                 for(let i=1;i<points.length;i++)if(Math.abs(x(times[i])-mouseX)<Math.abs(x(times[nearest])-mouseX))nearest=i;
                 const p=points[nearest],cx=x(times[nearest]);
-                guide.setAttribute("x1",cx);guide.setAttribute("x2",cx);
+                // The guide follows the pointer continuously while the value
+                // remains the nearest real recorded price (no invented prices).
+                const guideX=Math.max(left,Math.min(W-right,mouseX));
+                guide.setAttribute("x1",guideX);guide.setAttribute("x2",guideX);
                 focus.setAttribute("cx",cx);focus.setAttribute("cy",y(p.usd));
                 guide.setAttribute("visibility","visible");focus.setAttribute("visibility","visible");
                 dateLabel.textContent=p.date;priceLabel.textContent="US$"+p.usd.toFixed(2);
                 tooltip.hidden=false;
                 const tipWidth=tooltip.offsetWidth,graphWidth=root.clientWidth;
-                const marker=svg.createSVGPoint();marker.x=cx;marker.y=top;
+                const marker=svg.createSVGPoint();marker.x=guideX;marker.y=top;
                 const screenX=marker.matrixTransform(matrix).x-root.getBoundingClientRect().left;
                 tooltip.style.left=Math.max(0,Math.min(graphWidth-tipWidth,screenX-tipWidth/2))+"px";
             };
