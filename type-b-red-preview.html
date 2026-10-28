@@ -632,7 +632,18 @@
         .label {color:#aebbc1}
         .panel,.collection-nav {background:#151b20;border-color:#3a4149;border-left:2px solid #f8504a}
         .collection-nav::before,.panel::before {background:linear-gradient(45deg,transparent calc(50% - 1px),#f8504a 50%,transparent calc(50% + 1px))}
-        .collection-heading,#rate-info h2 {color:#d8e0e3}
+        /* All four section headings share a single cyan typography system. */
+        .collection-heading,
+        #result .section-heading,
+        #history-panel .history-head h2,
+        #rate-info h2 {
+            font-family:"Noto Sans TC","PingFang TC",sans-serif;
+            font-size:13px;
+            font-weight:500;
+            line-height:1.5;
+            letter-spacing:0;
+            color:#29ffff;
+        }
         .collection-field label,.collection-field-label,.collection-step-label {color:#aebbc1}
         .collection-search {border-top-color:#333d44}
         .collection-footer {border-top-color:#333d44}
@@ -708,7 +719,7 @@
         </section>
         <section class="panel detail" id="result">
             <div class="row space">
-                <div class="label">CARD DETAIL</div>
+                <div class="label section-heading">CARD DETAIL</div>
                 <div class="badge" id="variant">BETA</div>
             </div>
             <div class="cardgrid" style="margin-top:14px">
