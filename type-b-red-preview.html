@@ -624,26 +624,18 @@
         }
 
         /* 2077 cyberware-inspired dark UI: restrained crimson, cyan highlights, no yellow. */
-        :root {background:#071015;color:#d8e0e3}
-        /* Fine, fixed noise is confined to the page background; panels remain clean. */
+        :root {background:#0b0d10;color:#d8e0e3}
+        /* Grain is an actual background layer (not behind body paint). */
         body {
-            background:
-                radial-gradient(ellipse 95% 360px at 50% 0%,rgba(86,10,26,.28),transparent 85%),
-                #071015;
-            position:relative;
-            isolation:isolate;
+            background-image:
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.78' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.17'/%3E%3C/svg%3E"),
+                radial-gradient(ellipse 95% 360px at 50% 0%,rgba(86,10,26,.28),transparent 85%);
+            background-color:#0b0d10;
+            background-size:180px 180px,auto;
+            background-repeat:repeat,no-repeat;
+            background-attachment:fixed,scroll;
         }
-        body::before {
-            content:"";
-            position:fixed;
-            inset:0;
-            z-index:-1;
-            pointer-events:none;
-            opacity:.10;
-            background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.78' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.40'/%3E%3C/svg%3E");
-            background-size:180px 180px;
-        }
-        header {border-bottom-color:#35272d}
+                header {border-bottom-color:#35272d}
         .brand em,h1 span {color:#f8504a}
         .intro,.small,.muted {color:#a9b6bd}
         .label {color:#aebbc1}
