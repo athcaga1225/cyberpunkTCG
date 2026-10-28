@@ -925,7 +925,7 @@
         function collectionStatusText() {
             const qty = Object.keys(currentCatalog()).length;
             return activeSection === "main"
-                ? "Welcome to Night City Beta · " + qty + " 張卡（B001～B172、T001～T006）"
+                ? "Welcome to Night City Beta · " + qty + " 張卡（B001～B171（含 B005A、B005B）、T001～T006）"
                 : (activeStarter === "heist" ? "The Heist" : "Embracing Power") + " Beta · " + qty + " 張卡（B001～B020）";
         }
         function chooseSection(section, starter) {
