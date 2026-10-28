@@ -680,8 +680,8 @@
         .rarityinfo strong {color:#d6e3e6}
         .history-periods button {background:#111920;color:#b0bec4;border-color:#404b53}
         .history-tooltip {background:rgba(8,15,20,.97);border-color:#f8504a}
-        /* Follow the cursor smoothly rather than jumping between data points. */
-        .history-tooltip {transition:left 70ms ease-out;will-change:left}
+        /* Follow the cursor immediately without animation lag. */
+        .history-tooltip {transition:none;will-change:left}
         .history-tooltip strong {color:#f8504a}
         .divider {background:#354048}
         #history-summary {color:#d0dce0}
