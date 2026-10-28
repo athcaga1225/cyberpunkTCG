@@ -552,7 +552,14 @@
         .history-periods button{border-radius:0;padding:7px 9px;background:#10171a;border:1px solid #4b5b5e;color:#b9c9c9;font:11px ui-monospace,monospace}
         .history-periods button[aria-pressed="true"]{color:#111713;background:#c5003c;border-color:#c5003c}
         .history-graph{min-height:155px;position:relative;margin-top:12px}
+        /* Safari: prevent long-press selecting chart labels or SVG paths. */
+        .history-graph, .history-graph svg, .history-graph svg text {
+            -webkit-user-select:none;
+            user-select:none;
+            -webkit-touch-callout:none;
+        }
         .history-graph svg{touch-action:pan-y}
+        .history-graph svg text{pointer-events:none}
         .history-tooltip{position:absolute;top:8px;left:0;z-index:2;pointer-events:none;min-width:132px;padding:9px 12px;background:rgba(7,12,14,.95);border:1px solid #c5003c;color:#e6eeee;font:12px ui-monospace,monospace;box-shadow:0 5px 18px rgba(0,0,0,.35)}
         .history-tooltip strong{display:block;color:#c5003c;font-size:17px;margin-top:4px}
         .history-tooltip[hidden]{display:none}
