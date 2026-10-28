@@ -495,7 +495,7 @@
             }
 
             .cardgrid {
-                grid-template-columns: 175px minmax(0, 1fr)
+                grid-template-columns: 240px minmax(0, 1fr)
             }
         }
 
@@ -602,8 +602,8 @@
             background: linear-gradient(45deg, transparent calc(50% - 1px), #c5003c 50%, transparent calc(50% + 1px));
             pointer-events: none;
         }
-        .collection-heading, #rate-info h2 {font-family:"Noto Sans TC","PingFang TC",sans-serif;font-size:13px;font-weight:500;letter-spacing:0;line-height:1.5;color:#f4f6f4}
-        #rate-info[hidden] {display:none}
+        .collection-heading, .source-disclosure {font-family:"Noto Sans TC","PingFang TC",sans-serif;font-size:13px;font-weight:500;letter-spacing:0;line-height:1.5;color:#f4f6f4}
+        .source-disclosure[hidden] {display:none}
         .collection-nav-top,.collection-footer {display:flex;align-items:center;justify-content:space-between;gap:12px}
         .collection-status,.collection-aside {color:#718d8e;font-family:monospace;font-size:10px;letter-spacing:.11em}
         .collection-grid {display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:15px;margin:18px 0 17px}
@@ -682,7 +682,7 @@
         .collection-heading,
         #result .section-heading,
         #history-panel .history-head h2,
-        #rate-info h2 {
+        .source-disclosure {
             font-family:"Noto Sans TC","PingFang TC",sans-serif;
             font-size:13px;
             font-weight:500;
@@ -734,7 +734,7 @@
         @keyframes cardRefresh {from {opacity:.15;transform:translateY(7px)}to {opacity:1;transform:translateY(0)}}
         .collection-nav {animation:hudEnter .38s ease-out both}
         main > .panel {animation:hudEnter .38s ease-out .10s both}
-        #rate-info {animation-delay:.17s}
+        
         .history-graph svg path[stroke="#e5e9ec"][data-animated] {
             stroke-dasharray:var(--chart-length);
             animation:chartDraw .8s cubic-bezier(.2,.7,.2,1) both;
@@ -765,6 +765,28 @@
             button {transition:none!important}
             .button-arrow {transition:none!important}
             .history-graph svg path[stroke="#e5e9ec"][data-animated] {stroke-dashoffset:0}
+        }
+        .market-fx-note {border-top:1px solid #393035;margin-top:15px;padding-top:12px}
+        .market-fx-note .small {color:#aebbc1}
+        .market-fx-note strong {font-weight:600;color:#e5e9ec;font-family:ui-monospace,monospace}
+        .market-fx-note .note {margin:5px 0 0}
+        .source-disclosure {max-width:980px;margin:20px 0 0;color:#869399}
+        /* Layout study: larger desktop art, restrained supporting copy. */
+        .market-fx-note {margin-top:14px;padding-top:11px}
+        .market-fx-note .note {font-size:11px;line-height:1.65;color:#98a5ac}
+        .market-fx-note .small {font-size:12px}
+        @media(min-width:700px) {.cardgrid {gap:24px}}
+        /* Secondary external links: quiet hover, no decorative arrows. */
+        .links a {
+            display:inline-flex;align-items:center;
+            background:#11171b;border-color:#505b63;color:#b6c2c7;
+            transition:background-color .22s ease,color .22s ease;
+        }
+        .links a:hover,.links a:focus-visible {
+            background:#30353a;color:#f2f4f5;
+        }
+        @media(prefers-reduced-motion:reduce) {
+            .links a {transition:none!important}
         }
     </style>
 </head>
@@ -829,6 +851,12 @@
                     <div class="price" id="usd">—</div>
                     <div class="approx" id="twd"></div>
                     <p class="note" id="pricenote"></p>
+                    <div class="market-fx-note">
+                        <div class="small">USD / TWD 參考匯率 · 1 USD ≈ <strong id="rate">32.47</strong> TWD</div>
+                        <p class="note"><span id="rate-source">匯率載入中；暫用備援參考值 32.47。</span> <a href="https://www.exchangerate-api.com" target="_blank" rel="noopener noreferrer">Rates By Exchange Rate API</a></p>
+                        <p class="note">資料說明：價格為歷史參考值，非即時成交價；外部價格及卡圖資料可能變動。卡圖來源：主系列 Spellbound Games、Box Topper HoloHoard；Box Topper 使用 T001～T006 編號以區別主系列。</p>
+                    </div>
+
                 </div>
             </div>
             <div class="divider"></div>
@@ -840,17 +868,6 @@
             </div>
             <div class="links"><a id="tcg" target="_blank" rel="noopener noreferrer">TCGplayer 查價</a><a id="cataloglink"
                     target="_blank" rel="noopener noreferrer">查看 Beta 卡片圖鑑</a></div>
-        </section>
-        <section class="panel" id="rate-info" hidden>
-            <div class="row space">
-                <h2>匯率與資料說明</h2><span class="badge">USD → TWD</span>
-            </div>
-            <div class="row">
-                <div class="small">1 美元約 NT$</div><strong id="rate" aria-label="美元換算台幣參考匯率" style="color:#e5e9ec;font:600 16px ui-monospace,monospace">32.47</strong>
-            </div>
-            <p class="note"><span id="rate-source">匯率載入中；暫用備援參考值 32.47。</span> <a href="https://www.exchangerate-api.com" target="_blank" rel="noopener noreferrer">Rates By Exchange Rate API</a>。 每次開啟頁面會取得最新可用的每日參考匯率，僅供估算。價格資料為不同時間蒐集的歷史參考數字，並非目前成交價；外部資料來源可能變動。卡圖使用外部公開的圖片網址（Beta 主系列：Spellbound Games；Box
-                Topper：HoloHoard），可能隨來源網站更新而變動。Box Topper 與主系列都有 β001～β006 編號；為避免混淆，本站使用 T001～T006 代表 Box Topper（例如 T006
-                = V: Corporate Exile）。</p>
         </section>
         <footer>CYBERDEX 是非官方收藏工具。與 Cyberpunk TCG、TCGplayer 無關；卡圖版權歸原權利人所有。價格不能作為保證成交報價。</footer>
     </main>
@@ -944,7 +961,7 @@
                 btn.setAttribute("aria-pressed", String(active));
             }
             saveCollection();
-            $('result').classList.remove('open'); $('rate-info').hidden = true; selected = null;
+            $('result').classList.remove('open'); selected = null;
             if (activeEdition === "retail") {
                 $('loadstate').textContent = "RETAIL 正式版資料尚未加入，目前僅供切換與記憶功能測試。";
                 return;
@@ -957,7 +974,7 @@
         $('edition-retail').onclick = () => chooseEdition("retail");
                 function show(query, scroll) {
             if (activeEdition === "retail") {
-                $('result').classList.remove('open'); $('rate-info').hidden = true; selected = null;
+                $('result').classList.remove('open'); selected = null;
                 $('loadstate').textContent = "RETAIL 正式版資料尚未加入，無法搜尋。請切回 BETA。";
                 return;
             }
@@ -966,12 +983,12 @@
             if (!entry) {
                 const matches = Object.entries(cards).filter(([id, item]) => item.name.toLowerCase().includes(String(query).trim().toLowerCase()));
                 if (matches.length === 1) return show(matches[0][0], scroll);
-                $('result').classList.remove('open'); $('rate-info').hidden = true; selected = null;
+                $('result').classList.remove('open'); selected = null;
                 $('loadstate').textContent = matches.length > 1 ? "找到多張同名卡，請輸入完整卡號。" : activeSection === "starter" ? "此初始牌組僅收錄 B001～B020；" + code + " 不在目前選擇的牌組中。請檢查卡號或切換系列。" : "此系列查不到卡片，請檢查卡號或切換系列。"; return;
             }
             const changedCard = selected !== code || !$('result').classList.contains('open');
             selected = code; $('loadstate').textContent = collectionStatusText();
-            $('result').classList.add('open'); $('rate-info').hidden = false; $('number').textContent = (activeSection === "starter" ? (entry.setCode + " · ") : "") + code;
+            $('result').classList.add('open'); $('number').textContent = (activeSection === "starter" ? (entry.setCode + " · ") : "") + code;
             $('name').textContent = entry.name;
             $('variant').textContent = activeSection === "starter" ? (activeStarter === "heist" ? "THE HEIST · BETA" : "EMBRACING POWER · BETA") : (entry.set ? "BOX TOPPER" : "WELCOME TO NIGHT CITY · BETA");
             const rn = $('rarityinfo'); rn.replaceChildren();
