@@ -623,7 +623,10 @@
             .collection-aside {display:none}
         }
 
-        /* 2077 cyberware-inspired dark UI: restrained crimson, cyan highlights, no yellow. */
+        /* Search-first sequence: no top divider; separate series/edition below. */
+        .collection-search {border-top:0;border-bottom:1px solid #333d44;padding:18px 0 16px}
+        .collection-grid {margin:18px 0 17px}
+                /* 2077 cyberware-inspired dark UI: restrained crimson, cyan highlights, no yellow. */
         :root {background:#0b0d10;color:#d8e0e3}
         /* Grain is an actual background layer (not behind body paint). */
         html {
@@ -700,9 +703,17 @@
         <p class="intro">跨系列搜尋卡牌資料、稀有度與市場參考價格。先選擇系列與版本，再輸入卡號或卡名。</p>
         <section class="collection-nav" aria-label="卡牌系列與版本">
             <div class="collection-nav-top"><span class="collection-heading">COLLECTION / 系列導覽</span></div>
+            <div class="collection-search">
+                <div class="collection-search-head"><span class="collection-step-label">01 / SEARCH · 搜尋卡片</span></div>
+                <div class="search"><input id="query" autocomplete="off" placeholder="B135、B157、T006"
+                        aria-label="輸入卡號或卡名"><button class="primary" id="search">搜尋卡片 ↗</button></div>
+                <div class="row space" style="margin-top:12px;flex-wrap:wrap">
+                    <div class="small" id="loadstate">載入資料中…</div>
+                </div>
+            </div>
             <div class="collection-grid">
                 <div class="collection-field">
-                    <label for="collection-select">01 / SERIES · 卡牌系列</label>
+                    <label for="collection-select">02 / SERIES · 卡牌系列</label>
                     <div class="collection-select-wrap">
                         <select id="collection-select" aria-label="選擇卡牌系列">
                             <option value="main">Welcome to Night City</option>
@@ -712,19 +723,11 @@
                     </div>
                 </div>
                 <div class="collection-field">
-                    <span class="collection-field-label">02 / EDITION · 版本</span>
+                    <span class="collection-field-label">03 / EDITION · 版本</span>
                     <div class="edition-options" role="group" aria-label="卡牌版本">
                         <button type="button" id="edition-beta" class="edition-btn active" aria-pressed="true">BETA <span>●</span></button>
                         <button type="button" id="edition-retail" class="edition-btn upcoming" aria-pressed="false" title="正式版資料尚未加入">RETAIL <span>●</span></button>
                     </div>
-                </div>
-            </div>
-            <div class="collection-search">
-                <div class="collection-search-head"><span class="collection-step-label">03 / SEARCH · 搜尋卡片</span></div>
-                <div class="search"><input id="query" autocomplete="off" placeholder="B135、B157、T006"
-                        aria-label="輸入卡號或卡名"><button class="primary" id="search">搜尋卡片 ↗</button></div>
-                <div class="row space" style="margin-top:12px;flex-wrap:wrap">
-                    <div class="small" id="loadstate">載入資料中…</div>
                 </div>
             </div>
             <div class="collection-footer"><span class="collection-dot"></span><span id="collection-summary">WELCOME TO NIGHT CITY / BETA</span><span class="collection-aside">DATABASE ONLINE</span></div>
