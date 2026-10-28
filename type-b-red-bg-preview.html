@@ -651,7 +651,20 @@
             background-repeat:no-repeat,no-repeat,no-repeat,no-repeat,repeat,repeat;
             background-attachment:fixed,fixed,fixed,fixed,fixed,fixed;
         }
-        body {background:transparent;min-height:100vh}
+        body {background:transparent;min-height:100vh;position:relative}
+        /* Separate fixed atmospheric layer, visible behind the opaque cards. */
+        body::before {
+            content:"";
+            position:fixed;
+            inset:0;
+            z-index:0;
+            pointer-events:none;
+            background:
+                radial-gradient(ellipse 66% 480px at 50% 20%,rgba(135,24,45,.62) 0%,rgba(90,17,35,.38) 46%,transparent 90%),
+                radial-gradient(ellipse 32% 90% at 0% 55%,rgba(17,90,105,.20),transparent 86%),
+                radial-gradient(ellipse 32% 90% at 100% 55%,rgba(17,90,105,.20),transparent 86%);
+        }
+        body > header,body > main {position:relative;z-index:1}
         header {border-bottom-color:#35272d}
         .brand em,h1 span {color:#f8504a}
         .intro,.small,.muted {color:#a9b6bd}
