@@ -995,7 +995,20 @@
         }
         $('search').onclick = () => $('query').value && show($('query').value, true);
         $('query').onkeydown = e => { if (e.key === "Enter") show($('query').value, true) };
-        $('rate').onchange = () => { const v = Number($('rate').value); if (v >= 1 && v <= 100) { rate = v; try { localStorage.setItem("cyberscan-usd-twd", String(rate)) } catch (e) { } if (selected) { const price = activeSection === "main" ? prices[selected] : starterPrices[activeStarter]?.prices?.[selected]; const twd = $('twd'); if (price && Number.isFinite(price.usd)) { twd.replaceChildren(); const prefix = document.createElement('span'); prefix.className = 'twd-prefix'; prefix.textContent = '約 NT } else { $('rate').value = rate } };
+        $('rate').onchange = () => {
+            const v = Number($('rate').value);
+            if (v < 1 || v > 100) { $('rate').value = rate; return; }
+            rate = v;
+            try { localStorage.setItem("cyberscan-usd-twd", String(rate)); } catch (e) {}
+            if (!selected) return;
+            const price = activeSection === "main" ? prices[selected] : starterPrices[activeStarter]?.prices?.[selected];
+            if (!price || !Number.isFinite(price.usd)) return;
+            const twd = $('twd'), prefix = document.createElement('span'), amount = document.createElement('span');
+            prefix.className = 'twd-prefix';
+            prefix.textContent = '約 NT' + String.fromCharCode(36);
+            amount.textContent = Math.round(price.usd * rate).toLocaleString('zh-TW');
+            twd.replaceChildren(prefix, amount);
+        };
 
         function renderHistory(){
             const root=$('history-graph'),summary=$('history-summary'),note=$('history-note');
