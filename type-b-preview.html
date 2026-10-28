@@ -579,9 +579,9 @@
             visibility: hidden; /* Reveal only after restoring the saved selection. */
             position: relative;
             margin: 20px 0 22px;
-            background: linear-gradient(145deg, #1d292b, #151d20 70%);
-            border: 1px solid #607277;
-            border-left: 3px solid #def25b;
+            background: #1c2428;
+            border: 1px solid #57676b;
+            border-left: 2px solid #dcf257;
             padding: 18px 20px 0;
             clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
         }
@@ -595,6 +595,8 @@
             background: linear-gradient(45deg, transparent calc(50% - 1px), #dcf257 50%, transparent calc(50% + 1px));
             pointer-events: none;
         }
+        .collection-heading, #rate-info h2 {font-family:"Noto Sans TC","PingFang TC",sans-serif;font-size:13px;font-weight:500;letter-spacing:0;line-height:1.5;color:#f4f6f4}
+        #rate-info[hidden] {display:none}
         .collection-nav-top,.collection-footer {display:flex;align-items:center;justify-content:space-between;gap:12px}
         .collection-status,.collection-aside {color:#718d8e;font-family:monospace;font-size:10px;letter-spacing:.11em}
         .collection-grid {display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:15px;margin:18px 0 17px}
@@ -633,7 +635,7 @@
         <h1>NIGHT CITY<br><span>CARD INDEX.</span></h1>
         <p class="intro">跨系列搜尋卡牌資料、稀有度與市場參考價格。先選擇系列與版本，再輸入卡號或卡名。</p>
         <section class="collection-nav" aria-label="卡牌系列與版本">
-            <div class="collection-nav-top"><span class="label">COLLECTION / 系列導覽</span></div>
+            <div class="collection-nav-top"><span class="collection-heading">COLLECTION / 系列導覽</span></div>
             <div class="collection-grid">
                 <div class="collection-field">
                     <label for="collection-select">01 / SERIES · 卡牌系列</label>
@@ -695,7 +697,7 @@
             <div class="links"><a id="tcg" target="_blank" rel="noopener noreferrer">TCGplayer 查價</a><a id="cataloglink"
                     target="_blank" rel="noopener noreferrer">查看 Beta 卡片圖鑑</a></div>
         </section>
-        <section class="panel">
+        <section class="panel" id="rate-info" hidden>
             <div class="row space">
                 <h2>匯率與資料說明</h2><span class="badge">USD → TWD</span>
             </div>
@@ -787,7 +789,7 @@
                 btn.setAttribute("aria-pressed", String(active));
             }
             saveCollection();
-            $('result').classList.remove('open'); selected = null;
+            $('result').classList.remove('open'); $('rate-info').hidden = true; selected = null;
             if (activeEdition === "retail") {
                 $('loadstate').textContent = "RETAIL 正式版資料尚未加入，目前僅供切換與記憶功能測試。";
                 return;
@@ -801,7 +803,7 @@
         $('edition-retail').onclick = () => chooseEdition("retail");
                 function show(query, scroll) {
             if (activeEdition === "retail") {
-                $('result').classList.remove('open'); selected = null;
+                $('result').classList.remove('open'); $('rate-info').hidden = true; selected = null;
                 $('loadstate').textContent = "RETAIL 正式版資料尚未加入，無法搜尋。請切回 BETA。";
                 return;
             }
@@ -810,11 +812,11 @@
             if (!entry) {
                 const matches = Object.entries(cards).filter(([id, item]) => item.name.toLowerCase().includes(String(query).trim().toLowerCase()));
                 if (matches.length === 1) return show(matches[0][0], scroll);
-                $('result').classList.remove('open'); selected = null;
+                $('result').classList.remove('open'); $('rate-info').hidden = true; selected = null;
                 $('loadstate').textContent = matches.length > 1 ? "找到多張同名卡，請輸入完整卡號。" : "此系列查不到卡片，請檢查卡號或切換系列。"; return;
             }
             selected = code; $('loadstate').textContent = "已找到 " + code;
-            $('result').classList.add('open'); $('number').textContent = (activeSection === "starter" ? (entry.setCode + " · ") : "") + code;
+            $('result').classList.add('open'); $('rate-info').hidden = false; $('number').textContent = (activeSection === "starter" ? (entry.setCode + " · ") : "") + code;
             $('name').textContent = entry.name;
             $('variant').textContent = activeSection === "starter" ? (activeStarter === "heist" ? "THE HEIST · BETA" : "EMBRACING POWER · BETA") : (entry.set ? "BOX TOPPER" : "WELCOME TO NIGHT CITY · BETA");
             const rn = $('rarityinfo'); rn.replaceChildren();
