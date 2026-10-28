@@ -660,14 +660,14 @@
             z-index:0;
             pointer-events:none;
             background:
-                radial-gradient(ellipse 66% 480px at 50% 20%,rgba(135,24,45,.50) 0%,rgba(90,17,35,.38) 46%,transparent 90%),
+                radial-gradient(ellipse 66% 480px at 50% 20%,rgba(135,24,45,.40) 0%,rgba(90,17,35,.38) 46%,transparent 90%),
                 radial-gradient(ellipse 32% 90% at 0% 55%,rgb(40 40 40 / 20%),transparent 86%),
                 radial-gradient(ellipse 32% 90% at 100% 55%,rgb(40 40 40 / 20%),transparent 86%);
         }
         /* Barely visible texture on the atmospheric layer only, never on content. */
         body::after {
             content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-            opacity:.085;
+            opacity:.16;
             background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='.30'/%3E%3C/svg%3E");
             background-size:160px 160px;
         }
