@@ -606,8 +606,10 @@
         .edition-btn {display:flex;align-items:center;justify-content:space-between;gap:6px;min-height:46px;padding:10px 12px;border-radius:0;font-size:12px;font-family:inherit;font-weight:700;letter-spacing:.035em}
         .edition-btn.active {background:#def25b;color:#101617;border:1px solid #def25b}
         .edition-btn.active span {font-size:9px}
-        .edition-btn.upcoming {background:transparent;color:#829597;border:1px solid #3d5053;cursor:not-allowed;opacity:1}
+        .edition-btn.upcoming {background:transparent;color:#829597;border:1px solid #3d5053;cursor:pointer;opacity:1}
         .edition-btn.upcoming span {font:9px monospace;color:#708589;letter-spacing:.06em}
+        .edition-btn.upcoming.active {background:#def25b;color:#101617;border-color:#def25b}
+        .edition-btn:focus-visible {outline:2px solid #def25b;outline-offset:2px}
         .collection-footer {border-top:1px solid #354649;min-height:39px;justify-content:flex-start}
         .collection-dot {width:6px;height:6px;flex:none;background:#def25b;border-radius:50%;box-shadow:0 0 8px #def25b66}
         #collection-summary {color:#d9e1db;font-family:monospace;font-size:10px;letter-spacing:.06em}
@@ -646,8 +648,8 @@
                 <div class="collection-field">
                     <span class="collection-field-label">02 / EDITION · 版本</span>
                     <div class="edition-options" role="group" aria-label="卡牌版本">
-                        <button type="button" class="edition-btn active" aria-pressed="true">BETA <span>●</span></button>
-                        <button type="button" class="edition-btn upcoming" disabled title="正式版資料尚未加入">RETAIL <span>SOON</span></button>
+                        <button type="button" id="edition-beta" class="edition-btn active" aria-pressed="true">BETA <span>●</span></button>
+                        <button type="button" id="edition-retail" class="edition-btn upcoming" aria-pressed="false" title="正式版資料尚未加入">RETAIL <span>SOON</span></button>
                     </div>
                 </div>
             </div>
@@ -713,7 +715,7 @@
         const $ = id => document.getElementById(id);
         const base = "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/cyberpunk-tcg/price-guides/welcome-to-night-city-beta";
         const setUrl = "https://www.tcgplayer.com/search/cyberpunk-tcg/welcome-to-night-city-beta?page=1&productLineName=cyberpunk-tcg&setName=welcome-to-night-city-beta&view=grid";
-        let catalog = {}, prices = {}, starterPrices = {}, historyCards = {}, historyDays = 90, selected = null, rate = 32.47, priceDate = "", starterSets = {}, activeSection = "main", activeStarter = "heist";
+        let activeEdition = "beta", catalog = {}, prices = {}, starterPrices = {}, historyCards = {}, historyDays = 90, selected = null, rate = 32.47, priceDate = "", starterSets = {}, activeSection = "main", activeStarter = "heist";
         try { const v = Number(localStorage.getItem("cyberscan-usd-twd")); if (v >= 1 && v <= 100) rate = v } catch (e) { }
         $('rate').value = rate;
         // Shared Beta image URLs are loaded from card-images.json. No browser-specific uploads required.
@@ -753,30 +755,56 @@
         function currency(n) { return fmtTWD(n * rate) }
         const RARITY_CODES = { "Common": "C", "Uncommon": "UC", "Rare": "R", "Epic": "E", "Secret": "S", "Iconic Legend": "IL", "Iconic Other": "IO", "Iconic Secret": "IS", "Nova Rare": "NR" };
         const RARITY_ZH = { "Common": "普通", "Uncommon": "非普通", "Rare": "稀有", "Epic": "史詩", "Secret": "秘密稀有", "Iconic Legend": "標誌性傳奇", "Iconic Other": "標誌性特殊", "Iconic Secret": "標誌性秘密稀有", "Nova Rare": "Nova 稀有（Box Topper 特典）" };
-        function currentCatalog() { return activeSection === "starter" ? (starterSets[activeStarter]?.cards || {}) : catalog }
+        function currentCatalog() { return activeEdition === "retail" ? {} : activeSection === "starter" ? (starterSets[activeStarter]?.cards || {}) : catalog }
         const collectionStorageKey = "cyberdex-type-b-collection";
+        const editionStorageKey = "cyberdex-type-b-edition";
         function saveCollection() {
-            try { localStorage.setItem(collectionStorageKey, activeSection === "main" ? "main" : activeStarter); } catch (e) {}
+            try {
+                localStorage.setItem(collectionStorageKey, activeSection === "main" ? "main" : activeStarter);
+                localStorage.setItem(editionStorageKey, activeEdition);
+            } catch (e) {}
         }
         function restoreCollection() {
+            let saved = "main";
             try {
-                const saved = localStorage.getItem(collectionStorageKey);
-                if (saved === "heist" || saved === "power") { chooseSection("starter", saved); return; }
+                saved = localStorage.getItem(collectionStorageKey) || "main";
+                activeEdition = localStorage.getItem(editionStorageKey) === "retail" ? "retail" : "beta";
             } catch (e) {}
-            chooseSection("main");
+            if (saved === "heist" || saved === "power") chooseSection("starter", saved);
+            else chooseSection("main");
+        }
+        function chooseEdition(edition) {
+            activeEdition = edition;
+            chooseSection(activeSection, activeStarter);
         }
         function chooseSection(section, starter) {
             activeSection = section; if (starter) activeStarter = starter;
             $('collection-select').value = section === "main" ? "main" : activeStarter;
-            $('collection-summary').textContent = (section === "main" ? "WELCOME TO NIGHT CITY" : activeStarter === "heist" ? "THE HEIST" : "EMBRACING POWER") + " / BETA";
+            $('collection-summary').textContent = (section === "main" ? "WELCOME TO NIGHT CITY" : activeStarter === "heist" ? "THE HEIST" : "EMBRACING POWER") + " / " + activeEdition.toUpperCase();
+            for (const [edition, id] of [["beta", "edition-beta"], ["retail", "edition-retail"]]) {
+                const active = activeEdition === edition, btn = $(id);
+                btn.classList.toggle("active", active);
+                btn.setAttribute("aria-pressed", String(active));
+            }
             saveCollection();
             $('result').classList.remove('open'); selected = null;
+            if (activeEdition === "retail") {
+                $('loadstate').textContent = "RETAIL 正式版資料尚未加入，目前僅供切換與記憶功能測試。";
+                return;
+            }
             const qty = Object.keys(currentCatalog()).length;
             $('loadstate').textContent = section === "main" ? "Welcome to Night City Beta · " + qty + " 項" : (activeStarter === "heist" ? "The Heist" : "Embracing Power") + " Beta · " + qty + " 張卡";
             if ($('query').value.trim()) show($('query').value, false);
         }
         $('collection-select').onchange = e => e.target.value === "main" ? chooseSection("main") : chooseSection("starter", e.target.value);
-        function show(query, scroll) {
+        $('edition-beta').onclick = () => chooseEdition("beta");
+        $('edition-retail').onclick = () => chooseEdition("retail");
+                function show(query, scroll) {
+            if (activeEdition === "retail") {
+                $('result').classList.remove('open'); selected = null;
+                $('loadstate').textContent = "RETAIL 正式版資料尚未加入，無法搜尋。請切回 BETA。";
+                return;
+            }
             const code = normalize(query), cards = currentCatalog();
             let entry = cards[code];
             if (!entry) {
