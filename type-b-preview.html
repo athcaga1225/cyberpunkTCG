@@ -564,6 +564,10 @@
         /* Safari double-tap zoom prevention; pinch-to-zoom remains available. */
         html { touch-action: manipulation; }
         button, a, input { touch-action: manipulation; }
+        .collection-search {border-top:1px solid #45575a;padding:18px 0 16px}
+        .collection-search-head {display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:13px}
+        .collection-search-step {color:#718d8e;font:10px monospace;letter-spacing:.1em}
+        .collection-search .search {margin-top:0}
         /* Type B: series-first navigation prototype. */
         .collection-nav {
             margin: 20px 0 22px;
@@ -629,15 +633,15 @@
                     </div>
                 </div>
             </div>
-            <div class="collection-footer"><span class="collection-dot"></span><span id="collection-summary">WELCOME TO NIGHT CITY / BETA</span><span class="collection-aside">DATABASE ONLINE</span></div>
-        </section>
-        <section class="panel">
-            <h2>01 / 搜尋卡片</h2>
-            <div class="search"><input id="query" autocomplete="off" placeholder="B135、B157、T006"
-                    aria-label="輸入卡號或卡名"><button class="primary" id="search">搜尋卡片 ↗</button></div>
-            <div class="row space" style="margin-top:12px;flex-wrap:wrap">
-                <div class="small" id="loadstate">載入資料中…</div>
+            <div class="collection-search">
+                <div class="collection-search-head"><span class="label">SEARCH / 搜尋卡片</span><span class="collection-search-step">03 / LOOKUP</span></div>
+                <div class="search"><input id="query" autocomplete="off" placeholder="B135、B157、T006"
+                        aria-label="輸入卡號或卡名"><button class="primary" id="search">搜尋卡片 ↗</button></div>
+                <div class="row space" style="margin-top:12px;flex-wrap:wrap">
+                    <div class="small" id="loadstate">載入資料中…</div>
+                </div>
             </div>
+            <div class="collection-footer"><span class="collection-dot"></span><span id="collection-summary">WELCOME TO NIGHT CITY / BETA</span><span class="collection-aside">DATABASE ONLINE</span></div>
         </section>
         <section class="panel detail" id="result">
             <div class="row space">
