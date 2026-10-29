@@ -700,9 +700,10 @@
         .collection-select-wrap:after {border-color:#f8504a}
         button {background:#232b30;border-color:#46515a;color:#d6e1e3}
         .primary,.edition-btn.active,.history-periods button[aria-pressed="true"] {background:#a82e30;color:#fff1f0;border-color:#f8504a}
-        .collection-search .search button.primary {background:#49151d}
+        .collection-search .search button.primary {background:#49151d;display:inline-flex;align-items:center;justify-content:center;gap:5px}
+        .edition-btn.active {background:#49151d;color:#fff1f0;border-color:#f8504a}
         .primary:hover {background:#ba3839}
-        .edition-btn.active:hover {background:#a82e30;color:#fff1f0;border-color:#f8504a}
+        .edition-btn.active:hover {background:#60202a;color:#fff1f0;border-color:#f8504a}
         .edition-btn {background:#111920;color:#a8b7bd;border-color:#414a52}
         .edition-btn.active span {color:#f4e9ed}
         .edition-btn:focus-visible {outline-color:#f8504a}
@@ -751,8 +752,8 @@
         }
         /* Square clipping window: arrow exits NE and re-enters from SW. */
         .button-arrow-mask {
-            display:inline-flex;vertical-align:-2px;width:1.1em;height:1.1em;
-            margin-left:5px;align-items:center;justify-content:center;overflow:hidden;
+            display:inline-flex;vertical-align:middle;flex:0 0 1.1em;width:1.1em;height:1.1em;
+            margin-left:0;align-items:center;justify-content:center;overflow:hidden;
         }
         .button-arrow {display:block;line-height:1;transition:transform .23s ease}
         .collection-search .search button.primary:hover .button-arrow,
