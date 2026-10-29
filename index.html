@@ -755,10 +755,14 @@
             display:inline-flex;vertical-align:middle;flex:0 0 1.1em;width:1.1em;height:1.1em;
             margin-left:0;align-items:center;justify-content:center;overflow:hidden;
         }
-        .button-arrow {display:block;line-height:1;transition:transform .23s ease}
+        .button-arrow {display:block;line-height:1;transform:translateY(2px);transition:transform .23s ease}
         .collection-search .search button.primary:hover .button-arrow,
         .collection-search .search button.primary:focus-visible .button-arrow {
-            transform:translate(3px,-3px);
+            transform:translate(3px,-1px);
+        }
+        @media (hover:none) {
+            .collection-search .search button.primary:hover .button-arrow,
+            .collection-search .search button.primary:focus-visible .button-arrow {transform:translateY(2px)}
         }
         @media (prefers-reduced-motion:reduce) {
             .collection-nav,main > .panel,#result.card-refresh .cardgrid,#result.card-refresh .history-panel,
