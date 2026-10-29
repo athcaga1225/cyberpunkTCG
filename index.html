@@ -796,6 +796,11 @@
         .edition-options .edition-btn.active {background-color:#49151d;color:#fff1f0;border-color:#f8504a}
         .collection-search .search button.primary:hover,
         .edition-options .edition-btn.active:hover {background-color:#60202a;color:#fff1f0;border-color:#f8504a}
+        /* Prevent sticky hover on touch devices after edition switches. */
+        @media (hover:none) {
+            .edition-options .edition-btn.active:hover,
+            .edition-options .edition-btn.active:active {background-color:#49151d;color:#fff1f0;border-color:#f8504a}
+        }
     </style>
 </head>
 
