@@ -805,6 +805,19 @@
             .edition-options .edition-btn.active:hover,
             .edition-options .edition-btn.active:active {background-color:#49151d;color:#fff1f0;border-color:#f8504a}
         }
+    
+        /* V2: compact card-name match selector */
+        .card-match-list{margin-top:10px;background:#131314;border:1px solid #590a11;max-height:320px;overflow-y:auto}
+        .card-match-head{display:flex;justify-content:space-between;gap:12px;padding:11px 13px;color:#29ffff;font-size:11px;letter-spacing:.06em}
+        .card-match-head span:last-child{color:#999}
+        .card-match-item{width:100%;display:flex;align-items:center;gap:14px;text-align:left;background:transparent;border:0;border-top:1px solid #393035;border-radius:0;padding:11px 13px;color:#f5f5f5;cursor:pointer}
+        .card-match-item:hover,.card-match-item:focus-visible{background:rgba(73,21,29,.7);outline:none}
+        .card-match-meta{width:105px;flex:0 0 105px;display:flex;flex-direction:column;gap:3px}
+        .card-match-code{font-weight:700;color:#f8504a;font-size:14px}
+        .card-match-rarity{color:#bda9ac;font-size:10px;letter-spacing:.025em}
+        .card-match-name{flex:1;min-width:0;font-size:13px;line-height:1.45}
+        .card-match-chevron{color:#f8504a;font-size:18px}
+        @media(max-width:430px){.card-match-item{gap:9px;padding:10px}.card-match-meta{width:90px;flex-basis:90px}.card-match-name{font-size:12px}}
     </style>
 </head>
 
@@ -823,6 +836,7 @@
                 <div class="collection-search-head"><span class="collection-step-label">01 / SEARCH · 搜尋卡片</span></div>
                 <div class="search"><input id="query" autocomplete="off" placeholder="B135、B157、T006"
                         aria-label="輸入卡號或卡名"><button class="primary" id="search">搜尋卡片 <span class="button-arrow-mask" aria-hidden="true"><span class="button-arrow">↗</span></span></button></div>
+                <div id="card-match-list" class="card-match-list" hidden aria-label="符合的卡片"></div>
                 <div class="row space" style="margin-top:12px;flex-wrap:wrap">
                     <div class="small" id="loadstate">載入資料中…</div>
                 </div>
@@ -952,6 +966,7 @@
         }
         const starterOptions = [...$('collection-select').querySelectorAll('option')].filter(option => option.value === "heist" || option.value === "power");
         function chooseEdition(edition) {
+            clearCardMatches();
             activeEdition = edition;
             chooseSection(activeSection, activeStarter);
         }
@@ -962,6 +977,7 @@
                 : (activeStarter === "heist" ? "The Heist" : "Embracing Power") + " Beta · " + qty + " 張卡（B001～B020）";
         }
         function chooseSection(section, starter) {
+            clearCardMatches();
             // Only Welcome to Night City is listed for RETAIL.
             const retail = activeEdition === "retail";
             if (retail) section = "main";
@@ -989,7 +1005,54 @@
         $('collection-select').onchange = e => e.target.value === "main" ? chooseSection("main") : chooseSection("starter", e.target.value);
         $('edition-beta').onclick = () => chooseEdition("beta");
         $('edition-retail').onclick = () => chooseEdition("retail");
-                function show(query, scroll) {
+                function clearCardMatches() {
+            const list = $('card-match-list');
+            list.hidden = true;
+            list.replaceChildren();
+        }
+        function showCardMatches(matches) {
+            const list = $('card-match-list');
+            list.replaceChildren();
+            const head = document.createElement('div');
+            head.className = 'card-match-head';
+            const label = document.createElement('span');
+            label.textContent = 'MATCHING CARDS';
+            const count = document.createElement('span');
+            count.textContent = matches.length + ' RESULTS';
+            head.append(label, count);
+            list.append(head);
+            for (const [id, item] of matches) {
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.className = 'card-match-item';
+                const meta = document.createElement('span');
+                meta.className = 'card-match-meta';
+                const code = document.createElement('span');
+                code.className = 'card-match-code';
+                code.textContent = id;
+                const rarity = document.createElement('span');
+                rarity.className = 'card-match-rarity';
+                rarity.textContent = (RARITY_CODES[item.rarity] || item.rarity || '').toUpperCase() + (item.rarity ? ' · ' + item.rarity.toUpperCase() : '');
+                meta.append(code, rarity);
+                const name = document.createElement('span');
+                name.className = 'card-match-name';
+                name.textContent = item.name;
+                const arrow = document.createElement('span');
+                arrow.className = 'card-match-chevron';
+                arrow.textContent = '›';
+                button.append(meta, name, arrow);
+                button.addEventListener('click', () => {
+                    $('query').value = id;
+                    clearCardMatches();
+                    show(id, true);
+                });
+                list.append(button);
+            }
+            list.hidden = false;
+        }
+        $('query').addEventListener('input', clearCardMatches);
+        function show(query, scroll) {
+            clearCardMatches();
             if (activeEdition === "retail") {
                 $('result').classList.remove('open'); selected = null;
                 $('loadstate').textContent = "RETAIL 正式版資料尚未加入，無法搜尋。請切回 BETA。";
@@ -1000,6 +1063,12 @@
             if (!entry) {
                 const matches = Object.entries(cards).filter(([id, item]) => item.name.toLowerCase().includes(String(query).trim().toLowerCase()));
                 if (matches.length === 1) return show(matches[0][0], scroll);
+                if (matches.length > 1) {
+                    $('result').classList.remove('open'); selected = null;
+                    showCardMatches(matches);
+                    $('loadstate').textContent = "請從下方選擇卡片。";
+                    return;
+                }
                 $('result').classList.remove('open'); selected = null;
                 $('loadstate').textContent = matches.length > 1 ? "找到多張同名卡，請輸入完整卡號。" : activeSection === "starter" ? "此初始牌組僅收錄 B001～B020；" + code + " 不在目前選擇的牌組中。請檢查卡號或切換系列。" : "此系列查不到卡片，請檢查卡號或切換系列。"; return;
             }
