@@ -806,6 +806,12 @@
             .edition-options .edition-btn.active:active {background-color:#49151d;color:#fff1f0;border-color:#f8504a}
         }
     
+        /* Selected edition stays visually fixed; hover is for unselected editions only. */
+        .edition-options .edition-btn.active:hover,
+        .edition-options .edition-btn.active:active {background-color:#49151d;color:#fff1f0;border-color:#f8504a}
+        @media (hover:hover) {
+            .edition-options .edition-btn:not(.active):hover {background-color:#60202a;color:#fff1f0;border-color:#f8504a}
+        }
         .collection-heading{font-size:12px}
         /* V2: compact card-name match selector */
         .card-match-list{margin-top:10px;background:#131314;border:1px solid #590a11;max-height:320px;overflow-y:auto}
