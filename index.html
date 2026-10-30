@@ -892,7 +892,7 @@
             </div>
             <div class="divider"></div>
             <div class="history-panel" id="history-panel" aria-label="市場價格歷史">
-                <div class="row space history-head"><h2>價格走勢 / PRICE HISTORY</h2><div class="history-periods" id="history-periods"><button type="button" data-days="30" aria-pressed="false">1M</button><button type="button" data-days="90" aria-pressed="true">3M</button><button type="button" data-days="180" aria-pressed="false">6M</button><button type="button" data-days="365" aria-pressed="false">1Y</button><button type="button" data-days="0" aria-pressed="false">ALL</button></div></div>
+                <div class="row space history-head"><h2>價格走勢 / PRICE HISTORY</h2><div class="history-periods" id="history-periods"><button type="button" data-days="30" aria-pressed="true">1M</button><button type="button" data-days="90" aria-pressed="false">3M</button><button type="button" data-days="180" aria-pressed="false">6M</button><button type="button" data-days="365" aria-pressed="false">1Y</button><button type="button" data-days="0" aria-pressed="false">ALL</button></div></div>
                 <div id="history-summary" class="small"></div>
                 <div id="history-graph" class="history-graph"></div>
                 <p class="note" id="history-note">歷史市場參考價，非逐筆成交資料。</p>
@@ -907,7 +907,7 @@
         const $ = id => document.getElementById(id);
         const base = "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/cyberpunk-tcg/price-guides/welcome-to-night-city-beta";
         const setUrl = "https://www.tcgplayer.com/search/cyberpunk-tcg/welcome-to-night-city-beta?page=1&productLineName=cyberpunk-tcg&setName=welcome-to-night-city-beta&view=grid";
-        let activeEdition = "beta", catalog = {}, prices = {}, starterPrices = {}, historyCards = {}, historyDays = 90, selected = null, rate = 32.47, priceDate = "", starterSets = {}, activeSection = "main", activeStarter = "heist";
+        let activeEdition = "beta", catalog = {}, prices = {}, starterPrices = {}, historyCards = {}, historyDays = 30, selected = null, rate = 32.47, priceDate = "", starterSets = {}, activeSection = "main", activeStarter = "heist";
         $('rate').textContent = rate.toFixed(2);
         // Shared Beta image URLs are loaded from card-images.json. No browser-specific uploads required.
         let cardImages = {}, artRequest = 0;
