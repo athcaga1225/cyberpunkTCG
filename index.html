@@ -917,8 +917,8 @@
         $('rate').textContent = rate.toFixed(2);
         // Shared Beta image URLs are loaded from card-images.json. No browser-specific uploads required.
         let cardImages = {}, artRequest = 0;
-        const retailCards = {"B001":{name:"Adam Smasher: Ender of Legends",rarity:"Epic"},"B041":{name:"Adam Smasher: Metal Over Meat",rarity:"Epic"}};
-        const retailImages = Object.fromEntries(["001","041"].map(n=>["B"+n,{url:"https://cdn.tcg.online/public/cyberpunk/cards/welcometonightcityretail/"+n+".webp",sourceUrl:"https://tcg.online/cyberpunk/cards/adam-smasher-"+(n==="001"?"ender-of-legends":"metal-over-meat")}]));
+        const retailCards = {"001":{name:"Adam Smasher: Ender of Legends",rarity:"Epic"},"041":{name:"Adam Smasher: Metal Over Meat",rarity:"Epic"}};
+        const retailImages = Object.fromEntries(["001","041"].map(n=>[n,{url:"https://cdn.tcg.online/public/cyberpunk/cards/welcometonightcityretail/"+n+".webp",sourceUrl:"https://tcg.online/cyberpunk/cards/adam-smasher-"+(n==="001"?"ender-of-legends":"metal-over-meat")}]));
         function galleryFallback(code) {
             const art = $('imagebox'); art.replaceChildren();
             const a = document.createElement("a");
@@ -1056,7 +1056,7 @@
         function show(query, scroll) {
             clearCardMatches();
             
-            const code = normalize(query), cards = currentCatalog();
+            const code = activeEdition === "retail" ? normalize(query).replace(/^B(?=\d{3}[AB]?$)/, "") : normalize(query), cards = currentCatalog();
             let entry = cards[code];
             if (!entry) {
                 const matches = Object.entries(cards).filter(([id, item]) => item.name.toLowerCase().includes(String(query).trim().toLowerCase()));
