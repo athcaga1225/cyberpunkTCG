@@ -917,6 +917,8 @@
         $('rate').textContent = rate.toFixed(2);
         // Shared Beta image URLs are loaded from card-images.json. No browser-specific uploads required.
         let cardImages = {}, artRequest = 0;
+        const retailCards = {"B001":{name:"Adam Smasher: Ender of Legends",rarity:"Epic"},"B041":{name:"Adam Smasher: Metal Over Meat",rarity:"Epic"}};
+        const retailImages = Object.fromEntries(["001","041"].map(n=>["B"+n,{url:"https://cdn.tcg.online/public/cyberpunk/cards/welcometonightcityretail/"+n+".webp",sourceUrl:"https://tcg.online/cyberpunk/cards/adam-smasher-"+(n==="001"?"ender-of-legends":"metal-over-meat")}]));
         function galleryFallback(code) {
             const art = $('imagebox'); art.replaceChildren();
             const a = document.createElement("a");
@@ -927,11 +929,11 @@
         }
         function displayArt(code, entry) {
             const requestId = ++artRequest;
-            const record = activeSection === "starter" ? { url: entry.imageUrl, sourceUrl: entry.sourceUrl } : cardImages[code];
+            const record = activeEdition === "retail" ? retailImages[code] : activeSection === "starter" ? { url: entry.imageUrl, sourceUrl: entry.sourceUrl } : cardImages[code];
             if (!record?.url) { galleryFallback(code); return }
             const art = $('imagebox'); art.textContent = "載入卡圖中…";
             const image = document.createElement("img");
-            image.alt = code + " " + entry.name + "（Beta 卡圖）";
+            image.alt = code + " " + entry.name + "（" + activeEdition.toUpperCase() + " 卡圖）";
             image.loading = "eager"; image.decoding = "async"; image.referrerPolicy = "no-referrer";
             image.style.cssText = "display:block;width:100%;height:auto;border-radius: 0";
             image.onload = () => {
@@ -939,7 +941,7 @@
                 const note = $('imgnote'); note.replaceChildren();
                 const link = document.createElement("a");
                 link.href = record.sourceUrl; link.target = "_blank"; link.rel = "noopener noreferrer";
-                link.style.color = "#a6b8ba"; link.textContent = "卡圖來源：" + (activeSection === "starter" || code.startsWith("T") ? "HoloHoard" : "Spellbound Games") + " ↗";
+                link.style.color = "#a6b8ba"; link.textContent = "卡圖來源：" + (activeEdition === "retail" ? "TCG Online" : activeSection === "starter" || code.startsWith("T") ? "HoloHoard" : "Spellbound Games") + " ↗";
                 note.append(link);
             };
             image.onerror = () => { if (requestId === artRequest) galleryFallback(code) };
@@ -952,7 +954,7 @@
         function currency(n) { return fmtTWD(n * rate) }
         const RARITY_CODES = { "Common": "C", "Uncommon": "UC", "Rare": "R", "Epic": "E", "Secret": "S", "Iconic Legend": "IL", "Iconic Other": "IO", "Iconic Secret": "IS", "Nova Rare": "NR" };
         const RARITY_ZH = { "Common": "普通", "Uncommon": "非普通", "Rare": "稀有", "Epic": "史詩", "Secret": "秘密稀有", "Iconic Legend": "標誌性傳奇", "Iconic Other": "標誌性特殊", "Iconic Secret": "標誌性秘密稀有", "Nova Rare": "Nova 稀有（Box Topper 特典）" };
-        function currentCatalog() { return activeEdition === "retail" ? {} : activeSection === "starter" ? (starterSets[activeStarter]?.cards || {}) : catalog }
+        function currentCatalog() { return activeEdition === "retail" ? retailCards : activeSection === "starter" ? (starterSets[activeStarter]?.cards || {}) : catalog }
         const collectionStorageKey = "cyberdex-type-b-collection";
         const editionStorageKey = "cyberdex-type-b-edition";
         function saveCollection() {
@@ -978,7 +980,7 @@
         }
         function collectionStatusText() {
             const qty = Object.keys(currentCatalog()).length;
-            return activeSection === "main"
+            return activeEdition === "retail" ? "Welcome to Night City Retail · 已核對 " + qty + " 張卡圖（持續更新）" : activeSection === "main"
                 ? "Welcome to Night City Beta · " + qty + " 張卡（B001～B171（含 B005A、B005B）、T001～T006）"
                 : (activeStarter === "heist" ? "The Heist" : "Embracing Power") + " Beta · " + qty + " 張卡（B001～B020）";
         }
@@ -1001,10 +1003,7 @@
             }
             saveCollection();
             $('result').classList.remove('open'); selected = null;
-            if (activeEdition === "retail") {
-                $('loadstate').textContent = "RETAIL 正式版資料尚未加入，目前僅供切換與記憶功能測試。";
-                return;
-            }
+            
             $('loadstate').textContent = collectionStatusText();
             if ($('query').value.trim()) show($('query').value, false);
         }
@@ -1056,11 +1055,7 @@
         $('query').addEventListener('input', clearCardMatches);
         function show(query, scroll) {
             clearCardMatches();
-            if (activeEdition === "retail") {
-                $('result').classList.remove('open'); selected = null;
-                $('loadstate').textContent = "RETAIL 正式版資料尚未加入，無法搜尋。請切回 BETA。";
-                return;
-            }
+            
             const code = normalize(query), cards = currentCatalog();
             let entry = cards[code];
             if (!entry) {
@@ -1079,22 +1074,22 @@
             selected = code; $('loadstate').textContent = collectionStatusText();
             $('result').classList.add('open'); $('number').textContent = (activeSection === "starter" ? (entry.setCode + " · ") : "") + code;
             $('name').textContent = entry.name;
-            $('variant').textContent = activeSection === "starter" ? (activeStarter === "heist" ? "THE HEIST · BETA" : "EMBRACING POWER · BETA") : (entry.set ? "BOX TOPPER" : "WELCOME TO NIGHT CITY · BETA");
+            $('variant').textContent = activeSection === "starter" ? (activeStarter === "heist" ? "THE HEIST · BETA" : "EMBRACING POWER · BETA") : (entry.set ? "BOX TOPPER" : "WELCOME TO NIGHT CITY · " + activeEdition.toUpperCase());
             const rn = $('rarityinfo'); rn.replaceChildren();
             const line = document.createElement('div'); line.className = 'rarityline';
             const value = document.createElement('span'); value.className = 'raritycode';
             value.textContent = 'Rarity: ' + (entry.rarityCode || RARITY_CODES[entry.rarity] || '?');
             const expanded = document.createElement('span'); expanded.className = 'rarityname'; expanded.textContent = entry.rarity ? (entry.rarity + '（' + (RARITY_ZH[entry.rarity] || '待確認') + '）') : '未確認';
             line.append(value, expanded); rn.append(line);
-            const p = activeSection === "main" ? prices[code] : starterPrices[activeStarter]?.prices?.[code], usd = $('usd'); usd.replaceChildren();
+            const p = activeEdition === "retail" ? null : activeSection === "main" ? prices[code] : starterPrices[activeStarter]?.prices?.[code], usd = $('usd'); usd.replaceChildren();
             if (p && Number.isFinite(p.usd)) { const prefix = document.createElement('span'); prefix.className = 'currency-prefix'; prefix.textContent = 'US$'; const value = document.createElement('span'); value.textContent = p.usd.toFixed(2); usd.append(prefix, value) }
             else usd.textContent = '尚無報價';
             const twd = $('twd'); twd.replaceChildren(); if (p && Number.isFinite(p.usd)) { const prefix = document.createElement('span'); prefix.className = 'twd-prefix'; prefix.textContent = '約 NT$'; const amount = document.createElement('span'); amount.textContent = Math.round(p.usd * rate).toLocaleString('zh-TW'); twd.append(prefix, amount); }
             $('pricenote').textContent = p ? '歷史價格快照 · 非即時 · 參考資料日期：' + (p.observedDate || priceDate) + '。' + (activeSection === "starter" ? '初始牌組獨立報價（' + p.printing + '），不沿用主系列同號價格；尚無價格走勢。' : '不同來源時間可能不同。') : '尚未建立這張卡的價格紀錄。';
-            $('tcg').href = 'https://www.tcgplayer.com/search/all/product?q=' + encodeURIComponent("Cyberpunk TCG " + (activeSection === "starter" ? (activeStarter === "heist" ? "The Heist Beta starter " : "Embracing Power Beta starter ") : "Welcome to Night City Beta ") + code + " " + entry.name);
+            $('tcg').href = 'https://www.tcgplayer.com/search/all/product?q=' + encodeURIComponent("Cyberpunk TCG " + (activeSection === "starter" ? (activeStarter === "heist" ? "The Heist Beta starter " : "Embracing Power Beta starter ") : "Welcome to Night City " + (activeEdition === "retail" ? "Retail " : "Beta ")) + code + " " + entry.name);
             $('cataloglink').href = activeSection === "starter" ? entry.sourceUrl : setUrl;
             displayArt(code, entry);
-            renderHistory();
+            if (activeEdition === "retail") { $('history-periods').closest('.history-head')?.setAttribute("hidden",""); $('pricenote').textContent = "RETAIL 價格資料尚未加入。"; } else { $('history-periods').closest('.history-head')?.removeAttribute("hidden"); renderHistory(); }
             if (changedCard && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
                 const result = $('result');
                 result.classList.remove('card-refresh');
@@ -1107,7 +1102,7 @@
         $('query').onkeydown = e => { if (e.key === "Enter") show($('query').value, true) };
         function refreshTwdOnly() {
             if (!selected) return;
-            const price = activeSection === "main" ? prices[selected] : starterPrices[activeStarter]?.prices?.[selected];
+            const price = activeEdition === "retail" ? null : activeSection === "main" ? prices[selected] : starterPrices[activeStarter]?.prices?.[selected];
             if (!price || !Number.isFinite(price.usd)) return;
             const prefix = document.createElement("span"), amount = document.createElement("span");
             prefix.className = "twd-prefix";
