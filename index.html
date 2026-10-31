@@ -974,9 +974,18 @@
             else chooseSection("main");
         }
         const starterOptions = [...$('collection-select').querySelectorAll('option')].filter(option => option.value === "heist" || option.value === "power");
+        function updateSearchInput() {
+            const input = $('query');
+            const retail = activeEdition === "retail";
+            input.placeholder = retail ? "001、157、168" : "B135、B157、T006";
+            input.setAttribute("inputmode", retail ? "numeric" : "text");
+            input.setAttribute("aria-label", retail ? "輸入 RETAIL 卡號（不含 B）或卡名" : "輸入 BETA 卡號或卡名");
+        }
         function chooseEdition(edition) {
             clearCardMatches();
+            if (activeEdition !== edition) $('query').value = "";
             activeEdition = edition;
+            updateSearchInput();
             chooseSection(activeSection, activeStarter);
         }
         function collectionStatusText() {
@@ -986,6 +995,7 @@
                 : (activeStarter === "heist" ? "The Heist" : "Embracing Power") + " Beta · " + qty + " 張卡（B001～B020）";
         }
         function chooseSection(section, starter) {
+            updateSearchInput();
             clearCardMatches();
             // Only Welcome to Night City is listed for RETAIL.
             const retail = activeEdition === "retail";
