@@ -1104,9 +1104,8 @@
             const rn = $('rarityinfo'); rn.replaceChildren();
             const line = document.createElement('div'); line.className = 'rarityline';
             const value = document.createElement('span'); value.className = 'raritycode';
-            value.textContent = 'Rarity: ' + (entry.rarityCode || RARITY_CODES[entry.rarity] || '?');
-            const expanded = document.createElement('span'); expanded.className = 'rarityname'; expanded.textContent = entry.rarity ? (entry.rarity + '（' + (RARITY_ZH[entry.rarity] || '待確認') + '）') : '未確認';
-            line.append(value, expanded); rn.append(line);
+            value.textContent = 'Rarity: ' + (entry.rarity || '未確認');
+            line.append(value); rn.append(line);
             const p = activeEdition === "retail" ? retailPrices[code] : activeSection === "main" ? prices[code] : starterPrices[activeStarter]?.prices?.[code], usd = $('usd'); usd.replaceChildren();
             if (p && Number.isFinite(p.usd)) { const prefix = document.createElement('span'); prefix.className = 'currency-prefix'; prefix.textContent = 'US$'; const value = document.createElement('span'); value.textContent = p.usd.toFixed(2); usd.append(prefix, value) }
             else usd.textContent = '尚無報價';
