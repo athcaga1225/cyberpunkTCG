@@ -981,7 +981,7 @@
         function updateSearchInput() {
             const input = $('query');
             const retail = activeEdition === "retail";
-            input.placeholder = retail ? "001、157、168" : "135、157、171";
+            input.placeholder = retail ? "001、157、168" : "157、B157、T001";
             input.removeAttribute("inputmode");
             input.setAttribute("aria-label", retail ? "輸入 RETAIL 卡號或卡名" : "輸入 BETA 卡號或卡名");
         }
@@ -1041,7 +1041,7 @@
             count.textContent = matches.length + ' RESULTS';
             head.append(label, count);
             list.append(head);
-            for (const [id, item] of matches) {
+            for (const [id, item] of [...matches].sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" }))) {
                 const button = document.createElement('button');
                 button.type = 'button';
                 button.className = 'card-match-item';
@@ -1059,7 +1059,6 @@
                 arrow.textContent = '›';
                 button.append(meta, name, arrow);
                 button.addEventListener('click', () => {
-                    $('query').value = id;
                     clearCardMatches();
                     show(id, true);
                 });
@@ -1086,6 +1085,7 @@
                 $('result').classList.remove('open'); selected = null;
                 $('loadstate').textContent = matches.length > 1 ? "找到多張同名卡，請輸入完整卡號。" : activeSection === "starter" ? "此初始牌組僅收錄 B001～B020；" + code + " 不在目前選擇的牌組中。請檢查卡號或切換系列。" : "此系列查不到卡片，請檢查卡號或切換系列。"; return;
             }
+            $('query').value = '';
             const changedCard = selected !== code || !$('result').classList.contains('open');
             selected = code; $('loadstate').textContent = collectionStatusText();
             $('result').classList.add('open'); $('number').textContent = (activeSection === "starter" ? (entry.setCode + " · ") : "") + code;
