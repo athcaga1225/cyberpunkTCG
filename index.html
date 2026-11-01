@@ -1050,7 +1050,10 @@
                 const code = document.createElement('span');
                 code.className = 'card-match-code';
                 code.textContent = id;
-                meta.append(code);
+                const rarity = document.createElement('span');
+                rarity.className = 'card-match-rarity';
+                rarity.textContent = item.rarityCode || RARITY_CODES[item.rarity] || '';
+                meta.append(code, rarity);
                 const name = document.createElement('span');
                 name.className = 'card-match-name';
                 name.textContent = item.name;
