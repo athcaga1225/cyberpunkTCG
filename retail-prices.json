@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "edition": "Welcome to Night City — Retail",
+  "observedDate": null,
+  "priceType": "market_reference",
+  "currency": "USD",
+  "notes": "Only independently verified Retail card-specific market reference prices belong here. Never copy Beta prices. Listings/asking prices and completed sales must not be mislabeled as market prices. Add a record only with usd, observedDate (YYYY-MM-DD), sourceName and sourceUrl. Missing records show no quote.",
+  "prices": {}
+}
