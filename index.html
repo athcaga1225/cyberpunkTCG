@@ -1074,10 +1074,17 @@
             const code = activeEdition === "retail" ? normalize(query).replace(/^B(?=\d{3}[AB]?$)/, "") : normalize(query), cards = currentCatalog();
             let entry = cards[code];
             if (!entry) {
-                const iconicQuery = String(query).trim().toLowerCase() === "iconic";
-                const matches = Object.entries(cards).filter(([id, item]) => iconicQuery
-                    ? ["IL", "IO", "IS"].includes(item.rarityCode || RARITY_CODES[item.rarity])
-                    : item.name.toLowerCase().includes(String(query).trim().toLowerCase()));
+                const searchText = String(query).trim().toLowerCase().replace(/\s+/g, " ");
+                const iconicTypes = { "il": "IL", "io": "IO", "is": "IS",
+                    "iconic legend": "IL", "iconic other": "IO", "iconic secret": "IS" };
+                const iconicType = iconicTypes[searchText];
+                const matches = Object.entries(cards).filter(([id, item]) => {
+                    const rarity = item.rarityCode || RARITY_CODES[item.rarity];
+                    return searchText === "iconic"
+                        ? ["IL", "IO", "IS"].includes(rarity)
+                        : iconicType ? rarity === iconicType
+                        : item.name.toLowerCase().includes(String(query).trim().toLowerCase());
+                });
                 if (matches.length === 1) return show(matches[0][0], scroll);
                 if (matches.length > 1) {
                     $('result').classList.remove('open'); selected = null;
