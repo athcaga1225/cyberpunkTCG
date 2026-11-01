@@ -1074,7 +1074,10 @@
             const code = activeEdition === "retail" ? normalize(query).replace(/^B(?=\d{3}[AB]?$)/, "") : normalize(query), cards = currentCatalog();
             let entry = cards[code];
             if (!entry) {
-                const matches = Object.entries(cards).filter(([id, item]) => item.name.toLowerCase().includes(String(query).trim().toLowerCase()));
+                const iconicQuery = String(query).trim().toLowerCase() === "iconic";
+                const matches = Object.entries(cards).filter(([id, item]) => iconicQuery
+                    ? ["IL", "IO", "IS"].includes(item.rarityCode || RARITY_CODES[item.rarity])
+                    : item.name.toLowerCase().includes(String(query).trim().toLowerCase()));
                 if (matches.length === 1) return show(matches[0][0], scroll);
                 if (matches.length > 1) {
                     $('result').classList.remove('open'); selected = null;
