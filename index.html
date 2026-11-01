@@ -840,8 +840,8 @@
             <div class="collection-nav-top"><span class="collection-heading">COLLECTION / 系列導覽</span></div>
             <div class="collection-search">
                 <div class="collection-search-head"><span class="collection-step-label">01 / SEARCH · 搜尋卡片</span></div>
-                <div class="search"><input id="query" autocomplete="off" placeholder="B135、B157、T006"
-                        aria-label="輸入卡號或卡名"><button class="primary" id="search">搜尋卡片 <span class="button-arrow-mask" aria-hidden="true"><span class="button-arrow">↗</span></span></button></div>
+                <div class="search"><input id="query" autocomplete="off" inputmode="numeric" placeholder="135、157、171"
+                        aria-label="輸入卡號或卡名"><button type="button" id="keyboard-toggle" aria-label="切換英數鍵盤" style="flex:0 0 auto;padding:0 10px;min-width:46px;font-size:12px;letter-spacing:.04em;border:1px solid #590a11;background:#131314;color:#29ffff;border-radius:4px">ABC</button><button class="primary" id="search">搜尋卡片 <span class="button-arrow-mask" aria-hidden="true"><span class="button-arrow">↗</span></span></button></div>
                 <div id="card-match-list" class="card-match-list" hidden aria-label="符合的卡片"></div>
                 <div class="row space" style="margin-top:12px;flex-wrap:wrap">
                     <div class="small" id="loadstate">載入資料中…</div>
@@ -978,12 +978,18 @@
             else chooseSection("main");
         }
         const starterOptions = [...$('collection-select').querySelectorAll('option')].filter(option => option.value === "heist" || option.value === "power");
+        let searchKeyboardMode = "numeric";
         function updateSearchInput() {
             const input = $('query');
             const retail = activeEdition === "retail";
-            input.placeholder = retail ? "001、157、168" : "B135、B157、T006";
-            input.setAttribute("inputmode", retail ? "numeric" : "text");
-            input.setAttribute("aria-label", retail ? "輸入 RETAIL 卡號（不含 B）或卡名" : "輸入 BETA 卡號或卡名");
+            input.placeholder = retail ? "001、157、168" : "135、157、171";
+            input.setAttribute("inputmode", searchKeyboardMode);
+            input.setAttribute("aria-label", retail ? "輸入 RETAIL 卡號（不含 B）或卡名" : "輸入 BETA 卡號（可省略 B）、T 卡號或卡名");
+            const toggle = $('keyboard-toggle');
+            if (toggle) {
+                toggle.textContent = searchKeyboardMode === "numeric" ? "ABC" : "123";
+                toggle.setAttribute("aria-label", searchKeyboardMode === "numeric" ? "切換英數鍵盤以輸入卡名或特殊卡號" : "切換數字鍵盤");
+            }
         }
         function chooseEdition(edition) {
             clearCardMatches();
@@ -1067,6 +1073,13 @@
             }
             list.hidden = false;
         }
+        $('keyboard-toggle').onclick = () => {
+            searchKeyboardMode = searchKeyboardMode === "numeric" ? "text" : "numeric";
+            const input = $('query');
+            input.blur();
+            updateSearchInput();
+            input.focus();
+        };
         $('query').addEventListener('input', clearCardMatches);
         function show(query, scroll) {
             clearCardMatches();
