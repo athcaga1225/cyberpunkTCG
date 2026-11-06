@@ -1,14 +1,14 @@
 {
   "version": 1,
   "edition": "Welcome to Night City — Retail",
-  "observedDate": "2026-11-04",
+  "observedDate": "2026-11-06",
   "priceType": "market_reference",
   "currency": "USD",
-  "notes": "60 confirmed Retail-specific reference prices. 60 individually verified against ValueMyCard listing marked Updated 4 Nov 2026; other retained entries keep earlier observed dates. ValueMyCard currently reports 84 priced cards, but its paginated results returned inconsistent older cached data, so unverified remaining entries have not been invented. Not completed sales or live offers.",
+  "notes": "95 individually verified Retail US market reference prices: 60 observations dated 6 Nov 2026 from live ValueMyCard first page, 24 dated 4 Nov from paginated listing, and retained earlier entries with their original dates. Set source reports 118 priced as of 6 Nov, but additional entries could not be individually verified due inconsistent cached pagination; do not infer missing prices. Not completed sales or live offers; Beta values must not be substituted.",
   "prices": {
     "100": {
       "usd": 0.99,
-      "observedDate": "2026-11-04",
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Normal",
@@ -16,6 +16,14 @@
     },
     "101": {
       "usd": 1.08,
+      "observedDate": "2026-11-06",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Normal",
+      "priceType": "market_reference"
+    },
+    "102": {
+      "usd": 0.1,
       "observedDate": "2026-11-04",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
@@ -24,6 +32,22 @@
     },
     "103": {
       "usd": 1.12,
+      "observedDate": "2026-11-06",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Normal",
+      "priceType": "market_reference"
+    },
+    "104": {
+      "usd": 0.1,
+      "observedDate": "2026-11-04",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Normal",
+      "priceType": "market_reference"
+    },
+    "105": {
+      "usd": 0.1,
       "observedDate": "2026-11-04",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
@@ -32,15 +56,23 @@
     },
     "106": {
       "usd": 5.74,
-      "observedDate": "2026-11-04",
+      "observedDate": "2026-11-06",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Foil",
+      "priceType": "market_reference"
+    },
+    "107": {
+      "usd": 4.15,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
       "priceType": "market_reference"
     },
     "108": {
-      "usd": 6.15,
-      "observedDate": "2026-11-04",
+      "usd": 5.94,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
@@ -48,7 +80,23 @@
     },
     "109": {
       "usd": 12.67,
-      "observedDate": "2026-11-04",
+      "observedDate": "2026-11-06",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Foil",
+      "priceType": "market_reference"
+    },
+    "110": {
+      "usd": 3.81,
+      "observedDate": "2026-11-06",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Foil",
+      "priceType": "market_reference"
+    },
+    "116": {
+      "usd": 18.48,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
@@ -56,7 +104,7 @@
     },
     "117": {
       "usd": 0.45,
-      "observedDate": "2026-11-04",
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
@@ -64,31 +112,39 @@
     },
     "119": {
       "usd": 1,
-      "observedDate": "2026-11-04",
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
       "priceType": "market_reference"
     },
-    "125": {
-      "usd": 1.25,
+    "120": {
+      "usd": 0.1,
       "observedDate": "2026-11-04",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Normal",
       "priceType": "market_reference"
     },
+    "125": {
+      "usd": 1.12,
+      "observedDate": "2026-11-06",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Normal",
+      "priceType": "market_reference"
+    },
     "126": {
-      "usd": 6.24,
-      "observedDate": "2026-11-04",
+      "usd": 5.83,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
       "priceType": "market_reference"
     },
     "128": {
-      "usd": 0.99,
-      "observedDate": "2026-11-04",
+      "usd": 1.02,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
@@ -96,31 +152,47 @@
     },
     "129": {
       "usd": 1,
-      "observedDate": "2026-11-04",
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Normal",
       "priceType": "market_reference"
     },
     "134": {
-      "usd": 1.06,
-      "observedDate": "2026-11-04",
+      "usd": 1.04,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
       "priceType": "market_reference"
     },
     "135": {
-      "usd": 1.08,
-      "observedDate": "2026-11-04",
+      "usd": 1.03,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
       "priceType": "market_reference"
     },
     "138": {
-      "usd": 6.13,
-      "observedDate": "2026-11-04",
+      "usd": 6.23,
+      "observedDate": "2026-11-06",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Foil",
+      "priceType": "market_reference"
+    },
+    "141": {
+      "usd": 99.99,
+      "observedDate": "2026-11-06",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Foil",
+      "priceType": "market_reference"
+    },
+    "142": {
+      "usd": 43.32,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
@@ -128,23 +200,55 @@
     },
     "147": {
       "usd": 65,
-      "observedDate": "2026-11-04",
+      "observedDate": "2026-11-06",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Foil",
+      "priceType": "market_reference"
+    },
+    "161": {
+      "usd": 36.97,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
       "priceType": "market_reference"
     },
     "162": {
-      "usd": 46.49,
-      "observedDate": "2026-11-04",
+      "usd": 42.37,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
       "priceType": "market_reference"
     },
     "163": {
-      "usd": 25,
-      "observedDate": "2026-11-04",
+      "usd": 24.07,
+      "observedDate": "2026-11-06",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Foil",
+      "priceType": "market_reference"
+    },
+    "164": {
+      "usd": 16.17,
+      "observedDate": "2026-11-06",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Foil",
+      "priceType": "market_reference"
+    },
+    "165": {
+      "usd": 18.76,
+      "observedDate": "2026-11-06",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Foil",
+      "priceType": "market_reference"
+    },
+    "166": {
+      "usd": 23.97,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
@@ -152,71 +256,71 @@
     },
     "168": {
       "usd": 799.69,
-      "observedDate": "2026-11-04",
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
       "priceType": "market_reference"
     },
     "169": {
-      "usd": 739.89,
-      "observedDate": "2026-11-04",
+      "usd": 744.95,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
       "priceType": "market_reference"
     },
     "003": {
-      "usd": 24,
-      "observedDate": "2026-11-04",
+      "usd": 22.51,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
       "priceType": "market_reference"
     },
     "001": {
-      "usd": 21.67,
-      "observedDate": "2026-11-04",
+      "usd": 21.39,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
       "priceType": "market_reference"
     },
     "011": {
-      "usd": 16.12,
-      "observedDate": "2026-11-04",
+      "usd": 16.75,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
       "priceType": "market_reference"
     },
     "004": {
-      "usd": 5.98,
-      "observedDate": "2026-11-04",
+      "usd": 5.49,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
       "priceType": "market_reference"
     },
     "014": {
-      "usd": 5.96,
-      "observedDate": "2026-11-04",
+      "usd": 5.27,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
       "priceType": "market_reference"
     },
     "039": {
-      "usd": 5.96,
-      "observedDate": "2026-11-04",
+      "usd": 5.73,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
       "priceType": "market_reference"
     },
     "093": {
-      "usd": 5.62,
-      "observedDate": "2026-11-04",
+      "usd": 5.43,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
@@ -224,15 +328,15 @@
     },
     "036": {
       "usd": 5,
-      "observedDate": "2026-11-04",
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
       "priceType": "market_reference"
     },
     "040": {
-      "usd": 5,
-      "observedDate": "2026-11-04",
+      "usd": 4.25,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
@@ -240,23 +344,23 @@
     },
     "022": {
       "usd": 5,
-      "observedDate": "2026-11-04",
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
       "priceType": "market_reference"
     },
     "005a": {
-      "usd": 2.38,
-      "observedDate": "2026-11-04",
+      "usd": 2.34,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
       "priceType": "market_reference"
     },
     "029": {
-      "usd": 1.08,
-      "observedDate": "2026-11-04",
+      "usd": 0.91,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Normal",
@@ -264,31 +368,31 @@
     },
     "071": {
       "usd": 1,
-      "observedDate": "2026-11-04",
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
       "priceType": "market_reference"
     },
     "072": {
-      "usd": 0.99,
-      "observedDate": "2026-11-04",
+      "usd": 1.01,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
       "priceType": "market_reference"
     },
     "074": {
-      "usd": 1,
-      "observedDate": "2026-11-04",
+      "usd": 0.97,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
       "priceType": "market_reference"
     },
     "086": {
-      "usd": 1,
-      "observedDate": "2026-11-04",
+      "usd": 0.99,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Normal",
@@ -296,15 +400,15 @@
     },
     "095": {
       "usd": 1,
-      "observedDate": "2026-11-04",
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Normal",
       "priceType": "market_reference"
     },
     "057": {
-      "usd": 1.13,
-      "observedDate": "2026-11-04",
+      "usd": 1.08,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
@@ -312,39 +416,39 @@
     },
     "073": {
       "usd": 0.99,
-      "observedDate": "2026-11-04",
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
       "priceType": "market_reference"
     },
     "075": {
-      "usd": 1.04,
-      "observedDate": "2026-11-04",
+      "usd": 1.02,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
       "priceType": "market_reference"
     },
     "048": {
-      "usd": 9.98,
-      "observedDate": "2026-11-04",
+      "usd": 9.34,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
       "priceType": "market_reference"
     },
     "020": {
-      "usd": 6.97,
-      "observedDate": "2026-11-04",
+      "usd": 6.96,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
       "priceType": "market_reference"
     },
     "038": {
-      "usd": 5.98,
-      "observedDate": "2026-11-04",
+      "usd": 5.49,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
@@ -352,31 +456,31 @@
     },
     "089": {
       "usd": 5.49,
-      "observedDate": "2026-11-04",
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
       "priceType": "market_reference"
     },
     "035": {
-      "usd": 5,
-      "observedDate": "2026-11-04",
+      "usd": 4.63,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
       "priceType": "market_reference"
     },
     "098": {
-      "usd": 2.36,
-      "observedDate": "2026-11-04",
+      "usd": 2.34,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
       "priceType": "market_reference"
     },
     "099": {
-      "usd": 0.99,
-      "observedDate": "2026-11-04",
+      "usd": 0.93,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
@@ -384,7 +488,7 @@
     },
     "087": {
       "usd": 0.99,
-      "observedDate": "2026-11-04",
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Normal",
@@ -407,8 +511,8 @@
       "priceType": "market_reference"
     },
     "063": {
-      "usd": 0.3,
-      "observedDate": "2026-11-04",
+      "usd": 2.58,
+      "observedDate": "2026-11-06",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
       "printing": "Foil",
@@ -480,6 +584,182 @@
     },
     "066": {
       "usd": 0.12,
+      "observedDate": "2026-11-04",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Normal",
+      "priceType": "market_reference"
+    },
+    "041": {
+      "usd": 6.98,
+      "observedDate": "2026-11-06",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Foil",
+      "priceType": "market_reference"
+    },
+    "044": {
+      "usd": 0.54,
+      "observedDate": "2026-11-06",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Foil",
+      "priceType": "market_reference"
+    },
+    "031": {
+      "usd": 0.12,
+      "observedDate": "2026-11-04",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Normal",
+      "priceType": "market_reference"
+    },
+    "033": {
+      "usd": 0.12,
+      "observedDate": "2026-11-04",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Normal",
+      "priceType": "market_reference"
+    },
+    "050": {
+      "usd": 0.12,
+      "observedDate": "2026-11-04",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Normal",
+      "priceType": "market_reference"
+    },
+    "052": {
+      "usd": 0.12,
+      "observedDate": "2026-11-04",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Normal",
+      "priceType": "market_reference"
+    },
+    "070": {
+      "usd": 0.12,
+      "observedDate": "2026-11-04",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Normal",
+      "priceType": "market_reference"
+    },
+    "025": {
+      "usd": 0.11,
+      "observedDate": "2026-11-04",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Normal",
+      "priceType": "market_reference"
+    },
+    "006": {
+      "usd": 0.1,
+      "observedDate": "2026-11-04",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Normal",
+      "priceType": "market_reference"
+    },
+    "007": {
+      "usd": 0.1,
+      "observedDate": "2026-11-04",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Normal",
+      "priceType": "market_reference"
+    },
+    "028": {
+      "usd": 0.1,
+      "observedDate": "2026-11-04",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Normal",
+      "priceType": "market_reference"
+    },
+    "030": {
+      "usd": 0.1,
+      "observedDate": "2026-11-04",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Normal",
+      "priceType": "market_reference"
+    },
+    "097": {
+      "usd": 0.1,
+      "observedDate": "2026-11-04",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Normal",
+      "priceType": "market_reference"
+    },
+    "060": {
+      "usd": 0.1,
+      "observedDate": "2026-11-04",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Normal",
+      "priceType": "market_reference"
+    },
+    "012": {
+      "usd": 0.1,
+      "observedDate": "2026-11-04",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Normal",
+      "priceType": "market_reference"
+    },
+    "034": {
+      "usd": 0.1,
+      "observedDate": "2026-11-04",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Normal",
+      "priceType": "market_reference"
+    },
+    "094": {
+      "usd": 0.1,
+      "observedDate": "2026-11-04",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Normal",
+      "priceType": "market_reference"
+    },
+    "069": {
+      "usd": 0.1,
+      "observedDate": "2026-11-04",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Normal",
+      "priceType": "market_reference"
+    },
+    "054": {
+      "usd": 0.1,
+      "observedDate": "2026-11-04",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Normal",
+      "priceType": "market_reference"
+    },
+    "091": {
+      "usd": 0.1,
+      "observedDate": "2026-11-04",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Normal",
+      "priceType": "market_reference"
+    },
+    "092": {
+      "usd": 0.1,
+      "observedDate": "2026-11-04",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
+      "printing": "Normal",
+      "priceType": "market_reference"
+    },
+    "096": {
+      "usd": 0.1,
       "observedDate": "2026-11-04",
       "sourceName": "ValueMyCard / TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/expansions/cyberpunk-tcg/24855-welcome-to-night-city-retail",
