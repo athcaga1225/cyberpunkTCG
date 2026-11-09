@@ -542,6 +542,14 @@
       "printing": "Foil",
       "priceType": "market_reference"
     },
+    "171": {
+      "usd": 600,
+      "observedDate": "2026-11-09",
+      "sourceName": "ValueMyCard / TCGplayer US market reference",
+      "sourceUrl": "https://valuemycard.com/card/729852-judy-alvarez-nothing-to-doubt-isecret-cyberpunk-tcg-welcome-to-night-city-retail",
+      "printing": "Foil",
+      "priceType": "market_reference"
+    },
     "003": {
       "usd": 19.04,
       "observedDate": "2026-11-07",
