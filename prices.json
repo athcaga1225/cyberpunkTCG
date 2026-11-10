@@ -6,7 +6,7 @@
   "notes": "172 Welcome to Night City Beta main-set prices, captured from displayed printings. Foil and normal are preserved per card. Historical market references, not live offers. Box Toppers are excluded.",
   "prices": {
     "B001": {
-      "usd": 1.02,
+      "usd": 1.67,
       "name": "Adam Smasher: Ender of Legends",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714162-adam-smasher-ender-of-legends-epic-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -42,7 +42,7 @@
       "condition": "Ungraded market reference"
     },
     "B005A": {
-      "usd": 0.37,
+      "usd": 0.38,
       "name": "V: Streetkid",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714166-v-streetkid-a-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -51,7 +51,7 @@
       "condition": "Ungraded market reference"
     },
     "B005B": {
-      "usd": 0.4,
+      "usd": 0.39,
       "name": "V: Streetkid",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714167-v-streetkid-b-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -60,7 +60,7 @@
       "condition": "Ungraded market reference"
     },
     "B006": {
-      "usd": 0.16,
+      "usd": 0.18,
       "name": "6th Street Recruits",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714168-6th-street-recruits-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -69,7 +69,7 @@
       "condition": "Ungraded market reference"
     },
     "B007": {
-      "usd": 0.13,
+      "usd": 0.15,
       "name": "Animals Wrecker",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714169-animals-wrecker-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -96,7 +96,7 @@
       "condition": "Ungraded market reference"
     },
     "B010": {
-      "usd": 0.09,
+      "usd": 0.1,
       "name": "Japantown Jonin",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714172-japantown-jonin-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -105,7 +105,7 @@
       "condition": "Ungraded market reference"
     },
     "B011": {
-      "usd": 13.77,
+      "usd": 13.85,
       "name": "Johnny Silverhand: Never Stop Fighting",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714173-johnny-silverhand-never-stop-fighting-epic-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -123,7 +123,7 @@
       "condition": "Ungraded market reference"
     },
     "B013": {
-      "usd": 0.14,
+      "usd": 0.15,
       "name": "La Llorona: Ghost of the Past",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714175-la-llorona-ghost-of-the-past-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -132,7 +132,7 @@
       "condition": "Ungraded market reference"
     },
     "B014": {
-      "usd": 0.42,
+      "usd": 0.43,
       "name": "Meredith Stout: Stone Cold Corpo",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714176-meredith-stout-stone-cold-corpo-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -186,7 +186,7 @@
       "condition": "Ungraded market reference"
     },
     "B020": {
-      "usd": 3.17,
+      "usd": 3.2,
       "name": "V: Roamer of the Badlands",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714182-v-roamer-of-the-badlands-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -204,7 +204,7 @@
       "condition": "Ungraded market reference"
     },
     "B022": {
-      "usd": 0.76,
+      "usd": 0.72,
       "name": "Yorinobu Arasaka: Steel Dragon",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714184-yorinobu-arasaka-steel-dragon-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -213,7 +213,7 @@
       "condition": "Ungraded market reference"
     },
     "B023": {
-      "usd": 0.11,
+      "usd": 0.12,
       "name": "Arasaka Emergency Radioport",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714185-arasaka-emergency-radioport-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -222,7 +222,7 @@
       "condition": "Ungraded market reference"
     },
     "B024": {
-      "usd": 0.13,
+      "usd": 0.14,
       "name": "Deadman Transmitter",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714186-deadman-transmitter-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -231,7 +231,7 @@
       "condition": "Ungraded market reference"
     },
     "B025": {
-      "usd": 0.14,
+      "usd": 0.13,
       "name": "Mantis Blades",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714187-mantis-blades-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -240,7 +240,7 @@
       "condition": "Ungraded market reference"
     },
     "B026": {
-      "usd": 0.19,
+      "usd": 0.21,
       "name": "Satori: Sword of Saburo",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714188-satori-sword-of-saburo-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -249,7 +249,7 @@
       "condition": "Ungraded market reference"
     },
     "B027": {
-      "usd": 0.11,
+      "usd": 0.12,
       "name": "All is Lost",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714189-all-is-lost-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -258,7 +258,7 @@
       "condition": "Ungraded market reference"
     },
     "B028": {
-      "usd": 0.1,
+      "usd": 0.12,
       "name": "Appetite for Destruction",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714190-appetite-for-destruction-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -267,7 +267,7 @@
       "condition": "Ungraded market reference"
     },
     "B029": {
-      "usd": 0.18,
+      "usd": 0.19,
       "name": "Bonnie and Clyde",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714191-bonnie-and-clyde-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -276,7 +276,7 @@
       "condition": "Ungraded market reference"
     },
     "B030": {
-      "usd": 0.11,
+      "usd": 0.13,
       "name": "Carnage at the Colosseum",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714192-carnage-at-the-colosseum-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -285,7 +285,7 @@
       "condition": "Ungraded market reference"
     },
     "B031": {
-      "usd": 0.13,
+      "usd": 0.12,
       "name": "Detonate",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714193-detonate-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -330,7 +330,7 @@
       "condition": "Ungraded market reference"
     },
     "B036": {
-      "usd": 0.4,
+      "usd": 0.41,
       "name": "Dum Dum: Maelstrom Triggerman",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714198-dum-dum-maelstrom-triggerman-rare-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -357,7 +357,7 @@
       "condition": "Ungraded market reference"
     },
     "B039": {
-      "usd": 0.52,
+      "usd": 0.51,
       "name": "River Ward: Detective on the Hunt",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714201-river-ward-detective-on-the-hunt-rare-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -375,7 +375,7 @@
       "condition": "Ungraded market reference"
     },
     "B041": {
-      "usd": 2.46,
+      "usd": 2.44,
       "name": "Adam Smasher: Metal Over Meat",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714203-adam-smasher-metal-over-meat-epic-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -393,7 +393,7 @@
       "condition": "Ungraded market reference"
     },
     "B043": {
-      "usd": 0.14,
+      "usd": 0.15,
       "name": "Augmented Negotiators",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714205-augmented-negotiators-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -438,7 +438,7 @@
       "condition": "Ungraded market reference"
     },
     "B048": {
-      "usd": 7.46,
+      "usd": 7.18,
       "name": "Jackie Welles: Ride or Die Choom",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714210-jackie-welles-ride-or-die-choom-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -447,7 +447,7 @@
       "condition": "Ungraded market reference"
     },
     "B049": {
-      "usd": 0.1,
+      "usd": 0.11,
       "name": "Maelstrom Goons",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714211-maelstrom-goons-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -474,7 +474,7 @@
       "condition": "Ungraded market reference"
     },
     "B052": {
-      "usd": 0.18,
+      "usd": 0.19,
       "name": "Rockn' Rockerboy",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714214-rockn-rockerboy-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -492,7 +492,7 @@
       "condition": "Ungraded market reference"
     },
     "B054": {
-      "usd": 0.11,
+      "usd": 0.12,
       "name": "Sketchy Ripper",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714216-sketchy-ripper-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -510,7 +510,7 @@
       "condition": "Ungraded market reference"
     },
     "B056": {
-      "usd": 0.11,
+      "usd": 0.12,
       "name": "Trauma Team Operatives",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714218-trauma-team-operatives-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -519,7 +519,7 @@
       "condition": "Ungraded market reference"
     },
     "B057": {
-      "usd": 1.59,
+      "usd": 1.6,
       "name": "Viktor Vektor: Drop Your Illusions",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714219-viktor-vektor-drop-your-illusions-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -528,7 +528,7 @@
       "condition": "Ungraded market reference"
     },
     "B058": {
-      "usd": 0.15,
+      "usd": 0.14,
       "name": "Viktor Vektor: You Might Feel a Little Pinch",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714220-viktor-vektor-you-might-feel-a-little-pinch-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -537,7 +537,7 @@
       "condition": "Ungraded market reference"
     },
     "B059": {
-      "usd": 0.13,
+      "usd": 0.14,
       "name": "Adrenaline Converter",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714221-adrenaline-converter-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -546,7 +546,7 @@
       "condition": "Ungraded market reference"
     },
     "B060": {
-      "usd": 0.11,
+      "usd": 0.12,
       "name": "Gorilla Arms",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714222-gorilla-arms-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -600,7 +600,7 @@
       "condition": "Ungraded market reference"
     },
     "B066": {
-      "usd": 0.15,
+      "usd": 0.14,
       "name": "Bootleg Black Sapphire Show",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714228-bootleg-black-sapphire-show-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -609,7 +609,7 @@
       "condition": "Ungraded market reference"
     },
     "B067": {
-      "usd": 0.12,
+      "usd": 0.13,
       "name": "Cyberpsychosis",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714229-cyberpsychosis-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -627,7 +627,7 @@
       "condition": "Ungraded market reference"
     },
     "B069": {
-      "usd": 0.12,
+      "usd": 0.11,
       "name": "Safety Override",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714231-safety-override-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -654,7 +654,7 @@
       "condition": "Ungraded market reference"
     },
     "B072": {
-      "usd": 0.79,
+      "usd": 0.68,
       "name": "Hanako Arasaka: Daughter of the Emperor",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714234-hanako-arasaka-daughter-of-the-emperor-rare-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -663,7 +663,7 @@
       "condition": "Ungraded market reference"
     },
     "B073": {
-      "usd": 0.45,
+      "usd": 0.44,
       "name": "Jackie Welles: Mama's Favorite",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714235-jackie-welles-mama-s-favorite-rare-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -672,7 +672,7 @@
       "condition": "Ungraded market reference"
     },
     "B074": {
-      "usd": 0.46,
+      "usd": 0.43,
       "name": "Padre: Man of the Cross",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714236-padre-man-of-the-cross-rare-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -681,7 +681,7 @@
       "condition": "Ungraded market reference"
     },
     "B075": {
-      "usd": 0.74,
+      "usd": 0.75,
       "name": "Panam Palmer: Nomad Cavalry",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714237-panam-palmer-nomad-cavalry-epic-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -744,7 +744,7 @@
       "condition": "Ungraded market reference"
     },
     "B082": {
-      "usd": 0.09,
+      "usd": 0.08,
       "name": "MaxTac Squadron",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714244-maxtac-squadron-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -753,7 +753,7 @@
       "condition": "Ungraded market reference"
     },
     "B083": {
-      "usd": 0.12,
+      "usd": 0.13,
       "name": "Nadia: Fighting Through Grief",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714245-nadia-fighting-through-grief-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -789,7 +789,7 @@
       "condition": "Ungraded market reference"
     },
     "B087": {
-      "usd": 0.08,
+      "usd": 0.09,
       "name": "Riding Nomad",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714249-riding-nomad-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -807,7 +807,7 @@
       "condition": "Ungraded market reference"
     },
     "B089": {
-      "usd": 0.19,
+      "usd": 0.18,
       "name": "Saul Bright: Stormrider",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714251-saul-bright-stormrider-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -843,7 +843,7 @@
       "condition": "Ungraded market reference"
     },
     "B093": {
-      "usd": 2.66,
+      "usd": 2.7,
       "name": "Overwatch: Panam's Gift",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714255-overwatch-panam-s-gift-epic-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -852,7 +852,7 @@
       "condition": "Ungraded market reference"
     },
     "B094": {
-      "usd": 0.17,
+      "usd": 0.15,
       "name": "Riot Shield",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714256-riot-shield-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -888,7 +888,7 @@
       "condition": "Ungraded market reference"
     },
     "B098": {
-      "usd": 0.32,
+      "usd": 0.34,
       "name": "(Don't Fear) The Reaper",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714260-don-t-fear-the-reaper-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -915,7 +915,7 @@
       "condition": "Ungraded market reference"
     },
     "B101": {
-      "usd": 0.21,
+      "usd": 0.2,
       "name": "Peace Offering",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714263-peace-offering-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -942,7 +942,7 @@
       "condition": "Ungraded market reference"
     },
     "B104": {
-      "usd": 0.12,
+      "usd": 0.13,
       "name": "We Gotta Live Together",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714266-we-gotta-live-together-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -960,7 +960,7 @@
       "condition": "Ungraded market reference"
     },
     "B106": {
-      "usd": 0.57,
+      "usd": 0.51,
       "name": "Alt Cunningham: Soulkiller Architect",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714268-alt-cunningham-soulkiller-architect-rare-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -978,7 +978,7 @@
       "condition": "Ungraded market reference"
     },
     "B108": {
-      "usd": 1.23,
+      "usd": 1.21,
       "name": "Judy Álvarez: Braindance Maestro",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714270-judy-alvarez-braindance-maestro-epic-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -987,7 +987,7 @@
       "condition": "Ungraded market reference"
     },
     "B109": {
-      "usd": 12.39,
+      "usd": 12.41,
       "name": "Sasha Yakovleva: Won't Let You Down",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714271-sasha-yakovleva-won-t-let-you-down-secret-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -1050,7 +1050,7 @@
       "condition": "Ungraded market reference"
     },
     "B116": {
-      "usd": 8.75,
+      "usd": 8.56,
       "name": "Judy Álvarez: Nothing to Doubt",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714278-judy-alvarez-nothing-to-doubt-secret-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -1059,7 +1059,7 @@
       "condition": "Ungraded market reference"
     },
     "B117": {
-      "usd": 0.42,
+      "usd": 0.4,
       "name": "Lizzy Wizzy: Delicate Weapon",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714279-lizzy-wizzy-delicate-weapon-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -1068,7 +1068,7 @@
       "condition": "Ungraded market reference"
     },
     "B118": {
-      "usd": 0.17,
+      "usd": 0.16,
       "name": "Maman Brigitte: Spirit of Death",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714280-maman-brigitte-spirit-of-death-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -1077,7 +1077,7 @@
       "condition": "Ungraded market reference"
     },
     "B119": {
-      "usd": 0.22,
+      "usd": 0.21,
       "name": "Misty Olszewski: Mender of Broken Spirits",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714281-misty-olszewski-mender-of-broken-spirits-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -1131,7 +1131,7 @@
       "condition": "Ungraded market reference"
     },
     "B125": {
-      "usd": 0.14,
+      "usd": 0.15,
       "name": "Rita Wheeler: No Stupid Questions",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714287-rita-wheeler-no-stupid-questions-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -1140,7 +1140,7 @@
       "condition": "Ungraded market reference"
     },
     "B126": {
-      "usd": 1.5,
+      "usd": 1.45,
       "name": "Rogue Amendiares: Queen of the Afterlife",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714288-rogue-amendiares-queen-of-the-afterlife-epic-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -1158,7 +1158,7 @@
       "condition": "Ungraded market reference"
     },
     "B128": {
-      "usd": 0.25,
+      "usd": 0.26,
       "name": "Dying Night: V's Pistol",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714290-dying-night-v-s-pistol-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -1167,7 +1167,7 @@
       "condition": "Ungraded market reference"
     },
     "B129": {
-      "usd": 0.11,
+      "usd": 0.12,
       "name": "NetWatch Netdriver",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714291-netwatch-netdriver-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -1212,7 +1212,7 @@
       "condition": "Ungraded market reference"
     },
     "B134": {
-      "usd": 0.26,
+      "usd": 0.25,
       "name": "Nocturne OP55 N1",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714296-nocturne-op55-n1-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -1221,7 +1221,7 @@
       "condition": "Ungraded market reference"
     },
     "B135": {
-      "usd": 0.36,
+      "usd": 0.34,
       "name": "Pyramid Song",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714297-pyramid-song-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -1230,7 +1230,7 @@
       "condition": "Ungraded market reference"
     },
     "B136": {
-      "usd": 0.1,
+      "usd": 0.11,
       "name": "Reboot Optics",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714298-reboot-optics-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -1239,7 +1239,7 @@
       "condition": "Ungraded market reference"
     },
     "B137": {
-      "usd": 0.2,
+      "usd": 0.19,
       "name": "Three Mouths, One Desire",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714299-three-mouths-one-desire-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -1248,7 +1248,7 @@
       "condition": "Ungraded market reference"
     },
     "B138": {
-      "usd": 9.32,
+      "usd": 9.62,
       "name": "Towerfall",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714300-towerfall-epic-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -1284,7 +1284,7 @@
       "condition": "Ungraded market reference"
     },
     "B142": {
-      "usd": 64.65,
+      "usd": 64.38,
       "name": "Dexter DeShawn: Off the Grid",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714304-dexter-deshawn-off-the-grid-ilegend-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -1293,7 +1293,7 @@
       "condition": "Ungraded market reference"
     },
     "B143": {
-      "usd": 57.25,
+      "usd": 57.04,
       "name": "Royce: Psycho on the Edge",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714305-royce-psycho-on-the-edge-ilegend-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -1311,7 +1311,7 @@
       "condition": "Ungraded market reference"
     },
     "B145": {
-      "usd": 58.15,
+      "usd": 57.88,
       "name": "Dum Dum: Maelstrom Triggerman",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714307-dum-dum-maelstrom-triggerman-ilegend-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -1320,7 +1320,7 @@
       "condition": "Ungraded market reference"
     },
     "B146": {
-      "usd": 52.21,
+      "usd": 52.11,
       "name": "Kerry Eurodyne: Axe, Attitude, Audience",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714308-kerry-eurodyne-axe-attitude-audience-ilegend-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -1329,7 +1329,7 @@
       "condition": "Ungraded market reference"
     },
     "B147": {
-      "usd": 61.43,
+      "usd": 61.31,
       "name": "Muamar Reyes: El Capitán",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714309-muamar-reyes-el-capitan-ilegend-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -1338,7 +1338,7 @@
       "condition": "Ungraded market reference"
     },
     "B148": {
-      "usd": 124.92,
+      "usd": 124.85,
       "name": "River Ward: Detective on the Hunt",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714310-river-ward-detective-on-the-hunt-ilegend-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -1347,7 +1347,7 @@
       "condition": "Ungraded market reference"
     },
     "B149": {
-      "usd": 90.98,
+      "usd": 91.04,
       "name": "Rogue Amendiares: Preem Solo",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714311-rogue-amendiares-preem-solo-ilegend-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -1374,7 +1374,7 @@
       "condition": "Ungraded market reference"
     },
     "B152": {
-      "usd": 58.83,
+      "usd": 58.97,
       "name": "Jackie Welles: Mama's Favorite",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714314-jackie-welles-mama-s-favorite-ilegend-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -1383,7 +1383,7 @@
       "condition": "Ungraded market reference"
     },
     "B153": {
-      "usd": 77.1,
+      "usd": 76.85,
       "name": "Padre: Man of the Cross",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714315-padre-man-of-the-cross-ilegend-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -1401,7 +1401,7 @@
       "condition": "Ungraded market reference"
     },
     "B155": {
-      "usd": 233.58,
+      "usd": 233.18,
       "name": "Alt Cunningham: Soulkiller Architect",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714317-alt-cunningham-soulkiller-architect-ilegend-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -1410,7 +1410,7 @@
       "condition": "Ungraded market reference"
     },
     "B156": {
-      "usd": 105.14,
+      "usd": 105.81,
       "name": "Evelyn Parker: Beautiful Enigma",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714318-evelyn-parker-beautiful-enigma-ilegend-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -1419,7 +1419,7 @@
       "condition": "Ungraded market reference"
     },
     "B157": {
-      "usd": 310.32,
+      "usd": 304.99,
       "name": "Judy Álvarez: Braindance Maestro",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714319-judy-alvarez-braindance-maestro-ilegend-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -1428,7 +1428,7 @@
       "condition": "Ungraded market reference"
     },
     "B158": {
-      "usd": 64.25,
+      "usd": 62.57,
       "name": "Wakako Okada: Peace and Harmony",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714320-wakako-okada-peace-and-harmony-ilegend-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -1437,7 +1437,7 @@
       "condition": "Ungraded market reference"
     },
     "B159": {
-      "usd": 55.57,
+      "usd": 55.02,
       "name": "Johnny Silverhand: Never Stop Fighting",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714321-johnny-silverhand-never-stop-fighting-io-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -1446,7 +1446,7 @@
       "condition": "Ungraded market reference"
     },
     "B160": {
-      "usd": 49.16,
+      "usd": 49.06,
       "name": "Adam Smasher: Metal Over Meat",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714322-adam-smasher-metal-over-meat-io-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -1464,7 +1464,7 @@
       "condition": "Ungraded market reference"
     },
     "B162": {
-      "usd": 17.02,
+      "usd": 17.14,
       "name": "Hanako Arasaka: In a Gilded Cage",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714324-hanako-arasaka-in-a-gilded-cage-io-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -1473,7 +1473,7 @@
       "condition": "Ungraded market reference"
     },
     "B163": {
-      "usd": 16.99,
+      "usd": 17.31,
       "name": "The Relic: Experimental Biochip",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714325-the-relic-experimental-biochip-io-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -1482,7 +1482,7 @@
       "condition": "Ungraded market reference"
     },
     "B164": {
-      "usd": 11.56,
+      "usd": 11.55,
       "name": "Sandayu Oda: Hanako's Guardian",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714326-sandayu-oda-hanako-s-guardian-io-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -1491,7 +1491,7 @@
       "condition": "Ungraded market reference"
     },
     "B165": {
-      "usd": 19.09,
+      "usd": 19.0,
       "name": "Overwatch: Panam's Gift",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714327-overwatch-panam-s-gift-io-cyberpunk-tcg-welcome-to-night-city-beta",
@@ -1509,7 +1509,7 @@
       "condition": "Ungraded market reference"
     },
     "B167": {
-      "usd": 26.86,
+      "usd": 26.84,
       "name": "Towerfall",
       "source": "ValueMyCard — TCGplayer US market reference",
       "sourceUrl": "https://valuemycard.com/card/714329-towerfall-io-cyberpunk-tcg-welcome-to-night-city-beta",
